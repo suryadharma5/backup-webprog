@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    @stack('before-style')
     <!-- Bootstrap CSS -->
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -15,13 +16,14 @@
     {{-- css kita --}}
     <link rel="stylesheet" href="/css/style.css">
     <link href="css/bootstrap.css" rel="stylesheet">   
+    @stack('after-style')
     @yield('title')
   </head>
   <body>
     {{-- ini berarti ngambil dari folder partials dengan nama file Navbar --}}
     @include("partials.navbar")
     
-    <div class="container mt-4">
+    <div class="container mt-4 bg">
         @yield('container')
     </div>
 

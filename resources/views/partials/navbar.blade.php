@@ -43,7 +43,7 @@
           @else
             
               <li class="nav-item">
-                <a href="/login" class="nav-link {{ ($active == "login") ? 'active' : '' }}"><i class="bi bi-box-arrow-in-right mr-3"></i>Login</a>
+                <a href="/login" class="nav-link"><i class="bi bi-box-arrow-in-right mr-3"></i>Login</a>
               </li>
             
           @endauth

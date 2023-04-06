@@ -1,0 +1,72 @@
+@extends('layout.main')
+@push('after-style')
+    <style>
+        body {
+            background-color: #A4CFFF;
+        }
+    </style>
+@endpush
+
+@section('title')
+<title>PPTI | {{ $title }}</title>
+@endsection
+
+
+@section('container')
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      {{-- didapat dari RegisterController yang mengirim flash message --}}
+      @if (session()->has('success'))
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          {{ session('success') }}
+          <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+        </div>
+      @endif
+
+      @if (session()->has('loginError'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          {{ session('loginError') }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      @endif
+
+      <main class="form-signin">
+          <div class="d-flex justify-content-center">
+            <img class="mb-4" src="/img/logo.png" alt="" width="300" height="100">
+          </div>
+
+          <div class="container loginCont col-lg-12">
+            <form action="/login" method="POST" class="py-5 px-3">
+                @csrf
+    
+                <div class="form-floating">
+                  <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" autofocus required value="{{ old('email') }}">
+                  <label for="email">Email Address</label>
+    
+                  @error('email')
+                    <div class="invalid-feedback">
+                      {{ $message }}
+                    </div>
+                  @enderror
+    
+                </div>
+                <div class="form-floating">
+                  <input type="password"  name="password" class="form-control mt-3" id="password" placeholder="Password" required>
+                  <label for="password">Password</label>
+                </div>
+            
+                <div class="d-flex justify-content-center">
+                    <button class="w-50 btn btn-lg btn-danger mt-3 loginButton text-dark fs-6 fw-bold" type="submit">LOG IN</button>
+                </div>
+
+              </form>
+          </div>
+
+          <small class="d-block text-center mt-3">
+              Don't Have Account ? <a href="/register">Register Now</a>
+          </small>
+      </main>
+    </div>
+  </div>
+    
+@endsection
