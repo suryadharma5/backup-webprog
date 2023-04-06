@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -14,30 +16,24 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function authenticate(Request $request){
+    public function store(Request $request){
+        $validatedData = $request->validate([
+            //unique|dari table mana
+            'username' => 'required|min:3|max:255|unique:users',
+            'email' => 'required|email:dns|unique:users',
+            'password'=> 'required|min:5|max:255'
 
-        $credentials = $request->validate([
-            'email' => ['required', 'email:dns'],
-            'password' => 'required',
         ]);
 
-        //validasi dari data yang dikirim
-        if(Auth::attempt($credentials)){
-            $request->session()->regenerate();
+        // $validatedData['password'] = bcrypt($validatedData['password']);
+        $validatedData['password'] = Hash::make($validatedData['password']);
+ 
+        User::create($validatedData);
 
-            return redirect()->intended('/');
-        }
+        //ini nanti akan dikirim ke halamann yang akan ditampilkan, yaitu login
+        // $request->session()->flash('success', 'Registration successful!');
 
-        return back()->with('loginError', 'Login Failed');
-    }
+        return redirect('/login')->with('success', 'Registration successful!');
 
-    public function logout(Request $request){
-        Auth::logout();
-
-        request()->session()->invalidate();
-
-        request()->session()->regenerateToken();
-
-        return(redirect('/'));
     }
 }

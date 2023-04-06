@@ -40,7 +40,7 @@
                 @csrf
 
                 <div class="form-floating">
-                    <input type="text" name="username" class="form-control @error('username') is-invalid @enderror forms" id="username" placeholder="Your Username" required value="{{ old('username') }}">
+                    <input type="text" name="username" class="form-control @error('username') is-invalid @enderror forms" id="username" placeholder="Your Username" autofocus required value="{{ old('username') }}">
                     <label for="username" style="color: #7F7476">Username</label>
 
                     @error('username')
@@ -51,7 +51,7 @@
                   </div>
     
                 <div class="form-floating">
-                  <input type="email" name="email" class="form-control @error('email') is-invalid @enderror forms mt-3" id="email" placeholder="name@example.com" autofocus required value="{{ old('email') }}">
+                  <input type="email" name="email" class="form-control @error('email') is-invalid @enderror forms mt-3" id="email" placeholder="name@example.com" required value="{{ old('email') }}">
                   <label for="email" style="color: #7F7476">Email</label>
     
                   @error('email')
@@ -62,8 +62,14 @@
     
                 </div>
                 <div class="form-floating">
-                  <input type="password"  name="password" class="form-control mt-3 forms" id="password" placeholder="Password" required>
+                  <input type="password"  name="password" class="form-control @error('password') is-invalid @enderror mt-3 forms" id="password" placeholder="Password" required>
                   <label for="password" style="color:#7F7476">Password</label>
+
+                  @error('password')
+                    <div class="invalid-feedback">
+                      {{ $message }}
+                    </div>
+                  @enderror
                 </div>
             
                 <div class="d-flex justify-content-center">
