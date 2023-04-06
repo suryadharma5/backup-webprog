@@ -36,11 +36,22 @@
           </div>
 
           <div class="container loginCont col-lg-12">
-            <form action="/login" method="POST" class="py-5 px-3">
+            <form action="/register" method="POST" class="py-5 px-3">
                 @csrf
+
+                <div class="form-floating">
+                    <input type="text" name="username" class="form-control @error('username') is-invalid @enderror forms" id="username" placeholder="Your Username" required value="{{ old('username') }}">
+                    <label for="username" style="color: #7F7476">Username</label>
+
+                    @error('username')
+                      <div class="invalid-feedback">
+                        {{ $message }}
+                      </div>                      
+                    @enderror
+                  </div>
     
                 <div class="form-floating">
-                  <input type="email" name="email" class="form-control @error('email') is-invalid @enderror forms" id="email" placeholder="name@example.com" autofocus required value="{{ old('email') }}">
+                  <input type="email" name="email" class="form-control @error('email') is-invalid @enderror forms mt-3" id="email" placeholder="name@example.com" autofocus required value="{{ old('email') }}">
                   <label for="email" style="color: #7F7476">Email</label>
     
                   @error('email')
@@ -56,14 +67,13 @@
                 </div>
             
                 <div class="d-flex justify-content-center">
-                    <button class="w-50 btn btn-lg btn-danger mt-3 loginButton text-dark fs-6 fw-bold" type="submit">Log In</button>
+                    <button class="w-50 btn btn-lg btn-danger mt-3 loginButton text-dark fs-6 fw-bold" type="submit">Sign Up</button>
                 </div>
 
               </form>
           </div>
-
           <small class="d-block text-center mt-3">
-              Don't Have Account ? <a href="/register">Register Now</a>
+           Already Have Account ? <a href="/login">Log In</a>
           </small>
       </main>
     </div>
