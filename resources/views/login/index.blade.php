@@ -13,7 +13,7 @@
 
 
 @section('container')
-  <div class="row justify-content-center">
+  <div class="row justify-content-center mt-5">
     <div class="col-md-4">
       {{-- didapat dari RegisterController yang mengirim flash message --}}
       @if (session()->has('success'))
@@ -41,7 +41,7 @@
     
                 <div class="form-floating">
                   <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" autofocus required value="{{ old('email') }}">
-                  <label for="email">Email Address</label>
+                  <label for="email" style="color: #7F7476">Email</label>
     
                   @error('email')
                     <div class="invalid-feedback">
@@ -52,7 +52,7 @@
                 </div>
                 <div class="form-floating">
                   <input type="password"  name="password" class="form-control mt-3" id="password" placeholder="Password" required>
-                  <label for="password">Password</label>
+                  <label for="password" style="color:#7F7476">Password</label>
                 </div>
             
                 <div class="d-flex justify-content-center">
