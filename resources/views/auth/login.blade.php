@@ -4,7 +4,12 @@
         body {
             background-color: #A4CFFF;
         }
+
+        .navigasi {
+            display: none
+        }
     </style>
+
 @endpush
 
 @section('title')

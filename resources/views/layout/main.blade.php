@@ -21,7 +21,7 @@
   </head>
   <body>
     {{-- ini berarti ngambil dari folder partials dengan nama file Navbar --}}
-    @yield('navbar')
+    @include('partials.navbar')
     
     <div class="container mt-4 bg">
         @yield('container')
