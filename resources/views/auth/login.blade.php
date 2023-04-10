@@ -1,73 +1,72 @@
-@extends('layouts.app')
+@extends('layout.main')
+@push('after-style')
+    <style>
+        body {
+            background-color: #A4CFFF;
+        }
+    </style>
+@endpush
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+@section('title')
+<title>Hamily</title>
+@endsection
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+@section('container')
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-4">
+      {{-- didapat dari RegisterController yang mengirim flash message --}}
+      @if (session()->has('success'))
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          {{ session('success') }}
+          <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
         </div>
+      @endif
+
+      @if (session()->has('loginError'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          {{ session('loginError') }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      @endif
+
+      <main class="form-signin">
+          <div class="d-flex justify-content-center">
+            <img class="mb-4" src="/img/logo.png" alt="" width="300" height="100">
+          </div>
+
+          <div class="container loginCont col-lg-12">
+            <form action="{{ route('login') }}" method="POST" class="py-5 px-3">
+                @csrf
+    
+                <div class="form-floating">
+                  <input type="email" name="email" class="form-control @error('email') is-invalid @enderror forms" id="email" placeholder="name@example.com" autofocus required value="{{ old('email') }}">
+                  <label for="email" style="color: #7F7476">Email</label>
+    
+                  @error('email')
+                    <div class="invalid-feedback">
+                      {{ $message }}
+                    </div>
+                  @enderror
+    
+                </div>
+                <div class="form-floating">
+                  <input type="password"  name="password" class="form-control mt-3 forms" id="password" placeholder="Password" required>
+                  <label for="password" style="color:#7F7476">Password</label>
+                </div>
+            
+                <div class="d-flex justify-content-center">
+                    <button class="w-50 btn btn-lg btn-danger mt-3 loginButton text-dark fs-6 fw-bold" type="submit">Log In</button>
+                </div>
+
+              </form>
+          </div>
+
+          <small class="d-block text-center mt-3">
+              Don't Have Account ? <a href="/register">Register Now</a>
+          </small>
+      </main>
     </div>
-</div>
+  </div>
+    
 @endsection
