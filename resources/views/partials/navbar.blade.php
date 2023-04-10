@@ -32,10 +32,12 @@
         <ul class="navbar-nav ms-auto">
           {{-- jika sudah login --}}
           @auth
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Welcome Back, user
-              </a>
+          {{-- @dd(Auth::user()->username) --}}
+            <li class="nav-item dropdown d-flex flex-row align-items-center">
+              <img src="/img/profile.png" width="20" alt="" class="d-block" height="20">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 {{ Auth::user()->username }}
+                </a> 
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-sidebar-reverse"></i>My Dashboard</a></li>
                 <li><hr class="dropdown-divider"></li>
