@@ -30,3 +30,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//404 handler
+Route::fallback(function () {
+    return view('404');
+});
