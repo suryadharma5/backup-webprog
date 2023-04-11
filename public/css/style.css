@@ -1,3 +1,6 @@
+*{
+    font-family: roboto;
+}
 .loginCont{
     border-radius: 20px;
     background-color: #F9C6D1;
