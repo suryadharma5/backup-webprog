@@ -12,6 +12,17 @@
     </style>
 @endpush
 
+@section('title')
+  <title>Hamily</title>
+@endsection
+
+
+@if (session('success'))
+    <div class="alert alert-success">
+      {{ session('success') }}
+    </div>
+@endif
+
 @section('container')
   <div class="row justify-content-center mt-5">
     <div class="col-md-4">
