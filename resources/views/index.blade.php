@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('title')
- <title>Hamily</title>
+ <title>Hamily | {{ $title }}</title>
 @endsection 
 @section('container')
     

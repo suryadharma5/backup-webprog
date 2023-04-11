@@ -17,7 +17,9 @@ use App\Http\Controllers\RegisterController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('index', [
+        'title' => 'Home'
+    ]);
 });
 
 // Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
