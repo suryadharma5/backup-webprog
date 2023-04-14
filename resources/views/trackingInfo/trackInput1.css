@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    height: 105px;
+    width: 1260px;
+    background-color: white;
+}
+
+header {
+    background-image: url('./Picture/trackInfoBG.png');
+    /* background-position: bottom; */
+    width: auto;
+    height: 924px;
+}
+
+.questionBox {
+    width: 575px;
+    height: 200px;
+    background-color: #9FCAE6;
+    border-radius: 10px;
+}
