@@ -9,7 +9,7 @@ nav {
     background-color: white;
 }
 
-.info {
+header {
     background-image: url('./Picture/trackInfoBG.png');
     /* background-position: bottom; */
     width: auto;
@@ -20,7 +20,7 @@ nav {
     font-family: 'Baloo 2', cursive;
     font-style: normal;
     font-weight: 700;
-    font-size: 35px;
+    font-size: 30px;
 }
 
 .desc {
@@ -58,7 +58,7 @@ nav {
 
 .infoBox .trackStage {
     height: auto;
-    width: 36.19vw;
+    width: 36vw;
     margin-top: 35px;
 }
 
@@ -91,10 +91,94 @@ nav {
     cursor: pointer;
 }
 
-@media screen (max-width: 600px){
+/* Footer */
+.logo {
+    height: 300px;
+    width: 231px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: -100px;
+}
+
+.foot-desc {
+    width: auto;
+    height: 592px;
+    background-position: top;
+    background-image: url(./Picture/footer.png);
+    background-size: cover;
+    /* background-position: 50% 50%; */
+    margin-top: -210px;
+}
+
+.jargon {
+    font-family: 'Baloo 2', cursive;
+    font-size: 22px;
+    color: #78A2CC;
+    margin-top: -10px;
+}
+
+.linked {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.linked a {
+    margin-right: 30px;
+    font-family: 'Baloo 2', cursive;
+    /* font-weight: 400; */
+    font-size: 18px;
+    color: #78A2CC;
+}
+
+.linked a:hover {
+    color: #FFB8C7;
+}
+
+.sosmed {
+    display: flex;
+    margin-top: 25px;
+    justify-content: center;
+}
+
+.sosmed img {
+    width: 70px;
+    height: 70px;
+    margin-right: 35px;
+}
+
+.skip {
+    height: 62px;
+}
+
+.copyright {
+    height: 71px;
+    width: 1263px;
+    background-color: #FFB8C7;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.copyright p {
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    color: #FFF7F6;
+
+}
+
+@media screen and (max-width: 700px){
     .infoBox{
         height: 535px;
     }
 
-}
+    .linked {
+        display: list-item;
+        text-align: center;
+    }
 
+}
