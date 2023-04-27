@@ -19,3 +19,18 @@
     background-color: #78A2CC;
     /* height: 100px; */
 }
+
+.searchBar{
+    border-radius: 20px;
+    background-color: #FFF7F6;
+}
+
+.searchButton {
+    border-radius: 150px;
+    background-color: #FFB8C7;
+    border: 0px;
+}
+
+.searchIcon{
+    color: #FFF7F6;
+}
