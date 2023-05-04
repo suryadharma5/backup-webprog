@@ -256,7 +256,7 @@ body{
     padding: 60px 0;
     display: flex;
     scroll-behavior: smooth;
-    width: 1200px;
+    width: 1200px;   
     scrollbar-width: none;
 }
 
