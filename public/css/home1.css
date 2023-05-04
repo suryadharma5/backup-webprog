@@ -95,7 +95,7 @@
     font-weight: var(--SEMIBOLD)!important;
     box-shadow: 0.317vw 0.317vw 0.317vw rgb(127, 127, 127)!important;
 }
-
+ 
 .row{
     --bs-gutter-x: 0rem!important
 }
@@ -339,7 +339,11 @@ body{
     padding: 120px;
 }
 
-.rating-and-review .title{
+.rating-and-review .title, .rating-and-review .desc{
+    color: var(--WHITE);
+}
+
+/* .rating-and-review .title{
     width: 100%;
     text-align: center;
     color: #FFF7F6;
@@ -349,7 +353,7 @@ body{
 .rating-and-review .judul{
     font-size: 40px;
     font-weight: 600px;
-}
+} */
 
 .rating-and-review .deskripsi{
     font-size: 25px;
