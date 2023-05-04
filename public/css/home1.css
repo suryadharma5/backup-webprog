@@ -252,16 +252,11 @@ body{
 
 .scroll-container{
     overflow: auto;
-    /* overflow-x: scroll;
-    overflow-y: hidden; */
-    white-space: nowrap;
     scroll-snap-type: x mandatory;
-    /* padding: 60px 0; */
-    overflow-x : scroll;
+    padding: 60px 0;
     display: flex;
-    /* scroll-behavior: smooth; */
-    /* width: 1200px;    */
-    /* overflow: hidden; */
+    scroll-behavior: smooth;
+    width: 1200px;
     scrollbar-width: none;
 }
 
