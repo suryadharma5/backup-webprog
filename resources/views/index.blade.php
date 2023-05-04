@@ -182,19 +182,28 @@
     </div>
 
     <section>
-        <div class="bekgron">
+        <div class="sectionpic awanbiru">
             <img src="/img/section3_awan.png" alt="">
         </div>
+        <!-- <div class="bekgron">
+            <img src="/img/section3_awan.png" alt="">
+        </div> -->
     </section>
     <section class="menfess">
-        <div class="title">
+        <div class="title text-center">
+            Mention and Confess
+        </div>
+        <div class="desc text-center">
+            Share your opinions based the issues and discuss with others
+        </div>
+        <!-- <div class="title">
             <h2 class="judul">
                 Mention and Confess
             </h2>
             <p class="dekripsi">
                 share your opinions based the issues and discuss with others           
             </p>
-        </div>
+        </div> -->
         <div class="container-via">
             <div class="scroll-container">
                 <div class="scroll-area">
@@ -449,13 +458,18 @@
                 </div>
             </div>
         </div>
-        <div class="button">
+        <div class="col-md-12 text-center zoom">
+                <a href="./nextpage.html">
+                    <button type="button" class="btn btn-primary">See More</button>
+                </a>
+        </div>
+        <!-- <div class="button">
             <a class="asu" href="#">
                 <p>
                     SEE MORE
                 </p>
             </a>
-        </div>
+        </div> -->
     </section>
 
     <section>
@@ -464,14 +478,20 @@
         </div>
     </section>
     <section class="rating-and-review">
-        <div class="title">
+        <div class="title text-center">
+            Rating and Review
+        </div>
+        <div class="desc text-center">
+            See and rate your choice of products
+        </div>
+        <!-- <div class="title">
             <h2 class="judul">
                 Rating and Review
             </h2>
             <p class="deskripsi">
                 see and rate your choice of products
             </p>
-        </div>
+        </div> -->
         <div class="scroll-container">
             <div class="scroll-area">
                 <div class="foto-produk">
@@ -794,13 +814,18 @@
                 </div>
             </div>
         </div>
-        <div class="button">
+        <div class="col-md-12 text-center zoom">
+                <a href="./nextpage.html">
+                    <button type="button" class="btn btn-primary">See More</button>
+                </a>
+            </div>
+        <!-- <div class="button">
             <a class="asu" href="#">
                 <p>
                     SEE MORE
                 </p>
             </a>
-        </div>
+        </div> -->
     </section>
     <footer>
         <div>

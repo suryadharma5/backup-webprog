@@ -1,5 +1,6 @@
 *{
-    font-family: roboto;
+    /* font-family: roboto; */
+    font-family: 'Baloo 2', cursive;
 }
 .loginCont{
     border-radius: 20px;
