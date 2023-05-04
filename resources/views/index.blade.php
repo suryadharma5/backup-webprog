@@ -185,9 +185,6 @@
         <div class="sectionpic awanbiru">
             <img src="/img/section3_awan.png" alt="">
         </div>
-        <!-- <div class="bekgron">
-            <img src="/img/section3_awan.png" alt="">
-        </div> -->
     </section>
     <section class="menfess">
         <div class="title text-center">
@@ -196,14 +193,6 @@
         <div class="desc text-center">
             Share your opinions based the issues and discuss with others
         </div>
-        <!-- <div class="title">
-            <h2 class="judul">
-                Mention and Confess
-            </h2>
-            <p class="dekripsi">
-                share your opinions based the issues and discuss with others           
-            </p>
-        </div> -->
         <div class="container-via">
             <div class="scroll-container">
                 <div class="scroll-area">
@@ -231,11 +220,6 @@
                             Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele...
                             <a href="#">(lanjut)</a>
                         </p>
-                        <!-- <a class="lanjut" href="#">
-                            <p>
-                                (lanjut)
-                            </p>
-                        </a> -->
                     </div>
                     <div class="action-bar">
                         <ul class="triple-buttons">
@@ -282,11 +266,6 @@
                             Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele...
                             <a href="#">(lanjut)</a>
                         </p>
-                        <!-- <a class="lanjut" href="#">
-                            <p>
-                                (lanjut)
-                            </p>
-                        </a> -->
                     </div>
                     <div class="action-bar">
                         <ul class="triple-buttons">
@@ -384,11 +363,6 @@
                             Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele...
                             <a href="#">(lanjut)</a>
                         </p>
-                        <!-- <a class="lanjut" href="#">
-                            <p>
-                                (lanjut)
-                            </p>
-                        </a> -->
                     </div>
                     <div class="action-bar">
                         <ul class="triple-buttons">
@@ -435,12 +409,6 @@
                             Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele...
                             <a href="#">(lanjut)</a>
                         </p>
-                        
-                        <!-- <a class="lanjut" href="#">
-                            <p>
-                                (lanjut)
-                            </p>
-                        </a> -->
                     </div>
                     <div class="action-bar">
                         <ul class="triple-buttons">
@@ -469,13 +437,6 @@
                     <button type="button" class="btn btn-primary">See More</button>
                 </a>
         </div>
-        <!-- <div class="button">
-            <a class="asu" href="#">
-                <p>
-                    SEE MORE
-                </p>
-            </a>
-        </div> -->
     </section>
 
     <section>

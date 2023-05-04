@@ -13,10 +13,6 @@
     --EXTRABOLD: 800;
 }
 
-*{
-    /* font-family: 'Baloo 2', cursive; */
-}
-
 .container-fluid{
     background-color: pink;
 }
@@ -240,10 +236,10 @@ body{
 }
 
 .container-via{
-    padding: 60px 0;
-    width: 78.999vw;  
-    scrollbar-width: none;
-    scroll-behavior: smooth;
+    padding: 3.950vw 0;
+    /* width: 78.999vw;   */
+    /* scrollbar-width: none;
+    scroll-behavior: smooth; */
 }
 
 .item{
@@ -253,17 +249,16 @@ body{
 .scroll-container{
     overflow: auto;
     scroll-snap-type: x mandatory;
-    padding: 60px 0;
     display: flex;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth;
     width: 1200px;   
-    scrollbar-width: none;
+    scrollbar-width: none; */
 }
 
-.scroll-container ::-webkit-scrollbar{
+/* .scroll-container ::-webkit-scrollbar{
     display: none;
     scrollbar-width: none;
-}
+} */
 
 .scroll-area{
     /* scroll-snap-align: center; */
@@ -278,14 +273,15 @@ body{
     margin: 0.658vw;
     display: inline-block;
     margin: 1.317vw;
-    overflow-x: scroll;
-    scrollbar-width: none;
+    scroll-snap-align: center;
+    /* overflow-x: scroll;
+    scrollbar-width: none; */
 }
 
-.scroll-area ::-webkit-scrollbar{
+/* .scroll-area ::-webkit-scrollbar{
     display: none;
     scrollbar-width: none;
-}
+} */
 
 .person{
     display: flex;
@@ -378,9 +374,9 @@ body{
     font-weight: 32.916vw;
 }
 
-.scroll-container{
+/* .scroll-container{
     margin: 6.583vw 0;
-}
+} */
 
 .rating-and-review .scroll-area{
     display: flex;
