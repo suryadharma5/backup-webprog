@@ -14,7 +14,7 @@
 }
 
 *{
-    font-family: 'Baloo 2', cursive;
+    /* font-family: 'Baloo 2', cursive; */
 }
 
 .container-fluid{
@@ -251,9 +251,13 @@ body{
 }
 
 .scroll-container{
+    overflow: auto;
+    /* overflow-x: scroll;
+    overflow-y: hidden; */
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
     /* padding: 60px 0; */
     overflow-x : scroll;
-    /* scroll-snap-type: x mandatory; */
     display: flex;
     /* scroll-behavior: smooth; */
     /* width: 1200px;    */
@@ -331,9 +335,17 @@ body{
     width: 100%;
 }
 
-.lanjut p{
-    text-align: right;
+.content a{
+    color: var(--BLUE2);
 }
+
+.content a:hover{
+    color: var(--BLUE3);
+}
+
+/* .lanjut p{
+    text-align: right;
+} */
 
 .triple-buttons{
     display: flex;
