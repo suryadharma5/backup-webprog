@@ -506,16 +506,20 @@
                     </div>
                     <div class="count">
                         <div class="rating">
-
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
                         </div>
                         <div class="average-rating">
                             <p>
-                                4.9
+                                &nbsp; 4.9 &nbsp;
                             </p>
                         </div>
                         <div class="total-rating">
                             <p>
-                                250 people
+                                (250 people)
                             </p>
                         </div>
                     </div>
@@ -568,21 +572,23 @@
                             Baby Bath Blue 200ml
                         </p>
                     </div>
-                    <div class="count">
                         <div class="rating">
-
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
                         </div>
                         <div class="average-rating">
                             <p>
-                                4.9
+                                &nbsp; 4.9 &nbsp;
                             </p>
                         </div>
                         <div class="total-rating">
                             <p>
-                                250 people
+                                (250 people)
                             </p>
                         </div>
-                    </div>
                     <hr>
                     <div class="person">
                         <div class="foto-profile">
@@ -634,16 +640,20 @@
                     </div>
                     <div class="count">
                         <div class="rating">
-
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
                         </div>
                         <div class="average-rating">
                             <p>
-                                4.9
+                                &nbsp; 4.9 &nbsp;
                             </p>
                         </div>
                         <div class="total-rating">
                             <p>
-                                250 people
+                                (250 people)
                             </p>
                         </div>
                     </div>
@@ -697,17 +707,25 @@
                         </p>
                     </div>
                     <div class="count">
+<<<<<<< HEAD
+                    <div class="rating">
+=======
                         <div class="rating">
-
+>>>>>>> b414eca1fceabaf72b6628cdab6067042694865e
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
                         </div>
                         <div class="average-rating">
                             <p>
-                                4.9
+                                &nbsp; 4.9 &nbsp;
                             </p>
                         </div>
                         <div class="total-rating">
                             <p>
-                                250 people
+                                (250 people)
                             </p>
                         </div>
                     </div>
@@ -762,16 +780,20 @@
                     </div>
                     <div class="count">
                         <div class="rating">
-
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
                         </div>
                         <div class="average-rating">
                             <p>
-                                4.9
+                                &nbsp; 4.9 &nbsp;
                             </p>
                         </div>
                         <div class="total-rating">
                             <p>
-                                250 people
+                                (250 people)
                             </p>
                         </div>
                     </div>
