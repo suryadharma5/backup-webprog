@@ -228,13 +228,14 @@
                         </div>
                         <img src="/img/section3_image-menfess.png" alt="">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele
+                            Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele...
+                            <a href="#">(lanjut)</a>
                         </p>
-                        <a class="lanjut" href="#">
+                        <!-- <a class="lanjut" href="#">
                             <p>
                                 (lanjut)
                             </p>
-                        </a>
+                        </a> -->
                     </div>
                     <div class="action-bar">
                         <ul class="triple-buttons">
@@ -278,13 +279,14 @@
                         </div>
                         <img src="/img/section3_image-menfess.png" alt="">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele
+                            Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele...
+                            <a href="#">(lanjut)</a>
                         </p>
-                        <a class="lanjut" href="#">
+                        <!-- <a class="lanjut" href="#">
                             <p>
                                 (lanjut)
                             </p>
-                        </a>
+                        </a> -->
                     </div>
                     <div class="action-bar">
                         <ul class="triple-buttons">
@@ -328,13 +330,14 @@
                         </div>
                         <img src="/img/section3_image-menfess.png" alt="">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele
+                            Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele...
+                            <a href="#">(lanjut)</a>
                         </p>
-                        <a class="lanjut" href="#">
+                        <!-- <a class="lanjut" href="#">
                             <p>
                                 (lanjut)
                             </p>
-                        </a>
+                        </a> -->
                     </div>
                     <div class="action-bar">
                         <ul class="triple-buttons">
@@ -378,13 +381,14 @@
                         </div>
                         <img src="/img/section3_image-menfess.png" alt="">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele
+                            Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele...
+                            <a href="#">(lanjut)</a>
                         </p>
-                        <a class="lanjut" href="#">
+                        <!-- <a class="lanjut" href="#">
                             <p>
                                 (lanjut)
                             </p>
-                        </a>
+                        </a> -->
                     </div>
                     <div class="action-bar">
                         <ul class="triple-buttons">
@@ -428,13 +432,15 @@
                         </div>
                         <img src="/img/section3_image-menfess.png" alt="">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele
+                            Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele...
+                            <a href="#">(lanjut)</a>
                         </p>
-                        <a class="lanjut" href="#">
+                        
+                        <!-- <a class="lanjut" href="#">
                             <p>
                                 (lanjut)
                             </p>
-                        </a>
+                        </a> -->
                     </div>
                     <div class="action-bar">
                         <ul class="triple-buttons">
@@ -484,14 +490,6 @@
         <div class="desc text-center">
             See and rate your choice of products
         </div>
-        <!-- <div class="title">
-            <h2 class="judul">
-                Rating and Review
-            </h2>
-            <p class="deskripsi">
-                see and rate your choice of products
-            </p>
-        </div> -->
         <div class="scroll-container">
             <div class="scroll-area">
                 <div class="foto-produk">

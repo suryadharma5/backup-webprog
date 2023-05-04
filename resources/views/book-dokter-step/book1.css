@@ -1,0 +1,31 @@
+:root{
+    --PINK1: #FFB8C7;
+    --PINK2: #F9C6D1;
+    --PINK3: #F9D7D6;
+    --WHITE: #FFF7F6;
+    --BLUE1: #C3E4F1;
+    --BLUE2: #9FCAE6;
+    --BLUE3: #78A2CC;
+    --REGULAR: 400;
+    --MEDIUM: 500;
+    --SEMIBOLD: 600;
+    --BOLD: 700;
+    --EXTRABOLD: 800;
+}
+
+*{
+    font-family: 'Baloo 2', cursive;
+}
+
+.status-book{
+    /* margin-right: 20px; */
+    background-color: #78A2CC;
+    border-color: var(--PINK1);
+    border-radius: 1.188vw;
+}
+
+.box{
+    padding-top: 20px;
+    border-color: var(--PINK1);
+    border-radius: 1.188vw;
+}
