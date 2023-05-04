@@ -220,27 +220,30 @@ body{
     background-image: url("./ASSETS/home2/section3_background.png"); */
     position: relative;
     font-family: 'Baloo 2', cursive;
-    padding: 120px;
+    padding: 7.900vw;
 }
 
 .menfess .title{
     width: 100%;
     text-align: center;
-    margin-top: -40px;
+    margin-top: -2.633vw;
 }
 
 .menfess .judul{
-    font-size: 40px;
-    font-weight: 600px;
+    font-size: 2.633vw;
+    font-weight: 39.500vw;
 }
 
 .menfess .title p{
-    font-size: 25px;
-    font-weight: 500px;
+    font-size: 1.646vw;
+    font-weight: 32.916vw;
 }
 
 .container-via{
     padding: 60px 0;
+    width: 78.999vw;  
+    scrollbar-width: none;
+    scroll-behavior: smooth;
 }
 
 .item{
@@ -248,25 +251,41 @@ body{
 }
 
 .scroll-container{
-    overflow: auto;
-    scroll-snap-type: x mandatory;
+    /* padding: 60px 0; */
+    overflow-x : scroll;
+    /* scroll-snap-type: x mandatory; */
     display: flex;
+    /* scroll-behavior: smooth; */
+    /* width: 1200px;    */
+    /* overflow: hidden; */
+    scrollbar-width: none;
+}
+
+.scroll-container ::-webkit-scrollbar{
+    display: none;
+    scrollbar-width: none;
 }
 
 .scroll-area{
-    scroll-snap-align: center;
+    /* scroll-snap-align: center; */
     background-color: #FFF7F6;
     border-style: solid;
-    border-width: 2px;
+    border-width: 0.132vw;
     border-color: #D9D9D9;
-    border-radius: 10px;
-    padding: 30px;
-    min-width: 415px;
+    border-radius: 0.658vw;
+    padding: 1.975vw;
+    min-width: 27.321vw;
     height: fit-content;
-    margin: 10px;
+    margin: 0.658vw;
     display: inline-block;
-    margin: 20px;
-    scroll-snap-align: center;
+    margin: 1.317vw;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+
+.scroll-area ::-webkit-scrollbar{
+    display: none;
+    scrollbar-width: none;
 }
 
 .person{
@@ -274,20 +293,24 @@ body{
 }
 
 .nama-profile{
-    padding-left: 10px;
+    padding-left: 0.658vw;
     align-items: center;
     justify-content: baseline;
     font-family: 'Roboto', sans-serif;
 }
 
 .nama-profile h5{
-    font-size: 15px;
+    font-size: 0.987vw;
     font-weight: bold;
 }
 
 .nama-profile p{
-    font-size: 12px;
+    font-size: 0.790vw;
     font-weight: normal;
+}
+
+.checked {
+    color: #9FCAE6;
 }
 
 .content p{
@@ -298,10 +321,10 @@ body{
 }
 
 .question p{
-    font-size: 15px;
+    font-size: 0.987vw;
     font-weight: bold;
     font-family: 'Baloo 2', cursive;
-    margin-bottom: 10px;
+    margin-bottom: 0.658vw;
 }
 
 .content img{
@@ -319,60 +342,48 @@ body{
 }
 
 .triple-buttons li{
-    margin-right: 10px;
+    margin-right: 0.658vw;
 }
 
 .button{
-    margin-top: 60px;
+    margin-top: 3.950vw;
     width: 100%;
 }
 
 .bekgron img{
     width: 100%;
-    margin: -5px 0;
+    margin: -0.329vw 0;
 }
 
 .rating-and-review{
     background-color: #78A2CC;
     position: relative;
     font-family: 'Baloo 2', cursive;
-    padding: 120px;
+    padding: 7.900vw;
 }
 
 .rating-and-review .title, .rating-and-review .desc{
     color: var(--WHITE);
 }
 
-/* .rating-and-review .title{
-    width: 100%;
-    text-align: center;
-    color: #FFF7F6;
-    margin-top: 0px;
-}
-
-.rating-and-review .judul{
-    font-size: 40px;
-    font-weight: 600px;
-} */
-
 .rating-and-review .deskripsi{
-    font-size: 25px;
-    font-weight: 500px;
+    font-size: 1.646vw;
+    font-weight: 32.916vw;
 }
 
 .scroll-container{
-    margin: 100px 0;
+    margin: 6.583vw 0;
 }
 
 .rating-and-review .scroll-area{
     display: flex;
-    padding: 20px;
-    min-width: 434px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    padding: 1.317vw;
+    min-width: 28.571vw;
+    box-shadow: 0.658vw 0.658vw 0.658vw rgba(0, 0, 0, 0.25);
 }
 
 .rating-and-review .scroll-area .foto-produk img{
-    margin-left: -5px;
+    margin-left: -0.329vw;
     width: 100%;
     height: 100%;
     align-items: center;
@@ -380,26 +391,26 @@ body{
 }
 
 .nama-produk h5{
-    font-size: 25px;
+    font-size: 1.646vw;
     font-weight: semi-bold;
-    margin-bottom: -10px;
+    margin-bottom: -0.658vw;
 }
 
 .nama-produk p{
-    font-size: 20px;
+    font-size: 1.317vw;
     font-weight: normal;
 }
 
 .count{
     display: flex;
-    font-size: 18px;
+    font-size: 1.185vw;
     font-weight: normal;
 }
 
 .isi hr{
     background-color: #DEDEDE;
-    margin: 10px 0;
-    height: 1px;
+    margin: 0.658vw 0;
+    height: 0.066vw;
 }
 
 .isi .person{
@@ -408,71 +419,25 @@ body{
 }
 
 .isi .person img{
-    width: 20px;
-    height: 20px;
+    width: 1.317vw;
+    height: 1.317vw;
 }
 
 .isi .person .nama-profile h5{
-    font-size: 18px;
+    font-size: 1.185vw;
     font-weight: 550;
     font-family: 'Baloo2', cursive;
-    margin-top: -5px;
-    min-width: 190px;
+    margin-top: -0.329vw;
+    min-width: 12.508vw;
 }
 
 .isi .rekomen{
     display: flex;
     background-color: #BDFFBC;
-    font-size: 16px;
+    font-size: 1.053vw;
     font-weight: 400;
     color: #5EC75C;
-    border-radius: 10px;
-    padding: 5px;
-    align-items: center;;
-}
-
-.button{
-    text-align: center;
+    border-radius: 0.658vw;
+    padding: 0.329vw;
     align-items: center;
-    border-radius: 20px;
-    height: 75px;
-    align-items: center;
-}
-
-.asu{
-    margin-top: 120px;
-    font-weight: 600;
-    font-size: 25px;
-    padding: 20px 100px;
-    border-radius: 20px;
-    display: inline;
-    text-decoration: none;
-}
-
-.asu:hover{
-    font-size: 27px;
-    padding: 30px 120px;
-}
-
-.asu p{
-    margin-top: 120px;
-    font-weight: 600;
-    font-size: 25px;
-    padding: 20px 100px;
-    background-color: #FFB8C7;;
-    border-radius: 20px;
-    width: 400px;
-    display: inline;
-    color: black;
-    text-decoration: none;
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
-}
-
-.asu p:hover{
-    font-size: 27px;
-    padding: 30px 120px;
-    width: 450px;
-    text-decoration: none;
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
-    background-color: #FFB8C7;
 }
