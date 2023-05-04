@@ -574,7 +574,6 @@
                             Baby Bath Blue 200ml
                         </p>
                     </div>
-                    <div class="count">
                         <div class="rating">
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
@@ -592,7 +591,6 @@
                                 (250 people)
                             </p>
                         </div>
-                    </div>
                     <hr>
                     <div class="person">
                         <div class="foto-profile">
@@ -711,7 +709,11 @@
                         </p>
                     </div>
                     <div class="count">
+<<<<<<< HEAD
                     <div class="rating">
+=======
+                        <div class="rating">
+>>>>>>> b414eca1fceabaf72b6628cdab6067042694865e
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
