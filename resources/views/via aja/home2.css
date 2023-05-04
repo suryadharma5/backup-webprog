@@ -142,8 +142,8 @@ body{
     width: 100%;
 }
 
-.lanjut p{
-    text-align: right;
+.lanjut{
+    text-decoration: none;
 }
 
 .triple-buttons{
