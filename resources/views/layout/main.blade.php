@@ -15,6 +15,7 @@
 
     {{-- css kita --}}
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home1.css">
     <link href="css/bootstrap.css" rel="stylesheet">   
     @stack('after-style')
     @yield('title')
@@ -23,9 +24,9 @@
     {{-- ini berarti ngambil dari folder partials dengan nama file Navbar --}}
     @include('partials.navbar')
     
-    <div class="container mt-4 bg">
-        @yield('container')
-    </div>
+    {{-- <div class="containers">
+    </div> --}}
+    @yield('contents')
 
 
     <!-- Optional JavaScript -->

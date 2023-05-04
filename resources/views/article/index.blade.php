@@ -25,4 +25,55 @@
         </form>
         </div>
     </div>
+
+    <div id="carouselExampleAutoplaying" class="carousel slide mt-5" data-bs-ride="carousel">
+        <div class="carousel-inner d-block">
+            <div class="carousel-item active">
+            <img src="/img/slide1.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+            <img src="/img/slide1.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+            <img src="/img/slide1.png" class="d-block w-100" alt="...">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+    
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
+    </div>
+
+    <ul class="nav nav-underline justify-content-center mt-3 align-items-center tabControl">
+        <li class="nav-item">
+          <a class="nav-link underline active" href="#" >Mom's Corner</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Dad's Corner</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Mom & Dad's Corner</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Family's Corner</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Everyone's Corner</a>
+        </li>
+        
+    </ul>
+
+    <div class="col-lg-6">
+        <img src="/img/slide1.png" alt="">
+    </div>
+    <div style="margin-bottom: 100px">
+
+    </div>
 @endsection
