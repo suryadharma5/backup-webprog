@@ -19,3 +19,35 @@
     background-color: #78A2CC;
     /* height: 100px; */
 }
+
+.searchBar{
+    border-radius: 20px;
+    background-color: #FFF7F6;
+}
+
+.searchButton {
+    border-radius: 150px;
+    background-color: #FFB8C7;
+    border: 0px;
+}
+
+.searchIcon{
+    color: #FFF7F6;
+}
+
+.nav-link{
+    color: white;
+    /* margin-right: 100px; */
+}
+
+.tabControl{
+    background-color: #FFB8C7; 
+    height: 50px;
+    border-radius: 10px;
+    color: white;
+}
+
+.containers{
+    margin-left: 0px;
+    margin-right: 0px;
+}
