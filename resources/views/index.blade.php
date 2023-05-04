@@ -707,11 +707,7 @@
                         </p>
                     </div>
                     <div class="count">
-<<<<<<< HEAD
-                    <div class="rating">
-=======
                         <div class="rating">
->>>>>>> b414eca1fceabaf72b6628cdab6067042694865e
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
