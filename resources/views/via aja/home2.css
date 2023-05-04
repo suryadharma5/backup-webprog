@@ -9,6 +9,7 @@ body{
     margin: 0;
     padding: 0;
     position: relative;
+    /* overflow: hidden; */
 }
 
 .header{
@@ -41,22 +42,43 @@ body{
     font-weight: 500px;
 }
 
-.container{
+/* .container{
     padding: 60px 0;
-}
+} */
 
 .item{
     display: flex;
 }
 
 .scroll-container{
-    overflow: auto;
-    scroll-snap-type: x mandatory;
+    /* padding: 60px 0; */
+    overflow-x : scroll;
+    /* scroll-snap-type: x mandatory; */
     display: flex;
+    /* scroll-behavior: smooth; */
+    /* width: 1200px;    */
+    /* overflow: hidden; */
+    scrollbar-width: none;
+}
+
+.container{
+    /* /* overflow-x : scroll; */
+    scroll-behavior: smooth; 
+    /* overflow: hidden; */
+    /* scroll-snap-type: x mandatory; */
+    /* display: flex;
+    scroll-behavior: smooth;*/
+    width: 1200px;  
+    scrollbar-width: none;
+}
+
+.scroll-container ::-webkit-scrollbar{
+    display: none;
+    scrollbar-width: none;
 }
 
 .scroll-area{
-    scroll-snap-align: center;
+    /* scroll-snap-align: center; */
     background-color: #FFF7F6;
     border-style: solid;
     border-width: 2px;
@@ -68,7 +90,13 @@ body{
     margin: 10px;
     display: inline-block;
     margin: 20px;
-    scroll-snap-align: center;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+
+.scroll-area ::-webkit-scrollbar{
+    display: none;
+    scrollbar-width: none;
 }
 
 .person{
@@ -90,6 +118,10 @@ body{
 .nama-profile p{
     font-size: 12px;
     font-weight: normal;
+}
+
+.checked {
+    color: #9FCAE6;
 }
 
 .content p{
