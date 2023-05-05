@@ -389,7 +389,31 @@ body{
     box-shadow: 0.658vw 0.658vw 0.658vw rgba(0, 0, 0, 0.25);
 }
 
-.rating-and-review .scroll-area .foto-produk img{
+.person a{
+    color: var(--BLUE2);
+    text-decoration: none!important;
+}
+
+.person a:hover{
+    color: var(--BLUE3);
+}
+
+.nama-produk{
+    font-size: 1.317vw;
+    font-weight: var(--SEMIBOLD);
+    padding-bottom: -0.658vw;
+}
+
+.jenis-produk, .average-rating, .total-rating{
+    font-size: 1.117vw;
+    font-weight: var(--REGULAR);
+}
+
+.person, .rekomen, .reviews{
+    font-size: 0.658vw;
+}
+
+/* .rating-and-review .scroll-area .foto-produk img{
     margin-left: -0.329vw;
     width: 100%;
     height: 100%;
@@ -399,8 +423,8 @@ body{
 
 .nama-produk h5{
     font-size: 1.646vw;
-    font-weight: semi-bold;
-    margin-bottom: -0.658vw;
+    font-weight: 32.916vw;
+    padding-bottom: -0.658vw;
 }
 
 .nama-produk p{
@@ -447,4 +471,4 @@ body{
     border-radius: 0.658vw;
     padding: 0.329vw;
     align-items: center;
-}
+} */

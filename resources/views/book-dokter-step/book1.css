@@ -18,14 +18,68 @@
 }
 
 .status-book{
-    /* margin-right: 20px; */
-    background-color: #78A2CC;
-    border-color: var(--PINK1);
-    border-radius: 1.188vw;
+    /* padding-right: 20px; */
+    /* background-color: #78A2CC;
+    border-color: 1px solid var(--PINK1);
+    border-radius: 1.188vw; */
 }
 
 .box{
-    padding-top: 20px;
+    margin-top: 20px;
     border-color: var(--PINK1);
     border-radius: 1.188vw;
+    box-shadow: 0 0 0.317vw rgb(127, 127, 127)!important;
+    /* background-color: rebeccapurple; */
+}
+
+.box-atas{
+    padding: 5px;
+    background-color: #FFA5B8;
+    border-radius: 1.188vw 1.188vw 0 0;
+    color: var(--WHITE);
+}
+
+.date{
+    font-weight: var(--SEMIBOLD);
+    font-size: 20px;
+}
+
+.time{
+    font-weight: var(--REGULAR);
+    font-size: 15px;
+}
+
+.box-bawah{
+    background-color: var(--WHITE);
+    padding: 25px 30px;
+    border-radius: 0 0 1.188vw 1.188vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nama-dokter, .nama-rs{
+    font-size: 15px;
+    color: #606060;
+    text-align: left;
+    margin: 10px 0;
+}
+
+.cancelbutton{
+    /* background-color: rebeccapurple; */
+    border: 2px solid var(--PINK1);
+    padding: 5px 15px;
+    color: var(--PINK1);
+    border-radius: 10px;
+    margin-right: 10px;
+    font-weight: var(--SEMIBOLD);
+}
+
+.pilih-dokter{
+    background-color: red;
+    /* margin-left: 100px; */
+}
+
+.fa-solid{
+    /* background-color: red; */
 }
