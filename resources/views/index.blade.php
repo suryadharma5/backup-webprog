@@ -185,9 +185,6 @@
         <div class="sectionpic awanbiru">
             <img src="/img/section3_awan.png" alt="">
         </div>
-        <!-- <div class="bekgron">
-            <img src="/img/section3_awan.png" alt="">
-        </div> -->
     </section>
     <section class="menfess">
         <div class="title text-center">
@@ -196,28 +193,20 @@
         <div class="desc text-center">
             Share your opinions based the issues and discuss with others
         </div>
-        <!-- <div class="title">
-            <h2 class="judul">
-                Mention and Confess
-            </h2>
-            <p class="dekripsi">
-                share your opinions based the issues and discuss with others           
-            </p>
-        </div> -->
         <div class="container-via">
             <div class="scroll-container">
                 <div class="scroll-area">
-                    <div class="person">
+                    <div class="persona">
                         <div class="foto-profile">
                             <img src="/img/section 3_profile-picture.png" alt="">
                         </div>
                         <div class="nama-profile">
-                            <h5>
+                            <div class="nama">
                                 Brian Setiawan 1
-                            </h5>
-                            <p>
+                            </div>
+                            <div class="nama-desc">
                                 Bapak-Bapak yang sudah bekerja
-                            </p>
+                            </div>
                         </div>
                     </div>
                     <div class="content">
@@ -231,44 +220,25 @@
                             Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele...
                             <a href="#">(lanjut)</a>
                         </p>
-                        <!-- <a class="lanjut" href="#">
-                            <p>
-                                (lanjut)
-                            </p>
-                        </a> -->
                     </div>
                     <div class="action-bar">
-                        <ul class="triple-buttons">
-                            <li class="like">
-                                <a href="#">
-                                    <img src="/img/section3_like.png" alt="">
-                                </a>
-                            </li>
-                            <li class="comment">
-                                <a href="#">
-                                    <img src="/img/section3_comment.png" alt="">
-                                </a>
-                            </li>
-                            <li class="share">
-                                <a href="#">
-                                    <img src="/img/section3_share.png" alt="">
-                                </a>
-                            </li>
-                        </ul>
+                        <a href="#"><img src="/img/section3_like.png" alt=""></a>
+                        <a href="#"><img src="/img/section3_comment.png" alt=""></a>
+                        <a href="#"><img src="/img/section3_share.png" alt=""></a>
                     </div>
                 </div>
                 <div class="scroll-area">
-                    <div class="person">
+                    <div class="persona">
                         <div class="foto-profile">
                             <img src="/img/section 3_profile-picture.png" alt="">
                         </div>
                         <div class="nama-profile">
-                            <h5>
+                            <div class="nama">
                                 Brian Setiawan 2
-                            </h5>
-                            <p>
+                            </div>
+                            <div class="nama-desc">
                                 Bapak-Bapak yang sudah bekerja
-                            </p>
+                            </div>
                         </div>
                     </div>
                     <div class="content">
@@ -282,44 +252,25 @@
                             Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele...
                             <a href="#">(lanjut)</a>
                         </p>
-                        <!-- <a class="lanjut" href="#">
-                            <p>
-                                (lanjut)
-                            </p>
-                        </a> -->
                     </div>
                     <div class="action-bar">
-                        <ul class="triple-buttons">
-                            <li class="like">
-                                <a href="#">
-                                    <img src="/img/section3_like.png" alt="">
-                                </a>
-                            </li>
-                            <li class="comment">
-                                <a href="#">
-                                    <img src="/img/section3_comment.png" alt="">
-                                </a>
-                            </li>
-                            <li class="share">
-                                <a href="#">
-                                    <img src="/img/section3_share.png" alt="">
-                                </a>
-                            </li>
-                        </ul>
+                        <a href="#"><img src="/img/section3_like.png" alt=""></a>
+                        <a href="#"><img src="/img/section3_comment.png" alt=""></a>
+                        <a href="#"><img src="/img/section3_share.png" alt=""></a>
                     </div>
                 </div>
                 <div class="scroll-area">
-                    <div class="person">
+                    <div class="persona">
                         <div class="foto-profile">
                             <img src="/img/section 3_profile-picture.png" alt="">
                         </div>
                         <div class="nama-profile">
-                            <h5>
+                            <div class="nama">
                                 Brian Setiawan 3
-                            </h5>
-                            <p>
+                            </div>
+                            <div class="nama-desc">
                                 Bapak-Bapak yang sudah bekerja
-                            </p>
+                            </div>
                         </div>
                     </div>
                     <div class="content">
@@ -340,37 +291,23 @@
                         </a> -->
                     </div>
                     <div class="action-bar">
-                        <ul class="triple-buttons">
-                            <li class="like">
-                                <a href="#">
-                                    <img src="/img/section3_like.png" alt="">
-                                </a>
-                            </li>
-                            <li class="comment">
-                                <a href="#">
-                                    <img src="/img/section3_comment.png" alt="">
-                                </a>
-                            </li>
-                            <li class="share">
-                                <a href="#">
-                                    <img src="/img/section3_share.png" alt="">
-                                </a>
-                            </li>
-                        </ul>
+                        <a href="#"><img src="/img/section3_like.png" alt=""></a>
+                        <a href="#"><img src="/img/section3_comment.png" alt=""></a>
+                        <a href="#"><img src="/img/section3_share.png" alt=""></a>
                     </div>
                 </div>
                 <div class="scroll-area">
-                    <div class="person">
+                    <div class="persona">
                         <div class="foto-profile">
                             <img src="/img/section 3_profile-picture.png" alt="">
                         </div>
                         <div class="nama-profile">
-                            <h5>
+                            <div class="nama">
                                 Brian Setiawan 4
-                            </h5>
-                            <p>
+                            </div>
+                            <div class="nama-desc">
                                 Bapak-Bapak yang sudah bekerja
-                            </p>
+                            </div>
                         </div>
                     </div>
                     <div class="content">
@@ -384,44 +321,25 @@
                             Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele...
                             <a href="#">(lanjut)</a>
                         </p>
-                        <!-- <a class="lanjut" href="#">
-                            <p>
-                                (lanjut)
-                            </p>
-                        </a> -->
                     </div>
                     <div class="action-bar">
-                        <ul class="triple-buttons">
-                            <li class="like">
-                                <a href="#">
-                                    <img src="/img/section3_like.png" alt="">
-                                </a>
-                            </li>
-                            <li class="comment">
-                                <a href="#">
-                                    <img src="/img/section3_comment.png" alt="">
-                                </a>
-                            </li>
-                            <li class="share">
-                                <a href="#">
-                                    <img src="/img/section3_share.png" alt="">
-                                </a>
-                            </li>
-                        </ul>
+                        <a href="#"><img src="/img/section3_like.png" alt=""></a>
+                        <a href="#"><img src="/img/section3_comment.png" alt=""></a>
+                        <a href="#"><img src="/img/section3_share.png" alt=""></a>
                     </div>
                 </div>
                 <div class="scroll-area">
-                    <div class="person">
+                    <div class="persona">
                         <div class="foto-profile">
                             <img src="/img/section 3_profile-picture.png" alt="">
                         </div>
                         <div class="nama-profile">
-                            <h5>
-                                Brian Setiawan 5
-                            </h5>
-                            <p>
+                            <div class="nama">
+                                Brian Setiawan 1
+                            </div>
+                            <div class="nama-desc">
                                 Bapak-Bapak yang sudah bekerja
-                            </p>
+                            </div>
                         </div>
                     </div>
                     <div class="content">
@@ -435,31 +353,11 @@
                             Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele...
                             <a href="#">(lanjut)</a>
                         </p>
-                        
-                        <!-- <a class="lanjut" href="#">
-                            <p>
-                                (lanjut)
-                            </p>
-                        </a> -->
                     </div>
                     <div class="action-bar">
-                        <ul class="triple-buttons">
-                            <li class="like">
-                                <a href="#">
-                                    <img src="/img/section3_like.png" alt="">
-                                </a>
-                            </li>
-                            <li class="comment">
-                                <a href="#">
-                                    <img src="/img/section3_comment.png" alt="">
-                                </a>
-                            </li>
-                            <li class="share">
-                                <a href="#">
-                                    <img src="/img/section3_share.png" alt="">
-                                </a>
-                            </li>
-                        </ul>
+                        <a href="#"><img src="/img/section3_like.png" alt=""></a>
+                        <a href="#"><img src="/img/section3_comment.png" alt=""></a>
+                        <a href="#"><img src="/img/section3_share.png" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -469,13 +367,6 @@
                     <button type="button" class="btn btn-primary">See More</button>
                 </a>
         </div>
-        <!-- <div class="button">
-            <a class="asu" href="#">
-                <p>
-                    SEE MORE
-                </p>
-            </a>
-        </div> -->
     </section>
 
     <section>
@@ -490,287 +381,336 @@
         <div class="desc text-center">
             See and rate your choice of products
         </div>
-        <div class="scroll-container">
-            <div class="scroll-area">
-                <div class="foto-produk">
-                    <img src="/img/section4_photo-product.png" alt="">
-                </div>
-                <div class="isi">
-                    <div class="nama-produk">
-                        Johnsons Baby
+        <div class="container-via">
+            <div class="scroll-container">
+                <div class="scroll-area">
+                    <div class="foto-produk">
+                        <img src="/img/section4_photo-product.png" alt="">
                     </div>
-                    <div class="jenis-produk">
-                        Baby Bath Blue 200ml
-                    </div>
-                    <div class="count">
-                        <div class="rating">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
+                    <div class="isi">
+                        <div class="nama-produk">
+                            <!-- <h5> -->
+                                Johnsons Baby
+                            <!-- </h5> -->
+                            <div class="jenis-produk">
+                                Baby Bath Blue 200ml
+                            </div>
                         </div>
-                        <div class="average-rating">
+                        <div class="count">
+                            <div class="rating">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="average-rating">
+                                <!-- <p> -->
+                                    &nbsp; 4.9 &nbsp;
+                                <!-- </p> -->
+                            </div>
+                            <div class="total-rating">
+                                <!-- <p> -->
+                                    (250 people)
+                                <!-- </p> -->
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="person">
+                            <div class="jarakwokwok">
+                                <div class="foto-profile">
+                                    <img src="/img/section4_profile-picture.png" alt="">
+                                </div>
+                                <div class="nama-profile">
+                                <!-- <h5> -->
+                                    NURHAYATI 1 &nbsp;
+                                    <!-- </h5> -->
+                                </div>
+                            </div>
+                            <a class="lanjut" href="#">
+                                <!-- <p> -->
+                                (ALL REVIEWS)
+                                <!-- </p> -->
+                            </a>
+                        </div>
+                        <div class="rekomen">
+                            <div class="jempol">
+                                <img src="/img/section4_jempol-rekomen.png" alt="">
+                            </div>
+                            <div class="rekomendesc">
+                                &nbsp;
+                                NURHAYATI 1 recommends this product!
+                            </div>
+                        </div>
+                        <div reviews>
                             <p>
-                                &nbsp; 4.9 &nbsp;
+                                sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
                             </p>
                         </div>
-                        <div class="total-rating">
-                            <p>
-                                (250 people)
-                            </p>
-                        </div>
-                    </div>
-                    <div class="person">
-                        <div class="foto-profile">
-                            <img src="/img/section4_profile-picture.png" alt="">
-                        </div>
-                        <div class="nama-profile">
-                                NURHAYATI 1
-                        </div>
-                        <a href="#">ALL REVIEWS</a>
-                    </div>
-                    <div class="rekomen">
-                        <div class="jempol">
-                            <img src="/img/section4_jempol-rekomen.png" alt="">
-                        </div>
-                        <div class="username">
-                            &nbsp;
-                            NURHAYATI 1
-                        </div>
-                        <div class="ratingdesc">
-                            recommends this product!
-                        </div>
-                    </div>
-                    <div reviews>
-                        sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
-                    </div>
-                </div>
-            </div>
-
-            <div class="scroll-area">
-                <div class="foto-produk">
-                    <img src="/img/section4_photo-product.png" alt="">
-                </div>
-                <div class="isi">
-                    <div class="nama-produk">
-                        Johnsons Baby
-                    </div>
-                    <div class="jenis-produk">
-                        Baby Bath Blue 200ml
-                    </div>
-                    <div class="count">
-                        <div class="rating">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-                        <div class="average-rating">
-                            <p>
-                                &nbsp; 4.9 &nbsp;
-                            </p>
-                        </div>
-                        <div class="total-rating">
-                            <p>
-                                (250 people)
-                            </p>
-                        </div>
-                    </div>
-                    <div class="person">
-                        <div class="foto-profile">
-                            <img src="/img/section4_profile-picture.png" alt="">
-                        </div>
-                        <div class="nama-profile">
-                                NURHAYATI 1
-                        </div>
-                        <a href="#">ALL REVIEWS</a>
-                    </div>
-                    <div class="rekomen">
-                        <div class="jempol">
-                            <img src="/img/section4_jempol-rekomen.png" alt="">
-                        </div>
-                        <div class="username">
-                            &nbsp;
-                            NURHAYATI 1
-                        </div>
-                        <div class="ratingdesc">
-                            recommends this product!
-                        </div>
-                    </div>
-                    <div reviews>
-                        sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
                     </div>
                 </div>
-            </div>
-
-            <div class="scroll-area">
-                <div class="foto-produk">
-                    <img src="/img/section4_photo-product.png" alt="">
-                </div>
-                <div class="isi">
-                    <div class="nama-produk">
-                        Johnsons Baby
+                <div class="scroll-area">
+                    <div class="foto-produk">
+                        <img src="/img/section4_photo-product.png" alt="">
                     </div>
-                    <div class="jenis-produk">
-                        Baby Bath Blue 200ml
-                    </div>
-                    <div class="count">
-                        <div class="rating">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
+                    <div class="isi">
+                        <div class="nama-produk">
+                            <!-- <h5> -->
+                                Johnsons Baby
+                            <!-- </h5> -->
+                            <div class="jenis-produk">
+                                Baby Bath Blue 200ml
+                            </div>
                         </div>
-                        <div class="average-rating">
+                        <div class="count">
+                            <div class="rating">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="average-rating">
+                                <!-- <p> -->
+                                    &nbsp; 4.9 &nbsp;
+                                <!-- </p> -->
+                            </div>
+                            <div class="total-rating">
+                                <!-- <p> -->
+                                    (250 people)
+                                <!-- </p> -->
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="person">
+                            <div class="jarakwokwok">
+                                <div class="foto-profile">
+                                    <img src="/img/section4_profile-picture.png" alt="">
+                                </div>
+                                <div class="nama-profile">
+                                <!-- <h5> -->
+                                    NURHAYATI 2 &nbsp;
+                                    <!-- </h5> -->
+                                </div>
+                            </div>
+                            <a class="lanjut" href="#">
+                                <!-- <p> -->
+                                (ALL REVIEWS)
+                                <!-- </p> -->
+                            </a>
+                        </div>
+                        <div class="rekomen">
+                            <div class="jempol">
+                                <img src="/img/section4_jempol-rekomen.png" alt="">
+                            </div>
+                            <div class="rekomendesc">
+                                &nbsp;
+                                NURHAYATI 2 recommends this product!
+                            </div>
+                        </div>
+                        <div reviews>
                             <p>
-                                &nbsp; 4.9 &nbsp;
+                                sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
                             </p>
                         </div>
-                        <div class="total-rating">
-                            <p>
-                                (250 people)
-                            </p>
-                        </div>
-                    </div>
-                    <div class="person">
-                        <div class="foto-profile">
-                            <img src="/img/section4_profile-picture.png" alt="">
-                        </div>
-                        <div class="nama-profile">
-                                NURHAYATI 1
-                        </div>
-                        <a href="#">ALL REVIEWS</a>
-                    </div>
-                    <div class="rekomen">
-                        <div class="jempol">
-                            <img src="/img/section4_jempol-rekomen.png" alt="">
-                        </div>
-                        <div class="username">
-                            &nbsp;
-                            NURHAYATI 1
-                        </div>
-                        <div class="ratingdesc">
-                            recommends this product!
-                        </div>
-                    </div>
-                    <div reviews>
-                        sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
-                    </div>
-                </div>
-            </div>
-
-            <div class="scroll-area">
-                <div class="foto-produk">
-                    <img src="/img/section4_photo-product.png" alt="">
-                </div>
-                <div class="isi">
-                    <div class="nama-produk">
-                        Johnsons Baby
-                    </div>
-                    <div class="jenis-produk">
-                        Baby Bath Blue 200ml
-                    </div>
-                    <div class="count">
-                        <div class="rating">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-                        <div class="average-rating">
-                            <p>
-                                &nbsp; 4.9 &nbsp;
-                            </p>
-                        </div>
-                        <div class="total-rating">
-                            <p>
-                                (250 people)
-                            </p>
-                        </div>
-                    </div>
-                    <div class="person">
-                        <div class="foto-profile">
-                            <img src="/img/section4_profile-picture.png" alt="">
-                        </div>
-                        <div class="nama-profile">
-                                NURHAYATI 1
-                        </div>
-                        <a href="#">ALL REVIEWS</a>
-                    </div>
-                    <div class="rekomen">
-                        <div class="jempol">
-                            <img src="/img/section4_jempol-rekomen.png" alt="">
-                        </div>
-                        <div class="username">
-                            &nbsp;
-                            NURHAYATI 1
-                        </div>
-                        <div class="ratingdesc">
-                            recommends this product!
-                        </div>
-                    </div>
-                    <div reviews>
-                        sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
                     </div>
                 </div>
-            </div>
-
-            <div class="scroll-area">
-                <div class="foto-produk">
-                    <img src="/img/section4_photo-product.png" alt="">
+                <div class="scroll-area">
+                    <div class="foto-produk">
+                        <img src="/img/section4_photo-product.png" alt="">
+                    </div>
+                    <div class="isi">
+                        <div class="nama-produk">
+                            <!-- <h5> -->
+                                Johnsons Baby
+                            <!-- </h5> -->
+                            <div class="jenis-produk">
+                                Baby Bath Blue 200ml
+                            </div>
+                        </div>
+                        <div class="count">
+                            <div class="rating">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="average-rating">
+                                <!-- <p> -->
+                                    &nbsp; 4.9 &nbsp;
+                                <!-- </p> -->
+                            </div>
+                            <div class="total-rating">
+                                <!-- <p> -->
+                                    (250 people)
+                                <!-- </p> -->
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="person">
+                            <div class="jarakwokwok">
+                                <div class="foto-profile">
+                                    <img src="/img/section4_profile-picture.png" alt="">
+                                </div>
+                                <div class="nama-profile">
+                                <!-- <h5> -->
+                                    NURHAYATI 1 &nbsp;
+                                    <!-- </h5> -->
+                                </div>
+                            </div>
+                            <a class="lanjut" href="#">
+                                <!-- <p> -->
+                                (ALL REVIEWS)
+                                <!-- </p> -->
+                            </a>
+                        </div>
+                        <div class="rekomen">
+                            <div class="jempol">
+                                <img src="/img/section4_jempol-rekomen.png" alt="">
+                            </div>
+                            <div class="rekomendesc">
+                                &nbsp;
+                                NURHAYATI 3 recommends this product!
+                            </div>
+                        </div>
+                        <div reviews>
+                            <p>
+                                sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="isi">
-                    <div class="nama-produk">
-                        Johnsons Baby
+                <div class="scroll-area">
+                    <div class="foto-produk">
+                        <img src="/img/section4_photo-product.png" alt="">
                     </div>
-                    <div class="jenis-produk">
-                        Baby Bath Blue 200ml
-                    </div>
-                    <div class="count">
-                        <div class="rating">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
+                    <div class="isi">
+                        <div class="nama-produk">
+                            <!-- <h5> -->
+                                Johnsons Baby
+                            <!-- </h5> -->
+                            <div class="jenis-produk">
+                                Baby Bath Blue 200ml
+                            </div>
                         </div>
-                        <div class="average-rating">
+                        <div class="count">
+                            <div class="rating">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="average-rating">
+                                <!-- <p> -->
+                                    &nbsp; 4.9 &nbsp;
+                                <!-- </p> -->
+                            </div>
+                            <div class="total-rating">
+                                <!-- <p> -->
+                                    (250 people)
+                                <!-- </p> -->
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="person">
+                            <div class="jarakwokwok">
+                                <div class="foto-profile">
+                                    <img src="/img/section4_profile-picture.png" alt="">
+                                </div>
+                                <div class="nama-profile">
+                                <!-- <h5> -->
+                                    NURHAYATI 4 &nbsp;
+                                    <!-- </h5> -->
+                                </div>
+                            </div>
+                            <a class="lanjut" href="#">
+                                <!-- <p> -->
+                                (ALL REVIEWS)
+                                <!-- </p> -->
+                            </a>
+                        </div>
+                        <div class="rekomen">
+                            <div class="jempol">
+                                <img src="/img/section4_jempol-rekomen.png" alt="">
+                            </div>
+                            <div class="rekomendesc">
+                                &nbsp;
+                                NURHAYATI 4 recommends this product!
+                            </div>
+                        </div>
+                        <div reviews>
                             <p>
-                                &nbsp; 4.9 &nbsp;
+                                sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
                             </p>
                         </div>
-                        <div class="total-rating">
+                    </div>
+                </div>
+                <div class="scroll-area">
+                    <div class="foto-produk">
+                        <img src="/img/section4_photo-product.png" alt="">
+                    </div>
+                    <div class="isi">
+                        <div class="nama-produk">
+                            <!-- <h5> -->
+                                Johnsons Baby
+                            <!-- </h5> -->
+                            <div class="jenis-produk">
+                                Baby Bath Blue 200ml
+                            </div>
+                        </div>
+                        <div class="count">
+                            <div class="rating">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="average-rating">
+                                <!-- <p> -->
+                                    &nbsp; 4.9 &nbsp;
+                                <!-- </p> -->
+                            </div>
+                            <div class="total-rating">
+                                <!-- <p> -->
+                                    (250 people)
+                                <!-- </p> -->
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="person">
+                            <div class="jarakwokwok">
+                                <div class="foto-profile">
+                                    <img src="/img/section4_profile-picture.png" alt="">
+                                </div>
+                                <div class="nama-profile">
+                                <!-- <h5> -->
+                                    NURHAYATI 1 &nbsp;
+                                    <!-- </h5> -->
+                                </div>
+                            </div>
+                            <a class="lanjut" href="#">
+                                <!-- <p> -->
+                                (ALL REVIEWS)
+                                <!-- </p> -->
+                            </a>
+                        </div>
+                        <div class="rekomen">
+                            <div class="jempol">
+                                <img src="/img/section4_jempol-rekomen.png" alt="">
+                            </div>
+                            <div class="rekomendesc">
+                                &nbsp;
+                                NURHAYATI 5 recommends this product!
+                            </div>
+                        </div>
+                        <div reviews>
                             <p>
-                                (250 people)
+                                sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
                             </p>
                         </div>
-                    </div>
-                    <div class="person">
-                        <div class="foto-profile">
-                            <img src="/img/section4_profile-picture.png" alt="">
-                        </div>
-                        <div class="nama-profile">
-                                NURHAYATI 1 <a href="#">ALL REVIEWS</a>
-                        </div>
-                    </div>
-                    <div class="rekomen">
-                        <div class="jempol">
-                            <img src="/img/section4_jempol-rekomen.png" alt="">
-                        </div>
-                        <div class="username">
-                            &nbsp;
-                            NURHAYATI 1
-                        </div>
-                        <div class="ratingdesc">
-                            recommends this product!
-                        </div>
-                    </div>
-                    <div class="reviews">
-                        sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
                     </div>
                 </div>
             </div>
