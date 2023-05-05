@@ -16,7 +16,7 @@
             <a class = "nav-link"href="#">Track</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link" href="#">Book</a>
+            <a class="nav-link" href="/book">Book</a>
           </li>
           <li class="nav-item mx-2">
             <a class="nav-link" href="/article">Article</a>

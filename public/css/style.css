@@ -51,3 +51,14 @@
     margin-left: 0px;
     margin-right: 0px;
 }
+
+.dropdown-aja {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.daerah {
+    width: 300px;
+    border-radius: 10px;
+    color: #707070;
+}
