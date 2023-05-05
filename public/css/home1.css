@@ -236,7 +236,8 @@ body{
 }
 
 .container-via{
-    padding: 3.950vw 0;
+    padding-bottom: 3.950vw;
+    padding-top: 1.584vw;
     overflow: auto;
     /* width: 78.999vw;   */
     /* scrollbar-width: none;
@@ -329,7 +330,8 @@ body{
     background-color: #78A2CC;
     position: relative;
     font-family: 'Baloo 2', cursive;
-    padding: 9.500vw;
+    padding: 0 9.500vw;
+    padding-top: 3.950vw;
 }
 
 .rating-and-review .title, .rating-and-review .desc{
@@ -392,12 +394,9 @@ body{
     align-items: center;
 }
 
-.isi .person .nama-profile{
+.nama-person{
     font-size: 1.185vw;
-    font-weight: 550;
-    font-family: 'Baloo2', cursive;
-    /* margin-top: -0.329vw; */
-    /* min-width: 12.508vw; */
+    font-weight: var(--SEMIBOLD);
 }
 
 .jarakwokwok{
@@ -470,4 +469,9 @@ body{
 .scroll-container ::-webkit-scrollbar{
     display: none;
     width: 0 !important;
+}
+
+.person .lanjut{
+    font-size: 1.185vw;
+    justify-content: center;
 }
