@@ -13,10 +13,6 @@
     --EXTRABOLD: 800;
 }
 
-*{
-    font-family: 'Baloo 2', cursive;
-}
-
 .container-fluid{
     background-color: pink;
 }
@@ -95,7 +91,7 @@
     font-weight: var(--SEMIBOLD)!important;
     box-shadow: 0.317vw 0.317vw 0.317vw rgb(127, 127, 127)!important;
 }
-
+ 
 .row{
     --bs-gutter-x: 0rem!important
 }
@@ -220,255 +216,262 @@ body{
     background-image: url("./ASSETS/home2/section3_background.png"); */
     position: relative;
     font-family: 'Baloo 2', cursive;
-    padding: 120px;
+    padding: 3vw 9.500vw;
 }
 
 .menfess .title{
     width: 100%;
     text-align: center;
-    margin-top: -40px;
+    margin-top: -2.633vw;
 }
 
 .menfess .judul{
-    font-size: 40px;
-    font-weight: 600px;
+    font-size: 2.633vw;
+    font-weight: 39.500vw;
 }
 
 .menfess .title p{
-    font-size: 25px;
-    font-weight: 500px;
+    font-size: 1.646vw;
+    font-weight: 32.916vw;
 }
 
 .container-via{
-    padding: 60px 0;
+    padding-bottom: 3.950vw;
+    padding-top: 1.584vw;
+    overflow: auto;
+    /* width: 78.999vw;   */
+    /* scrollbar-width: none;
+    scroll-behavior: smooth; */
 }
 
 .item{
     display: flex;
 }
 
-.scroll-container{
-    overflow: auto;
-    scroll-snap-type: x mandatory;
-    display: flex;
-}
-
-.scroll-area{
-    scroll-snap-align: center;
-    background-color: #FFF7F6;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #D9D9D9;
-    border-radius: 10px;
-    padding: 30px;
-    min-width: 415px;
-    height: fit-content;
-    margin: 10px;
-    display: inline-block;
-    margin: 20px;
-    scroll-snap-align: center;
-}
-
-.person{
+.persona{
     display: flex;
 }
 
 .nama-profile{
-    padding-left: 10px;
+    padding-left: 0.658vw;
     align-items: center;
     justify-content: baseline;
     font-family: 'Roboto', sans-serif;
 }
 
-.nama-profile h5{
-    font-size: 15px;
+.nama-profile .nama{
+    font-size: 0.987vw;
     font-weight: bold;
+    font-family: 'Roboto', sans-serif;
 }
 
-.nama-profile p{
-    font-size: 12px;
+.nama-profile .nama-desc{
+    font-size: 0.790vw;
     font-weight: normal;
+    font-family: 'Roboto', sans-serif;
+}
+
+.checked {
+    color: #9FCAE6;
 }
 
 .content p{
     /* display: none; */
     font-family: 'Roboto', sans-serif;
-    font-size: 15;
-    font-weight: normal;
+    font-size: 1.029vw;
+    font-weight: var(--REGULAR);
 }
 
 .question p{
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 1.200vw;
+    font-weight: 700;
     font-family: 'Baloo 2', cursive;
-    margin-bottom: 10px;
+    margin-bottom: 0.658vw;
+    margin-top: 0.5vw;
 }
 
 .content img{
     width: 100%;
+    margin-bottom: 0.658vw;
 }
 
-.lanjut p{
+.content a{
+    color: var(--BLUE2);
+}
+
+.content a:hover{
+    color: var(--BLUE3);
+}
+
+.lanjut{
     text-align: right;
+    align-items: end;
+    right: 0px;
+    float: right;
+    text-decoration: none;
 }
 
-.triple-buttons{
+.action-bar{
     display: flex;
-    justify-content: baseline;
-    list-style: none;
-}
-
-.triple-buttons li{
-    margin-right: 10px;
+    gap: 0.658vw;
 }
 
 .button{
-    margin-top: 60px;
+    margin-top: 3.950vw;
     width: 100%;
 }
 
 .bekgron img{
     width: 100%;
-    margin: -5px 0;
+    margin: -0.329vw 0;
 }
 
 .rating-and-review{
     background-color: #78A2CC;
     position: relative;
     font-family: 'Baloo 2', cursive;
-    padding: 120px;
+    padding: 0 9.500vw;
+    padding-top: 3.950vw;
 }
 
-.rating-and-review .title{
-    width: 100%;
-    text-align: center;
-    color: #FFF7F6;
-    margin-top: 0px;
-}
-
-.rating-and-review .judul{
-    font-size: 40px;
-    font-weight: 600px;
+.rating-and-review .title, .rating-and-review .desc{
+    color: var(--WHITE);
 }
 
 .rating-and-review .deskripsi{
-    font-size: 25px;
-    font-weight: 500px;
+    font-size: 1.646vw;
+    font-weight: 32.916vw;
 }
 
-.scroll-container{
-    margin: 100px 0;
+.nama-produk{
+    font-size: 1.646vw;
+    font-weight: 600;
+    margin-bottom: 0.500vw;
 }
 
 .rating-and-review .scroll-area{
     display: flex;
-    padding: 20px;
-    min-width: 434px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    padding: 1.317vw;
+    min-width: 34.000vw;
+    box-shadow: 0.658vw 0.658vw 0.658vw rgba(0, 0, 0, 0.25);
 }
 
 .rating-and-review .scroll-area .foto-produk img{
-    margin-left: -5px;
-    width: 100%;
-    height: 100%;
+    margin-left: -0.329vw;
+    /* width: 100%; */
+    /* height: 100%; */
     align-items: center;
     justify-content: center;
 }
-
-.nama-produk h5{
-    font-size: 25px;
-    font-weight: semi-bold;
-    margin-bottom: -10px;
-}
-
-.nama-produk p{
-    font-size: 20px;
+.jenis-produk{
+    font-size: 1.317vw;
     font-weight: normal;
 }
 
 .count{
     display: flex;
-    font-size: 18px;
+    font-size: 1.185vw;
     font-weight: normal;
+    text-align: center;
 }
 
 .isi hr{
-    background-color: #DEDEDE;
-    margin: 10px 0;
-    height: 1px;
+    color: #8A8A8A;
+    /* height: 0.066vw; */
 }
 
 .isi .person{
     width: 100%;
     display: flex;
+    text-align: center;
+    padding-right: 0vw;
+    justify-content: space-between;
 }
 
 .isi .person img{
-    width: 20px;
-    height: 20px;
+    width: 100%;
+    height: 1.317vw;
+    align-items: center;
 }
 
-.isi .person .nama-profile h5{
-    font-size: 18px;
-    font-weight: 550;
-    font-family: 'Baloo2', cursive;
-    margin-top: -5px;
-    min-width: 190px;
+.nama-person{
+    font-size: 1.185vw;
+    font-weight: var(--SEMIBOLD);
+}
+
+.jarakwokwok{
+    display: flex;
+    justify-content: space-between;
 }
 
 .isi .rekomen{
+    margin: 1vw 0;
     display: flex;
     background-color: #BDFFBC;
-    font-size: 16px;
+    font-size: 1.053vw;
     font-weight: 400;
     color: #5EC75C;
-    border-radius: 10px;
-    padding: 5px;
-    align-items: center;;
+    border-radius: 0.658vw;
+    align-items: center;
 }
 
-.button{
+.rekomendesc{
     text-align: center;
     align-items: center;
-    border-radius: 20px;
-    height: 75px;
-    align-items: center;
 }
 
-.asu{
-    margin-top: 120px;
-    font-weight: 600;
-    font-size: 25px;
-    padding: 20px 100px;
-    border-radius: 20px;
-    display: inline;
-    text-decoration: none;
+.rekomen{
+    padding: 5px 10px;
 }
 
-.asu:hover{
-    font-size: 27px;
-    padding: 30px 120px;
+.jenis-produk{
+    margin-bottom: -2px;
 }
 
-.asu p{
-    margin-top: 120px;
-    font-weight: 600;
-    font-size: 25px;
-    padding: 20px 100px;
-    background-color: #FFB8C7;;
-    border-radius: 20px;
-    width: 400px;
-    display: inline;
-    color: black;
-    text-decoration: none;
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
+.scroll-container{
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    position: relative;
+    /* scroll-behavior: smooth;
+    width: 1200px;   
+    scrollbar-width: none; */
 }
 
-.asu p:hover{
-    font-size: 27px;
-    padding: 30px 120px;
-    width: 450px;
-    text-decoration: none;
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
-    background-color: #FFB8C7;
+.scroll-container ::-webkit-scrollbar{
+    display: none;
+    width: 0 !important;
+}
+
+.container-via ::-webkit-scrollbar{
+    display: none;
+    width: 0 !important;
+}
+
+.scroll-area{
+    /* scroll-snap-align: center; */
+    background-color: #FFF7F6;
+    border-style: solid;
+    border-width: 0.132vw;
+    border-color: #D9D9D9;
+    border-radius: 0.658vw;
+    padding: 1.975vw;
+    min-width: 37.500vw;
+    height: fit-content;
+    margin: 0.658vw;
+    display: inline-block;
+    margin: 1.317vw;
+    scroll-snap-align: center;
+    overflow-x: scroll;
+    /* scrollbar-width: none; */
+}
+
+.scroll-container ::-webkit-scrollbar{
+    display: none;
+    width: 0 !important;
+}
+
+.person .lanjut{
+    font-size: 1.185vw;
+    justify-content: center;
 }
