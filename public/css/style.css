@@ -54,11 +54,30 @@
 
 .dropdown-aja {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .daerah {
     width: 300px;
+    border-radius: 10px;
+    color: #707070;
+}
+
+.pilih-hari{
+    margin-left: 70px;
+}
+
+.dropdown-hari{
+    display: flex;
+    flex-direction: row;
+}
+
+#jam{
+    margin-left: 30px;
+}
+
+.hari{
+    width: 200px;
     border-radius: 10px;
     color: #707070;
 }
