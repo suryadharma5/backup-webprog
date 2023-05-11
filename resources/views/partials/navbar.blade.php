@@ -10,16 +10,16 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item mx-2">
-            <a class = "nav-link active"href="/">Home</a>
+            <a class = "nav-link"href="/">Home</a>
           </li>
           <li li class="nav-item mx-2">
             <a class = "nav-link"href="#">Track</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link" href="#">Book</a>
+            <a class="nav-link" href="/book">Book</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link" href="#">Article</a>
+            <a class="nav-link" href="/article">Article</a>
           </li>
           <li class="nav-item mx-2">
             <a class="nav-link" href="#">Menfess</a>
@@ -28,6 +28,8 @@
             <a class="nav-link" href="#">Rating & Review</a>
           </li>
         </ul>
+
+        {{-- {{ ($active == "home") ? 'active' : '' }} --}}
 
         <ul class="navbar-nav ms-auto">
           {{-- jika sudah login --}}

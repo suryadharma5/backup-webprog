@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CityController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -18,7 +20,8 @@ use App\Http\Controllers\RegisterController;
 
 Route::get('/', function () {
     return view('index', [
-        'title' => 'Home'
+        'title' => 'Home',
+        'active' => 'home'
     ]);
 });
 
@@ -37,3 +40,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::fallback(function () {
     return view('404');
 });
+
+Route::get('/article', [ArticleController::class, 'index']);
+
+Route::get('/book', [CityController::class, 'index']);
+Route::post('/getKabupaten', [CityController::class, 'getKabupaten']);
+
+Route::post('/getHospital', [CityController::class, 'getHospital']);

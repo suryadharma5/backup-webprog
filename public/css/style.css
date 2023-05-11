@@ -1,6 +1,13 @@
 *{
-    font-family: roboto;
+    /* font-family: roboto; */
+    font-family: 'Baloo 2', cursive;
 }
+
+/* @font-face {
+    font-family: 'Baloo 2';
+    src: url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+} */
+
 .loginCont{
     border-radius: 20px;
     background-color: #F9C6D1;
@@ -18,4 +25,66 @@
 .navigasi{
     background-color: #78A2CC;
     /* height: 100px; */
+}
+
+.searchBar{
+    border-radius: 20px;
+    background-color: #FFF7F6;
+}
+
+.searchButton {
+    border-radius: 150px;
+    background-color: #FFB8C7;
+    border: 0px;
+}
+
+.searchIcon{
+    color: #FFF7F6;
+}
+
+.nav-link{
+    color: white;
+    /* margin-right: 100px; */
+}
+
+.tabControl{
+    background-color: #FFB8C7; 
+    height: 50px;
+    border-radius: 10px;
+    color: white;
+}
+
+.containers{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.dropdown-aja {
+    display: flex;
+    justify-content: space-between;
+}
+
+.daerah {
+    width: 300px;
+    border-radius: 10px;
+    color: #707070;
+}
+
+.pilih-hari{
+    margin-left: 70px;
+}
+
+.dropdown-hari{
+    display: flex;
+    flex-direction: row;
+}
+
+#jam{
+    margin-left: 30px;
+}
+
+.hari{
+    width: 200px;
+    border-radius: 10px;
+    color: #707070;
 }
