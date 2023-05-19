@@ -1,5 +1,10 @@
 @extends('layout.main')
 
+@section('title')
+    <title>PPTI | {{ $title }}</title>
+@endsection
+
+
 @section('contents')
     <div class="container mt-4 bg">
         <h1>Ini untuk image</h1>

@@ -47,3 +47,9 @@ Route::get('/book', [CityController::class, 'index']);
 Route::post('/getKabupaten', [CityController::class, 'getKabupaten']);
 
 Route::post('/getHospital', [CityController::class, 'getHospital']);
+
+Route::get('/rating', function(){
+    return view( 'ratingNreview.index', [
+
+    ]);
+});
