@@ -13,16 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('rumah_sakits', function (Blueprint $table) {
+        Schema::dropIfExists('agenda');
+        Schema::create('agenda', function (Blueprint $table) {
             $table->id('id');
-            $table->foreignId('province_id');
-            $table->foreignId('regency_id');
-            $table->string('hospital_name');
+            $table->unsignedBigInteger('doctor_id');
+            $table->date('date');
+            $table->time('start_time');
+            $table->time('end_time');
             $table->timestamps();
 
-            $table->foreign('province_id')->references('id')->on('provinces');
-            $table->foreign('regency_id')->references('id')->on('regencies');
-
+            $table->foreign('doctor_id')->references('id')->on('doctor');
         });
     }
 
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rumah_sakits');
+        Schema::dropIfExists('agenda');
     }
 };

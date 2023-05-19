@@ -13,16 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('rumah_sakits', function (Blueprint $table) {
+        Schema::create('title', function (Blueprint $table) {
             $table->id('id');
-            $table->foreignId('province_id');
-            $table->foreignId('regency_id');
-            $table->string('hospital_name');
+            $table->string('title_name');
             $table->timestamps();
-
-            $table->foreign('province_id')->references('id')->on('provinces');
-            $table->foreign('regency_id')->references('id')->on('regencies');
-
         });
     }
 
@@ -33,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rumah_sakits');
+        Schema::dropIfExists('title');
     }
 };
