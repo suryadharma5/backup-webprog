@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         //factory(parameter jumlah yang ingin dibuat)
 
         User::factory(3)->create();
-        
+
         Article::factory(20)->create();
     }
 }
