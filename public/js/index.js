@@ -16,7 +16,7 @@ const changeColorNo = ()=> {
 
 $('input[name=rate]').change(function(){
     var value = $( 'input[name=rate]:checked').index();
-    console.log(value); 
+    // console.log(value); 
     
     if (value == 8){
         document.getElementById('star-perfect').style.display = 'none'

@@ -1,5 +1,9 @@
 @extends('layout.main')
 
+@section('title')
+    <title>Hamily | {{ $title }}</title>
+@endsection
+
 @section('contents')
     <div class="container mt-4 bg">
         <!-- Button trigger modal -->
