@@ -421,10 +421,8 @@
                                 <div class="foto-profile">
                                     <img src="/img/section4_profile-picture.png" alt="">
                                 </div>
-                                <div class="nama-profile">
-                                <!-- <h5> -->
-                                    NURHAYATI 1 &nbsp;
-                                    <!-- </h5> -->
+                                <div class="nama-person">
+                                    &nbsp; NURHAYATI 1
                                 </div>
                             </div>
                             <a class="lanjut" href="#">
@@ -487,10 +485,8 @@
                                 <div class="foto-profile">
                                     <img src="/img/section4_profile-picture.png" alt="">
                                 </div>
-                                <div class="nama-profile">
-                                <!-- <h5> -->
-                                    NURHAYATI 2 &nbsp;
-                                    <!-- </h5> -->
+                                <div class="nama-person">
+                                    &nbsp; NURHAYATI 2
                                 </div>
                             </div>
                             <a class="lanjut" href="#">
@@ -553,10 +549,8 @@
                                 <div class="foto-profile">
                                     <img src="/img/section4_profile-picture.png" alt="">
                                 </div>
-                                <div class="nama-profile">
-                                <!-- <h5> -->
-                                    NURHAYATI 1 &nbsp;
-                                    <!-- </h5> -->
+                                <div class="nama-person">
+                                    &nbsp; NURHAYATI 3
                                 </div>
                             </div>
                             <a class="lanjut" href="#">
@@ -619,10 +613,8 @@
                                 <div class="foto-profile">
                                     <img src="/img/section4_profile-picture.png" alt="">
                                 </div>
-                                <div class="nama-profile">
-                                <!-- <h5> -->
-                                    NURHAYATI 4 &nbsp;
-                                    <!-- </h5> -->
+                                <div class="nama-person">
+                                    &nbsp; NURHAYATI 4
                                 </div>
                             </div>
                             <a class="lanjut" href="#">
@@ -685,10 +677,8 @@
                                 <div class="foto-profile">
                                     <img src="/img/section4_profile-picture.png" alt="">
                                 </div>
-                                <div class="nama-profile">
-                                <!-- <h5> -->
-                                    NURHAYATI 1 &nbsp;
-                                    <!-- </h5> -->
+                                <div class="nama-person">
+                                    &nbsp; NURHAYATI 5
                                 </div>
                             </div>
                             <a class="lanjut" href="#">
