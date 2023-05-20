@@ -5,6 +5,7 @@ use App\Http\Controllers\CityController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RatingController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -47,3 +48,5 @@ Route::get('/book', [CityController::class, 'index']);
 Route::post('/getKabupaten', [CityController::class, 'getKabupaten']);
 
 Route::post('/getHospital', [CityController::class, 'getHospital']);
+
+Route::get('/rating', [RatingController::class, 'index']);
