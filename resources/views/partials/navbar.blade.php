@@ -10,22 +10,22 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item mx-2">
-            <a class = "nav-link"href="/">Home</a>
+            <a class = "nav-link {{ ($title == 'Home') ? 'active' : ''}}"href="/">Home</a>
           </li>
           <li li class="nav-item mx-2">
             <a class = "nav-link"href="#">Track</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link" href="#">Book</a>
+            <a class="nav-link {{ ($title == 'book') ? 'active' : ''}}" href="/book">Book</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link" href="/article">Article</a>
+            <a class="nav-link {{ ($title == 'article') ? 'active' : ''}}" href="/article">Article</a>
           </li>
           <li class="nav-item mx-2">
             <a class="nav-link" href="#">Menfess</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link" href="#">Rating & Review</a>
+            <a class="nav-link {{ ($title == 'rating and review') ? 'active' : ''}}" href="/rating">Rating & Review</a>
           </li>
         </ul>
 
