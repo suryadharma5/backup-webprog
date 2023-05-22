@@ -21,6 +21,27 @@
     background-color: greenyellow;
 }
 
+.container-gb-book-dokter{
+    height: 800px;
+}
+
+.container-text-info-bg{
+    top: 30%;
+}
+
+.text-info-bg{
+    font-weight: var(--MEDIUM);
+    color: var(--WHITE);
+}
+
+.img-check-info{
+    height: 50px;
+}
+
+.text-check-info{
+    font-size: 20px;
+}
+
 .title{
     font-size: 1.979vw;
     font-weight: var(--SEMIBOLD);
