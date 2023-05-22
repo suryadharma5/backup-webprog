@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    height: 105px;
+    width: 1260px;
+    background-color: white;
+}
+
+header {
+    background-image: url('./Picture/trackInfoBG.png');
+    /* background-position: bottom; */
+    width: auto;
+    height: 924px;
+}
+
+.title {
+    font-family: 'Baloo 2', cursive;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.desc {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.box {
+    /* height: 113px; */
+    height: 8.968vw;
+}
+
+.infoBox {
+    /* margin-top: 113px; */
+    margin-left: 17.302vw;
+    margin-right: 17.302vw;
+    height: 515px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+    background-color: #FFF7F6;
+    text-align: center;
+}
+
+.infoBox .exp {
+    /* text-align: center; */
+    margin-top: 13px;
+}
+
+.infoBox .exp p {
+    /* margin-left: 70px; */
+    width: 52.778vw;
+}
+
+.infoBox .trackStage {
+    height: auto;
+    width: 36vw;
+    margin-top: 35px;
+}
+
+.continue {
+    margin-top: 20px;
+}
+
+.continue .yes {
+    width: 200px;
+    height: 50px;
+    font-family: 'Baloo 2', cursive;
+    font-size: 20px;
+    background-color: #78A2CC;
+    color: #FFF7F6;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    border: none;
+}
+
+.continue .yes:hover {
+    width: 200px;
+    height: 50px;
+    font-family: 'Baloo 2', cursive;
+    font-size: 20px;
+    background-color: #FFF7F6;
+    color:#78A2CC;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    border: 3px solid #78A2CC;
+    cursor: pointer;
+}
+
+/* Footer */
+.logo {
+    height: 300px;
+    width: 231px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: -100px;
+}
+
+.foot-desc {
+    width: auto;
+    height: 592px;
+    background-position: top;
+    background-image: url(./Picture/footer.png);
+    background-size: cover;
+    /* background-position: 50% 50%; */
+    margin-top: -210px;
+}
+
+.jargon {
+    font-family: 'Baloo 2', cursive;
+    font-size: 22px;
+    color: #78A2CC;
+    margin-top: -10px;
+}
+
+.linked {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.linked a {
+    margin-right: 30px;
+    font-family: 'Baloo 2', cursive;
+    /* font-weight: 400; */
+    font-size: 18px;
+    color: #78A2CC;
+}
+
+.linked a:hover {
+    color: #FFB8C7;
+}
+
+.sosmed {
+    display: flex;
+    margin-top: 25px;
+    justify-content: center;
+}
+
+.sosmed img {
+    width: 70px;
+    height: 70px;
+    margin-right: 35px;
+}
+
+.skip {
+    height: 62px;
+}
+
+.copyright {
+    height: 71px;
+    width: 1263px;
+    background-color: #FFB8C7;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.copyright p {
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    color: #FFF7F6;
+
+}
+
+@media screen and (max-width: 700px){
+    .infoBox{
+        height: 535px;
+    }
+
+    .linked {
+        display: list-item;
+        text-align: center;
+    }
+
+}

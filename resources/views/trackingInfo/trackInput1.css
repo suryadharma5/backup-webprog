@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    height: 105px;
+    width: 1260px;
+    background-color: white;
+}
+
+header {
+    background-image: url('./Picture/trackInfoBG.png');
+    /* background-position: bottom; */
+    width: auto;
+    height: 924px;
+}
+
+.box {
+    height: 307px;
+}
+
+.questionBox {
+    width: 575px;
+    height: 200px;
+    background-color: #9FCAE6;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.exp {
+    font-family: 'Baloo 2', cursive;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    padding-top: 45px;
+}
+
+.answer button {
+    margin-top: 30px;
+    width: 140px;
+    height: 40px;
+    background: #F9D7D6;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.answer button:hover{
+    border: 3px solid #000000;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.answer {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 600px){
+    .questionBox {
+        width: 425px;
+    }
+}
+
