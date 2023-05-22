@@ -28,6 +28,7 @@
 
 .status-book{
     padding-right: 6.334vw;
+    /* position: fixed; */
 }
 
 .contentbookingdokter{
@@ -40,6 +41,7 @@
     border-radius: 1.188vw;
     box-shadow: 0 0 0.317vw rgb(127, 127, 127)!important;
     /* background-color: rebeccapurple; */
+    /* position: fixed; */
 }
 
 .box-atas{
