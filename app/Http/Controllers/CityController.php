@@ -12,6 +12,7 @@ class CityController extends Controller
     public function index(){
         return view('book.index', [
             'provinces' => Province::all(),
+            'title' => 'book'
             // 'regencies' => Regency::all(),
         ]);
     }
