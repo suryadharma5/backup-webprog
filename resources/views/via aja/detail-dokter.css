@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+body{
+    padding: 30px 60px;
+    font-family: 'Baloo 2', cursive;
+}
+
+.back-button{
+    width: 100%;
+    margin: 30px 0px;
+}
+
+.dokter{
+    display: flex;
+    justify-content: space-between;
+}
+
+.profil-dokter{
+    max-width: 800px;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25), inset 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 30px;
+    padding-top: 15px;
+    height: fit-content;
+}
+
+.rumah-sakit{
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.rumah-sakit img{
+    width: 260px;
+    margin-bottom: 60px;
+    margin-right: 60px;
+}
+
+.praktek-dokter{
+    max-width: 800px;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25), inset 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 30px;
+    padding-top: 15px;
+}
+
+.jam{
+    border: 1px solid #78A2CC;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 32px;
+    text-align: center;
+    color: #78A2CC;
+    text-align: left;
+    width: fit-content;
+    padding: 10px 20px;
+}
+
+.list-button{
+    display: flex;
+    /* background-color: yellow; */
+    justify-content: space-around;
+}
+
+.list-button p{
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 32px;
+    text-align: center;
+    color: #FFF7F6;
+    margin: 0;
+    padding: 0;
+}
+
+.list-button img{
+    width: 30px;
+    height: 30px;
+}
+
+.all-list-button{
+    padding: 15px;
+    background: #78A2CC;
+    border-radius: 10px;
+    text-decoration: none;
+    width: 350px;
+    margin-top: 30px;
+}
+
+.tentang-dokter{
+    max-width: 800px;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25), inset 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 30px;
+    padding-top: 15px;
+}
+
+h2{
+    padding: 0 20px;
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 56px;
+    color: #404040;
+}
+
+.nama-dokter{
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.desc-dokter{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    text-align: justify;
+    color: #000000;
+}
+
+h3{
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 40px;
+    color: #78A2CC;
+}
+
+h4{
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 48px;
+    color: #404040;
+}
+
+.jenis-dokter{
+    text-align: center;
+    margin: -20px 0;
+}
+
+.identitas-dokter img{
+    width: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.book p{
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 40px;
+    text-align: center;
+    color: #FFF7F6;
+    padding: 10px 0;
+    background: #78A2CC;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+h5{
+    font-weight: 600;
+    font-size: 25px;
+    /* line-height: 40px; */
+    margin: 0 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+p{
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 40px;
+}
