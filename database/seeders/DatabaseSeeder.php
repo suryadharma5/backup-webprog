@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
     {
         User::create([
             'username' => 'suryadharmas',
+            'dob' => '1979-06-09',
+            'phone_number' => '08775461234',
             'email' => 'setiawansurya03@gmail.com',
             'password' => bcrypt('12345')
         ]);
@@ -27,5 +29,11 @@ class DatabaseSeeder extends Seeder
         User::factory(3)->create();
 
         Article::factory(20)->create();
+
+        $this->call([
+            IndoRegionProvinceSeeder::class,
+            IndoRegionRegencySeeder::class,
+            RumahSakitSeeder::class,
+        ]);
     }
 }
