@@ -10,9 +10,10 @@ use Illuminate\Http\Request;
 class CityController extends Controller
 {
     public function index(){
-        return view('book.index', [
+        return view('book-dokter-step.book1', [
             'provinces' => Province::all(),
-            'title' => 'book'
+            'title' => 'Book',
+            'active' => 'book'
             // 'regencies' => Regency::all(),
         ]);
     }

@@ -12,8 +12,13 @@
     </style>
 @endpush
 
+@section('css')
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+@endsection
+
 @section('title')
-  <title>Hamily</title>
+  <title>Hamily | {{ $title }}</title>
 @endsection
 
 
@@ -23,7 +28,7 @@
     </div>
 @endif
 
-@section('container')
+@section('contents')
   <div class="row justify-content-center mt-5">
     <div class="col-md-4">
       {{-- didapat dari RegisterController yang mengirim flash message --}}

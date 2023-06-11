@@ -8,7 +8,8 @@ class RatingController extends Controller
 {
     public function index (){
         return view('ratingNreview.index', [
-            'title' => 'rating and review'
+            'title' => 'Rating and review',
+            'active' => 'rating'
         ]); 
     }
 }

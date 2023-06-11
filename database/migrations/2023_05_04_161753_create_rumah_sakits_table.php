@@ -14,10 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('rumah_sakits', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('kabupaten_id');
-            $table->string('name');
+            $table->id('id');
+            $table->foreignId('province_id');
+            $table->foreignId('regency_id');
+            $table->string('hospital_name');
             $table->timestamps();
+
+            $table->foreign('province_id')->references('id')->on('provinces');
+            $table->foreign('regency_id')->references('id')->on('regencies');
+
         });
     }
 
