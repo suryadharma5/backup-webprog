@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark navigasi">
     <div class="container">
       {{-- <a class="navbar-brand" href="/">PPTI Blog</a> --}}
-      <a href="#">
+      <a href="/">
         <img src="/img/logo.png" alt="" width="200" class="navbar-brand mr-2">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,22 +10,22 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item mx-2">
-            <a class = "nav-link {{ ($title == 'Home') ? 'active' : ''}}"href="/">Home</a>
+            <a class = "nav-link {{ ($active == 'home') ? 'active' : ''}}"href="/">Home</a>
           </li>
           <li li class="nav-item mx-2">
             <a class = "nav-link"href="#">Track</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link {{ ($title == 'book') ? 'active' : ''}}" href="/book">Book</a>
+            <a class="nav-link {{ ($active == 'book') ? 'active' : ''}}" href="/book">Book</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link {{ ($title == 'article') ? 'active' : ''}}" href="/article">Article</a>
+            <a class="nav-link {{ ($active == 'article') ? 'active' : ''}}" href="/article">Article</a>
           </li>
           <li class="nav-item mx-2">
             <a class="nav-link" href="#">Menfess</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link {{ ($title == 'rating and review') ? 'active' : ''}}" href="/rating">Rating & Review</a>
+            <a class="nav-link {{ ($active == 'rating') ? 'active' : ''}}" href="/rating">Rating & Review</a>
           </li>
         </ul>
 
@@ -55,8 +55,10 @@
           {{-- jika belum login --}}
           @else
             
-              <li class="nav-item">
-                <a href="/login" class="nav-link"><i class="bi bi-box-arrow-in-right mr-3"></i>Login</a>
+              <li class="nav-item" style="display: flex; align-content : center;">
+                <a href="/login" class="nav-link {{ $active == 'login' ? 'active' : '' }}">
+                  <i class="bi bi-box-arrow-in-right" style="margin-right: 5px"></i>
+                Login</a>
               </li>
             
           @endauth

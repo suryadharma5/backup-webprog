@@ -1,4 +1,12 @@
 @extends('layout.main')
+
+@section('css')
+    {{-- <link rel="stylesheet" href="/css/style.css"> --}}
+    <link rel="stylesheet" href="/css/home1.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+@endsection
+
+
 @section('title')
  <title>Hamily | {{ $title }}</title>
 @endsection 
