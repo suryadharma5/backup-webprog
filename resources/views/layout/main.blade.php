@@ -36,6 +36,8 @@
     
     {{-- <div class="containers">
     </div> --}}
+    <div class="container-fluid">
+    </div>
     @yield('contents')
 
 

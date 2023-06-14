@@ -1,54 +1,58 @@
 @extends('layout.main')
 
-    @section('css')
+
+@section('css')
         <link rel="stylesheet" href="/css/book1.css">
         <link rel="stylesheet" href="/css/navbar.css">
-    @endsection
-
-    @section('contents')
-    <div class="container-fluid g-0 container-gb-book-dokter" style="position: relative">
-        <img src="/img/bg-book-dokter.png" alt="" style="z-index:1" class="bg-book-dokter img-fluid">
-        <div class="container-fluid g-0 container-text-info-bg" style="position: absolute; z-index: 2">
-            <div class="row"> 
-                <div class="offset-5 col-3 d-flex justify-content-end">
-                    <img src="/img/check-circle-rounded.svg" alt="" class="img-check-info">
+@endsection
+        
+        @section('title')
+        <title>Hamily | {{ $title }}</title>
+        @endsection
+        
+        @section('contents')
+        <div class="container-fluid g-0 container-gb-book-dokter overflow-hidden" style="position: relative">
+            <img src="/img/bg-book-dokter.png" alt="" style="z-index:1" class="bg-book-dokter img-fluid" width="100%">
+            <div class="container-fluid g-0 container-text-info-bg" style="position: absolute; z-index: 2">
+                <div class="row"> 
+                    <div class="offset-5 col-3 d-flex justify-content-end">
+                        <img src="/img/check-circle-rounded.svg" alt="" class="img-check-info">
+                    </div>
+                    <div class="col-4 text-info-bg d-flex align-items-center text-check-info" >Ribuan Dokter Berpengalaman</div>
                 </div>
-                <div class="col-4 text-info-bg d-flex align-items-center text-check-info" >Ribuan Dokter Berpengalaman</div>
-            </div>
-            <div class="row mt-3"> 
-                <div class="offset-5 col-3 d-flex justify-content-end">
-                    <img src="/img/check-circle-rounded.svg" alt="" class="img-check-info">
+                <div class="row mt-3"> 
+                    <div class="offset-5 col-3 d-flex justify-content-end">
+                        <img src="/img/check-circle-rounded.svg" alt="" class="img-check-info">
+                    </div>
+                    <div class="col-4 text-info-bg d-flex align-items-center text-check-info" >Dari Rumah Sakit Terbaik</div>
                 </div>
-                <div class="col-4 text-info-bg d-flex align-items-center text-check-info" >Dari Rumah Sakit Terbaik</div>
-            </div>
-            <div class="row mt-3"> 
-                <div class="offset-5 col-3 d-flex justify-content-end">
-                    <img src="/img/check-circle-rounded.svg" alt="" class="img-check-info">
+                <div class="row mt-3"> 
+                    <div class="offset-5 col-3 d-flex justify-content-end">
+                        <img src="/img/check-circle-rounded.svg" alt="" class="img-check-info">
+                    </div>
+                    <div class="col-4 text-info-bg d-flex align-items-center text-check-info" >Kepastian Jadwal Booking</div>
                 </div>
-                <div class="col-4 text-info-bg d-flex align-items-center text-check-info" >Kepastian Jadwal Booking</div>
             </div>
         </div>
-    </div>
-        <div class="mt-4">
+        <div class="mt-5">
             <div class="full-width-content">
                 
                 <div class="container">
-                    <div class="dropdown-aja" style="margin-top: 100px">
+                    <div class="dropdown-aja">
                         <select class="form-select daerah" aria-label="Default select example" id="provinsi">
                             <option selected>Pilih Provinsi</option>
                             @foreach ($provinces as $province)
-                                <option value="{{ $province->id }}">{{ $province->name }}</option>
+                            <option value="{{ $province->id }}">{{ $province->name }}</option>
                             @endforeach
                         </select>
                         <select class="form-select daerah" aria-label="Default select example" id="kabupaten">
                             <option selected>Pilih Kabupaten</option>
                             {{-- @foreach ($regencies as $regency)
                                 <option value="{{ $regency->id }}">{{ $regency->name }}</option>
-                            @endforeach --}}
+                                @endforeach --}}
                         </select>
-                        <select class="form-select daerah" aria-label="Default select example" id="hospital">
+                         <select class="form-select daerah" aria-label="Default select example" id="hospital">
                             <option selected>Pilih Rumah Sakit</option>
-    
                         </select>
                     </div>
                 </div>
@@ -215,9 +219,6 @@
                                 <div class="dropdown-hari mt-2 col-lg-8">
                                     <select class="form-select hari" aria-label="Default select example" id="hari">
                                         <option selected>Pilih Hari</option>
-                                        {{-- @foreach ($provinces as $province)
-                                            <option value="{{ $province->id }}">{{ $province->name }}</option>
-                                        @endforeach --}}
                                     </select>
                                     <select class="form-select hari" aria-label="Default select example" id="jam">
                                         <option selected>Pilih Jam</option>
@@ -392,7 +393,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mb-5">
                                 <div class="spesialisdoc">
                                     <div class="foto">
                                         <img src="/img/dokter.png" alt="">

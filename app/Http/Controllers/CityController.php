@@ -12,8 +12,9 @@ class CityController extends Controller
     public function index(){
         return view('book-dokter-step.book1', [
             'provinces' => Province::all(),
-            'title' => 'Book',
-            'active' => 'book'
+            'title' => 'Booking Doctor',
+            'active' => 'book',
+            'day' => ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu']
             // 'regencies' => Regency::all(),
         ]);
     }
@@ -33,11 +34,11 @@ class CityController extends Controller
     public function getHospital (Request $request){
         $id_kabupaten = $request->id_kabupaten;
 
-        $hospitals = RumahSakit::where('kabupaten_id', $id_kabupaten)->get();
+        $hospitals = RumahSakit::where('regency_id', $id_kabupaten)->get();
 
         echo "<option selected>Pilih Rumah Sakit</option>";
         foreach($hospitals as $hospital){
-            echo "<option value='$hospital->id'> $hospital->name </option>";
+            echo "<option value='$hospital->id> $hospital->hospital_name </option>";
         }
     }
 }

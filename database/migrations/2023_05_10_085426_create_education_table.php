@@ -22,7 +22,7 @@ return new class extends Migration
             $table->year('year_end');
             $table->timestamps();
 
-            $table->foreign('doctor_id')->references('id')->on('doctor');
+            $table->foreign('doctor_id')->references('id')->on('doctors');
             $table->foreign('program_id')->references('id')->on('program');
         });
     }
