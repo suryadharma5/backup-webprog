@@ -6,12 +6,12 @@
         <link rel="stylesheet" href="/css/navbar.css">
 @endsection
         
-        @section('title')
-        <title>Hamily | {{ $title }}</title>
-        @endsection
+@section('title')
+<title>Hamily | {{ $title }}</title>
+@endsection
         
-        @section('contents')
-        <div class="container-fluid g-0 container-gb-book-dokter overflow-hidden" style="position: relative">
+    @section('contents')
+    <div class="container-fluid g-0 container-gb-book-dokter overflow-hidden" style="position: relative">
             <img src="/img/bg-book-dokter.png" alt="" style="z-index:1" class="bg-book-dokter img-fluid" width="100%">
             <div class="container-fluid g-0 container-text-info-bg" style="position: absolute; z-index: 2">
                 <div class="row"> 
@@ -33,8 +33,11 @@
                     <div class="col-4 text-info-bg d-flex align-items-center text-check-info" >Kepastian Jadwal Booking</div>
                 </div>
             </div>
-        </div>
-        <div class="mt-5">
+            <div class="gelombang" style="position: absolute; z-index: 15; width:100%;">
+                <img src="/img/gelombang.png" alt="" srcset="" style="width: 100%;" class="img-fluid">
+            </div>
+    </div>
+    <div class="mt-2">
             <div class="full-width-content">
                 
                 <div class="container">
@@ -62,7 +65,7 @@
                     </div> --}}
                 </div>
         
-                <div class="contentbookingdokter">
+                <div class="contentbookingdokter" id="result">
                     <div class="row">
                         <div class="col-md-4 status-book">
                             <div class="title">
@@ -228,203 +231,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="spesialisdoc">
-                                    <div class="foto">
-                                        <img src="/img/dokter.png" alt="">
-                                    </div>
-                                    <div class="keterangan">
-                                        <div class="title-dokter">
-                                            Dr. I Gede Lanying
-                                        </div>
-                                        <div class="nama-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-stethoscope"></i></div>
-                                            Dokter Spesialis Kandungan
-                                        </div>
-                                        <div class="rs-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-hospital"></i></div>
-                                            Rumah Sakit Mangusada
-                                        </div>
-                                        <div class="loc-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                                            Badung, Bali
-                                        </div>
-                                        <div class="tahun-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-business-time"></i></div>
-                                            5 Tahun
-                                        </div>
-                                    </div>
-                                    <div class="bookbutton">
-                                        <a href="#">
-                                            <button type="button" class="btn btn-primary">Book</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="spesialisdoc">
-                                    <div class="foto">
-                                        <img src="/img/dokter.png" alt="">
-                                    </div>
-                                    <div class="keterangan">
-                                        <div class="title-dokter">
-                                            Dr. I Gede Lanying
-                                        </div>
-                                        <div class="nama-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-stethoscope"></i></div>
-                                            Dokter Spesialis Kandungan
-                                        </div>
-                                        <div class="rs-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-hospital"></i></div>
-                                            Rumah Sakit Mangusada
-                                        </div>
-                                        <div class="loc-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                                            Badung, Bali
-                                        </div>
-                                        <div class="tahun-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-business-time"></i></div>
-                                            5 Tahun
-                                        </div>
-                                    </div>
-                                    <div class="bookbutton">
-                                        <a href="#">
-                                            <button type="button" class="btn btn-primary">Book</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="spesialisdoc">
-                                    <div class="foto">
-                                        <img src="/img/dokter.png" alt="">
-                                    </div>
-                                    <div class="keterangan">
-                                        <div class="title-dokter">
-                                            Dr. I Gede Lanying
-                                        </div>
-                                        <div class="nama-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-stethoscope"></i></div>
-                                            Dokter Spesialis Kandungan
-                                        </div>
-                                        <div class="rs-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-hospital"></i></div>
-                                            Rumah Sakit Mangusada
-                                        </div>
-                                        <div class="loc-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                                            Badung, Bali
-                                        </div>
-                                        <div class="tahun-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-business-time"></i></div>
-                                            5 Tahun
-                                        </div>
-                                    </div>
-                                    <div class="bookbutton">
-                                        <a href="#">
-                                            <button type="button" class="btn btn-primary">Book</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="spesialisdoc">
-                                    <div class="foto">
-                                        <img src="/img/dokter.png" alt="">
-                                    </div>
-                                    <div class="keterangan">
-                                        <div class="title-dokter">
-                                            Dr. I Gede Lanying
-                                        </div>
-                                        <div class="nama-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-stethoscope"></i></div>
-                                            Dokter Spesialis Kandungan
-                                        </div>
-                                        <div class="rs-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-hospital"></i></div>
-                                            Rumah Sakit Mangusada
-                                        </div>
-                                        <div class="loc-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                                            Badung, Bali
-                                        </div>
-                                        <div class="tahun-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-business-time"></i></div>
-                                            5 Tahun
-                                        </div>
-                                    </div>
-                                    <div class="bookbutton">
-                                        <a href="#">
-                                            <button type="button" class="btn btn-primary">Book</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="spesialisdoc">
-                                    <div class="foto">
-                                        <img src="/img/dokter.png" alt="">
-                                    </div>
-                                    <div class="keterangan">
-                                        <div class="title-dokter">
-                                            Dr. I Gede Lanying
-                                        </div>
-                                        <div class="nama-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-stethoscope"></i></div>
-                                            Dokter Spesialis Kandungan
-                                        </div>
-                                        <div class="rs-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-hospital"></i></div>
-                                            Rumah Sakit Mangusada
-                                        </div>
-                                        <div class="loc-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                                            Badung, Bali
-                                        </div>
-                                        <div class="tahun-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-business-time"></i></div>
-                                            5 Tahun
-                                        </div>
-                                    </div>
-                                    <div class="bookbutton">
-                                        <a href="#">
-                                            <button type="button" class="btn btn-primary">Book</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mb-5">
-                                <div class="spesialisdoc">
-                                    <div class="foto">
-                                        <img src="/img/dokter.png" alt="">
-                                    </div>
-                                    <div class="keterangan">
-                                        <div class="title-dokter">
-                                            Dr. I Gede Lanying
-                                        </div>
-                                        <div class="nama-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-stethoscope"></i></div>
-                                            Dokter Spesialis Kandungan
-                                        </div>
-                                        <div class="rs-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-hospital"></i></div>
-                                            Rumah Sakit Mangusada
-                                        </div>
-                                        <div class="loc-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                                            Badung, Bali
-                                        </div>
-                                        <div class="tahun-spesialis">
-                                            <div class="icon"><i class="fa-solid fa-business-time"></i></div>
-                                            5 Tahun
-                                        </div>
-                                    </div>
-                                    <div class="bookbutton">
-                                        <a href="#">
-                                            <button type="button" class="btn btn-primary">Book</button>
-                                        </a>
-                                    </div>
-                                </div>
+                            <div class="row" id="listDoctor">
                             </div>
                         </div>
                     </div>
@@ -433,7 +240,7 @@
                 {{-- <div class="footer">INI FOOTER</div> --}}
         
             </div>
-        </div>
+    </div>
         
     @endsection
 

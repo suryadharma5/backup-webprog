@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doctor;
 use App\Models\Province;
 use App\Models\Regency;
 use App\Models\RumahSakit;
@@ -10,7 +11,7 @@ use Illuminate\Http\Request;
 class CityController extends Controller
 {
     public function index(){
-        return view('book-dokter-step.book1', [
+        return view('booking-page.book1', [
             'provinces' => Province::all(),
             'title' => 'Booking Doctor',
             'active' => 'book',
@@ -38,7 +39,53 @@ class CityController extends Controller
 
         echo "<option selected>Pilih Rumah Sakit</option>";
         foreach($hospitals as $hospital){
-            echo "<option value='$hospital->id> $hospital->hospital_name </option>";
+            echo "<option value='$hospital->id'> $hospital->hospital_name </option>";
         }
+    }
+
+    public function getDoctor (Request $request){
+
+        // dd($request);
+        $id_rs = $request->id_rs;
+
+        $doctors = Doctor::where('hospital_id', $id_rs)->get();
+
+        foreach ($doctors as $doctor){
+            echo "<div class='spesialisdoc'><div class = 'foto'> <img src='/img/dokter.png'></div>
+            <div class='keterangan'>
+                <div class='title-dokter'>
+                    $doctor->doctor_name
+                </div>
+                <div class='nama-spesialis'>
+                    <div class='icon'><i class='fa-solid fa-stethoscope'></i></div>
+                    Dokter Spesialis Kandungan
+                </div>
+                <div class='rs-spesialis'>
+                    <div class='icon'><i class='fa-solid fa-hospital'></i></div>
+                    $doctor->hospital_id
+                </div>
+                <div class='loc-spesialis'>
+                    <div class='icon'><i class='fa-solid fa-location-dot'></i></div>
+                    Badung, Bali
+                </div>
+                <div class='tahun-spesialis'>
+                    <div class='icon'><i class='fa-solid fa-business-time'></i></div>
+                    $doctor->year_experience tahun
+                </div>
+            </div>
+            <div class = 'bookbutton'>
+                <a href='/book/$doctor->doctor_name'>
+                    <button type = 'submit' class = 'btn btn-primary'>Book</button>
+                </a>
+            </div>
+            </div>";
+        }
+        
+    }
+
+    public function bookDoctor(Doctor $doctor){
+        return view('booking-page.detail-dokter', [
+            'active' => 'book'
+        ]);
     }
 }

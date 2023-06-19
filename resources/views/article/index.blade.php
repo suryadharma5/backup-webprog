@@ -58,10 +58,10 @@
     
         <ul class="nav nav-underline justify-content-center mt-3 align-items-center tabControl">
             <li class="nav-item">
-              <a class="nav-link underline active" href="#" >Mom's Corner</a>
+              <a class="nav-link underline active text-decoration-none text-black" href="#" >Mom's Corner</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#">Dad's Corner</a>
+              <a class="nav-link text-black" href="#">Dad's Corner</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Mom & Dad's Corner</a>
@@ -76,7 +76,7 @@
         </ul>
     
         <div class="col-lg-6">
-            <img src="/img/slide1.png" alt="">
+            {{-- <img src="/img/slide1.png" alt=""> --}}
         </div>
         <div style="margin-bottom: 100px">
     
