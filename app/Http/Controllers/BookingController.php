@@ -8,7 +8,7 @@ use App\Models\Regency;
 use App\Models\RumahSakit;
 use Illuminate\Http\Request;
 
-class CityController extends Controller
+class BookingController extends Controller
 {
     public function index(){
         return view('booking-page.book1', [
@@ -85,7 +85,8 @@ class CityController extends Controller
 
     public function bookDoctor(Doctor $doctor){
         return view('booking-page.detail-dokter', [
-            'active' => 'book'
+            'active' => 'book',
+            'doctor' => $doctor,
         ]);
     }
 }

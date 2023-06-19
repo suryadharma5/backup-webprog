@@ -9,7 +9,7 @@
     @stack('before-style')
     <!-- Bootstrap CSS -->
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     
     {{-- linke ke icon bootstrap --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
@@ -18,8 +18,9 @@
     @yield('css')
     {{-- <link rel="stylesheet" href="/css/style.css"> --}}
     {{-- <link rel="stylesheet" href="/css/home1.css"> --}}
-    {{-- <link rel="stylesheet" href="/css/book1.css">
-    <link rel="stylesheet" href="/css/navbar.css"> --}}
+    {{-- <link rel="stylesheet" href="/css/book1.css"> --}}
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
 
 
     <link href="css/bootstrap.css" rel="stylesheet">   
@@ -39,7 +40,10 @@
     {{-- <div class="container-fluid"> --}}
     {{-- </div> --}}
     @yield('contents')
-
+    
+    {{-- <div style="height: 500px"></div> --}}
+    @stack('css-footer')
+    @include('partials.footer')
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
