@@ -13,13 +13,14 @@
     --EXTRABOLD: 800;
 }
 
+*{
+    /* font-family: roboto; */
+    font-family: 'Baloo 2', cursive;
+}
+
 .container-fluid{
     background-color: pink;
 }
-/* .navbar{
-    background-color: aqua;
-    width: 100%;
-} */
 
 .title{
     /* background-color: aquamarine; */

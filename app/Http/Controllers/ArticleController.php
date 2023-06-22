@@ -12,4 +12,10 @@ class ArticleController extends Controller
             'active' => 'article'
         ]);
     }
+
+    public function detail(){
+        return view('article.article-detail', [
+            'active' => 'article',
+        ]);
+    }
 }

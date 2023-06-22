@@ -43,6 +43,7 @@ Route::fallback(function () {
 });
 
 Route::get('/article', [ArticleController::class, 'index']);
+Route::get('/detailArticle', [ArticleController::class, 'detail']);
 
 Route::get('/book', [BookingController::class, 'index']);
 Route::post('/getKabupaten', [BookingController::class, 'getKabupaten']);
