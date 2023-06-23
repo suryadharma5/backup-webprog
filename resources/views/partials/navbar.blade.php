@@ -1,4 +1,3 @@
-@if ($active)
 <nav class="navbar navbar-expand-lg navbar-dark navigasi">
   <div class="container">
     {{-- <a class="navbar-brand" href="/">PPTI Blog</a> --}}
@@ -68,7 +67,3 @@
     </div>
   </div>
 </nav>
-
-@else
-  
-@endif

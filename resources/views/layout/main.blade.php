@@ -15,12 +15,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
     {{-- css kita --}}
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
     @yield('css')
     {{-- <link rel="stylesheet" href="/css/style.css"> --}}
     {{-- <link rel="stylesheet" href="/css/home1.css"> --}}
     {{-- <link rel="stylesheet" href="/css/book1.css"> --}}
-    <link rel="stylesheet" href="/css/navbar.css">
-    <link rel="stylesheet" href="/css/footer.css">
 
 
     <link href="css/bootstrap.css" rel="stylesheet">   

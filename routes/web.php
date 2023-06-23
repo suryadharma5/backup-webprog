@@ -37,12 +37,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//404 handler
-Route::fallback(function () {
-    return view('404', [
-        'active' => 'home'
-    ]);
-});
 
 Route::get('/article', [ArticleController::class, 'index']);
 Route::get('/detailArticle', [ArticleController::class, 'detail']);
@@ -55,3 +49,10 @@ Route::get('/book/{doctor:doctor_name}', [BookingController::class, 'bookDoctor'
 
 Route::get('/rating', [RatingController::class, 'index']);
 Route::get('/ratingcoba', [RatingController::class, 'coba']);
+
+//404 handler
+Route::fallback(function () {
+    return view('404', [
+        'active' => 'none'
+    ]);
+});
