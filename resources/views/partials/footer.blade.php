@@ -1,5 +1,5 @@
 <!-- INI FOOTER -->
-<footer>
+<footer class="footer">
     <div class="foot-desc">
         <img src="/img/footerLogo.png" alt="" class="logo">
         <div class="jargon">

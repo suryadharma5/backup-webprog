@@ -39,7 +39,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //404 handler
 Route::fallback(function () {
-    return view('404');
+    return view('404', [
+        'active' => 'home'
+    ]);
 });
 
 Route::get('/article', [ArticleController::class, 'index']);
@@ -52,3 +54,4 @@ Route::post('/getDoctor', [BookingController::class, 'getDoctor']);
 Route::get('/book/{doctor:doctor_name}', [BookingController::class, 'bookDoctor']);
 
 Route::get('/rating', [RatingController::class, 'index']);
+Route::get('/ratingcoba', [RatingController::class, 'coba']);

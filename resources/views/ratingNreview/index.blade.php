@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('css')
-    {{-- <link rel="stylesheet" href="/css/navbar.css"> --}}
+    <link rel="stylesheet" href="/css/ratingModal.css">
 @endsection
 
 @section('title')
