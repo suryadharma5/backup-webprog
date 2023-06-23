@@ -12,18 +12,22 @@
 
 @section('contents')
 
-<div class="container m-10">
+<div class="container">
     {{-- button bagian atas --}}
     <div class="row pt-5 d-flex">
         <div class="col-2">
-            <div class="tombol">
-                <button type="button" class="btn" style="background-color: #FFB8C7; font-weight: bold; margin-right: 25px; color:#FFF7F6"><i class="fa-solid fa-cloud-arrow-up fa-xl"></i>post menfess</button>
-            </div>
+            <a href="#">
+                <div class="tombol">
+                    <button type="button" class="btn" style="background-color: #FFB8C7; font-weight: bold; margin-right: 25px; color:#FFF7F6"><i class="fa-solid fa-cloud-arrow-up fa-xl"></i>post menfess</button>
+                </div>
+            </a>
         </div>
         <div class="col-2">
-            <div class="tombol">
-                <button type="button" class="btn" style="background-color: #78A2CC; font-weight: bold; color:#FFF7F6"><i class="fa-solid fa-clock-rotate-left fa-xl"></i>my menfess</button>
-            </div>
+            <a href="#">
+                <div class="tombol">
+                    <button type="button" class="btn" style="background-color: #78A2CC; font-weight: bold; color:#FFF7F6"><i class="fa-solid fa-clock-rotate-left fa-xl"></i>my menfess</button>
+                </div>
+            </a>
         </div>
         <div class="col-8">
             <div class="input-group mb-3">
@@ -43,9 +47,9 @@
         <div class="card-body">
             <div class="row d-flex mx-1">
                 <div class="col-10 my-1">
-                    <h3 class="card-title">{{ $men->title }}</h3>
+                    <h3 class="card-title fw-bold">{{ $men->title }}</h3>
                 </div>
-                <div class="col">
+                <div class="col my-1">
                     <div class="row d-flex">
                         <div class="col-1">
                             <i class="fa-solid fa-heart fa-lg" style="color: #78a2cc;"></i>
@@ -55,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col" style="margin-left: -25px;">
+                <div class="col my-1" style="margin-left: -25px;">
                     <div class="row d-flex">
                         <div class="col-1">
                             <i class="fa-solid fa-message" style="color: #78a2cc;"></i>
@@ -91,7 +95,7 @@
             </div>
             <div class="row text-center" style="margin-left: 30%; margin-right:30%;">
                 <div class="tombol">
-                    <a href="#" class="btn" style="background-color: #78A2CC; color:#FFF7F6;">See more replies  <i class="fa-solid fa-arrow-right fa-lg" style="color: #ffffff;"></i></a>
+                    <a href="#" class="btn" style="background-color: #78A2CC; color:#FFF7F6;">See more replies  <i class="fa-solid fa-arrow-right fa-lg mx-2" style="color: #ffffff;"></i></a>
                 </div>
             </div>
         </div>

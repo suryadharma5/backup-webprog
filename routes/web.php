@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\MenfessController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -49,6 +50,9 @@ Route::get('/book/{doctor:doctor_name}', [BookingController::class, 'bookDoctor'
 
 Route::get('/rating', [RatingController::class, 'index']);
 Route::get('/ratingcoba', [RatingController::class, 'coba']);
+
+Route::get('/menfess', [MenfessController::class, 'index']);
+
 
 //404 handler
 Route::fallback(function () {

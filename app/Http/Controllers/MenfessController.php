@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class MenfessController extends Controller
 {
     //
-    public function menfess(){
+    public function index(){
         return view('menfess.index', [
             'title' => 'Menfess',
             'active' => 'menfess',
