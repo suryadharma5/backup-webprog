@@ -16,6 +16,7 @@
             <div class="decoration col-md-3">
                 ADD PRODUCTS
             </div>
+
         </div>
 
         {{-- Form add product --}}
@@ -395,7 +396,7 @@
     @push('css-footer')
             <style>
                 footer {
-                    margin-top: -220px
+                    margin-top: -20px
                 }
             </style>
     @endpush
