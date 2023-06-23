@@ -50,3 +50,10 @@ Route::post('/getKabupaten', [CityController::class, 'getKabupaten']);
 Route::post('/getHospital', [CityController::class, 'getHospital']);
 
 Route::get('/rating', [RatingController::class, 'index']);
+
+Route::get('/via', function () {
+    return view('via.popular', [
+        'title' => 'Rating',
+        'active' => 'popular'
+    ]);
+});
