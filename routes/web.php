@@ -1,12 +1,11 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CityController;
+use App\Http\Controllers\RatingController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RatingController;
-use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\BookingController;
-use App\Http\Controllers\MenfessController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -38,25 +37,20 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
-Route::get('/article', [ArticleController::class, 'index']);
-Route::get('/detailArticle', [ArticleController::class, 'detail']);
-
-Route::get('/book', [BookingController::class, 'index']);
-Route::post('/getKabupaten', [BookingController::class, 'getKabupaten']);
-Route::post('/getHospital', [BookingController::class, 'getHospital']);
-Route::post('/getDoctor', [BookingController::class, 'getDoctor']);
-Route::get('/book/{doctor:doctor_name}', [BookingController::class, 'bookDoctor']);
-
-Route::get('/rating', [RatingController::class, 'index']);
-Route::get('/ratingcoba', [RatingController::class, 'coba']);
-
-Route::get('/menfess', [MenfessController::class, 'index']);
-
-
 //404 handler
 Route::fallback(function () {
-    return view('404', [
-        'active' => 'none'
-    ]);
+    return view('404');
+});
+
+Route::get('/article', [ArticleController::class, 'index']);
+
+Route::get('/book', [CityController::class, 'index']);
+Route::post('/getKabupaten', [CityController::class, 'getKabupaten']);
+
+Route::post('/getHospital', [CityController::class, 'getHospital']);
+
+Route::get('/rating', [RatingController::class, 'index']);
+
+Route::get('/profile', function(){
+    return view('profile.profile');
 });
