@@ -20,18 +20,18 @@
         </div>
 
         {{-- Form add product --}}
-        <form class="contentform" id="contentform">
+        <form class="contentform">
             <label for="namabrand">Nama Brand</label> <br>
-            <input type="text" id="namabrand" name="namabrand" class="px-3 form-control" required> <br>
+            <input type="text" id="namabrand" name="namabrand" class="px-3 form-control"> <br>
             <label for="namaproduk">Nama Produk</label> <br>
-            <input type="text" id="namaproduk" name="namaproduk" class="px-3 form-control" required> <br>
+            <input type="text" id="namaproduk" name="namaproduk" class="px-3 form-control"> <br>
             <label for="namavarian">Varian / Shade</label> <br>
-            <input type="text" id="namavarian" name="namavarian" class="px-3 form-control" required> <br>
+            <input type="text" id="namavarian" name="namavarian" class="px-3 form-control"> <br>
             
             <div class="containers">
                 <div class="wrapper">
                    <div class="image">
-                       <img src=" " alt="" id="img-prev">
+                       <img src=" " alt="">
                     </div>
                     <div class="content">
                         <div class="icon">
@@ -48,11 +48,11 @@
                         File name here
                     </div>
                 </div>
-                <button onclick="defaultBtnActive()" id="custom-btn" type="button">+ ADD PHOTO</button>
+                <button onclick="defaultBtnActive()" id="custom-btn">+ ADD PHOTO</button>
                 <input id="default-btn" type="file" hidden>
             </div>
             <div class="sendbutton col-md-12">
-                <button type="submit" class="btn btn-primary" onclick="">SEND</button>
+                <button type="button" class="btn btn-primary" onclick="sendvalue()">SEND</button>
                 <a href="#">
                 </a>
             </div>

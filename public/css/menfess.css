@@ -1,0 +1,23 @@
+
+button{
+    width: 175px;
+    height: 50px;
+    color: #FFF7F6;
+    font-weight: bold;
+}
+
+button i {
+    margin-right: 5px;
+}
+
+.input-group button {
+    width: 70px;
+}
+
+.tombol {
+    transition: transform .3s;
+}
+
+.tombol :hover {
+    transform: scale(1.1);
+}

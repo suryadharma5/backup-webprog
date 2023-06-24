@@ -1,23 +1,23 @@
 @extends('layout.main')
+
 @push('after-style')
     <style>
         body {
             background-color: #A4CFFF;
         }
 
-        .navigasi {
+        /* .navigasi {
             display: none
-        }
+        } */
 
         *{
             font-family: 'Baloo 2', cursive;
         }
 
-        .footer{
+        /* .footer{
             display: none
-        }
+        } */
     </style>
-
 @endpush
 
 @section('title')

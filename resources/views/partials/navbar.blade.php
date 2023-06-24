@@ -1,4 +1,3 @@
-@if ($active)
 <nav class="navbar navbar-expand-lg navbar-dark navigasi">
   <div class="container">
     {{-- <a class="navbar-brand" href="/">PPTI Blog</a> --}}
@@ -23,7 +22,7 @@
           <a class="nav-link {{ ($active == 'article') ? 'active' : ''}}" href="/article">Article</a>
         </li>
         <li class="nav-item mx-2">
-          <a class="nav-link" href="#">Menfess</a>
+          <a class="nav-link {{ ($active == 'menfess') ? 'active' : ''}}" href="/menfess">Menfess</a>
         </li>
         <li class="nav-item mx-2">
           <a class="nav-link {{ ($active == 'rating') ? 'active' : ''}}" href="/rating">Rating & Review</a>
@@ -68,7 +67,3 @@
     </div>
   </div>
 </nav>
-
-@else
-  
-@endif
