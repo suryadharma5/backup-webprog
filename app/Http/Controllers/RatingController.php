@@ -12,4 +12,11 @@ class RatingController extends Controller
             'active' => 'rating'
         ]); 
     }
+
+    public function coba (){
+        return view('ratingNreview.indexes', [
+            'title' => 'Rating and review',
+            'active' => 'rating'
+        ]); 
+    }
 }

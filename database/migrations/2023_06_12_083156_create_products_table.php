@@ -13,16 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('agenda');
-        Schema::create('agenda', function (Blueprint $table) {
-            $table->id('id');
-            $table->unsignedBigInteger('doctor_id');
-            $table->date('date');
-            $table->time('start_time');
-            $table->time('end_time');
+        Schema::create('products', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
-
-            $table->foreign('doctor_id')->references('id')->on('doctors');
         });
     }
 
@@ -33,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agenda');
+        Schema::dropIfExists('products');
     }
 };

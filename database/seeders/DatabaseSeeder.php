@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
             IndoRegionProvinceSeeder::class,
             IndoRegionRegencySeeder::class,
             RumahSakitSeeder::class,
+            // DoctorSeeder::class
         ]);
     }
 }
