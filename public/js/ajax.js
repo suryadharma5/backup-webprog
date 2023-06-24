@@ -6,6 +6,7 @@ $(function (){
     $(function(){
         $('#provinsi').on('change', function(){
             let id_provinsi = $('#provinsi').val()
+            console.log(id_provinsi)
             $.ajax({
                 type: 'POST',
                 url : '/getKabupaten',
@@ -39,4 +40,24 @@ $(function (){
 
         
     })
+
+    $(function(){
+        $('#hospital').on('change', function(){
+            let id_rs = $('#hospital').val()
+            console.log(id_rs)
+            $.ajax({
+                type: 'POST',
+                url : '/getDoctor',
+                data : {id_rs:id_rs},
+                caches : false,
+
+                success: function(msg){
+                    $('#listDoctor').html(msg)
+                }
+            })
+        })
+
+        
+    })
+
 })

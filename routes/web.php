@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\MenfessController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,12 +49,10 @@ Route::get('/book', [CityController::class, 'index']);
 Route::post('/getKabupaten', [CityController::class, 'getKabupaten']);
 
 Route::post('/getHospital', [CityController::class, 'getHospital']);
+Route::post('/getDoctor', [CityController::class, 'getDoctor']);
 
 Route::get('/rating', [RatingController::class, 'index']);
 
-Route::get('/via', function () {
-    return view('via.popular', [
-        'title' => 'Rating',
-        'active' => 'popular'
-    ]);
-});
+Route::get('/book/{doctor:doctor_name}', [CityController::class, 'bookDoctor']);
+
+Route::get('/menfess', [MenfessController::class, 'menfess']);

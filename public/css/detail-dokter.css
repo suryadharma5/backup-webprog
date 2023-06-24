@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 body{
-    padding: 30px 60px;
     font-family: 'Baloo 2', cursive;
 }
 
@@ -14,7 +13,6 @@ body{
     display: flex;
     gap: 0px;
     width: 100%;
-    background-color: red;
 }
 
 h2{
@@ -33,15 +31,13 @@ h2{
     /* width: 700px; */
     font-size: 20px;
     font-weight: 400;
-    background-color: green;
 }
 
-.identitas-dokter{
+/* .identitas-dokter{
     float: right;
-    background-color: blue;
     align-items: end;;
-}
+} */
 
-.identitas-dokter img{
+/* .identitas-dokter img{
     width: 100%;
-}
+} */

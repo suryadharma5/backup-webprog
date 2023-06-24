@@ -13,21 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('doctor');
-
-        Schema::defaultStringLength(191);
-        Schema::create('doctor', function (Blueprint $table) {
+        Schema::create('doctors', function (Blueprint $table) {
             $table->id('id');
             $table->unsignedBigInteger('hospital_id');
-            $table->unsignedBigInteger('title_id');
+            $table->integer('title_id');
             $table->string('doctor_name');
             $table->text('doctor_profile');
             $table->integer('year_experience');
             $table->timestamps();
 
-            $table->foreign('title_id')->references('id')->on('title');
+            // $table->foreign('title_id')->references('id')->on('title');
             $table->foreign('hospital_id')->references('id')->on('rumah_sakits');
-
         });
     }
 

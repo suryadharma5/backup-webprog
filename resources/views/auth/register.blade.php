@@ -29,7 +29,7 @@
 @endif
 
 @section('contents')
-  <div class="row justify-content-center mt-5">
+  <div class="row justify-content-center mt-5" style="width: 100%">
     <div class="col-md-4">
       {{-- didapat dari RegisterController yang mengirim flash message --}}
       @if (session()->has('success'))

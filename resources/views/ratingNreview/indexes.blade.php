@@ -1,22 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="addproduct.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> -->
-    <title>Document</title>
-</head>
-<body>
+@extends('layout.main')
+
+@section('css')
+    <link rel="stylesheet" href="/css/ratingNreviewForm.css">
+@endsection
+
+@section('contents')
     <div class="full-width-content">
-        <div class="navbar">INI NAVBAR</div>
         <div class="content-atas row">
             <div class="back-button col-md-2">
                 <i class="fa-solid fa-circle-arrow-left" style="color: #9FCAE6;"></i>
@@ -29,18 +18,20 @@
             </div>
 
         </div>
-        <div class="contentform">
+
+        {{-- Form add product --}}
+        <form class="contentform" id="contentform">
             <label for="namabrand">Nama Brand</label> <br>
-            <input type="text" id="namabrand"> <br>
+            <input type="text" id="namabrand" name="namabrand" class="px-3 form-control" required> <br>
             <label for="namaproduk">Nama Produk</label> <br>
-            <input type="text" id="namaproduk"> <br>
+            <input type="text" id="namaproduk" name="namaproduk" class="px-3 form-control" required> <br>
             <label for="namavarian">Varian / Shade</label> <br>
-            <input type="text" id="namavarian"> <br>
+            <input type="text" id="namavarian" name="namavarian" class="px-3 form-control" required> <br>
             
-            <div class="container">
+            <div class="containers">
                 <div class="wrapper">
                    <div class="image">
-                       <img src=" " alt="">
+                       <img src=" " alt="" id="img-prev">
                     </div>
                     <div class="content">
                         <div class="icon">
@@ -57,17 +48,18 @@
                         File name here
                     </div>
                 </div>
-                <button onclick="defaultBtnActive()" id="custom-btn">+ ADD PHOTO</button>
+                <button onclick="defaultBtnActive()" id="custom-btn" type="button">+ ADD PHOTO</button>
                 <input id="default-btn" type="file" hidden>
             </div>
             <div class="sendbutton col-md-12">
-                <button type="button" class="btn btn-primary" onclick="sendvalue()">SEND</button>
+                <button type="submit" class="btn btn-primary" onclick="">SEND</button>
                 <a href="#">
                 </a>
             </div>
-        </div>
+        </form>
+
         <div class="sectionpic awanpink">
-            <img src="../../../public/img/awanpink.png" alt="">
+            <img src="/img/awanpink.png" alt="">
         </div>
         <div class="contentsimilar">
             <div class="title text-center">
@@ -77,7 +69,7 @@
                 <div class="scroll-container">
                     <div class="scroll-area">
                         <div class="foto-produk">
-                            <img src="../../../public/img/section4_photo-product.png" alt="">
+                            <img src="/img/section4_photo-product.png" alt="">
                         </div>
                         <div class="isi">
                             <div class="nama-produk">
@@ -111,7 +103,7 @@
                             <div class="person">
                                 <div class="jarakwokwok">
                                     <div class="foto-profile">
-                                        <img src="../../../public/img/section4_profile-picture.png" alt="">
+                                        <img src="/img/section4_profile-picture.png" alt="">
                                     </div>
                                     <div class="nama-person">
                                         &nbsp; NURHAYATI 1
@@ -125,7 +117,7 @@
                             </div>
                             <div class="rekomen">
                                 <div class="jempol">
-                                    <img src="../../../public/img/section4_jempol-rekomen.png" alt="">
+                                    <img src="/img/section4_jempol-rekomen.png" alt="">
                                 </div>
                                 <div class="rekomendesc">
                                     &nbsp;
@@ -141,7 +133,7 @@
                     </div>
                     <div class="scroll-area">
                         <div class="foto-produk">
-                            <img src="../../../public/img/section4_photo-product.png" alt="">
+                            <img src="/img/section4_photo-product.png" alt="">
                         </div>
                         <div class="isi">
                             <div class="nama-produk">
@@ -175,7 +167,7 @@
                             <div class="person">
                                 <div class="jarakwokwok">
                                     <div class="foto-profile">
-                                        <img src="../../../public/img/section4_profile-picture.png" alt="">
+                                        <img src="/img/section4_profile-picture.png" alt="">
                                     </div>
                                     <div class="nama-person">
                                         &nbsp; NURHAYATI 2
@@ -189,7 +181,7 @@
                             </div>
                             <div class="rekomen">
                                 <div class="jempol">
-                                    <img src="../../../public/img/section4_jempol-rekomen.png" alt="">
+                                    <img src="/img/section4_jempol-rekomen.png" alt="">
                                 </div>
                                 <div class="rekomendesc">
                                     &nbsp;
@@ -205,7 +197,7 @@
                     </div>
                     <div class="scroll-area">
                         <div class="foto-produk">
-                            <img src="../../../public/img/section4_photo-product.png" alt="">
+                            <img src="/img/section4_photo-product.png" alt="">
                         </div>
                         <div class="isi">
                             <div class="nama-produk">
@@ -239,7 +231,7 @@
                             <div class="person">
                                 <div class="jarakwokwok">
                                     <div class="foto-profile">
-                                        <img src="../../../public/img/section4_profile-picture.png" alt="">
+                                        <img src="/img/section4_profile-picture.png" alt="">
                                     </div>
                                     <div class="nama-person">
                                         &nbsp; NURHAYATI 3
@@ -253,7 +245,7 @@
                             </div>
                             <div class="rekomen">
                                 <div class="jempol">
-                                    <img src="../../../public/img/section4_jempol-rekomen.png" alt="">
+                                    <img src="/img/section4_jempol-rekomen.png" alt="">
                                 </div>
                                 <div class="rekomendesc">
                                     &nbsp;
@@ -269,7 +261,7 @@
                     </div>
                     <div class="scroll-area">
                         <div class="foto-produk">
-                            <img src="../../../public/img/section4_photo-product.png" alt="">
+                            <img src="/img/section4_photo-product.png" alt="">
                         </div>
                         <div class="isi">
                             <div class="nama-produk">
@@ -303,7 +295,7 @@
                             <div class="person">
                                 <div class="jarakwokwok">
                                     <div class="foto-profile">
-                                        <img src="../../../public/img/section4_profile-picture.png" alt="">
+                                        <img src="/img/section4_profile-picture.png" alt="">
                                     </div>
                                     <div class="nama-person">
                                         &nbsp; NURHAYATI 4
@@ -317,7 +309,7 @@
                             </div>
                             <div class="rekomen">
                                 <div class="jempol">
-                                    <img src="../../../public/img/section4_jempol-rekomen.png" alt="">
+                                    <img src="/img/section4_jempol-rekomen.png" alt="">
                                 </div>
                                 <div class="rekomendesc">
                                     &nbsp;
@@ -333,7 +325,7 @@
                     </div>
                     <div class="scroll-area">
                         <div class="foto-produk">
-                            <img src="../../../public/img/section4_photo-product.png" alt="">
+                            <img src="/img/section4_photo-product.png" alt="">
                         </div>
                         <div class="isi">
                             <div class="nama-produk">
@@ -367,7 +359,7 @@
                             <div class="person">
                                 <div class="jarakwokwok">
                                     <div class="foto-profile">
-                                        <img src="../../../public/img/section4_profile-picture.png" alt="">
+                                        <img src="/img/section4_profile-picture.png" alt="">
                                     </div>
                                     <div class="nama-person">
                                         &nbsp; NURHAYATI 5
@@ -381,7 +373,7 @@
                             </div>
                             <div class="rekomen">
                                 <div class="jempol">
-                                    <img src="../../../public/img/section4_jempol-rekomen.png" alt="">
+                                    <img src="/img/section4_jempol-rekomen.png" alt="">
                                 </div>
                                 <div class="rekomendesc">
                                     &nbsp;
@@ -399,9 +391,15 @@
             </div>
 
         </div>
-        <div class="footer">INI FOOTER</div>
     </div>
-    <script src="addproduct.js"></script>
+
+    @push('css-footer')
+            <style>
+                footer {
+                    margin-top: -20px
+                }
+            </style>
+    @endpush
+    <script src="/js/addproduct.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-</body>
-</html>
+@endsection
