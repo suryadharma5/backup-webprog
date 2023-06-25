@@ -12,13 +12,18 @@
 
 @endpush
 
+@section('css')
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+@endsection
+
 @section('title')
-<title>Hamily</title>
+<title>Hamily | {{ $title }}</title>
 @endsection
 
 
-@section('container')
-  <div class="row justify-content-center mt-5">
+@section('contents')
+  <div class="row justify-content-center mt-5 overflow-hidden" style="width: 100%">
     <div class="col-md-4">
       
       {{-- didapat dari RegisterController yang mengirim flash message --}}
@@ -62,7 +67,7 @@
                 </div>
             
                 <div class="d-flex justify-content-center">
-                    <button class="w-50 btn btn-lg btn-danger mt-3 loginButton text-dark fs-6 fw-bold" type="submit">Log In</button>
+                    <button class="w-50 btn btn-lg btn-danger mt-3 loginButton text-dark fs-6 fw-bold" type="button">Log In</button>
                 </div>
 
               </form>

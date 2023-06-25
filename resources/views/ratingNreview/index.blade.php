@@ -1,5 +1,9 @@
 @extends('layout.main')
 
+@section('css')
+    <link rel="stylesheet" href="/css/ratingModal.css">
+@endsection
+
 @section('title')
     <title>Hamily | {{ $title }}</title>
 @endsection

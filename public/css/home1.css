@@ -13,13 +13,14 @@
     --EXTRABOLD: 800;
 }
 
+*{
+    /* font-family: roboto; */
+    font-family: 'Baloo 2', cursive;
+}
+
 .container-fluid{
     background-color: pink;
 }
-/* .navbar{
-    background-color: aqua;
-    width: 100%;
-} */
 
 .title{
     /* background-color: aquamarine; */
@@ -463,6 +464,23 @@ body{
     margin: 1.317vw;
     scroll-snap-align: center;
     overflow-x: scroll;
+    /* scrollbar-width: none; */
+}
+
+.scroll-area-rating{
+    /* scroll-snap-align: center; */
+    background-color: #FFF7F6;
+    border-style: solid;
+    border-width: 0.132vw;
+    border-color: #D9D9D9;
+    border-radius: 0.658vw;
+    padding: 1.975vw;
+    min-width: 37.500vw;
+    height: fit-content;
+    margin: 0.658vw;
+    display: inline-block;
+    margin: 1.317vw;
+    box-shadow: 0.658vw 0.658vw 0.658vw rgba(0, 0, 0, 0.25);
     /* scrollbar-width: none; */
 }
 
