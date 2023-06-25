@@ -264,6 +264,9 @@
         
     </div>
 
+    <label for=""></label>
+    <input type="text" class="form-control">
+
     <script type="text/javascript">
         $(function() {
             $('#datepicker').datepicker({

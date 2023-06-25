@@ -22,10 +22,6 @@
     border-radius: 15px;
 }
 
-.navigasi{
-    background-color: #78A2CC;
-    /* height: 100px; */
-}
 
 .searchBar{
     border-radius: 20px;
@@ -59,7 +55,7 @@
     margin-right: 0px;
 }
 
-.dropdown-aja {
+/* .dropdown-aja {
     display: flex;
     justify-content: space-between;
 }
@@ -87,4 +83,6 @@
     width: 200px;
     border-radius: 10px;
     color: #707070;
-}
+} */
+
+

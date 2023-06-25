@@ -1,0 +1,368 @@
+:root{
+    --PINK1: #FFB8C7;
+    --PINK2: #F9C6D1;
+    --PINK3: #F9D7D6;
+    --WHITE: #FFF7F6;
+    --BLUE1: #C3E4F1;
+    --BLUE2: #9FCAE6;
+    --BLUE3: #78A2CC;
+    --REGULAR: 400;
+    --MEDIUM: 500;
+    --SEMIBOLD: 600;
+    --BOLD: 700;
+    --EXTRABOLD: 800;
+}
+
+*{
+    font-family: 'Baloo 2', cursive;
+}
+
+.footer{
+    background-color: greenyellow;
+}
+
+.container-gb-book-dokter{
+    height: 1000px;
+}
+
+.container-text-info-bg{
+    top: 30%;
+}
+
+.text-info-bg{
+    font-weight: var(--MEDIUM);
+    color: var(--WHITE);
+    padding-left: 10px;
+}
+
+.img-check-info{
+    height: 50px;
+}
+
+.text-check-info{
+    font-size: 20px;
+}
+
+.gelombang{
+    bottom: -100px;
+    
+}
+
+.title{
+    font-size: 1.979vw;
+    font-weight: var(--SEMIBOLD);
+}
+
+.status-book{
+    padding-right: 6.334vw;
+    /* position: fixed; */
+}
+
+.contentbookingdokter{
+    margin: 0 9.501vw;
+}
+
+.box{
+    margin-top: 1.584vw;
+    border-color: var(--PINK1);
+    border-radius: 1.188vw;
+    box-shadow: 0 0 0.317vw rgb(127, 127, 127)!important;
+    /* background-color: rebeccapurple; */
+    /* position: fixed; */
+}
+
+.box-atas{
+    padding: 0.396vw;
+    background-color: #FFA5B8;
+    border-radius: 1.188vw 1.188vw 0 0;
+    color: var(--WHITE);
+}
+
+.date{
+    font-weight: var(--SEMIBOLD);
+    font-size: 1.584vw;
+}
+
+.time{
+    font-weight: var(--REGULAR);
+    font-size: 1.188vw;
+}
+
+.box-bawah{
+    background-color: #FFFFFF;
+    padding: 1.188vw 2.375vw;
+    border-radius: 0 0 1.188vw 1.188vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nama-dokter, .nama-rs{
+    font-size: 1.029vw;
+    color: #606060;
+    text-align: left;
+    margin: 0.792vw 0;
+    display: flex;
+}
+
+/* .cancelbutton{
+    border: 0.119vw solid var(--PINK1);
+    padding: 0.396vw 1.188vw;
+    color: var(--PINK1);
+    border-radius: 0.792vw;
+    font-weight: var(--SEMIBOLD);
+    font-size: 1.029vw;
+} */
+
+.btn-primary, .btn-primary:active, .btn-primary:visited {
+    color: var(--PINK1)!important;
+    background-color: #FFFFFF!important;
+    border: 0.119vw solid var(--PINK1)!important;
+    border-radius: 0.792vw!important;
+    /* width: 22.169vw!important;
+    height: 4.751vw!important; */
+    font-size: 1.029vw!important;
+    font-weight: var(--SEMIBOLD)!important;
+    /* box-shadow: 0.317vw 0.317vw 0.317vw rgb(127, 127, 127)!important; */
+}
+
+.btn-primary:hover{
+    color: var(--WHITE)!important;
+    background-color: var(--PINK1)!important;
+    /* border-color: var(--PINK1)!important; */
+    border-radius: 0.792vw!important;
+    /* width: 22.169vw!important;
+    height: 4.751vw!important; */
+    font-size: 1.029vw!important;
+    font-weight: var(--SEMIBOLD)!important;
+    /* box-shadow: 0.317vw 0.317vw 0.317vw rgb(127, 127, 127)!important; */
+}
+
+.icon{
+    /* background-color: yellow; */
+    width: 1.979vw;
+    text-align: center;
+}
+
+.kotakpilih{
+    background-color: red;
+    height: 3.167vw;
+}
+
+.spesialisdoc{
+    margin-top: 0.792vw;
+    background-color: var(--BLUE3);
+    border-radius: 0.792vw;
+    display: flex;
+    align-items: center;
+}
+
+.spesialisdoc .foto img{
+    width: 15.835vw;
+}
+
+.title-dokter{
+    font-size: 1.979vw;
+    font-weight: var(--SEMIBOLD);
+    padding: 0.792vw 0;
+}
+
+.keterangan{
+    color: var(--WHITE);
+    width: 100%;
+    margin-left: 2.375vw;
+}
+
+.nama-spesialis, .rs-spesialis, .loc-spesialis, .tahun-spesialis{
+    display: flex;
+    font-size: 1.108vw;
+    font-weight: var(--REGULAR);
+    padding: 0.238vw 0;
+}
+
+.nama-spesialis .icon, .rs-spesialis .icon, .loc-spesialis .icon, .tahun-spesialis .icon{
+    margin-right: 0.396vw;
+}
+
+.pilih-dokter{
+    padding-left: 3.167vw;
+}
+
+.pilih-dokter .row{
+    margin-top: 1.584vw;
+}
+
+.bookbutton{
+    margin-right: 1.584vw;
+    text-align: center;
+    transform: translate(0, 100%);
+}
+
+.bookbutton .btn-primary, .bookbutton .btn-primary:active, .bookbutton .btn-primary:visited {
+    color: var(--BLUE3)!important;
+    background-color: #FFFFFF!important;
+    border: 0.119vw solid #FFFFFF!important;
+    border-radius: 0.396vw!important;
+    padding: 0.396vw 3.959vw!important;
+    font-size: 1.979vw!important;
+    font-weight: var(--BOLD)!important;
+}
+
+.bookbutton .btn-primary:hover{
+    color: var(--BLUE3)!important;
+    background-color: var(--BLUE1)!important;
+    border: 0.119vw solid var(--BLUE1)!important;
+    border-radius: 0.396vw!important;
+    padding: 0.396vw 3.959vw!important;
+    font-size: 1.979vw!important;
+    font-weight: var(--BOLD)!important;
+}
+
+/* --------------------------------------POP UP------------------------------------------- */
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+    z-index: 10;
+}
+
+.popup, .popup2 {
+    margin: 5.542vw auto;
+    padding: 1.584vw;
+    background: var(--WHITE);
+    border-radius: 0.396vw;
+    width: 50%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.popup .alert {
+    margin-top: -3.959vw;
+    color: var(--PINK1);
+    font-weight: var(--BOLD);
+    font-size: 1.979vw;
+    text-align: center;
+    max-height: 30%;
+    overflow: auto;
+}
+
+.kumpulan-button{
+    display: flex;
+    margin-bottom: 3.167vw;
+    justify-content: center;
+}
+
+.popup .kembali {
+    transition: all 200ms;
+    text-decoration: none;
+}
+
+.warning-icon{
+    font-size: 11.876vw;
+    text-align: center;
+}
+
+.buttonlanjut .btn-primary, .buttonlanjut .btn-primary:active, .buttonlanjut .btn-primary:visited {
+    color: var(--WHITE)!important;
+    background-color: var(--PINK1)!important;
+    border: 0.119vw solid var(--PINK1)!important;
+    border-radius: 10vw!important;
+    padding: 0.396vw 3.959vw!important;
+    font-size: 1.188vw!important;
+    font-weight: var(--SEMIBOLD)!important;
+    box-shadow: 0.317vw 0.317vw 0.317vw rgb(127, 127, 127)!important;
+}
+
+.buttonlanjut .btn-primary:hover{
+    color: var(--WHITE)!important;
+    background-color: #B7556A!important;
+    border: 0.119vw solid #B7556A!important;
+    border-radius: 10vw!important;
+    padding: 0.396vw 3.959vw!important;
+    font-size: 1.188vw!important;
+    font-weight: var(--SEMIBOLD)!important;
+}
+
+.buttonkembali, .buttonlanjut{
+    margin: 0 1.584vw;
+}
+
+.buttonkembali .btn-primary, .buttonkembali .btn-primary:active, .buttonkembali .btn-primary:visited {
+    color: var(--WHITE)!important;
+    background-color: var(--BLUE3)!important;
+    border: 0.119vw solid var(--BLUE3)!important;
+    border-radius: 10vw!important;
+    padding: 0.396vw 3.959vw!important;
+    font-size: 1.188vw!important;
+    font-weight: var(--SEMIBOLD)!important;
+    box-shadow: 0.317vw 0.317vw 0.317vw rgb(127, 127, 127)!important;
+}
+
+.buttonkembali .btn-primary:hover{
+    color: var(--WHITE)!important;
+    background-color: #214F7D!important;
+    border: 0.119vw solid #214F7D!important;
+    border-radius: 10vw!important;
+    padding: 0.396vw 3.959vw!important;
+    font-size: 1.188vw!important;
+    font-weight: var(--SEMIBOLD)!important;
+}
+
+.popup2 .alert {
+    color: var(--BLUE3);
+    font-weight: var(--BOLD);
+    font-size: 1.979vw;
+    text-align: center;
+    max-height: 30%;
+    overflow: auto;
+}
+
+.popup2 .buttonkembali{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.584vw;
+}
+
+.dropdown-aja {
+    display: flex;
+    justify-content: space-between;
+}
+
+.daerah {
+    width: 300px;
+    border-radius: 10px;
+    color: #707070;
+}
+
+.pilih-hari{
+    margin-left: 70px;
+}
+
+.dropdown-hari{
+    display: flex;
+    flex-direction: row;
+}
+
+#jam{
+    margin-left: 30px;
+}
+
+.hari{
+    width: 200px;
+    border-radius: 10px;
+    color: #707070;
+}
+
+.gelombang{
+    bottom: -50px;
+}

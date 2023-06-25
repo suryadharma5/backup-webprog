@@ -21,8 +21,8 @@ class CreateRegenciesTables extends Migration
     public function up()
     {
         Schema::create('regencies', function(Blueprint $table){
-            $table->char('id', 4)->index();
-            $table->char('province_id', 2);
+            $table->id('id')->index();
+            $table->foreignId('province_id');
             $table->string('name', 50);
             $table->foreign('province_id')
                 ->references('id')
