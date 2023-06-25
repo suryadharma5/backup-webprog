@@ -54,3 +54,10 @@ Route::get('/rating', [RatingController::class, 'index']);
 Route::get('/profile', function(){
     return view('profile.profile');
 });
+
+Route::get('/via', function () {
+    return view('via.popular', [
+        'title' => 'Rating',
+        'active' => 'popular'
+    ]);
+});
