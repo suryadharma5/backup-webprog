@@ -25,7 +25,7 @@
             <a class="nav-link" href="#">Menfess</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link" href="#">Rating & Review</a>
+            <a class="nav-link" href="/rating">Rating & Review</a>
           </li>
         </ul>
 

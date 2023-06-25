@@ -1,0 +1,30 @@
+.box-article-tab{
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: black;
+}
+
+.nav-link.active{
+    color: #78A2CC !important;
+}
+
+.nav-link:hover{
+    color: #C3E4F1 !important;
+    text-decoration: none;
+}
+
+/* .nav-underline > li.nav-item > .active > a {
+    color: red; 
+    background-color: aqua;
+} */
+  
+
+/* .nav-tabs .nav-item .nav-link {
+    border: none;
+    border-bottom: 2px solid transparent;
+}
+  
+.nav-tabs .nav-item .nav-link.active {
+    border-color: #000; Customize the color of the underline
+} */
