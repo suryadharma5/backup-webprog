@@ -5,7 +5,10 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\RatingController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\CityController;
 use App\Http\Controllers\LoginController;
+// use App\Http\Controllers\RatingController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -54,6 +57,8 @@ Route::get('/rating', [RatingController::class, 'index']);
 Route::get('/profile', function(){
     return view('profile.profile');
 });
+
+Route::put('/profile', [ProfileController::class, 'updateprofile'])->name('updateprofile');
 
 Route::get('/via', function () {
     return view('via.popular', [

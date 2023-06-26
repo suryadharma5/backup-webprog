@@ -32,6 +32,7 @@
 .text-info-bg{
     font-weight: var(--MEDIUM);
     color: var(--WHITE);
+    padding-left: 10px;
 }
 
 .img-check-info{
@@ -40,6 +41,11 @@
 
 .text-check-info{
     font-size: 20px;
+}
+
+.gelombang{
+    bottom: -100px;
+    
 }
 
 .title{
