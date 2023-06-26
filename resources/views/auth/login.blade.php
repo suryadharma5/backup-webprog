@@ -67,7 +67,7 @@
                 </div>
             
                 <div class="d-flex justify-content-center">
-                    <button class="w-50 btn btn-lg btn-danger mt-3 loginButton text-dark fs-6 fw-bold" type="button">Log In</button>
+                    <button class="w-50 btn btn-lg btn-danger mt-3 loginButton text-dark fs-6 fw-bold" type="submit">Log In</button>
                 </div>
 
               </form>

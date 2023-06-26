@@ -188,12 +188,12 @@
                     <img src="/img/ProfilePic-profile.png " alt="" class="profile-pict">
                 </div>
                 
-                <form class="row g-3" action="{{ route('updateprofile') }}" method="POST">
+                <form class="row g-3" action="" method="">
                     @method("put")
                     @csrf
                     <div class="col-12">
                         <label class="form-label">Username</label>
-                        <input type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="Tes" required >
+                        <input type="text" class="form-control @error('username') is-invalid @enderror" name="username" value={{ Auth::user()->username }} required >
                         @error('username')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror

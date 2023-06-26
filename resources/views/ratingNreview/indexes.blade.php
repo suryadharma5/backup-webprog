@@ -20,7 +20,7 @@
         </div>
 
         {{-- Form add product --}}
-        <form class="contentform">
+        <form class="contentform" enctype="multipart/form-data" method="">
             <label for="namabrand">Nama Brand</label> <br>
             <input type="text" id="namabrand" name="namabrand" class="px-3 form-control"> <br>
             <label for="namaproduk">Nama Produk</label> <br>
@@ -30,16 +30,13 @@
             
             <div class="containers">
                 <div class="wrapper">
-                   <div class="image" id="uploadimage">
-                       <img src=" " alt="">
+                    <div class="image">
+                       <img src="" alt="" id="uploadimage">
                     </div>
                     <div class="content">
                         <div class="icon">
                             <i class="fa-solid fa-image"></i>
                         </div>
-                        <!-- <div class="text">
-                            No file chosen, yet!
-                        </div> -->
                     </div>
                     <div id="cancel-btn">
                         <i class="fas fa-times"></i>
@@ -48,11 +45,11 @@
                         File name here
                     </div>
                 </div>
-                <button onclick="defaultBtnActive()" id="custom-btn">+ ADD PHOTO</button>
+                <button onclick="defaultBtnActive()" id="custom-btn" type="button">+ ADD PHOTO</button>
                 <input id="default-btn" type="file" hidden>
             </div>
             <div class="sendbutton col-md-12">
-                <button type="button" class="btn btn-primary" onclick="sendvalue()">SEND</button>
+                <button type="submit" class="btn btn-primary" onclick="sendvalue()">SEND</button>
                 <a href="#">
                 </a>
             </div>
