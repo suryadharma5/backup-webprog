@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="/css/article.css">
     <link rel="stylesheet" href="/css/detailrating.css">
     <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
     <link href="css/bootstrap.css" rel="stylesheet">   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,9 +32,9 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark navigasi">
+    {{-- <nav class="navbar navbar-expand-lg navbar-dark navigasi">
         <div class="container">
-          {{-- <a class="navbar-brand" href="/">PPTI Blog</a> --}}
+          <a class="navbar-brand" href="/">PPTI Blog</a>
           <a href="#">
             <img src="/img/logo.png" alt="" width="200" class="navbar-brand mr-2">
           </a>
@@ -40,7 +42,57 @@
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
-    </nav>
+    </nav> --}}
+
+    <nav class="navbar navbar-expand-lg navbar-dark navigasi">
+        <div class="container">
+          {{-- <a class="navbar-brand" href="/">PPTI Blog</a> --}}
+          <a href="/">
+            <img src="/img/logo.png" alt="" width="200" class="navbar-brand mr-2">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">      
+      
+            <ul class="navbar-nav ms-auto">
+              {{-- jika sudah login --}}
+              @auth
+              {{-- @dd(Auth::user()->username) --}}
+                <li class="nav-item dropdown d-flex flex-row align-items-center">
+                  <img src="/img/profile.png" width="20" alt="" class="d-block" height="20">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                     {{ Auth::user()->username }}
+                    </a> 
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-sidebar-reverse"></i>My Dashboard</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <form action="/logout" method="POST">
+                      @csrf
+                      <button type="submit" class="dropdown-item">
+                        <i class="bi bi-box-arrow-right"></i>Logout
+                      </button>
+                    </form>
+                  </ul>
+                </li>
+      
+              {{-- jika belum login --}}
+              @else
+                
+                  <li class="nav-item" style="display: flex; align-content : center;">
+                    <a href="/login" class="nav-link ">
+                        {{-- {{ $active == 'login' ? 'active' : '' }} --}}
+                      <i class="bi bi-box-arrow-in-right" style="margin-right: 5px"></i>
+                    Login</a>
+                  </li>
+                
+              @endauth
+      
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
 
     @if (session('message'))
         <!-- Modal -->
@@ -270,7 +322,7 @@
     <script type="text/javascript">
         $(function() {
             $('#datepicker').datepicker({
-                'format': 'dd-mm-yyyy',
+                'format': 'yyyy-mm-dd',
                 'autoclose': true
             });
         });

@@ -1,35 +1,4 @@
 <nav class="navbar navbar-expand-lg navbar-dark navigasi">
-<<<<<<< HEAD
-    <div class="container">
-      {{-- <a class="navbar-brand" href="/">PPTI Blog</a> --}}
-      <a href="#">
-        <img src="/img/logo.png" alt="" width="200" class="navbar-brand mr-2">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item mx-2">
-            <a class = "nav-link"href="/">Home</a>
-          </li>
-          <li li class="nav-item mx-2">
-            <a class = "nav-link"href="#">Track</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="/book">Book</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="/article">Article</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="#">Menfess</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="/rating">Rating & Review</a>
-          </li>
-        </ul>
-=======
   <div class="container">
     {{-- <a class="navbar-brand" href="/">PPTI Blog</a> --}}
     <a href="/">
@@ -59,7 +28,6 @@
           <a class="nav-link {{ ($active == 'rating') ? 'active' : ''}}" href="/rating">Rating & Review</a>
         </li>
       </ul>
->>>>>>> d0520eed96adc4d082b03baafda4862ddd053cf4
 
       {{-- {{ ($active == "home") ? 'active' : '' }} --}}
 

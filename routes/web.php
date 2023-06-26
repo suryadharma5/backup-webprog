@@ -5,9 +5,9 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\RatingController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CityController;
+// use App\Http\Controllers\CityController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RatingController;
+// use App\Http\Controllers\RatingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 

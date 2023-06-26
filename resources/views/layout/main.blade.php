@@ -15,12 +15,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
     {{-- css kita --}}
-<<<<<<< HEAD
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/home1.css">
-    <link rel="stylesheet" href="/css/article.css">
-    <link rel="stylesheet" href="/css/detailrating.css">
-=======
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/footer.css">
     @yield('css')
@@ -29,7 +23,6 @@
     {{-- <link rel="stylesheet" href="/css/book1.css"> --}}
 
 
->>>>>>> d0520eed96adc4d082b03baafda4862ddd053cf4
     <link href="css/bootstrap.css" rel="stylesheet">   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
