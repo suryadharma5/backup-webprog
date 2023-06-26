@@ -8,8 +8,14 @@ class ArticleController extends Controller
 {
     public function index(){
         return view('article.index', [
-            'title' => 'article',
+            'title' => 'Article',
             'active' => 'article'
+        ]);
+    }
+
+    public function detail(){
+        return view('article.article-detail', [
+            'active' => 'article',
         ]);
     }
 }

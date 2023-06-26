@@ -1,0 +1,81 @@
+/* Footer */
+footer {
+    /* background-color: #78A2CC; */
+    position: relative;
+    z-index: 1000;
+    margin-top: 200px;
+}
+
+.logo {
+    height: 300px;
+    width: 231px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.foot-desc {
+    width: auto;
+    height: 592px;
+    background-image: url(../img/footer.png);
+    background-size: cover;
+    /* background-position: 50% 50%; */
+    margin-top: -50px;
+}
+
+.jargon {
+    font-family: 'Baloo 2', cursive;
+    font-size: 22px;
+    color: #78A2CC;
+    margin-top: -10px;
+}
+
+.linked {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.linked a {
+    margin-right: 30px;
+    font-family: 'Baloo 2', cursive;
+    /* font-weight: 400; */
+    font-size: 18px;
+    color: #78A2CC;
+}
+
+.linked a:hover {
+    color: #FFB8C7;
+}
+
+.sosmed {
+    display: flex;
+    margin-top: 25px;
+    justify-content: center;
+}
+
+.sosmed img {
+    width: 70px;
+    height: 70px;
+    margin-right: 35px;
+}
+
+.skip {
+    height: 62px;
+}
+
+.copyright {
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+    box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.copyright p {
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    color: #FFF7F6;
+
+}

@@ -1,11 +1,17 @@
 @extends('layout.main')
+
+@section('css')
+    {{-- <link rel="stylesheet" href="/css/style.css"> --}}
+    <link rel="stylesheet" href="/css/home1.css">
+    {{-- <link rel="stylesheet" href="/css/navbar.css"> --}}
+@endsection
+
+
 @section('title')
  <title>Hamily | {{ $title }}</title>
 @endsection 
 @section('contents')
 <div class="full-width-content">
-   
-
     <div class="row">
         <div class="sectionpic awanatas">
             <img src="/img/awanputih.png" alt="">
@@ -706,10 +712,23 @@
             </div>
         </div>
         <div class="col-md-12 text-center zoom">
+            <div class="col-md-12 text-center zoom">
                 <a href="./nextpage.html">
-                    <button type="button" class="btn btn-primary">See More</button>
+                    <button type="button" class="btn btn-primary" style="color: white">See More</button>
                 </a>
             </div>
+        </div>
+        <div class="row">
+            <div class="col" style=" height:250px;background-color: #78A2CC;"></div>
+        </div>
+
+        @push('css-footer')
+            <style>
+                footer {
+                    margin-top: -230px
+                }
+            </style>
+        @endpush
         <!-- <div class="button">
             <a class="asu" href="#">
                 <p>
@@ -718,11 +737,7 @@
             </a>
         </div> -->
     </section>
-    <footer>
-        <div>
-            <p> INI FOOTER NANTI </p>
-        </div>
-    </footer>
+    
         
 </div>
 @endsection
