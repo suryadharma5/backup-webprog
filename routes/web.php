@@ -42,10 +42,10 @@ Route::post('/getDoctor', [BookingController::class, 'getDoctor']);
 Route::get('/book/{doctor:doctor_name}', [BookingController::class, 'bookDoctor']);
 
 Route::get('/rating', [RatingController::class, 'index']);
-Route::get('/ratingcoba', [RatingController::class, 'coba']);
+Route::get('/addproduct', [RatingController::class, 'formRating']);
+Route::get('/detailRating', [RatingController::class, 'detailRating']);
 
 Route::get('/menfess', [MenfessController::class, 'index']);
-
 
 Route::get('/profile', function(){
     return view('profile.profile');

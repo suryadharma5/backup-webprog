@@ -18,9 +18,6 @@
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/footer.css">
     @yield('css')
-    {{-- <link rel="stylesheet" href="/css/style.css"> --}}
-    {{-- <link rel="stylesheet" href="/css/home1.css"> --}}
-    {{-- <link rel="stylesheet" href="/css/book1.css"> --}}
 
 
     <link href="css/bootstrap.css" rel="stylesheet">   
@@ -32,6 +29,7 @@
     @yield('title')
   </head>
   <body>
+    @stack('backgorund-color')
     {{-- ini berarti ngambil dari folder partials dengan nama file Navbar --}}
     @include('partials.navbar')
     

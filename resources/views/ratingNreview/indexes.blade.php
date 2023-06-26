@@ -30,7 +30,7 @@
             
             <div class="containers">
                 <div class="wrapper">
-                   <div class="image">
+                   <div class="image" id="uploadimage">
                        <img src=" " alt="">
                     </div>
                     <div class="content">
@@ -396,7 +396,7 @@
     @push('css-footer')
             <style>
                 footer {
-                    margin-top: -20px
+                    margin-top: -220px
                 }
             </style>
     @endpush

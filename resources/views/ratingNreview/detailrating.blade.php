@@ -1,10 +1,23 @@
 @extends('layout.main')
 
+
 @section('title')
-    <title>Hamily | {{ $title }}</title>
+    {{-- <title>Hamily | {{ $title }}</title> --}}
 @endsection
 
+@section('css')
+    <link rel="stylesheet" href="/css/detailrating.css">
+@endsection
+
+
 @section('contents')
+    @push('backgorund-color')
+                <style>
+                    body{
+                        background-color: #78A2CC
+                    }
+                </style>
+    @endpush
 <div style="background-color: #FFF7F6">
     <div class="container py-5" >
         <div class="row g-0">
@@ -36,7 +49,7 @@
                             Rating Distribution
                         </div>
                         <div class="row">
-                            <div class="col-9 mt-2"> 
+                            <div class="col-9 mt-2">
                                 <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                     <div class="progress-bar" style="width: 25%"></div>
                                 </div>
@@ -71,9 +84,10 @@
                                 </div>
                             </div>
                         </div>
-                        
+                       
                     </div>
                 </div>
+
 
                 <div class="row mt-5 box-rate pb-3">
                     <div class="col-3 d-flex justify-content-center">
@@ -100,23 +114,26 @@
                     </div>
                 </div>
 
+
             </div>
         </div>
     </div>
 </div>
-    
+   
     <div class="sectionpic awanbiru">
-        <img src="img/awan.png" alt="">
+        <img src="img/awan-detailrating.png" alt="" style="width: 100%">
     </div>
 
-    <div class="container-fluid biru-bawah">
-        <div class="container ">
+
+    <div class="container-fluid biru-bawah pt-5 pb-5" style="margin-top: -120px">
+        <div class="container pt-5">
             <div class="container">
                 <div class="row pt-3">
                     <div class="col-3"></div>
                     <div class="col-6 d-flex justify-content-center fs-2 border-bottom border-3 mb-5" style="font-weight: bold; color:#FFF7F6">USER REVIEWS</div>
                     <div class="col-3"></div>
                 </div>
+
 
                 <div class="row box-komen-detailrating py-5">
                     <div class="col-1 text-center">
@@ -130,7 +147,7 @@
                             <div style="color: #5EC75C; margin-left:10px" class="">NURHAYATI recommends this product</div>
                         </div>
                         <div>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur semper facilisis mollis. 
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur semper facilisis mollis.
                             Nam vel rhoncus dolor, at accumsan est. Fusce varius dolor sit amet pulvinar vestibulum. Curabitur accumsan in purus vitae vulputate.
                             Pellentesque facilisis congue mauris, sed semper ex vehicula a. Maecenas in tempor massa, ac laoreet ante. Donec nec.
                         </div>
@@ -154,9 +171,10 @@
                             <div class="col-12 text-center" style=""><img src="/img/gb-artikel-tab.png" alt="" class="gb-komen-detailrating"></div>
                         </div>
                     </div>
-                    
-        
+                   
+       
                 </div>
+
 
                 <div class="row box-komen-detailrating py-5 mt-5">
                     <div class="col-1 text-center">
@@ -170,7 +188,7 @@
                             <div style="color: #C75C5C; margin-left:10px" class="">NURHAYATI not recommends this product</div>
                         </div>
                         <div>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur semper facilisis mollis. 
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur semper facilisis mollis.
                             Nam vel rhoncus dolor, at accumsan est. Fusce varius dolor sit amet pulvinar vestibulum. Curabitur accumsan in purus vitae vulputate.
                             Pellentesque facilisis congue mauris, sed semper ex vehicula a. Maecenas in tempor massa, ac laoreet ante. Donec nec.
                         </div>
@@ -195,7 +213,7 @@
                         </div>
                     </div>
                 </div>
-                
+               
                 <div class="row box-komen-detailrating py-5 mt-5">
                     <div class="row">
                         <div class="col-1 text-center">
@@ -220,7 +238,7 @@
                         <div class="col-1"></div>
                         <div class="col-10">
                             <div>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur semper facilisis mollis. 
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur semper facilisis mollis.
                                 Nam vel rhoncus dolor, at accumsan est. Fusce varius dolor sit amet pulvinar vestibulum. Curabitur accumsan in purus vitae vulputate.
                                 Pellentesque facilisis congue mauris, sed semper ex vehicula a. Maecenas in tempor massa, ac laoreet ante. Donec nec.
                             </div>
@@ -237,12 +255,16 @@
                         </div>
                         <div class="col-1"></div>
                     </div>
-        
+       
                 </div>
             </div>
         </div>
     </div>
-    
+   
+
 
 @endsection
+
+
+
 
