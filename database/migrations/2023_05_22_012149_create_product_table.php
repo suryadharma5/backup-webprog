@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('merk');
             $table->string('jenis');
-            $table->enum('rating', smallInteger('1', '2', '3', '4', '5'));
+            $table->enum('rating', ['1', '2', '3', '4', '5']);
             $table->string('name', 30);
-            $table->enum('recommend', array('yes', 'no'));
+            $table->enum('recommend', ['yes', 'no']);
             $table->string('description');
             $table->timestamps();
         });
