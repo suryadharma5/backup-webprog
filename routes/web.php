@@ -49,7 +49,9 @@ Route::get('/menfess', [MenfessController::class, 'index']);
 Route::get('/detailMenfess', [MenfessController::class, 'detail']);
 
 Route::get('/profile', function(){
-    return view('profile.profile');
+    return view('profile.profile', [
+        'active' => 'profile'
+    ]);
 });
 
 

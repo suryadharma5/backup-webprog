@@ -9,6 +9,10 @@
         .navigasi {
             display: none
         }
+
+        footer{
+          display: none
+        }
     </style>
 @endpush
 
@@ -77,6 +81,19 @@
                   @enderror
     
                 </div>
+
+                <div class="form-floating">
+                  <input type="phoneNumber" name="phone_number" class="form-control @error('phoneNumber') is-invalid @enderror forms mt-3" id="phoneNumber" placeholder="name@example.com" required value="{{ old('phoneNumber') }}">
+                  <label for="phoneNumber" style="color: #7F7476">Phone Number</label>
+    
+                  @error('phoneNumber')
+                    <div class="invalid-feedback">
+                      {{ $message }}
+                    </div>
+                  @enderror
+    
+                </div>
+
                 <div class="form-floating">
                   <input type="password"  name="password" class="form-control @error('password') is-invalid @enderror mt-3 forms" id="password" placeholder="Password" required>
                   <label for="password" style="color:#7F7476">Password</label>
@@ -89,9 +106,14 @@
                 </div>
 
                 <div class="form-floating">
-                    <input type="password" name="password_confirmation" class="form-control mt-3 forms" id="password-confirm" placeholder="Confirm Password" required>
-                    <label for="password-confirm" style="color:#7F7476">Confirm Password</label>
-  
+                  <input type="password" name="password_confirmation" class="form-control mt-3 forms" id="password-confirm" placeholder="Confirm Password" required>
+                  <label for="password-confirm" style="color:#7F7476">Confirm Password</label>
+
+                  @error('password_confirmation')
+                    <div class="invalid-feedback">
+                      {{ $message }}
+                    </div>
+                  @enderror
                 </div>
             
                 <div class="d-flex justify-content-center">

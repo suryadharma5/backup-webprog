@@ -8,6 +8,10 @@
         .navigasi {
             display: none
         }
+
+        footer{
+          display: none
+        }
     </style>
 
 @endpush

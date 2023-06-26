@@ -127,7 +127,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-3 bungkus-nav-profile py-3">
-                <a href="/"class="row mt-3 mb-3 bungkus-profile-kiri" style="text-decoration: none">
+                <a href=""class="row mt-3 mb-3 bungkus-profile-kiri" style="text-decoration: none">
                     <div class="col-4">
                         <img src="/img/home-navbar-profile.png" class="pict-nav-profile">
                     </div>
@@ -135,7 +135,7 @@
                         Home
                     </div>
                 </a>
-                <a href="#"class="row mt-3 mb-3 bungkus-profile-kiri" style="text-decoration: none">
+                <a href=""class="row mt-3 mb-3 bungkus-profile-kiri" style="text-decoration: none">
                     <div class="col-4">
                         <img src="/img/LoadingSign-profile.png" class="pict-nav-profile">
                     </div>
@@ -143,7 +143,7 @@
                         Track
                     </div>
                 </a>
-                <a href="/book"class="row mt-3 mb-3 bungkus-profile-kiri" style="text-decoration: none">
+                <a href=""class="row mt-3 mb-3 bungkus-profile-kiri" style="text-decoration: none">
                     <div class="col-4">
                         <img src="/img/book-profile-navbar.png" class="pict-nav-profile">
                     </div>
@@ -151,7 +151,7 @@
                         Book
                     </div>
                 </a>
-                <a href="/article"class="row mt-3 mb-3 bungkus-profile-kiri" style="text-decoration: none">
+                <a href=""class="row mt-3 mb-3 bungkus-profile-kiri" style="text-decoration: none">
                     <div class="col-4">
                         <img src="/img/article-navbar-profile.png" class="pict-nav-profile">
                     </div>
@@ -188,12 +188,12 @@
                     <img src="/img/ProfilePic-profile.png " alt="" class="profile-pict">
                 </div>
                 
-                <form class="row g-3" action="" method="">
+                <form class="row g-3" method="POST">
                     @method("put")
                     @csrf
                     <div class="col-12">
                         <label class="form-label">Username</label>
-                        <input type="text" class="form-control @error('username') is-invalid @enderror" name="username" value={{ Auth::user()->username }} required >
+                        <input type="text" class="form-control @error('username') is-invalid @enderror" name="username" value= {{ Auth::user()->username }} >
                         @error('username')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror

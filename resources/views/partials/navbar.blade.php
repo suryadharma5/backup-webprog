@@ -41,12 +41,12 @@
                {{ Auth::user()->username }}
               </a> 
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/profile"><i class="bi bi-person-fill"></i>Profile</a></li>
+              <li><a class="dropdown-item" href="/profile"><i class="bi bi-person-fill"></i><span class="mx-2">profile</span></a></li>
               <li><hr class="dropdown-divider"></li>
               <form action="/logout" method="POST">
                 @csrf
                 <button type="submit" class="dropdown-item">
-                  <i class="bi bi-box-arrow-right"></i>Logout
+                  <i class="bi bi-box-arrow-right"></i><span class="mx-2">Logout</span>
                 </button>
               </form>
             </ul>
