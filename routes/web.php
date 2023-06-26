@@ -59,3 +59,10 @@ Route::get('/profile', function(){
 });
 
 Route::put('/profile', [ProfileController::class, 'updateprofile'])->name('updateprofile');
+
+Route::get('/via', function () {
+    return view('via.popular', [
+        'title' => 'Rating',
+        'active' => 'popular'
+    ]);
+});
