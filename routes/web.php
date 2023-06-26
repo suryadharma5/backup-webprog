@@ -1,17 +1,13 @@
 <?php
 
-<<<<<<< HEAD
-=======
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\RatingController;
->>>>>>> d0520eed96adc4d082b03baafda4862ddd053cf4
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RatingController;
-use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 
@@ -60,10 +56,6 @@ Route::get('/rating', [RatingController::class, 'index']);
 
 Route::get('/profile', function(){
     return view('profile.profile');
-<<<<<<< HEAD
 });
 
 Route::put('/profile', [ProfileController::class, 'updateprofile'])->name('updateprofile');
-=======
-});
->>>>>>> d0520eed96adc4d082b03baafda4862ddd053cf4
