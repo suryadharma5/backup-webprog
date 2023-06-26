@@ -46,6 +46,7 @@ Route::get('/addproduct', [RatingController::class, 'formRating']);
 Route::get('/detailRating', [RatingController::class, 'detailRating']);
 
 Route::get('/menfess', [MenfessController::class, 'index']);
+Route::get('/detailMenfess', [MenfessController::class, 'detail']);
 
 Route::get('/profile', function(){
     return view('profile.profile');

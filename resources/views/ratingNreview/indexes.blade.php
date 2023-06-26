@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <button onclick="defaultBtnActive()" id="custom-btn" type="button">+ ADD PHOTO</button>
-                <input id="default-btn" type="file" hidden>
+                <input id="default-btn" type="file" hidden name="form-image">
             </div>
             <div class="sendbutton col-md-12">
                 <button type="submit" class="btn btn-primary" onclick="sendvalue()">SEND</button>

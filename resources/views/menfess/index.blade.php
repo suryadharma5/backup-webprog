@@ -1,7 +1,6 @@
 @extends('layout.main')
 
 @section('css')
-        <link rel="stylesheet" href="/css/navbar.css">
         <link rel="stylesheet" href="/css/menfess.css">
 @endsection
 
@@ -47,7 +46,9 @@
         <div class="card-body">
             <div class="row d-flex mx-1">
                 <div class="col-10 my-1">
-                    <h3 class="card-title fw-bold">{{ $men->title }}</h3>
+                    <a href="/detailMenfess" class="text-decoration-none text-black">
+                        <h3 class="card-title fw-bold">{{ $men->title }}</h3>
+                    </a>
                 </div>
                 <div class="col my-1">
                     <div class="row d-flex">
