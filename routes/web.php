@@ -49,7 +49,6 @@ Route::get('/article', [ArticleController::class, 'index']);
 
 Route::get('/book', [CityController::class, 'index']);
 Route::post('/getKabupaten', [CityController::class, 'getKabupaten']);
-
 Route::post('/getHospital', [CityController::class, 'getHospital']);
 
 Route::get('/rating', [RatingController::class, 'index']);
