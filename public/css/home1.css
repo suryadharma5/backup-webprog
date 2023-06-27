@@ -82,7 +82,7 @@
 }
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-    color: black!important;
+    /* color: black!important; */
     background-color: var(--PINK2)!important;
     border-color: var(--PINK2)!important;
     border-radius: 1.188vw!important;

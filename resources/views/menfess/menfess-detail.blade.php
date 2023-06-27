@@ -8,6 +8,8 @@
      <link rel="stylesheet" href="/css/menfess.css">
 @endsection
 
+{{-- @dd($menfess) --}}
+
 @section('contents')
     <div class="back container">
             <button type="button" class="btn"><i class ="fa fa-arrow-circle-left fa-xl" style="color: #78A2CC; marginleft:-1.5vw" aria-hidden="true"></i>
@@ -16,7 +18,7 @@
     <div class="container mt-4">
         <div class="container px-3 pt-4 text-white" style="background-color: #FFA5B8; display: flex; border-radius:10px; font-color: white;">
             <div class="col-10">
-                <h3 class="fw-bold">Bagaimana cara mengubah hari Senin menjadi hari Minggu?</h3>
+                <h3 class="fw-bold">{{ $menfess->title }}</h3>
                 <p>asked by <span class="fw-bold">suryadharma5</span></p>
             </div>
             <div class="col-md-3 offset-md my-2 p-0">
@@ -31,7 +33,7 @@
             <div class="card-body">
                 <div class="row d-flex m-1">
                     <div class="col-1">
-                        <img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Profile" style="border-radius: 50%; width: 50px; height:50px; object-fit: cover;">
+                        <img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" style="border-radius: 50%; width: 50px; height:50px; object-fit: cover;">
                     </div>
                     <div class="col-10" style="margin-left: -30px">
                         <p style="font-weight: bold;">Brian</p>
@@ -43,16 +45,16 @@
                                 <i class="fa-solid fa-heart fa-lg" style="color: #78a2cc;"></i>
                             </div>
                             <div class="col">
-                                <p style="color: #78A2CC">100 likes</p>
+                                <p style="color: #78A2CC">{{ $menfess->total_likes }} likes</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row mx-1">
-                    <img src="/img/articlepic.jpg" class="card-img-top" alt="..." style="height: 380px; object-fit:cover;">
+                    <img src="{{ $menfess->menfess_image }}" class="card-img-top" alt="..." style="height: 380px; object-fit:cover;">
                 </div>
                 <div class="row m-1 mt-3">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>{{ $menfess->menfess_text }}</p>
                 </div>
             </div>
         </div>

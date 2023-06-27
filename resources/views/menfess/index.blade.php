@@ -96,7 +96,7 @@
             </div>
             <div class="row text-center" style="margin-left: 30%; margin-right:30%;">
                 <div class="tombol">
-                    <a href="/menfess/detail" class="btn" style="background-color: #78A2CC; color:#FFF7F6;">See more replies  <i class="fa-solid fa-arrow-right fa-lg mx-2" style="color: #ffffff;"></i></a>
+                    <a href="/menfess/detail/{{ $men->id }}" class="btn" style="background-color: #78A2CC; color:#FFF7F6;">See more replies  <i class="fa-solid fa-arrow-right fa-lg mx-2" style="color: #ffffff;"></i></a>
                 </div>
             </div>
         </div>

@@ -31,7 +31,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
 Route::get('/article', [ArticleController::class, 'index']);
 Route::get('/detailArticle', [ArticleController::class, 'detail']);
 
@@ -46,7 +45,7 @@ Route::get('/rating/form', [RatingController::class, 'formRating']);
 Route::get('/rating/detail', [RatingController::class, 'detailRating']);
 
 Route::get('/menfess', [MenfessController::class, 'index']);
-Route::get('/menfess/detail', [MenfessController::class, 'detail']);
+Route::get('/menfess/detail/{menfess}', [MenfessController::class, 'detail']);
 
 Route::get('/profile', function(){
     return view('profile.profile', [

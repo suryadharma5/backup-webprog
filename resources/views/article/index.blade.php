@@ -23,79 +23,92 @@
                 @endif
     
                 <div class="row">
-                    <input type="text" class="form-control searchBar col shadow" placeholder="Search" name="search" value="{{ request('search') }}">
-                    <button class="searchButton col-md-1" type="submit" id="button-addon2">
-                        <i class="bi bi-search searchIcon"></i>
+                    <input type="text" class="form-control searchBar col shadow" placeholder="Search Article" name="search">
+                    <button class="searchButton col-md-1 border-0 rounded-end-5 rounded-start-5" type="submit" id="button-addon2" style="background-color: #FFB8C7; margin-left: -50px">
+                        <i class="bi bi-search searchIcon text-white" style="-webkit-text-stroke: 1px;"></i>
                     </button>
                 </div>
             </form>
             </div>
         </div>
     
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+        
+                    <div class="carousel-inner" style="height: 50%">
+                        <div class="carousel-item active">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-9 mx-0 px-0">
+                                        <img src="/img/carousel-slide1.png" class="d-block" alt="..." style="width: 100%; height: 450px;">
+                                    </div>
+                                    <div class="col-lg-3 d-flex flex-column justify-content-center" style="background-color: #BBA1A0">
+                                        <h5 class="text-white fw-bold" style="font-size: 2.5vw;">
+                                            101 Tips Untuk Kamu yang Baru Menikah ke
+                                        </h5>
+                                        <a href="#" class="text-white">
+                                            Mom's Corner.
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="carousel-item active">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-9 mx-0 px-0">
+                                        <img src="/img/carousel-slide1.png" class="d-block" alt="..." style="width: 100%; height: 450px;">
+                                    </div>
+                                    <div class="col-lg-3 d-flex flex-column justify-content-center" style="background-color: #BBA1A0">
+                                        <h5 class="text-white fw-bold" style="font-size: 2.5vw;">
+                                            101 Tips Untuk Kamu yang Baru Menikah ke
+                                        </h5>
+                                        <a href="#" class="text-white">
+                                            Mom's Corner.
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="carousel-item active">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-9 mx-0 px-0">
+                                        <img src="/img/carousel-slide1.png" class="d-block" alt="..." style="width: 100%; height: 450px;">
+                                    </div>
+                                    <div class="col-lg-3 d-flex flex-column justify-content-center" style="background-color: #BBA1A0">
+                                        <h5 class="text-white fw-bold" style="font-size: 2.5vw;">
+                                            101 Tips Untuk Kamu yang Baru Menikah ke
+                                        </h5>
+                                        <a href="#" class="text-white">
+                                            Mom's Corner.
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button> --}}
+                </div>
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-9 mx-0 px-0">
-                                <img src="/img/carousel-slide1.png" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="col" style="background-color: #BBA1A0">
-                                <h5 style="font-size: 2.5vw; font-weight: bold; font-family: 'Baloo 2', cursive;">
-                                    101 Tips Untuk Kamu yang Baru Menikah
-                                </h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item active">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-9 mx-0 px-0">
-                                <img src="/img/carousel-slide1.png" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="col" style="background-color: #BBA1A0">
-                                <h5 style="font-size: 2.5vw; font-weight: bold; font-family: 'Baloo 2', cursive;">
-                                    101 Tips Untuk Kamu yang Baru Menikah
-                                </h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item active">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-9 mx-0 px-0">
-                                <img src="/img/carousel-slide1.png" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="col" style="background-color: #BBA1A0">
-                                <h5 style="font-size: 2.5vw; font-weight: bold; font-family: 'Baloo 2', cursive;">
-                                    101 Tips Untuk Kamu yang Baru Menikah
-                                </h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
     
-        <ul class="nav nav-underline justify-content-center mt-3 align-items-center tabControl mt-5" id="myTab" role="tablist" style="background-color: #FFB8C7; border-radius:10px">
+        <ul class="nav nav-underline justify-content-evenly mt-3 align-items-center tabControl" id="myTab" role="tablist" style="background-color: #FFB8C7; border-radius:10px">
             <li class="nav-item">
               <a class="nav-link tab-aja active" href="#content1" id="tab1" data-bs-toggle="tab" href="#content1" role="tab" aria-controls="content1" aria-selected="true">Mom's Corner</a>
             </li>
@@ -117,102 +130,88 @@
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="content1" role="tabpanel" aria-labelledby="tab1">
                 <!-- Content for Tab 1 -->
-                <a href="" class="row mt-5 box-article-tab">
-                    <div class="col-6">
-                        <img src="/img/gb-artikel-tab.png" alt="" href="#">
-                    </div>
-                    <div class="col-4 mt-5">
-                        <div class="title">Ibu, Jaga Buah Hati Dengan Makanan Ini</div>
-                        <div class="date-posted">Posted on Wed, April 4th 2023</div>
-                    </div>
-                    <div class="col">
+                <a href="" class="row mt-3 box-article-tab">
+                    <div class="lg-5 d-flex flex-row">
+                        <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
+                        <div class="col-lg mt-5 mx-3 ">
+                            <h1 class="col-lg-8 fw-bold">Ibu, Jaga Buah Hati Dengan Makanan Ini</h1>
+                            <div class="date-posted">Posted on Wed, April 4th 2023</div>
+                        </div>
                     </div>
                 </a>
-                <a href="" class="row mt-5 box-article-tab">
-                    <div class="col-6">
-                        <img src="/img/gb-artikel-tab.png" alt="" href="#">
-                    </div>
-                    <div class="col-4 mt-5">
-                        <div class="title">Ibu, Jaga Buah Hati Dengan Makanan Ini</div>
-                        <div class="date-posted">Posted on Wed, April 4th 2023</div>
-                    </div>
-                    <div class="col">
+                <a href="" class="row mt-3 box-article-tab">
+                    <div class="lg-5 d-flex flex-row">
+                        <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
+                        <div class="col-lg mt-5 mx-3 ">
+                            <h1 class="col-lg-8 fw-bold">Ibu, Jaga Buah Hati Dengan Makanan Ini</h1>
+                            <div class="date-posted">Posted on Wed, April 4th 2023</div>
+                        </div>
                     </div>
                 </a>
-                <a href="" class="row mt-5 box-article-tab">
-                    <div class="col-6">
-                        <img src="/img/gb-artikel-tab.png" alt="" href="#">
-                    </div>
-                    <div class="col-4 mt-5">
-                        <div class="title">Ibu, Jaga Buah Hati Dengan Makanan Ini</div>
-                        <div class="date-posted">Posted on Wed, April 4th 2023</div>
-                    </div>
-                    <div class="col">
+                <a href="" class="row mt-3 box-article-tab">
+                    <div class="lg-5 d-flex flex-row">
+                        <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
+                        <div class="col-lg mt-5 mx-3 ">
+                            <h1 class="col-lg-8 fw-bold">Ibu, Jaga Buah Hati Dengan Makanan Ini</h1>
+                            <div class="date-posted">Posted on Wed, April 4th 2023</div>
+                        </div>
                     </div>
                 </a>
             </div>
             <div class="tab-pane fade" id="content2" role="tabpanel" aria-labelledby="tab2">
                 <!-- Content for Tab 2 -->
                 @for ($i = 0; $i < 3; $i++)
-                    <a href="" class="row mt-5 box-article-tab">
-                        <div class="col-6">
-                            <img src="/img/gb-artikel-tab.png" alt="" href="#">
-                        </div>
-                        <div class="col-4 mt-5">
-                            <div class="title">Ibu, Jaga Buah Hati Dengan Makanan Ini 2</div>
+                <a href="" class="row mt-3 box-article-tab">
+                    <div class="lg-5 d-flex flex-row">
+                        <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
+                        <div class="col-lg mt-5 mx-3 ">
+                            <h1 class="col-lg-8 fw-bold">Ibu, Jaga Buah Hati Dengan Makanan Ini</h1>
                             <div class="date-posted">Posted on Wed, April 4th 2023</div>
                         </div>
-                        <div class="col">
-                        </div>
-                    </a>
+                    </div>
+                </a>
                 @endfor
             </div>
             <div class="tab-pane fade" id="content3" role="tabpanel" aria-labelledby="tab3">
                 <!-- Content for Tab 3 -->
                 @for ($i = 0; $i < 3; $i++)
-                    <a href="" class="row mt-5 box-article-tab">
-                        <div class="col-6">
-                            <img src="/img/gb-artikel-tab.png" alt="" href="#">
-                        </div>
-                        <div class="col-4 mt-5">
-                            <div class="title">Ibu, Jaga Buah Hati Dengan Makanan Ini 3</div>
+                <a href="" class="row mt-3 box-article-tab">
+                    <div class="lg-5 d-flex flex-row">
+                        <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
+                        <div class="col-lg mt-5 mx-3 ">
+                            <h1 class="col-lg-8 fw-bold">Ibu, Jaga Buah Hati Dengan Makanan Ini</h1>
                             <div class="date-posted">Posted on Wed, April 4th 2023</div>
                         </div>
-                        <div class="col">
-                        </div>
-                    </a>
+                    </div>
+                </a>
                 @endfor
             </div>
             <div class="tab-pane fade" id="content4" role="tabpanel" aria-labelledby="tab4">
                 <!-- Content for Tab 3 -->
                 @for ($i = 0; $i < 3; $i++)
-                    <a href="" class="row mt-5 box-article-tab">
-                        <div class="col-6">
-                            <img src="/img/gb-artikel-tab.png" alt="" href="#">
-                        </div>
-                        <div class="col-4 mt-5">
-                            <div class="title">Ibu, Jaga Buah Hati Dengan Makanan Ini 4</div>
+                <a href="" class="row mt-3 box-article-tab">
+                    <div class="lg-5 d-flex flex-row">
+                        <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
+                        <div class="col-lg mt-5 mx-3 ">
+                            <h1 class="col-lg-8 fw-bold">Ibu, Jaga Buah Hati Dengan Makanan Ini</h1>
                             <div class="date-posted">Posted on Wed, April 4th 2023</div>
                         </div>
-                        <div class="col">
-                        </div>
-                    </a>
+                    </div>
+                </a>
                 @endfor
             </div>
             <div class="tab-pane fade" id="content5" role="tabpanel" aria-labelledby="tab5">
                 <!-- Content for Tab 3 -->
                 @for ($i = 0; $i < 3; $i++)
-                    <a href="" class="row mt-5 box-article-tab">
-                        <div class="col-6">
-                            <img src="/img/gb-artikel-tab.png" alt="" href="#">
-                        </div>
-                        <div class="col-4 mt-5">
-                            <div class="title">Ibu, Jaga Buah Hati Dengan Makanan Ini 5</div>
+                <a href="" class="row mt-3 box-article-tab">
+                    <div class="lg-5 d-flex flex-row">
+                        <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
+                        <div class="col-lg mt-5 mx-3 ">
+                            <h1 class="col-lg-8 fw-bold">Ibu, Jaga Buah Hati Dengan Makanan Ini</h1>
                             <div class="date-posted">Posted on Wed, April 4th 2023</div>
                         </div>
-                        <div class="col">
-                        </div>
-                    </a>
+                    </div>
+                </a>
                 @endfor
             </div>
         </div>

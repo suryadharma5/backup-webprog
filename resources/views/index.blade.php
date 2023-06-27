@@ -17,7 +17,7 @@
             <img src="/img/awanputih.png" alt="">
         </div>
         <div class="sectionpic trackbutton zoom" style="">
-            <a href="./nextpage.html">
+            <a href="/home1/nextpage.html">
                 <img src="/img/track button.png" alt="">
             </a>
         </div>
@@ -713,8 +713,8 @@
         </div>
         <div class="col-md-12 text-center zoom">
             <div class="col-md-12 text-center zoom">
-                <a href="./nextpage.html">
-                    <button type="button" class="btn btn-primary" style="color: white">See More</button>
+                <a href="./nextpage.html" class="text-decoration-none text-white">
+                    <button type="button" class="btn btn-primary">See More</button>
                 </a>
             </div>
         </div>

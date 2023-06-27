@@ -8,6 +8,7 @@
 .tab-aja.active{
     margin: 0;
     color: #78A2CC !important;
+    font-weight: bold;
 }
 
 .nav-link:hover{
@@ -23,6 +24,7 @@
 .tab-aja{
     text-decoration: none;
     color: white !important;
+    font-weight: bold;
 }
 
 /* .nav-underline > li.nav-item > .active > a {
