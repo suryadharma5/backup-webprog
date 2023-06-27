@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class RatingController extends Controller
 {
     public function index(){
-        return view('ratingNreview.popular', [
+        return view('ratingNreview.index', [
             'title' => 'Rating n Review',
             'active' => 'rating',
         ]);

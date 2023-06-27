@@ -477,9 +477,9 @@ body{
     padding: 1.975vw;
     min-width: 37.500vw;
     height: fit-content;
-    margin: 0.658vw;
+    /* margin: 0.658vw; */
     display: inline-block;
-    margin: 1.317vw;
+    /* margin: 1.317vw; */
     box-shadow: 0.658vw 0.658vw 0.658vw rgba(0, 0, 0, 0.25);
     /* scrollbar-width: none; */
 }

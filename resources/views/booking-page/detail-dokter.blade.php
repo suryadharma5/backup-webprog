@@ -11,7 +11,7 @@
 
 @section('contents')
     <div class="container">
-        <section class="back-button">
+        <section class="back-button mt-4">
             <div class="button">
                 <a href="/book">
                     <img src="/img/back-button.png" alt="">
@@ -19,9 +19,9 @@
             </div>
         </section>
 
-        <section class="content">
+        <section class="content mt-3">
             <div class="row dokter">
-                <div class="col-lg-7 profil-dokter">
+                <div class="col-lg-5 profil-dokter">
                     <h2 class="judul">Profil Dokter</h2>
                     <p class="box">
                         {{ $doctor->doctor_name }} adalah seorang Dokter Spesialis Kandungan yang berpraktik di Rumah Sakit Mangusada. Beliau dapat membantu layanan Konsultasi mengenai kandungan.
@@ -29,14 +29,16 @@
                         {{ $doctor->doctor_name }} menamatkan pendidikan Kedokteran Umum di Universitas Kristen Krida Wacana, lulus pada tahun 2019. Selain itu, beliau juga tercatat sebagai anggota Ikatan Dokter Indonesia (IDI).
                     </p>
                 </div>
-                {{-- <div class="col-lg-2"></div> --}}
+                
                 <div class="col-lg identitas-dokter d-flex flex-column align-items-center">
-                    <img src="/img/foto-dokter.png" alt="" class="img-fluid mx-auto d-block">
+                    <div class="gambar">
+                        <img src="/img/foto-dokter.png" alt="" class="img-fluid mx-auto d-block">
+                    </div>
                     <h3 class="fw-bold">{{ $doctor->doctor_name }}</h3>
                     <p class="jenis-dokter" style="color: #78A2CC">
                         Dokter Spesialis Kandungan
                     </p>
-                    <button type="button" class="btn fw-bold" style="background-color: #78A2CC; color: white; width:50%">
+                    <button type="button" class="btn fw-bold" style="background-color: #78A2CC; color: white; width:30%">
                         <a href="#" class="text-decoration-none text-white">Book</a>
                     </button>
                 </div>
@@ -70,24 +72,24 @@
                             <h4 class="tanggal">
                                 Kamis , 6 April 2023
                             </h4>
-                            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="btncheck1">09.00 - 12.00</label>
+                            <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btncheck2">09.00 - 12.00</label>
                             <hr>
                         </div>
                         <div class="item">
                             <h4 class="tanggal">
                                 Kamis , 6 April 2023
                             </h4>
-                            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="btncheck1">09.00 - 12.00</label>
+                            <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btncheck3">09.00 - 12.00</label>
                             <hr>
                         </div>
                         <div class="item">
                             <h4 class="tanggal">
                                 Kamis , 6 April 2023
                             </h4>
-                            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="btncheck1">09.00 - 12.00</label>
+                            <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btncheck4">09.00 - 12.00</label>
                             <hr>
                         </div>
                         {{-- <div class="all-list-button px-2 py-2 d-flex flex-row align-items-center rounded-2 fw-bold justify-content-center" style="width: 38%; background-color: #78A2CC; color:white;">

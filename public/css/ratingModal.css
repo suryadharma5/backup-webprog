@@ -132,3 +132,7 @@
     font-weight: bold;
     margin-top: 20px;
 }
+
+.recom:hover{
+    cursor: pointer;
+}

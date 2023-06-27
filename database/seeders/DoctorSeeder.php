@@ -24,8 +24,8 @@ class DoctorSeeder extends Seeder
         for ($i = 0 ; $i <=1000; $i++){
             $temp = $rs->shuffle();
             Doctor::create([
-                // 'hospital_id' => mt_rand(0, 1001),
-                'hospital_id' => $rs[$i],
+                'hospital_id' => $temp[0],
+                // 'hospital_id' => $rs[$i],
                 'title_id' => mt_rand(1,8),
                 'doctor_name' => 'dr.'. ' ' . $faker->name(),
                 'doctor_profile' => $faker->paragraph(mt_rand(6,9)),
