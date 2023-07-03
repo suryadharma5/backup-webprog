@@ -1,8 +1,7 @@
 @extends('layout.main')
 
 @section('css')
-        {{-- <link rel="stylesheet" href="/css/navbar.css"> --}}
-        <link rel="stylesheet" href="/css/detail-dokter.css">
+    <link rel="stylesheet" href="/css/detail-dokter.css">
 @endsection
 
 @section('title')

@@ -89,4 +89,11 @@ class BookingController extends Controller
             'doctor' => $doctor,
         ]);
     }
+
+    public function formBooking(){
+        return view('booking-page.form-doctor', [
+            'active' => 'book',
+            // 'doctor' => $doctor,
+        ]);
+    }
 }

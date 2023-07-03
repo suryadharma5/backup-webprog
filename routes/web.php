@@ -39,6 +39,7 @@ Route::post('/getKabupaten', [BookingController::class, 'getKabupaten']);
 Route::post('/getHospital', [BookingController::class, 'getHospital']);
 Route::post('/getDoctor', [BookingController::class, 'getDoctor']);
 Route::get('/book/{doctor:doctor_name}', [BookingController::class, 'bookDoctor']);
+Route::get('/coba', [BookingController::class, 'formBooking']);
 
 Route::get('/rating', [RatingController::class, 'index']);
 Route::get('/rating/form', [RatingController::class, 'formRating']);
