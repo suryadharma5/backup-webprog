@@ -30,8 +30,10 @@
                 </div>
             </div>
         </div>
-        <div class="card my-3" >
-            <div class="card-body">
+
+        {{-- main content --}}
+        <div class="card my-3" style="background-color: #FFF7F6">
+            <div class="card-body border-0">
                 <div class="row d-flex m-1">
                     <div class="col-1">
                         <img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" style="border-radius: 50%; width: 50px; height:50px; object-fit: cover;">

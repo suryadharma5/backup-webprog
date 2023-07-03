@@ -130,7 +130,7 @@
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="content1" role="tabpanel" aria-labelledby="tab1">
                 <!-- Content for Tab 1 -->
-                <a href="" class="row mt-3 box-article-tab">
+                <a href="/article/detail" class="row mt-3 box-article-tab">
                     <div class="lg-5 d-flex flex-row">
                         <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
                         <div class="col-lg mt-5 mx-3 ">
@@ -139,7 +139,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="" class="row mt-3 box-article-tab">
+                <a href="/article/detail" class="row mt-3 box-article-tab">
                     <div class="lg-5 d-flex flex-row">
                         <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
                         <div class="col-lg mt-5 mx-3 ">
@@ -148,7 +148,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="" class="row mt-3 box-article-tab">
+                <a href="/article/detail" class="row mt-3 box-article-tab">
                     <div class="lg-5 d-flex flex-row">
                         <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
                         <div class="col-lg mt-5 mx-3 ">
@@ -161,7 +161,7 @@
             <div class="tab-pane fade" id="content2" role="tabpanel" aria-labelledby="tab2">
                 <!-- Content for Tab 2 -->
                 @for ($i = 0; $i < 3; $i++)
-                <a href="" class="row mt-3 box-article-tab">
+                <a href="/article/detail" class="row mt-3 box-article-tab">
                     <div class="lg-5 d-flex flex-row">
                         <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
                         <div class="col-lg mt-5 mx-3 ">
@@ -175,7 +175,7 @@
             <div class="tab-pane fade" id="content3" role="tabpanel" aria-labelledby="tab3">
                 <!-- Content for Tab 3 -->
                 @for ($i = 0; $i < 3; $i++)
-                <a href="" class="row mt-3 box-article-tab">
+                <a href="/article/detail" class="row mt-3 box-article-tab">
                     <div class="lg-5 d-flex flex-row">
                         <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
                         <div class="col-lg mt-5 mx-3 ">
@@ -189,7 +189,7 @@
             <div class="tab-pane fade" id="content4" role="tabpanel" aria-labelledby="tab4">
                 <!-- Content for Tab 3 -->
                 @for ($i = 0; $i < 3; $i++)
-                <a href="" class="row mt-3 box-article-tab">
+                <a href="/article/detail" class="row mt-3 box-article-tab">
                     <div class="lg-5 d-flex flex-row">
                         <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
                         <div class="col-lg mt-5 mx-3 ">
@@ -203,7 +203,7 @@
             <div class="tab-pane fade" id="content5" role="tabpanel" aria-labelledby="tab5">
                 <!-- Content for Tab 3 -->
                 @for ($i = 0; $i < 3; $i++)
-                <a href="" class="row mt-3 box-article-tab">
+                <a href="/article/detail" class="row mt-3 box-article-tab">
                     <div class="lg-5 d-flex flex-row">
                         <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
                         <div class="col-lg mt-5 mx-3 ">

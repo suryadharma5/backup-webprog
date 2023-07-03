@@ -19,6 +19,16 @@ class MenfessSeeder extends Seeder
         //
         $faker = Faker::create('id_ID');
         $user = DB::table('users')->pluck('id');
+
+        DB::table('menfesses')->insert([
+            'user_id' => '3',
+            'title' => 'Apakah ibu hamil boleh hamil lagi?',
+            'total_likes' => $faker->numberBetween(0, 100),
+            'total_replies' => $faker->numberBetween(0, 10),
+            'menfess_image' => 'https://images.pexels.com/photos/618923/pexels-photo-618923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            'menfess_text' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
+        ]);
+
         DB::table('menfesses')->insert([
             'user_id' => '1',
             'title' => 'Bagaimana cara saya menurunkan berat badan setelah hamil 9 bulan?',
@@ -37,13 +47,5 @@ class MenfessSeeder extends Seeder
             'menfess_text' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ]);
 
-        DB::table('menfesses')->insert([
-            'user_id' => '3',
-            'title' => 'Apakah ibu hamil boleh tetap aktif bekerja?',
-            'total_likes' => $faker->numberBetween(0, 100),
-            'total_replies' => $faker->numberBetween(0, 10),
-            'menfess_image' => 'https://images.pexels.com/photos/618923/pexels-photo-618923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            'menfess_text' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
-        ]);
     }
 }

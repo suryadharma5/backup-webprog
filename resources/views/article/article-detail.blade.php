@@ -8,7 +8,9 @@
     {{-- Section 1 --}}
     <div class="container-fluid sec-1" style="height: 500px">
         <div class="container">
-            <img src="/img/Go-Back.png" alt="" width="50" height="50" class="img-fluid mt-5">
+            <a href="/article">
+                <img src="/img/Go-Back.png" alt="" width="50" height="50" class="img-fluid mt-5">
+            </a>
             <p class="text-decoration-underline mt-4 text-white">Mom's corner</p>
             <h2 class="text-white fw-bold">Ibu, Jaga Buah Hati Dengan Makanan Ini</h2>
             <p class="text-white">Posted on Wed, April 4th 2023</p>
