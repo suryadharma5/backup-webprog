@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('css')
-        <link rel="stylesheet" href="/css/menfess.css">
+    <link rel="stylesheet" href="/css/menfess.css">
 @endsection
 
 @section('title')

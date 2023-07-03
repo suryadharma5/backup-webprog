@@ -11,12 +11,13 @@
 {{-- @dd($menfess) --}}
 
 @section('contents')
-    <div class="back container">
-            <button type="button" class="btn"><i class ="fa fa-arrow-circle-left fa-xl" style="color: #78A2CC; marginleft:-1.5vw" aria-hidden="true"></i>
-        </div>
-    </a>
     <div class="container mt-4">
-        <div class="container px-3 pt-4 text-white" style="background-color: #FFA5B8; display: flex; border-radius:10px; font-color: white;">
+        <div class="col-2">
+            <a href="/menfess">
+                <img src="/img/back-detailrating.png" alt="">
+            </a>
+        </div>
+        <div class="container px-3 pt-4 text-white mt-4" style="background-color: #FFA5B8; display: flex; border-radius:10px; font-color: white;">
             <div class="col-10">
                 <h3 class="fw-bold">{{ $menfess->title }}</h3>
                 <p>asked by <span class="fw-bold">suryadharma5</span></p>
