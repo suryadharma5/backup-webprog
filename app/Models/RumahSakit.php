@@ -17,6 +17,10 @@ class RumahSakit extends Model
         return $this->belongsTo(Regency::class);
     }
 
+    public function province(){
+        return $this->belongsTo(Province::class);
+    }
+
     public function doctor (){
         return $this->hasMany(Doctor::class);
     }

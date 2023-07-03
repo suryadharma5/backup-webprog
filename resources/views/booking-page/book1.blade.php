@@ -218,20 +218,53 @@
                             <div class="col-lg-7 pilih-hari bg-primary">
                                 
                             </div>
-                            <div class="row">
+                            {{-- <div class="row">
                                 <div class="dropdown-hari mt-2 col-lg-8">
                                     <select class="form-select hari" aria-label="Default select example" id="hari">
                                         <option selected>Pilih Hari</option>
                                     </select>
                                     <select class="form-select hari" aria-label="Default select example" id="jam">
                                         <option selected>Pilih Jam</option>
-                                        {{-- @foreach ($regencies as $regency)
+                                        @foreach ($regencies as $regency)
                                             <option value="{{ $regency->id }}">{{ $regency->name }}</option>
-                                        @endforeach --}}
+                                        @endforeach
                                     </select>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="row" id="listDoctor">
+                                @foreach ($doctors as $doctor)
+                                <div class='spesialisdoc'><div class = 'foto'> <img src='/img/dokter.png'></div>
+                                <div class='keterangan'>
+                                    <div class='title-dokter'>
+                                        {{ $doctor->doctor_name }}
+                                    </div>
+                                    <div class='nama-spesialis'>
+                                        <div class='icon'><i class='fa-solid fa-stethoscope'></i></div>
+                                        Dokter Spesialis Kandungan
+                                    </div>
+                                    <div class='rs-spesialis'>
+                                        <div class='icon'><i class='fa-solid fa-hospital'></i></div>
+                                        {{ $doctor->hospital_id }}
+                                    </div>
+                                    <div class='loc-spesialis'>
+                                        <div class='icon'><i class='fa-solid fa-location-dot'></i></div>
+                                        {{ Str::after($doctor->rumahSakit->regency->name, 'KABUPATEN') }}, {{ $doctor->rumahSakit->province->name }}
+                                    </div>
+                                    <div class='tahun-spesialis'>
+                                        <div class='icon'><i class='fa-solid fa-business-time'></i></div>
+                                        {{ $doctor->year_experience }} tahun
+                                    </div>
+                                </div>
+                                <div class = 'bookbutton'>
+                                    <a href='/book/$doctor->doctor_name'>
+                                        <button type = 'submit' class = 'btn btn-primary'>Book</button>
+                                    </a>
+                                </div>
+                                </div>
+                                @endforeach
+                                <div class="container mt-5 d-flex justify-content-end">
+                                    {{ $doctors->links() }}
+                                </div>
                             </div>
                         </div>
                     </div>

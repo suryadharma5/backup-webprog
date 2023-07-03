@@ -13,6 +13,7 @@ class BookingController extends Controller
     public function index(){
         return view('booking-page.book1', [
             'provinces' => Province::all(),
+            'doctors' => Doctor::latest()->simplepaginate(5),
             'title' => 'Booking Doctor',
             'active' => 'book',
             'day' => ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu']
