@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="form-floating">
-                  <input type="phoneNumber" name="phone_number" class="form-control @error('phoneNumber') is-invalid @enderror forms mt-3" id="phoneNumber" placeholder="name@example.com" required value="{{ old('phoneNumber') }}">
+                  <input type="phoneNumber" name="phone_number" class="form-control @error('phoneNumber') is-invalid @enderror forms mt-3" id="phoneNumber" placeholder="name@example.com" required value="{{ old('phone_number') }}">
                   <label for="phoneNumber" style="color: #7F7476">Phone Number</label>
     
                   @error('phoneNumber')

@@ -231,6 +231,8 @@
                                     </select>
                                 </div>
                             </div> --}}
+
+
                             <div class="row" id="listDoctor">
                                 @foreach ($doctors as $doctor)
                                 <div class='spesialisdoc'><div class = 'foto'> <img src='/img/dokter.png'></div>
@@ -256,7 +258,7 @@
                                     </div>
                                 </div>
                                 <div class = 'bookbutton'>
-                                    <a href='/book/$doctor->doctor_name'>
+                                    <a href='/book/{{ $doctor->doctor_name }}'>
                                         <button type = 'submit' class = 'btn btn-primary'>Book</button>
                                     </a>
                                 </div>
