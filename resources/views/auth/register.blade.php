@@ -122,7 +122,7 @@
 
               </form>
           </div>
-          <small class="d-block text-center mt-3">
+          <small class="d-block text-center mt-3 mb-5">
            Already Have Account ? <a href="/login">Log In</a>
           </small>
       </main>
