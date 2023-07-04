@@ -13,7 +13,7 @@
           <a class = "nav-link {{ ($active == 'home') ? 'active' : ''}}"href="/">Home</a>
         </li>
         <li li class="nav-item mx-2">
-          <a class = "nav-link"href="#">Track</a>
+          <a class = "nav-link {{ ($active == 'track') ? 'active' : ''}}"href="/track">Track</a>
         </li>
         <li class="nav-item mx-2">
           <a class="nav-link {{ ($active == 'book') ? 'active' : ''}}" href="/book">Book</a>
