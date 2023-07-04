@@ -54,8 +54,17 @@ Route::get('/menfess/detail/{menfess}', [MenfessController::class, 'detail']);
 Route::get('/track', function(){
     return view('track.index', [
         'active' => 'track',
+        'title' => 'Tracking'
     ]);
 });
+
+Route::get('/track/form', function(){
+    return view('track.hpl', [
+        'active' => 'track',
+        'title' => 'Tracking'
+    ]);
+});
+
 
 Route::get('/profile', function(){
     return view('profile.profile', [

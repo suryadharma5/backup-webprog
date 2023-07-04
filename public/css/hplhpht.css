@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.gambar-bg{
+    width: 100%;
+    height: 100%;
+}
+
+.formulir-kalender{
+    background-color: #9FCAE6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-control{
+    background-color: #F9D7D6;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.button-calendar{
+    height: 100%;
+    border-radius: 0px 10px 10px 0px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+    /* padding-left: 10px; */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.bt-bayi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 150px;
+    margin-top: -40px;
+}
+
+.box-formulir-keseluruhan{
+    padding-top: 160px;
+}
+
+.button-kalender{
+    height: 150px;
+    width: 150px;
+}
+
+.text-start-tracking{
+    color: white;
+    font-weight: bold;
+    width: 150px;
+    top: 50px;
+}
+
+.text-tracking{
+    color: white;
+    font-weight: bold;
+    width: 150px;
+    bottom: 55px;
+}
+
+.hpl-text{
+    color: rgba(0, 0, 0, 0.2) ; 
+    font-weight: bold;
+    text-decoration:none
+}
+
+.link-button-start-tracking{
+    height: 150px;
+    width: 150px;
+}
+
+
