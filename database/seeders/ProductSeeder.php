@@ -22,10 +22,11 @@ class ProductSeeder extends Seeder
         $faker = Factory::create();
 
         $categories = ['Body Care', 'Pakaian', 'Makanan', 'Peralatan'];
+        $nama = ['Bedak Super', 'Sabun Unyu', 'Minyak Kelon'];
 
-        for ($i = 0; $i <= 1000; $i++) {
+        for ($i = 0; $i <= 7; $i++) {
             DB::table('products')->insert([
-                'name_product' => $faker->unique()->sentence,
+                'name_product' => $nama[mt_rand(0,2)],
                 'type_product' => $faker->randomElement($categories),
                 'rating' => mt_rand(1, 5),
             ]);

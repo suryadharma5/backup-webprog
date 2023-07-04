@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class RatingController extends Controller
@@ -10,6 +11,7 @@ class RatingController extends Controller
         return view('ratingNreview.index', [
             'title' => 'Rating n Review',
             'active' => 'rating',
+            'products' => Product::all(),
         ]);
     }
 

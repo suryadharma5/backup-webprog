@@ -25,530 +25,82 @@
                 </div>
             </div>
             <div class="col-lg-1"></div>
-            <div class="col-lg-5 py-2 px-2">
-                <div class="d-flex justify-content-center py-2" style="background-color: #FFB8C7; border-radius: 10px">
-                    <a href="/rating/form" class="text-decoration-none text-white fw-bold"><h5 class="fw-bold">Add Product</h5></a>
-                </div>
+            <div class="col-lg-5 py-2 px-2" style="margin-left: 15px">
+                <a href="/rating/form" class="text-decoration-none text-white">
+                    <div class="d-flex justify-content-center py-2" style="background-color: #FFB8C7; border-radius: 10px">
+                        <h5 class="fw-bold">Add Product</h5>
+                    </div>
+                </a>
             </div>
         </div>
         <h3 class="mt-4 fw-bold"> Popular Products</h3>
-        <div class="mt-4 bg row-col-6 d-flex" style="">
-            <div class="row row-cols-2 row-cols-md-2 g-4">
-                    <div class="scroll-area-rating" style="display: flex">
-                        <div class="foto-produk">
-                            <img src="/img/section4_photo-product.png" alt="">
+        <div class="mt-4 row d-flex" style="">
+            @foreach ($products as $prod)
+                <div class="col-lg-5 scroll-area-rating mb-4" style="display: flex; margin-right: 50px">
+                    <div class="foto-produk">
+                        <img src="/img/section4_photo-product.png" alt="">
+                    </div>
+                    <div class="isi">
+                        <div class="nama-produk">
+                            <!-- <h5> -->
+                                {{ $prod->name_product }}
+                            <!-- </h5> -->
+                            <div class="jenis-produk">
+                                {{ $prod->type_product }}
+                            </div>
                         </div>
-                        <div class="isi">
-                            <div class="nama-produk">
-                                <!-- <h5> -->
-                                    Johnsons Baby
-                                <!-- </h5> -->
-                                <div class="jenis-produk">
-                                    Baby Bath Blue 200ml
+                        <div class="count">
+                            <div class="rating">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="average-rating">
+                                <!-- <p> -->
+                                    &nbsp; 4.9 &nbsp;
+                                <!-- </p> -->
+                            </div>
+                            <div class="total-rating">
+                                <!-- <p> -->
+                                    (250 people)
+                                <!-- </p> -->
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="person">
+                            <div class="jarakwokwok">
+                                <div class="foto-profile">
+                                    <img src="/img/section4_profile-picture.png" alt="">
+                                </div>
+                                <div class="nama-person">
+                                    &nbsp; NURHAYATI 1
                                 </div>
                             </div>
-                            <div class="count">
-                                <div class="rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </div>
-                                <div class="average-rating">
-                                    <!-- <p> -->
-                                        &nbsp; 4.9 &nbsp;
-                                    <!-- </p> -->
-                                </div>
-                                <div class="total-rating">
-                                    <!-- <p> -->
-                                        (250 people)
-                                    <!-- </p> -->
-                                </div>
+                            <a class="lanjut" href="/rating/detail">
+                                <!-- <p> -->
+                                (ALL REVIEWS)
+                                <!-- </p> -->
+                            </a>
+                        </div>
+                        <div class="rekomen">
+                            <div class="jempol">
+                                <img src="/img/section4_jempol-rekomen.png" alt="">
                             </div>
-                            <hr>
-                            <div class="person">
-                                <div class="jarakwokwok">
-                                    <div class="foto-profile">
-                                        <img src="/img/section4_profile-picture.png" alt="">
-                                    </div>
-                                    <div class="nama-person">
-                                        &nbsp; NURHAYATI 1
-                                    </div>
-                                </div>
-                                <a class="lanjut" href="/rating/detail">
-                                    <!-- <p> -->
-                                    (ALL REVIEWS)
-                                    <!-- </p> -->
-                                </a>
+                            <div class="rekomendesc">
+                                &nbsp;
+                                NURHAYATI 1 recommends this product!
                             </div>
-                            <div class="rekomen">
-                                <div class="jempol">
-                                    <img src="/img/section4_jempol-rekomen.png" alt="">
-                                </div>
-                                <div class="rekomendesc">
-                                    &nbsp;
-                                    NURHAYATI 1 recommends this product!
-                                </div>
-                            </div>
-                            <div reviews>
-                                <p>
-                                    sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
-                                </p>
-                            </div>
+                        </div>
+                        <div reviews>
+                            <p>
+                                sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
+                            </p>
                         </div>
                     </div>
-                    <div class="scroll-area-rating" style="display: flex">
-                        <div class="foto-produk">
-                            <img src="/img/section4_photo-product.png" alt="">
-                        </div>
-                        <div class="isi">
-                            <div class="nama-produk">
-                                <!-- <h5> -->
-                                    Johnsons Baby
-                                <!-- </h5> -->
-                                <div class="jenis-produk">
-                                    Baby Bath Blue 200ml
-                                </div>
-                            </div>
-                            <div class="count">
-                                <div class="rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </div>
-                                <div class="average-rating">
-                                    <!-- <p> -->
-                                        &nbsp; 4.9 &nbsp;
-                                    <!-- </p> -->
-                                </div>
-                                <div class="total-rating">
-                                    <!-- <p> -->
-                                        (250 people)
-                                    <!-- </p> -->
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="person">
-                                <div class="jarakwokwok">
-                                    <div class="foto-profile">
-                                        <img src="/img/section4_profile-picture.png" alt="">
-                                    </div>
-                                    <div class="nama-person">
-                                        &nbsp; NURHAYATI 1
-                                    </div>
-                                </div>
-                                <a class="lanjut" href="/deta">
-                                    <!-- <p> -->
-                                    (ALL REVIEWS)
-                                    <!-- </p> -->
-                                </a>
-                            </div>
-                            <div class="rekomen">
-                                <div class="jempol">
-                                    <img src="/img/section4_jempol-rekomen.png" alt="">
-                                </div>
-                                <div class="rekomendesc">
-                                    &nbsp;
-                                    NURHAYATI 1 recommends this product!
-                                </div>
-                            </div>
-                            <div reviews>
-                                <p>
-                                    sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="scroll-area-rating" style="display: flex">
-                        <div class="foto-produk">
-                            <img src="/img/section4_photo-product.png" alt="">
-                        </div>
-                        <div class="isi">
-                            <div class="nama-produk">
-                                <!-- <h5> -->
-                                    Johnsons Baby
-                                <!-- </h5> -->
-                                <div class="jenis-produk">
-                                    Baby Bath Blue 200ml
-                                </div>
-                            </div>
-                            <div class="count">
-                                <div class="rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </div>
-                                <div class="average-rating">
-                                    <!-- <p> -->
-                                        &nbsp; 4.9 &nbsp;
-                                    <!-- </p> -->
-                                </div>
-                                <div class="total-rating">
-                                    <!-- <p> -->
-                                        (250 people)
-                                    <!-- </p> -->
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="person">
-                                <div class="jarakwokwok">
-                                    <div class="foto-profile">
-                                        <img src="/img/section4_profile-picture.png" alt="">
-                                    </div>
-                                    <div class="nama-person">
-                                        &nbsp; NURHAYATI 1
-                                    </div>
-                                </div>
-                                <a class="lanjut" href="/deta">
-                                    <!-- <p> -->
-                                    (ALL REVIEWS)
-                                    <!-- </p> -->
-                                </a>
-                            </div>
-                            <div class="rekomen">
-                                <div class="jempol">
-                                    <img src="/img/section4_jempol-rekomen.png" alt="">
-                                </div>
-                                <div class="rekomendesc">
-                                    &nbsp;
-                                    NURHAYATI 1 recommends this product!
-                                </div>
-                            </div>
-                            <div reviews>
-                                <p>
-                                    sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="scroll-area-rating" style="display: flex">
-                        <div class="foto-produk">
-                            <img src="/img/section4_photo-product.png" alt="">
-                        </div>
-                        <div class="isi">
-                            <div class="nama-produk">
-                                <!-- <h5> -->
-                                    Johnsons Baby
-                                <!-- </h5> -->
-                                <div class="jenis-produk">
-                                    Baby Bath Blue 200ml
-                                </div>
-                            </div>
-                            <div class="count">
-                                <div class="rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </div>
-                                <div class="average-rating">
-                                    <!-- <p> -->
-                                        &nbsp; 4.9 &nbsp;
-                                    <!-- </p> -->
-                                </div>
-                                <div class="total-rating">
-                                    <!-- <p> -->
-                                        (250 people)
-                                    <!-- </p> -->
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="person">
-                                <div class="jarakwokwok">
-                                    <div class="foto-profile">
-                                        <img src="/img/section4_profile-picture.png" alt="">
-                                    </div>
-                                    <div class="nama-person">
-                                        &nbsp; NURHAYATI 1
-                                    </div>
-                                </div>
-                                <a class="lanjut" href="/deta">
-                                    <!-- <p> -->
-                                    (ALL REVIEWS)
-                                    <!-- </p> -->
-                                </a>
-                            </div>
-                            <div class="rekomen">
-                                <div class="jempol">
-                                    <img src="/img/section4_jempol-rekomen.png" alt="">
-                                </div>
-                                <div class="rekomendesc">
-                                    &nbsp;
-                                    NURHAYATI 1 recommends this product!
-                                </div>
-                            </div>
-                            <div reviews>
-                                <p>
-                                    sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="row row-cols-2 row-cols-md-2 g-4">
-                    <div class="scroll-area-rating" style="display: flex">
-                        <div class="foto-produk">
-                            <img src="/img/section4_photo-product.png" alt="">
-                        </div>
-                        <div class="isi">
-                            <div class="nama-produk">
-                                <!-- <h5> -->
-                                    Johnsons Baby
-                                <!-- </h5> -->
-                                <div class="jenis-produk">
-                                    Baby Bath Blue 200ml
-                                </div>
-                            </div>
-                            <div class="count">
-                                <div class="rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </div>
-                                <div class="average-rating">
-                                    <!-- <p> -->
-                                        &nbsp; 4.9 &nbsp;
-                                    <!-- </p> -->
-                                </div>
-                                <div class="total-rating">
-                                    <!-- <p> -->
-                                        (250 people)
-                                    <!-- </p> -->
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="person">
-                                <div class="jarakwokwok">
-                                    <div class="foto-profile">
-                                        <img src="/img/section4_profile-picture.png" alt="">
-                                    </div>
-                                    <div class="nama-person">
-                                        &nbsp; NURHAYATI 1
-                                    </div>
-                                </div>
-                                <a class="lanjut" href="/deta">
-                                    <!-- <p> -->
-                                    (ALL REVIEWS)
-                                    <!-- </p> -->
-                                </a>
-                            </div>
-                            <div class="rekomen">
-                                <div class="jempol">
-                                    <img src="/img/section4_jempol-rekomen.png" alt="">
-                                </div>
-                                <div class="rekomendesc">
-                                    &nbsp;
-                                    NURHAYATI 1 recommends this product!
-                                </div>
-                            </div>
-                            <div reviews>
-                                <p>
-                                    sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="scroll-area-rating" style="display: flex">
-                        <div class="foto-produk">
-                            <img src="/img/section4_photo-product.png" alt="">
-                        </div>
-                        <div class="isi">
-                            <div class="nama-produk">
-                                <!-- <h5> -->
-                                    Johnsons Baby
-                                <!-- </h5> -->
-                                <div class="jenis-produk">
-                                    Baby Bath Blue 200ml
-                                </div>
-                            </div>
-                            <div class="count">
-                                <div class="rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </div>
-                                <div class="average-rating">
-                                    <!-- <p> -->
-                                        &nbsp; 4.9 &nbsp;
-                                    <!-- </p> -->
-                                </div>
-                                <div class="total-rating">
-                                    <!-- <p> -->
-                                        (250 people)
-                                    <!-- </p> -->
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="person">
-                                <div class="jarakwokwok">
-                                    <div class="foto-profile">
-                                        <img src="/img/section4_profile-picture.png" alt="">
-                                    </div>
-                                    <div class="nama-person">
-                                        &nbsp; NURHAYATI 1
-                                    </div>
-                                </div>
-                                <a class="lanjut" href="/deta">
-                                    <!-- <p> -->
-                                    (ALL REVIEWS)
-                                    <!-- </p> -->
-                                </a>
-                            </div>
-                            <div class="rekomen">
-                                <div class="jempol">
-                                    <img src="/img/section4_jempol-rekomen.png" alt="">
-                                </div>
-                                <div class="rekomendesc">
-                                    &nbsp;
-                                    NURHAYATI 1 recommends this product!
-                                </div>
-                            </div>
-                            <div reviews>
-                                <p>
-                                    sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="scroll-area-rating" style="display: flex">
-                        <div class="foto-produk">
-                            <img src="/img/section4_photo-product.png" alt="">
-                        </div>
-                        <div class="isi">
-                            <div class="nama-produk">
-                                <!-- <h5> -->
-                                    Johnsons Baby
-                                <!-- </h5> -->
-                                <div class="jenis-produk">
-                                    Baby Bath Blue 200ml
-                                </div>
-                            </div>
-                            <div class="count">
-                                <div class="rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </div>
-                                <div class="average-rating">
-                                    <!-- <p> -->
-                                        &nbsp; 4.9 &nbsp;
-                                    <!-- </p> -->
-                                </div>
-                                <div class="total-rating">
-                                    <!-- <p> -->
-                                        (250 people)
-                                    <!-- </p> -->
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="person">
-                                <div class="jarakwokwok">
-                                    <div class="foto-profile">
-                                        <img src="/img/section4_profile-picture.png" alt="">
-                                    </div>
-                                    <div class="nama-person">
-                                        &nbsp; NURHAYATI 1
-                                    </div>
-                                </div>
-                                <a class="lanjut" href="/deta">
-                                    <!-- <p> -->
-                                    (ALL REVIEWS)
-                                    <!-- </p> -->
-                                </a>
-                            </div>
-                            <div class="rekomen">
-                                <div class="jempol">
-                                    <img src="/img/section4_jempol-rekomen.png" alt="">
-                                </div>
-                                <div class="rekomendesc">
-                                    &nbsp;
-                                    NURHAYATI 1 recommends this product!
-                                </div>
-                            </div>
-                            <div reviews>
-                                <p>
-                                    sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="scroll-area-rating" style="display: flex">
-                        <div class="foto-produk">
-                            <img src="/img/section4_photo-product.png" alt="">
-                        </div>
-                        <div class="isi">
-                            <div class="nama-produk">
-                                <!-- <h5> -->
-                                    Johnsons Baby
-                                <!-- </h5> -->
-                                <div class="jenis-produk">
-                                    Baby Bath Blue 200ml
-                                </div>
-                            </div>
-                            <div class="count">
-                                <div class="rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </div>
-                                <div class="average-rating">
-                                    <!-- <p> -->
-                                        &nbsp; 4.9 &nbsp;
-                                    <!-- </p> -->
-                                </div>
-                                <div class="total-rating">
-                                    <!-- <p> -->
-                                        (250 people)
-                                    <!-- </p> -->
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="person">
-                                <div class="jarakwokwok">
-                                    <div class="foto-profile">
-                                        <img src="/img/section4_profile-picture.png" alt="">
-                                    </div>
-                                    <div class="nama-person">
-                                        &nbsp; NURHAYATI 1
-                                    </div>
-                                </div>
-                                <a class="lanjut" href="/deta">
-                                    <!-- <p> -->
-                                    (ALL REVIEWS)
-                                    <!-- </p> -->
-                                </a>
-                            </div>
-                            <div class="rekomen">
-                                <div class="jempol">
-                                    <img src="/img/section4_jempol-rekomen.png" alt="">
-                                </div>
-                                <div class="rekomendesc">
-                                    &nbsp;
-                                    NURHAYATI 1 recommends this product!
-                                </div>
-                            </div>
-                            <div reviews>
-                                <p>
-                                    sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-            </div>
+                </div>
+            @endforeach
         </div>
     </div>
 @endsection
