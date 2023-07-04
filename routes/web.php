@@ -8,6 +8,8 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\MenfessController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ReviewController;
+use App\Models\Review;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +56,8 @@ Route::get('/profile', function(){
     ]);
 });
 
+
+Route::resource('/rating/detail/review', ReviewController::class);
 
 //404 handler
 Route::fallback(function () {

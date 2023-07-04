@@ -8,6 +8,8 @@
 @section('css')
     <link rel="stylesheet" href="/css/detailrating.css">
     <link rel="stylesheet" href="/css/ratingModal.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    
 @endsection
 
 
@@ -124,81 +126,119 @@
         {{-- Modal (Pop up review) --}}
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" style="width: 700px; height: 500px;">
-            <div class="modal-content" style="height: 450px;">
+            <div class="modal-content" style="height: 500px;">
                 {{-- <div class="modal-header border-0 margin-0">
                 </div> --}}
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-1 mt-2" style="margin-left: 10px">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="color: #F9C6D1"></button>
-                        </div>
-
-                        <div class="col-lg-6 star-all">
-                            <div class="star-wrapper col-lg-4">
-                                <div class="star-image">
-                                    <img src="/img/star-perfect.png" alt="" width="70" height="70" id="star-perfect"> 
-                                    <img src="/img/star-good.png" alt="" width="70" height="70" style="display: none;" id="star-good"> 
-                                    <img src="/img/star-neutral.png" alt="" width="70" height="70" style="display: none" id="star-neutral"> 
-                                    <img src="/img/star-bad.png" alt="" width="70" height="70" style="display: none" id="star-bad"> 
-                                    <img src="/img/star-worst.png" alt="" width="70" height="70" style="display: none" id="star-worst"> 
+                <form action="/rating/detail/review" method="POST">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-1 mt-2" style="margin-left: 10px">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="color: #F9C6D1"></button>
+                            </div>
+    
+                            <div class="col-lg-6 star-all">
+                                <div class="star-wrapper col-lg-4">
+                                    <div class="star-image">
+                                        <img src="/img/star-perfect.png" alt="" width="70" height="70" id="star-perfect"> 
+                                        <img src="/img/star-good.png" alt="" width="70" height="70" style="display: none;" id="star-good"> 
+                                        <img src="/img/star-neutral.png" alt="" width="70" height="70" style="display: none" id="star-neutral"> 
+                                        <img src="/img/star-bad.png" alt="" width="70" height="70" style="display: none" id="star-bad"> 
+                                        <img src="/img/star-worst.png" alt="" width="70" height="70" style="display: none" id="star-worst"> 
+                                    </div>
+                                    <div class="star-text mt-2" id="star-text">
+                                        Perfect
+                                    </div>
                                 </div>
-                                <div class="star-text mt-2" id="star-text">
-                                    Perfect
+    
+                                <div class="star-container">
+                                    <div class="star-rate col-lg-4" id="rates">
+                                        <input type="radio" name="rate" id="rate-5" value="5">
+                                        <label for="rate-5" class="bi bi-star-fill"></label>
+                                        <input type="radio" name="rate" id="rate-4" value="4">
+                                        <label for="rate-4" class="bi bi-star-fill"></label>
+                                        <input type="radio" name="rate" id="rate-3" value="3">
+                                        <label for="rate-3" class="bi bi-star-fill"></label>
+                                        <input type="radio" name="rate" id="rate-2" value="2">
+                                        <label for="rate-2" class="bi bi-star-fill"></label>
+                                        <input type="radio" name="rate" id="rate-1" value="1" required>
+                                        <label for="rate-1" class="bi bi-star-fill"></label>
+                                        @error('rate')
+                                            <div class="invalid-feedback">
+                                              {{ $message }}
+                                            </div>
+                                            <script>
+                                                
+                                                $('#exampleModal').modal('show');
+                                            </script>
+                                        @enderror
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="star-container">
-                                <div class="star-rate col-lg-4" id="rates">
-                                    <input type="radio" name="rate" id="rate-5">
-                                    <label for="rate-5" class="bi bi-star-fill"></label>
-                                    <input type="radio" name="rate" id="rate-4">
-                                    <label for="rate-4" class="bi bi-star-fill"></label>
-                                    <input type="radio" name="rate" id="rate-3">
-                                    <label for="rate-3" class="bi bi-star-fill"></label>
-                                    <input type="radio" name="rate" id="rate-2">
-                                    <label for="rate-2" class="bi bi-star-fill"></label>
-                                    <input type="radio" name="rate" id="rate-1">
-                                    <label for="rate-1" class="bi bi-star-fill"></label>
-                                    <form action="#">
-                                        <header></header>
-                                    </form>
-                                </div>
+    
+                            <div class="title-modal col-lg-3 mt-2">
+                                <p class="modal-title " id="exampleModalLabel">REVIEW PRODUCT</p>
                             </div>
                         </div>
+    
+                        <div class="form-floating">
+                            <textarea class="form-control @error('comment') is-invalid @enderror" placeholder="Leave a comment here" id="floatingTextarea" style="height: 150px" name="comment" required></textarea>
+                            <label for="floatingTextarea" style="color: #F9C6D1">Let us know about your review</label>
 
-                        <div class="title-modal col-lg-3 mt-2">
-                            <p class="modal-title " id="exampleModalLabel">REVIEW PRODUCT</p>
+                            @error('comment')
+                                <div class="invalid-feedback">
+                                  {{ $message }}
+                                </div>
+                                <script type="text/javascript">
+                                    console.log('error');
+                                    $(document).ready(function(){
+                                        //your stuff
+                                        $('#exampleModal').modal('show');
+                                    });
+                                </script>
+                            @enderror
                         </div>
+    
+                        <div class="term-rate mt-2 fw-bold d-flex flex-row">
+                            <div class="caution col-lg-5">
+                                review can be seen by many people
+                                <img src="/img/info-rate.png" alt="" width="10px" height="10px" style="margin-left: 3px">
+                            </div>
+    
+                            <div class="image-input d-flex flex-row justify-content-end col-lg mx-2">
+                                <p class="text-center mx-2 mt-2 filename">No file chosen</p>
+                                <button type="button" id="photoButton" onclick="buttonClick()" class="border-0 bg-transparent" style="text-align: left; width:7%">
+                                    <i class="bi bi-image-fill fa-2x" style="color: #FFA5B8"></i>
+                                </button>
+                                <input type="file" name="reply-photo" id="reply-photo" hidden>
+                                <i class="bi bi-x-lg" id="x-button" style="display: none;" onclick="removeFile()"></i>
+                            </div>
+                        </div>
+    
+                        <div class="recommend-prods mt-4">
+                            <span class="recommend-text">Would you like to recommend this product ? </span>
+                            <span id="yes-recom" class="recom" onclick="changeColorYes()">
+                                Yes
+                                <input type="hidden" value="yes" id="tes">
+                            </span>
+                            <span id="|" class="recom"> | </span>
+                            <span id="no-recom" class="recom" onclick="changeColorNo()">
+                                No
+                                <input type="hidden" value="no" id="tes">
+                            </span>
+                        </div>
+    
+                        <div class="col-lg-12 rateButton-wrap">
+                            {{-- <button type="submit" class="btn btn-danger border-0 submit-rate" data-bs-toggle="modal" data-bs-target="#exampleModals">SEND</button> --}}
+                            <button type="submit" class="btn btn-danger border-0 submit-rate" @error('comment') data-bs-target="#exampleModal" @enderror>SEND</button>
+                        </div>
+    
                     </div>
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 150px"></textarea>
-                        <label for="floatingTextarea" style="color: #F9C6D1">Let us know about your review</label>
-                    </div>
-                    <div class="term-rate mt-2 fw-bold">
-                        review can be seen by many people
-                        <img src="/img/info-rate.png" alt="" width="10px" height="10px" style="margin-left: 3px">
-                    </div>
-
-                    <div class="recommend-prods mt-4">
-                        <span class="recommend-text">Would you like to recommend this product ? </span>
-                        <span id="yes-recom" class="recom" onclick="changeColorYes()">
-                            Yes
-                            <input type="hidden" value="yes" id="tes">
-                        </span>
-                        <span id="|" class="recom"> | </span>
-                        <span id="no-recom" class="recom" onclick="changeColorNo()">
-                            No
-                            <input type="hidden" value="no" id="tes">
-                        </span>
-                    </div>
-                    <div class="col-lg-12 rateButton-wrap">
-                        <button type="submit" class="btn btn-danger border-0 submit-rate" data-bs-toggle="modal" data-bs-target="#exampleModals">SEND</button>
-                    </div>
-
-                </div>
+                </form>
             </div>
             </div>
         </div>
+        {{-- Modal End --}}
 
         <div class="modal fade" id="exampleModals" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" style="margin-left : 500px">

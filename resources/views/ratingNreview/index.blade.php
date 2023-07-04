@@ -10,10 +10,15 @@
 
 @section('contents')
     <div class="container">
+        @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show col-lg-12 mt-3" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         <div class="search-bar d-flex flex-row mt-4">
             <div class="col-lg-5 d-flex flex-row py-2">
-                {{-- <input class="col-lg-8 border-0" type="text" placeholder="Search Product">
-                <i class="bi bi-search fa-1x col-lg-4" style="color: #78A2CC; -webkit-text-stroke: 2px;"></i> --}}
                 <div class="input-group col-lg" style="border-color:#FFB8C7; border-style: solid; text-align: right ; border-radius: 7px">
                     <input type="text" class="form-control" placeholder="Search Product" name="search" >
                     <button class="btn border-0 bg-transparent" type="submit" id="button-addon2"><i class="bi bi-search fa-1x col-lg-4" style="color: #78A2CC; -webkit-text-stroke: 1px;"></i></button>
