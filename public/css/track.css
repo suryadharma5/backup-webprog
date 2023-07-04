@@ -1,0 +1,138 @@
+:root{
+    --PINK1: #FFB8C7;
+    --PINK2: #F9C6D1;
+    --PINK3: #F9D7D6;
+    --WHITE: #FFF7F6;
+    --BLUE1: #C3E4F1;
+    --BLUE2: #9FCAE6;
+    --BLUE3: #78A2CC;
+    --REGULAR: 400;
+    --MEDIUM: 500;
+    --SEMIBOLD: 600;
+    --BOLD: 700;
+    --EXTRABOLD: 800;
+}
+
+.full-width-content{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.track-progress{
+    padding-top: 200px;
+}
+
+.circular{
+    text-align: center;
+    /* padding-top: 50px; */
+    height: 100px;
+    width: 100px;
+    /* background: red; */
+    position: relative;
+    transform: scale(4);
+}
+
+.circular .inner{
+    /* display: none; */
+    position: absolute;
+    z-index: 6;
+    top: 50%;
+    left: 50%;
+    height: 80px;
+    width: 80px;
+    margin: -40px 0 0 -40px;
+    /* background: var(--BLUE2); */
+    border-radius: 100%;
+    background: url(/img/watermelon.jpg);
+    background-size: cover;
+    /* box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2); */
+}
+
+.circular .numb{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    font-size: 18px;
+    font-weight: 500;
+    color: red;
+}
+
+.circular .bar{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #78A2CC;
+    -webkit-border-radius: 100%;
+    clip: rect(0px, 100px, 100px, 50px);
+}
+
+.circle .bar .progress{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #F9C6D1;
+    -webkit-border-radius: 100%;
+    clip: rect(0px, 50px, 100px, 0px);
+}
+
+.circle .left .progress{
+    z-index: 1;
+    animation: left 3s linear both;
+}
+@keyframes left{
+    100%{
+        transform: rotate(180deg);
+    }
+}
+
+.circle .right{
+    z-index: 3;
+    transform: rotate(180deg);
+}
+
+.circle .right .progress{
+    animation: right 2s linear both;
+    animation-delay: 3s;
+}
+@keyframes right{
+    100%{
+        transform: rotate(calc(8.57deg*(30 - 21)));
+    }
+}
+
+.dot{
+    /* display: none; */
+    position: absolute;
+    /* background: yellow; */
+    inset: 5px;
+    z-index: 10;
+    transform: rotate(calc(8.57deg*30));
+    animation: animateDot 5s linear both;
+}
+
+@keyframes animateDot{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(calc(8.57deg*30));
+    }
+}
+
+.dot::before{
+    content: '';
+    position: absolute;
+    top: -10px;
+    /* left: 50%; */
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #FFB8C7;
+}
+
+.iden{
+    box-shadow: 5px 5px 10px rgb(92, 92, 92) ;
+}

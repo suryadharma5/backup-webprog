@@ -50,6 +50,12 @@ Route::get('/rating/detail', [RatingController::class, 'detailRating']);
 Route::get('/menfess', [MenfessController::class, 'index']);
 Route::get('/menfess/detail/{menfess}', [MenfessController::class, 'detail']);
 
+Route::get('/track', function(){
+    return view('track.track', [
+        'active' => 'track',
+    ]);
+});
+
 Route::get('/profile', function(){
     return view('profile.profile', [
         'active' => 'profile'

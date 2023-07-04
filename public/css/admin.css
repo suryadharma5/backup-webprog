@@ -1,0 +1,12 @@
+.nav-pills li a:hover{
+    background-color: #FFB8C7;
+}
+
+.addBtn a :hover{
+    border-radius: 0;
+    background-color: #FFB8C7;
+}
+
+.nav-item .on{
+    background-color: #FFB8C7;
+}
