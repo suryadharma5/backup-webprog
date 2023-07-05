@@ -289,8 +289,14 @@
                         </div>
                         <div class="col-6">
                             {{-- @dd($rev->user) --}}
-                            <div style="font-weight: bold">{{ $rev->user->username }}</div>
-                            <img src="/img/star-detailrating.png" alt="">
+                            <div style="font-weight: bold">{{ $rev->user->username }} (4 days ago)</div>
+                            <div class="becice">
+                                <i class="bi bi-star-fill" style="color: {{ ($rev->rate >= 1) ? '#78A2CC' : ''}}"></i>
+                                <i class="bi bi-star-fill" style="color: {{ ($rev->rate >= 2) ? '#78A2CC' : ''}}"></i>
+                                <i class="bi bi-star-fill" style="color: {{ ($rev->rate >= 3) ? '#78A2CC' : ''}}"></i>
+                                <i class="bi bi-star-fill" style="color: {{ ($rev->rate >= 4) ? '#78A2CC' : ''}}"></i>
+                                <i class="bi bi-star-fill" style="color: {{ ($rev->rate >= 5) ? '#78A2CC' : ''}}"></i>
+                            </div>
                             <div class="recommend-detailrating py-1 mt-2" style="background-color: {{ ($rev->recommend == 1) ? '#BDFFBC' : '#FFBCBC' }}">
                                 <img src="{{ ($rev->recommend == 1) ? '/img/section4_jempol-rekomen.png' : '/img/section4_jempol-nonrekomen.png'}}" alt="">
                                 <div style="color: {{ ($rev->recommend == 1) ? '#5EC75C' : '#C75C5C'}}; margin-left:10px" class="">{{ $rev->user->username }} {{ ($rev->recommend == 1) ? 'recommends' : 'not recommends' }} this product</div>
@@ -310,9 +316,27 @@
                             </div>
                         </div>
                         <div class="col-5">
-                            <div class="row mb-3">
-                                <div class="col"></div>
-                                <div class="col-4 text-center" style="">4 days ago</div>
+                            <div class="row mb-3 d-flex justify-content-end">
+                                {{-- <div class="col"></div> --}}
+                                <div class="col-4 text-center" style="">
+                                    {{-- 4 days ago --}}
+                                    <div class="dropdown-center">
+                                        <i class="bi bi-three-dots-vertical titik-tiga" data-bs-toggle="dropdown" style=""></i>
+                                        <ul class="dropdown-menu">
+                                          <li><a class="dropdown-item" href="#"><i class="bi bi-exclamation-circle me-2"></i>Laporkan</a></li>
+                                          @if ($rev->user_id == auth()->user()->id)
+                                          <li><hr class="dropdown-divider"></li>
+                                            <form action="/rating/detail/review/{{ $rev->id}}" method="POST">
+                                                <li onclick="return confirm('Apaka anda yakin ?')">
+                                                    @method('delete')
+                                                    @csrf
+                                                    <button type="submit" class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i>Hapus</button> 
+                                                </li>
+                                            </form>
+                                          @endif
+                                        </ul>
+                                      </div>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-12 text-center" style=""><img src="/img/gb-artikel-tab.png" alt="" class="gb-komen-detailrating"></div>

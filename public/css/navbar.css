@@ -6,3 +6,7 @@
 *{
     font-family: 'Baloo 2', cursive;
 }
+
+.titik-tiga:hover{
+    cursor: pointer;
+}

@@ -50,7 +50,7 @@ class ReviewController extends Controller
         $user = Auth::user();
 
         if($user->reviews->count()){
-            return redirect('/rating')->with('failed', 'Anda sudah pernah memberi review');
+            return redirect('/rating')->with('failed', 'Anda sudah pernah memberi review pada product ini');
         };
 
         Review::create($validatedData);
@@ -100,6 +100,7 @@ class ReviewController extends Controller
      */
     public function destroy(Review $review)
     {
-        //
+        Review::destroy($review->id);
+        return redirect('/rating')-> with('success', 'Review berhasil dihapus');
     }
 }
