@@ -52,6 +52,10 @@ class BookingController extends Controller
         $doctors = Doctor::where('hospital_id', $id_rs)->get();
 
         foreach ($doctors as $doctor){
+            $kab = strtolower(str_replace('KABUPATEN', '', $doctor->rumahSakit->regency->name));
+            $kab[1] = strtoupper($kab[1]);
+            $prov = ucfirst(strtolower($doctor->rumahSakit->province->name));
+
             echo "<div class='spesialisdoc'><div class = 'foto'> <img src='/img/dokter.png'></div>
             <div class='keterangan'>
                 <div class='title-dokter'>
@@ -67,7 +71,7 @@ class BookingController extends Controller
                 </div>
                 <div class='loc-spesialis'>
                     <div class='icon'><i class='fa-solid fa-location-dot'></i></div>
-                    Badung, Bali
+                    $kab, $prov
                 </div>
                 <div class='tahun-spesialis'>
                     <div class='icon'><i class='fa-solid fa-business-time'></i></div>

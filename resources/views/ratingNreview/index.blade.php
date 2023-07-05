@@ -34,73 +34,68 @@
             </div>
         </div>
         <h3 class="mt-4 fw-bold"> Popular Products</h3>
-        <div class="mt-4 row d-flex" style="">
+        <div class="mt-4 row">
             @foreach ($products as $prod)
-                <div class="col-lg-5 scroll-area-rating mb-4" style="display: flex; margin-right: 50px">
+              <div class="col-lg-5 mb-4" style="margin-right: 100px">
+                <a href="/rating/detail" class="text-decoration-none text-black">
+                  <div class="scroll-area-rating d-flex">
                     <div class="foto-produk">
-                        <img src="/img/section4_photo-product.png" alt="">
+                      <img src="/img/section4_photo-product.png" alt="">
                     </div>
                     <div class="isi">
-                        <div class="nama-produk">
-                            <!-- <h5> -->
-                                {{ $prod->name_product }}
-                            <!-- </h5> -->
-                            <div class="jenis-produk">
-                                {{ $prod->type_product }}
-                            </div>
+                      <div class="nama-produk">
+                        {{ $prod->name_product }}
+                      </div>
+                      <div class="jenis-produk">
+                        {{ $prod->type_product }}
+                      </div>
+                      <div class="count">
+                        <div class="rating">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
                         </div>
-                        <div class="count">
-                            <div class="rating">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <div class="average-rating">
-                                <!-- <p> -->
-                                    &nbsp; 4.9 &nbsp;
-                                <!-- </p> -->
-                            </div>
-                            <div class="total-rating">
-                                <!-- <p> -->
-                                    (250 people)
-                                <!-- </p> -->
-                            </div>
+                        <div class="average-rating">
+                          &nbsp; 4.9 &nbsp;
                         </div>
-                        <hr>
-                        <div class="person">
-                            <div class="jarakwokwok">
-                                <div class="foto-profile">
-                                    <img src="/img/section4_profile-picture.png" alt="">
-                                </div>
-                                <div class="nama-person">
-                                    &nbsp; NURHAYATI 1
-                                </div>
-                            </div>
-                            <a class="lanjut" href="/rating/detail">
-                                <!-- <p> -->
-                                (ALL REVIEWS)
-                                <!-- </p> -->
-                            </a>
+                        <div class="total-rating">
+                          (250 people)
                         </div>
-                        <div class="rekomen">
-                            <div class="jempol">
-                                <img src="/img/section4_jempol-rekomen.png" alt="">
-                            </div>
-                            <div class="rekomendesc">
-                                &nbsp;
-                                NURHAYATI 1 recommends this product!
-                            </div>
+                      </div>
+                      <hr>
+                      <div class="person">
+                        <div class="jarakwokwok">
+                          <div class="foto-profile">
+                            <img src="/img/section4_profile-picture.png" alt="">
+                          </div>
+                          <div class="nama-person">
+                            &nbsp; NURHAYATI 1
+                          </div>
                         </div>
-                        <div reviews>
-                            <p>
-                                sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
-                            </p>
+                        <a class="lanjut" href="/rating/detail">
+                          (ALL REVIEWS)
+                        </a>
+                      </div>
+                      <div class="rekomen">
+                        <div class="jempol">
+                          <img src="/img/section4_jempol-rekomen.png" alt="">
                         </div>
+                        <div class="rekomendesc">
+                          &nbsp; NURHAYATI 1 recommends this product!
+                        </div>
+                      </div>
+                      <div reviews>
+                        <p>
+                          sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
+                        </p>
+                      </div>
                     </div>
-                </div>
+                  </div>
+                </a>
+              </div>
             @endforeach
-        </div>
+          </div>
     </div>
 @endsection
