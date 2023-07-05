@@ -71,7 +71,7 @@
 
 .recommend-detailrating{
     display: flex;
-    background-color: #BDFFBC;
+    /* background-color: #BDFFBC; */
     width: 340px;
     align-items: center;
     justify-content: center;

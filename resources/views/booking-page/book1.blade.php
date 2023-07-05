@@ -43,19 +43,19 @@
                 <div class="container">
                     <div class="dropdown-aja">
                         <select class="form-select daerah" aria-label="Default select example" id="provinsi">
-                            <option selected>Pilih Provinsi</option>
+                            <option selected disabled>Pilih Provinsi</option>
                             @foreach ($provinces as $province)
                             <option value="{{ $province->id }}">{{ $province->name }}</option>
                             @endforeach
                         </select>
                         <select class="form-select daerah" aria-label="Default select example" id="kabupaten">
-                            <option selected>Pilih Kabupaten</option>
+                            <option selected disabled>Pilih Kabupaten</option>
                             {{-- @foreach ($regencies as $regency)
                                 <option value="{{ $regency->id }}">{{ $regency->name }}</option>
                                 @endforeach --}}
                         </select>
                          <select class="form-select daerah" aria-label="Default select example" id="hospital">
-                            <option selected>Pilih Rumah Sakit</option>
+                            <option selected disabled>Pilih Rumah Sakit</option>
                         </select>
                     </div>
                 </div>

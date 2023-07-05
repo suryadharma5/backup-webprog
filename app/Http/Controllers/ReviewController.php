@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Review;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
@@ -39,14 +40,22 @@ class ReviewController extends Controller
         // dd($request);
         $validatedData = $request->validate([
             'rate' => 'required',
-            'comment' => 'required|max:500|min:2'
+            'comment' => 'required|max:500|min:2',
+            'recommend' => 'required',
+            'product_id' => 'required'
         ]);
 
-        // $validatedData['user_id'] = auth()->user()->id;
+        $validatedData['user_id'] = auth()->user()->id;
+
+        $user = Auth::user();
+
+        if($user->reviews->count()){
+            return redirect('/rating')->with('failed', 'Anda sudah pernah memberi review');
+        };
 
         Review::create($validatedData);
 
-        return redirect('/rating')->with('success', 'Review has been added');
+        return redirect('/rating')->with('success', 'Review sukses ditambahkan');
     }
 
     /**

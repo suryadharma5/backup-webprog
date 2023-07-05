@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class RatingController extends Controller
@@ -15,10 +16,12 @@ class RatingController extends Controller
         ]);
     }
 
-    public function detailRating(){
+    public function detailRating(Product $prod){
         return view('ratingNreview.detailrating', [
             'title' => 'Rating n Review',
             'active' => 'rating',
+            'product' => $prod,
+            'review' => Review::where('product_id', $prod->id)->get()    
         ]);
     }
 

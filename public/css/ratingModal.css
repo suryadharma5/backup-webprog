@@ -107,6 +107,7 @@
 .star-rate input:not(:checked) ~ label:hover,
 .star-rate input:not(:checked) ~ label:hover ~label{
     color: #FFB8C7;
+    cursor: pointer;
 }
 
 .star-rate input:checked ~ label {

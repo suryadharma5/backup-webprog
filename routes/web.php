@@ -45,8 +45,8 @@ Route::get('/book/{doctor:doctor_name}', [BookingController::class, 'bookDoctor'
 Route::get('/coba', [BookingController::class, 'formBooking']);
 
 Route::get('/rating', [RatingController::class, 'index']);
-Route::get('/rating/form', [RatingController::class, 'formRating']);
-Route::get('/rating/detail', [RatingController::class, 'detailRating']);
+Route::get('/rating/form', [RatingController::class, 'formRating'])->middleware('auth');
+Route::get('/rating/detail/{prod:name_product}', [RatingController::class, 'detailRating'])->middleware('auth');
 
 Route::get('/menfess', [MenfessController::class, 'index']);
 Route::get('/menfess/detail/{menfess}', [MenfessController::class, 'detail']);

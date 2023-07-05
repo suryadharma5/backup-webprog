@@ -17,6 +17,13 @@
             </div>
         @endif
 
+        @if (session()->has('failed'))
+            <div class="alert alert-danger alert-dismissible fade show col-lg-12 mt-3" role="alert">
+                {{ session('failed') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         <div class="search-bar d-flex flex-row mt-4">
             <div class="col-lg-5 d-flex flex-row py-2">
                 <div class="input-group col-lg" style="border-color:#FFB8C7; border-style: solid; text-align: right ; border-radius: 7px">
@@ -37,7 +44,7 @@
         <div class="mt-4 row">
             @foreach ($products as $prod)
               <div class="col-lg-5 mb-4" style="margin-right: 100px">
-                <a href="/rating/detail" class="text-decoration-none text-black">
+                <a href="/rating/detail/{{ $prod->name_product }}" class="text-decoration-none text-black">
                   <div class="scroll-area-rating d-flex">
                     <div class="foto-produk">
                       <img src="/img/section4_photo-product.png" alt="">
@@ -51,14 +58,14 @@
                       </div>
                       <div class="count">
                         <div class="rating">
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star"></span>
-                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star {{ ($prod->rating >= 1) ? 'checked' : ''}}"></span>
+                          <span class="fa fa-star {{ ($prod->rating >= 2) ? 'checked' : ''}}"></span>
+                          <span class="fa fa-star {{ ($prod->rating >= 3) ? 'checked' : ''}}"></span>
+                          <span class="fa fa-star {{ ($prod->rating >= 4) ? 'checked' : ''}}"></span>
+                          <span class="fa fa-star {{ ($prod->rating >= 5) ? 'checked' : ''}}"></span>
                         </div>
                         <div class="average-rating">
-                          &nbsp; 4.9 &nbsp;
+                          &nbsp; {{ $prod->rating }}&nbsp;
                         </div>
                         <div class="total-rating">
                           (250 people)
