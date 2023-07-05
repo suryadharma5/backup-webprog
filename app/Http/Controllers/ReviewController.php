@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Review;
+use Faker\Core\Number;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -49,9 +51,18 @@ class ReviewController extends Controller
 
         $user = Auth::user();
 
+        $product = Product::findOrFail($request->product_id);
+        $product->rating += $request->rate;
+        $product->total_review++;
+        $product->rating /= $product->total_review;
+        $product->rating = round($product->rating, 1);
+        $product->save();
+
+        // dd($product);
         if($user->reviews->count()){
             return redirect('/rating')->with('failed', 'Anda sudah pernah memberi review pada product ini');
         };
+
 
         Review::create($validatedData);
 

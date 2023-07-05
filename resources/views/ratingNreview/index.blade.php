@@ -68,7 +68,7 @@
                           &nbsp; {{ $prod->rating }}&nbsp;
                         </div>
                         <div class="total-rating">
-                          (250 people)
+                          ({{ $prod->total_review }} {{ ($prod->total_review > 1) ? 'peoples' : 'people'}}) 
                         </div>
                       </div>
                       <hr>
@@ -81,7 +81,7 @@
                             &nbsp; NURHAYATI 1
                           </div>
                         </div>
-                        <a class="lanjut" href="/rating/detail">
+                        <a class="lanjut" href="/rating/detail/{{ $prod->name_product }}">
                           (ALL REVIEWS)
                         </a>
                       </div>

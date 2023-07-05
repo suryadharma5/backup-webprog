@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name_product');
             $table->string('type_product');
-            $table->enum('rating', ['1', '2', '3', '4', '5']);
+            $table->float('rating')->default(0);
+            $table->integer('total_review')->default(0);
             // $table->foreignId('user_id');
             // $table->foreignId('user_image');
             // $table->foreignId('user_name');

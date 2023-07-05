@@ -43,10 +43,14 @@
                 <div class="row mt-5 box-rate pb-5">
                     <div class="col-6 d-flex align-items-center justify-content-center flex-column pt-4">
                         <div class="rate">
-                            4.9
+                            {{ $product->rating }}
                         </div>
                         <div class="star">
-                            <img src="/img/star-detailrating.png" alt="">
+                            <i class="bi bi-star-fill" style="color: {{ ($product->rating >= 1) ? '#78A2CC' : ''}}"></i>
+                            <i class="bi bi-star-fill" style="color: {{ ($product->rating >= 2) ? '#78A2CC' : ''}}"></i>
+                            <i class="bi bi-star-fill" style="color: {{ ($product->rating >= 3) ? '#78A2CC' : ''}}"></i>
+                            <i class="bi bi-star-fill" style="color: {{ ($product->rating >= 4) ? '#78A2CC' : ''}}"></i>
+                            <i class="bi bi-star-fill" style="color: {{ ($product->rating >= 5) ? '#78A2CC' : ''}}"></i>
                         </div>
                     </div>
                     <div class="col">

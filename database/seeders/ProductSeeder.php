@@ -28,7 +28,7 @@ class ProductSeeder extends Seeder
             DB::table('products')->insert([
                 'name_product' => $nama[mt_rand(0,2)],
                 'type_product' => $faker->randomElement($categories),
-                'rating' => mt_rand(1, 5),
+                // 'rating' => mt_rand(1, 5),
             ]);
         }
     }
