@@ -15,7 +15,7 @@ class MenfessReply extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function menfesses(){
+    public function menfess(){
         return $this->belongsTo(Menfess::class);
     }
 }

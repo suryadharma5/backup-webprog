@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menfess;
+use App\Models\MenfessReply;
 use Illuminate\Http\Request;
 
 class MenfessController extends Controller
@@ -12,7 +13,7 @@ class MenfessController extends Controller
         return view('menfess.index', [
             'title' => 'Menfess',
             'active' => 'menfess',
-            'menfess' => Menfess::all()
+            'menfess' => Menfess::all(),
         ]);
     }
 
@@ -20,7 +21,8 @@ class MenfessController extends Controller
         return view('menfess.menfess-detail', [
             'title' => 'Menfess',
             'active' => 'menfess',
-            'menfess' => $menfess
+            'menfess' => $menfess,
+            'reply' => MenfessReply::where('menfess_id', $menfess->id)->get(),
         ]);
     }
 }

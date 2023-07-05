@@ -46,7 +46,7 @@
         <div class="card-body">
             <div class="row d-flex mx-1">
                 <div class="col-10 my-1">
-                    <a href="/menfess/detail" class="text-decoration-none text-black">
+                    <a href="/menfess/detail/{{ $men->id }}" class="text-decoration-none text-black">
                         <h3 class="card-title fw-bold">{{ $men->title }}</h3>
                     </a>
                 </div>
@@ -71,34 +71,37 @@
                     </div>
                 </div>
             </div>
-            <div class="row d-flex mx-1">
+            <div class="row d-flex mx-1 my-0">
                 <div class="col-1">
                     <p class="card-text" style="color: gray">asked by</p>
                 </div>
                 <div class="col" style="margin-left: -38px">
-                    <p class="card-text" style="font-weight: bold;">suryadharma</p>
+                    <p class="card-text" style="font-weight: bold;">{{ $men->user->username }}</p>
                 </div>
             </div>
-            <div class="row d-flex m-1">
-                <div class="col-1">
-                    <img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Profile" style="border-radius: 50%; width: 50px; height:50px; object-fit: cover;">
+            @if ($men->menfessReply->count())
+            {{-- @dd($men->menfessReply) --}}
+                <div class="row d-flex m-1">
+                    <div class="col-1">
+                        <img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Profile" style="border-radius: 50%; width: 50px; height:50px; object-fit: cover;">
+                    </div>
+                    <div class="col" style="margin-left: -30px">
+                        <p style="font-weight: bold;">Brian</p>
+                        <p style="margin-top: -20px; color: gray;">Worker Dad</p>
+                    </div>
+                    </div>
+                    <div class="row mx-1">
+                    <img src="{{$men->menfessReply[0]->reply_image}}" class="card-img-top" alt="..." style="height: 380px; object-fit:cover;">
+                    </div>
+                    <div class="row m-1">
+                        <p>{{$men->menfessReply[0]->reply_text}}</p>
+                    </div>
+                    <div class="row text-center" style="margin-left: 30%; margin-right:30%;">
+                    <div class="tombol">
+                        <a href="/menfess/detail/{{ $men->id }}" class="btn" style="background-color: #78A2CC; color:#FFF7F6;">See all replies  <i class="fa-solid fa-arrow-right fa-lg mx-2" style="color: #ffffff;"></i></a>
+                    </div>
                 </div>
-                <div class="col" style="margin-left: -30px">
-                    <p style="font-weight: bold;">Brian</p>
-                    <p style="margin-top: -20px; color: gray;">Worker Dad</p>
-                </div>
-            </div>
-            <div class="row mx-1">
-                <img src="{{ $men->menfess_image }}" class="card-img-top" alt="..." style="height: 380px; object-fit:cover;">
-            </div>
-            <div class="row m-1">
-                <p>{{$men->menfess_text}}</p>
-            </div>
-            <div class="row text-center" style="margin-left: 30%; margin-right:30%;">
-                <div class="tombol">
-                    <a href="/menfess/detail/{{ $men->id }}" class="btn" style="background-color: #78A2CC; color:#FFF7F6;">See more replies  <i class="fa-solid fa-arrow-right fa-lg mx-2" style="color: #ffffff;"></i></a>
-                </div>
-            </div>
+            @endif
         </div>
     </div>
     @endforeach

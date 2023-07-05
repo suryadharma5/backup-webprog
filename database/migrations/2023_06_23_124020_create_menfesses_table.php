@@ -15,14 +15,12 @@ return new class extends Migration
     {
         Schema::create('menfesses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->string('title');
             $table->integer('total_likes');
             $table->integer('total_replies');
-            $table->string('menfess_image');
-            $table->longText('menfess_text');
 
-            $table->foreign('user_id')->references('id')->on('users');
+            // $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
