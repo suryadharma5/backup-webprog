@@ -43,6 +43,7 @@
         <h3 class="mt-4 fw-bold"> Popular Products</h3>
         <div class="mt-4 row">
             @foreach ($products as $prod)
+              {{-- @dd( $prod->reviews[0]->user->username) --}}
               <div class="col-lg-5 mb-4" style="margin-right: 100px">
                 <a href="/rating/detail/{{ $prod->name_product }}" class="text-decoration-none text-black">
                   <div class="scroll-area-rating d-flex">
@@ -72,32 +73,36 @@
                         </div>
                       </div>
                       <hr>
-                      <div class="person">
-                        <div class="jarakwokwok">
-                          <div class="foto-profile">
-                            <img src="/img/section4_profile-picture.png" alt="">
+                      @if ({{ $prod->reviews[0]->user->count() }})
+                        <div class="person">
+                          <div class="jarakwokwok">
+                            <div class="foto-profile">
+                              <img src="/img/section4_profile-picture.png" alt="">
+                            </div>
+                            <div class="nama-person">
+                              {{ $prod->reviews[0]->user->username }}
+                            </div>
                           </div>
-                          <div class="nama-person">
-                            &nbsp; NURHAYATI 1
+
+                          <a class="lanjut" href="/rating/detail/{{ $prod->name_product }}">
+                            (ALL REVIEWS)
+                          </a>
+
+                        </div>
+                        <div class="rekomen">
+                          <div class="jempol">
+                            <img src="/img/section4_jempol-rekomen.png" alt="">
+                          </div>
+                          <div class="rekomendesc">
+                            &nbsp; NURHAYATI 1 recommends this product!
                           </div>
                         </div>
-                        <a class="lanjut" href="/rating/detail/{{ $prod->name_product }}">
-                          (ALL REVIEWS)
-                        </a>
-                      </div>
-                      <div class="rekomen">
-                        <div class="jempol">
-                          <img src="/img/section4_jempol-rekomen.png" alt="">
+                        <div reviews>
+                          <p>
+                            sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
+                          </p>
                         </div>
-                        <div class="rekomendesc">
-                          &nbsp; NURHAYATI 1 recommends this product!
-                        </div>
-                      </div>
-                      <div reviews>
-                        <p>
-                          sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
-                        </p>
-                      </div>
+                      @endif
                     </div>
                   </div>
                 </a>
