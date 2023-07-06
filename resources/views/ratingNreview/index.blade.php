@@ -45,7 +45,7 @@
             @foreach ($products as $prod)
               {{-- @dd( $prod->reviews[0]->user->username) --}}
               <div class="col-lg-5 mb-4" style="margin-right: 100px">
-                <a href="/rating/detail/{{ $prod->name_product }}" class="text-decoration-none text-black">
+                <a href="/rating/detail/{{ $prod->id }}" class="text-decoration-none text-black">
                   <div class="scroll-area-rating d-flex">
                     <div class="foto-produk">
                       <img src="/img/section4_photo-product.png" alt="">
@@ -73,33 +73,33 @@
                         </div>
                       </div>
                       <hr>
-                      @if ({{ $prod->reviews[0]->user->count() }})
+                      @if ($prod->reviews->count())
                         <div class="person">
                           <div class="jarakwokwok">
                             <div class="foto-profile">
                               <img src="/img/section4_profile-picture.png" alt="">
                             </div>
-                            <div class="nama-person">
+                            <div class="nama-person ms-2">
                               {{ $prod->reviews[0]->user->username }}
                             </div>
                           </div>
 
-                          <a class="lanjut" href="/rating/detail/{{ $prod->name_product }}">
+                          <a class="lanjut" href="/rating/detail/{{ $prod->id }}">
                             (ALL REVIEWS)
                           </a>
 
                         </div>
-                        <div class="rekomen">
+                        <div class="rekomen" style="background-color: {{ ($prod->reviews[0]->recommend == 1) ? '#BDFFBC' : '#FFBCBC' }}">
                           <div class="jempol">
-                            <img src="/img/section4_jempol-rekomen.png" alt="">
+                            <img src="/img/{{ ($prod->reviews[0]->recommend == 1) ? 'section4_jempol-rekomen.png' : 'section4_jempol-nonrekomen.png'}}" alt="">
                           </div>
-                          <div class="rekomendesc">
-                            &nbsp; NURHAYATI 1 recommends this product!
+                          <div class="rekomendesc" style="color:  {{ ($prod->reviews[0]->recommend == 1) ? '#5EC75C' : '#C75C5C'}}">
+                            &nbsp; {{ $prod->reviews[0]->user->username }} {{ ($prod->reviews[0]->recommend == 1) ? 'merekomendasikan ini' : 'tidak merekomendasikan ini'}}
                           </div>
                         </div>
                         <div reviews>
                           <p>
-                            sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
+                            {{ $prod->reviews[0]->comment }}
                           </p>
                         </div>
                       @endif

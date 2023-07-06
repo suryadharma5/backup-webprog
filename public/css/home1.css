@@ -408,10 +408,10 @@ body{
 .isi .rekomen{
     margin: 1vw 0;
     display: flex;
-    background-color: #BDFFBC;
+    /* background-color: #BDFFBC; */
     font-size: 1.053vw;
     font-weight: 400;
-    color: #5EC75C;
+    /* color: #5EC75C; */
     border-radius: 0.658vw;
     align-items: center;
 }

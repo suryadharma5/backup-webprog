@@ -47,7 +47,7 @@ Route::get('/coba', [BookingController::class, 'formBooking']);
 
 Route::get('/rating', [RatingController::class, 'index']);
 Route::get('/rating/form', [RatingController::class, 'formRating'])->middleware('auth');
-Route::get('/rating/detail/{prod:name_product}', [RatingController::class, 'detailRating'])->middleware('auth');
+Route::get('/rating/detail/{prod}', [RatingController::class, 'detailRating'])->middleware('auth');
 Route::resource('/rating/detail/review', ReviewController::class);
 
 Route::get('/menfess', [MenfessController::class, 'index']);
