@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menfess;
 use App\Models\MenfessReply;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
@@ -89,8 +90,9 @@ class MenfessReplyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(MenfessReply $menfessReply)
     {
-        //
+        MenfessReply::destroy($menfessReply->id);
+        return redirect('/menfess')-> with('success', 'Jawaban berhasil dihapus');
     }
 }

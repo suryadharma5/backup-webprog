@@ -41,11 +41,35 @@
                         <div class="col-1">
                             <img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" style="border-radius: 50%; width: 50px; height:50px; object-fit: cover;">
                         </div>
-                        <div class="col-10" style="margin-left: -30px">
+                        <div class="col-8" style="margin-left: -30px">
                             <p style="font-weight: bold;">{{ $men->users->username }}</p>
                             <p style="margin-top: -20px; color: gray;">Worker Dad</p>
                         </div>
-                        <div class="col my-1">
+                        <div class="col">
+                            <div class="col-lg py-2">
+                                <div class="d-flex flex-row justify-content-end align-items-center">
+                                    <i class="fa-solid fa-heart fa-lg" style="color: #78a2cc;"></i>
+                                    <div class="align-self-center p-0 ms-1">{{ $men->total_likes }} likes</div>
+                                    <div class="dropdown-center ms-4">
+                                        <i class="bi bi-three-dots-vertical titik-tiga" data-bs-toggle="dropdown" style=""></i>
+                                        <ul class="dropdown-menu">
+                                          <li><a class="dropdown-item" href="#"><i class="bi bi-exclamation-circle me-2"></i>Laporkan</a></li>
+                                          @if ($men->users->id == auth()->user()->id)
+                                          <li><hr class="dropdown-divider"></li>
+                                            <form action="/menfess/detail/reply/{{ $men->id}}" method="POST">
+                                                <li onclick="return confirm('Apaka anda yakin ?')">
+                                                    @method('delete')
+                                                    @csrf
+                                                    <button type="submit" class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i>Hapus</button> 
+                                                </li>
+                                            </form>
+                                          @endif
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- <div class="col my-1 bg-r">
                             <div class="row d-flex">
                                 <div class="col-1">
                                     <i class="fa-solid fa-heart fa-lg" style="color: #78a2cc;"></i>
@@ -53,8 +77,11 @@
                                 <div class="col">
                                     <p style="color: #78A2CC">{{ $menfess->total_likes }} likes</p>
                                 </div>
+                                <div class="col bg-warning">
+                                    a
+                                </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     @if ($men->reply_image)
                         <div class="row mx-1">

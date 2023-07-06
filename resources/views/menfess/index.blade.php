@@ -9,7 +9,6 @@
 <title>Hamily | {{ $title }}</title>
 @endsection
 
-
 @section('contents')
 
 <div class="container">
@@ -86,15 +85,34 @@
                     <p class="card-text" style="font-weight: bold;">{{ $men->user->username }}</p>
                 </div>
             </div>
+            <hr>
             @if ($men->menfessReply->count())
-            {{-- @dd($men->menfessReply) --}}
+            
                 <div class="row d-flex m-1">
                     <div class="col-1">
                         <img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Profile" style="border-radius: 50%; width: 50px; height:50px; object-fit: cover;">
                     </div>
                     <div class="col" style="margin-left: -30px">
-                        <p style="font-weight: bold;">Brian</p>
+                        <p style="font-weight: bold;">{{ $men->menfessReply[0]->users->username }}</p>
                         <p style="margin-top: -20px; color: gray;">Worker Dad</p>
+                    </div>
+                    <div class="col text-end">
+                        <div class="dropdown-center">
+                            <i class="bi bi-three-dots-vertical titik-tiga" data-bs-toggle="dropdown" style=""></i>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#"><i class="bi bi-exclamation-circle me-2"></i>Laporkan</a></li>
+                              @if ($men->menfessReply[0]->users->id == auth()->user()->id)
+                              <li><hr class="dropdown-divider"></li>
+                                <form action="/menfess/detail/reply/{{ $men->menfessReply[0]->id}}" method="POST">
+                                    <li onclick="return confirm('Apaka anda yakin ?')">
+                                        @method('delete')
+                                        @csrf
+                                        <button type="submit" class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i>Hapus</button> 
+                                    </li>
+                                </form>
+                              @endif
+                            </ul>
+                        </div>
                     </div>
                     </div>
 
