@@ -5,7 +5,8 @@
 @endsection
 
 @section('css')
-     <link rel="stylesheet" href="/css/menfess.css">
+    <link rel="stylesheet" href="/css/menfess.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 @endsection
 
 {{-- @dd($menfess) --}}
@@ -31,8 +32,9 @@
             </div>
         </div>
 
-        {{-- main content --}}
-        @foreach ($reply as $rep)
+        {{-- main content user reply --}}
+        @foreach ($menfess->menfessReply as $men)
+            {{-- @dd($men->users) --}}
             <div class="card-body border-0 mt-4">
                     <div class="card my-3" style="background-color: #FFF7F6">
                     <div class="row d-flex m-1 mt-3">
@@ -40,7 +42,7 @@
                             <img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" style="border-radius: 50%; width: 50px; height:50px; object-fit: cover;">
                         </div>
                         <div class="col-10" style="margin-left: -30px">
-                            <p style="font-weight: bold;">Brian</p>
+                            <p style="font-weight: bold;">{{ $men->users->username }}</p>
                             <p style="margin-top: -20px; color: gray;">Worker Dad</p>
                         </div>
                         <div class="col my-1">
@@ -54,11 +56,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row mx-1">
-                        <img src="{{ $rep->reply_image }}" class="card-img-top" alt="..." style="height: 380px; object-fit:cover;">
-                    </div>
+                    @if ($men->reply_image)
+                        <div class="row mx-1">
+                            <img src="{{ $men->reply_image }}" class="card-img-top" alt="..." style="height: 380px; object-fit:cover;">
+                        </div>
+                    @endif
                     <div class="row m-1 mt-3">
-                        <p>{{ $rep->reply_text }}</p>
+                        <p>{{ $men->reply_text }}</p>
                     </div>
                 </div>
             </div>
@@ -66,9 +70,11 @@
 
         {{-- Modal --}}
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" style="width: 700px; height: 500px;">
-            <form action="">
-                <div class="modal-content" style="height: 450px;">
+            <div class="modal-dialog modal-lg" style="width: 700px; height: 600px;">
+            <form action="/menfess/detail/reply" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" value="{{ $menfess->id }}" name="menfess_id">
+                <div class="modal-content" style="height: 500px;">
                     <div class="x-button d-flex flex-row-reverse mt-4" style="margin-right: -50px">
                         <button type="button" class="border-0 bg-transparent" data-bs-dismiss="modal"><i class="bi bi-x-lg" style="color: #FFA5B8; -webkit-text-stroke: 3px;"></i></button>
                     </div>
@@ -77,16 +83,28 @@
                             <p class="my-0">
                                 add reply to
                             </p>
-                            <h5 class="fw-bold">Bagaimana cara mengubah hari Senin menjadi hari Minggu?</h5>
+                            <h5 class="fw-bold">{{ Str::limit($menfess->title, $limit=150, '...') }}</h5>
                             <div class="mb-3">
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="9" placeholder="Type reply..." style="background-color: #C3E4F1"></textarea>
+                                <textarea class="form-control @error('user_reply') is-invalid @enderror" id="exampleFormControlTextarea1" rows="9" placeholder="Type reply..." style="background-color: #C3E4F1" name="reply_text"></textarea>
+                                @error('user_reply')
+                                <div class="invalid-feedback">
+                                  {{ $message }}
+                                </div>
+                                <script type="text/javascript">
+                                    console.log('error');
+                                    $(document).ready(function(){
+                                        //your stuff
+                                        $('#exampleModal').modal('show');
+                                    });
+                                </script>
+                                @enderror
                             </div>
                             <div class="row">
                                 <div class="image-input d-flex flex-row col-lg-6 align-items-center">
                                     <button type="button" id="photoButton" onclick="buttonClick()" class="border-0 bg-transparent" style="text-align: left; width:7%">
                                         <i class="bi bi-image-fill fa-2x" style="color: #FFA5B8"></i>
                                     </button>
-                                    <input type="file" name="reply-photo" id="reply-photo" hidden>
+                                    <input type="file" name="reply_image" id="reply-photo" hidden>
                                     <p class="text-center ms-4 mt-2 filename">No file chosen</p>
                                     <i class="bi bi-x-lg" id="x-button" style="display: none;" onclick="removeFile()"></i>
                                 </div>

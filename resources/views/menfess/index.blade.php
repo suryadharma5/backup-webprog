@@ -2,6 +2,7 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/menfess.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 @endsection
 
 @section('title')
@@ -12,6 +13,12 @@
 @section('contents')
 
 <div class="container">
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show col-lg-12 mt-3" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     {{-- button bagian atas --}}
     <div class="row pt-5 d-flex">
         <div class="col-2">
@@ -90,9 +97,12 @@
                         <p style="margin-top: -20px; color: gray;">Worker Dad</p>
                     </div>
                     </div>
-                    <div class="row mx-1">
-                    <img src="{{$men->menfessReply[0]->reply_image}}" class="card-img-top" alt="..." style="height: 380px; object-fit:cover;">
-                    </div>
+
+                    @if ($men->menfessReply[0]->reply_image)
+                        <div class="row mx-1">
+                            <img src="{{$men->menfessReply[0]->reply_image}}" class="card-img-top" alt="..." style="height: 380px; object-fit:cover;">
+                        </div>
+                    @endif
                     <div class="row m-1">
                         <p>{{$men->menfessReply[0]->reply_text}}</p>
                     </div>
@@ -105,8 +115,6 @@
         </div>
     </div>
     @endforeach
-
-
 </div>
 
 

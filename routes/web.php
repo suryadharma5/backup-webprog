@@ -10,6 +10,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\MenfessController;
+use App\Http\Controllers\MenfessReplyController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -47,9 +48,11 @@ Route::get('/coba', [BookingController::class, 'formBooking']);
 Route::get('/rating', [RatingController::class, 'index']);
 Route::get('/rating/form', [RatingController::class, 'formRating'])->middleware('auth');
 Route::get('/rating/detail/{prod:name_product}', [RatingController::class, 'detailRating'])->middleware('auth');
+Route::resource('/rating/detail/review', ReviewController::class);
 
 Route::get('/menfess', [MenfessController::class, 'index']);
-Route::get('/menfess/detail/{menfess}', [MenfessController::class, 'detail']);
+Route::get('/menfess/detail/{menfess}', [MenfessController::class, 'detail'])->middleware('auth');
+Route::resource('/menfess/detail/reply', MenfessReplyController::class);
 
 Route::get('/track', function(){
     return view('track.index', [
@@ -73,7 +76,6 @@ Route::get('/profile', function(){
 });
 
 
-Route::resource('/rating/detail/review', ReviewController::class);
 
 
 Route::get('/adminArticle', [AdminController::class, 'article']);

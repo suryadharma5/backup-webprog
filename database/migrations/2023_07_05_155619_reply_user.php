@@ -13,15 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('menfess_replies', function (Blueprint $table) {
+        Schema::create('reply_user', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('menfess_id');
-            $table->foreignId('user_id');
-            $table->string('reply_image')->nullable()->default(null);
-            $table->longText('reply_text');
-
-            $table->timestamps();
+            $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('menfess_reply_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
         });
+
     }
 
     /**
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menfess_replies');
+        //
     }
 };
