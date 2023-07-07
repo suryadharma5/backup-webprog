@@ -56,14 +56,14 @@ $('input[name=rate]').change(function(){
     }
 });
 
-const fileInput = document.getElementById('reply-photo')
+const fileInput = document.getElementById('reply_photo')
 const changeFileName = document.querySelector('.filename')
 const xbutton = document.getElementById('x-button')
 var selectedFile = '';
 
 
 function buttonClick(){
-    const photoButton = document.querySelector('#reply-photo')
+    const photoButton = document.querySelector('#reply_photo')
     photoButton.click()
 }
 

@@ -40,13 +40,20 @@ class ReviewController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        // dd($validatedData);
         // dd($request);
         $validatedData = $request->validate([
             'rate' => 'required',
             'comment' => 'required|max:500|min:2',
             'recommend' => 'required',
-            'product_id' => 'required'
+            'product_id' => 'required',
+            'reply_photo' => 'image|file|max:1024'
         ]);
+        
+        if ($request->file('reply_photo')) {
+            $validatedData['reply_photo'] = $request->file('reply_photo')->store('review-images');
+        }
+
 
         $validatedData['user_id'] = auth()->user()->id;
 
@@ -116,7 +123,21 @@ class ReviewController extends Controller
      */
     public function destroy(Review $review)
     {
+
+        $product = Product::findOrFail($review->product_id);
+        $product->rating -= $review->rate;
+        $product->total_review--;
+        if($product->total_review != 0){
+            $product->rating /= $product->total_review;
+        }else {
+            $product->rating = 0;
+        }
+
+        $product->rating = round($product->rating, 1);
+        $product->save();
+
         Review::destroy($review->id);
+        // dd($review);
         return redirect('/rating')-> with('success', 'Review berhasil dihapus');
     }
 }

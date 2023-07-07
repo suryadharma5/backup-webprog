@@ -133,7 +133,7 @@
             <div class="modal-content" style="height: 500px;">
                 {{-- <div class="modal-header border-0 margin-0">
                 </div> --}}
-                <form action="/rating/detail/review" method="POST">
+                <form action="/rating/detail/review" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="row">
@@ -214,7 +214,7 @@
                                 <button type="button" id="photoButton" onclick="buttonClick()" class="border-0 bg-transparent" style="text-align: left; width:7%">
                                     <i class="bi bi-image-fill fa-2x" style="color: #FFA5B8"></i>
                                 </button>
-                                <input type="file" name="reply-photo" id="reply-photo" hidden>
+                                <input type="file" name="reply_photo" id="reply_photo" hidden>
                                 <i class="bi bi-x-lg" id="x-button" style="display: none;" onclick="removeFile()"></i>
                             </div>
                         </div>
@@ -342,9 +342,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-12 text-center" style=""><img src="/img/gb-artikel-tab.png" alt="" class="gb-komen-detailrating"></div>
-                            </div>
+
+                            @if ($rev->reply_photo)
+                                <div class="row">
+                                    <div class="col-12 text-center" style="">
+                                        <img src="{{ asset('storage/'. $rev->reply_photo) }}" alt="" class="gb-komen-detailrating">
+                                    </div>
+                                </div>
+                            @endif
                         </div>
                     
                     

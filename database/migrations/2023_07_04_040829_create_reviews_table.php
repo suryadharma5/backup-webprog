@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('product_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->integer('recommend');
+            $table->string('reply_photo')->nullable()->default(null);
             $table->integer('rate')->default(0);
             $table->longText('comment');
             $table->timestamps();
