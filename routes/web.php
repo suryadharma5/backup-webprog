@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Review;
+use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
@@ -10,8 +11,9 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\MenfessController;
-use App\Http\Controllers\MenfessReplyController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\MenfessReplyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,9 +48,9 @@ Route::get('/book/{doctor:doctor_name}', [BookingController::class, 'bookDoctor'
 Route::get('/coba', [BookingController::class, 'formBooking']);
 
 Route::get('/rating', [RatingController::class, 'index']);
-Route::get('/rating/form', [RatingController::class, 'formRating'])->middleware('auth');
 Route::get('/rating/detail/{prod}', [RatingController::class, 'detailRating'])->middleware('auth');
 Route::resource('/rating/detail/review', ReviewController::class);
+Route::resource('/rating/product', ProductController::class)->middleware('auth');
 
 Route::get('/menfess', [MenfessController::class, 'index']);
 Route::get('/menfess/detail/{menfess}', [MenfessController::class, 'detail'])->middleware('auth');

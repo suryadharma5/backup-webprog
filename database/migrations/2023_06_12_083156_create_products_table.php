@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name_product');
             $table->string('type_product');
+            $table->string('form_image')->default('/img/section4_photo-product.png');
             $table->float('rating')->default(0);
             $table->integer('total_review')->default(0);
             // $table->foreignId('user_id');

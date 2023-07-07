@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
             RumahSakitSeeder::class,
             DoctorSeeder::class,
             MenfessSeeder::class,
-            ProductSeeder::class,
+            // ProductSeeder::class,
         ]);
     }
 }

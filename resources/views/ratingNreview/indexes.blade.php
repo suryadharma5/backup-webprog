@@ -4,12 +4,17 @@
     <link rel="stylesheet" href="/css/ratingNreviewForm.css">
 @endsection
 
+@section('title')
+    <title>Hamily | {{ $title }}</title>
+@endsection
+
 @section('contents')
     <div class="full-width-content">
         <div class="content-atas row align-items-center mt-4">
-            <div class="back-button col-md-2">
+            <a class="back-button col-md-2" href="/rating">
+                {{-- aa --}}
                 <i class="fa-solid fa-circle-arrow-left" style="color: #9FCAE6;"></i>
-            </div>
+            </a>
             <div class="text-desc col-md-7">
                 Yuk bantu Hamily dengan melengkapi list product yang kamu gunakan!
             </div>
@@ -20,15 +25,30 @@
 
         {{-- Form add product --}}
         <div class="container">
-            <form class="contentform px-5 py-1" enctype="multipart/form-data" method="">
-                <label for="namabrand">Nama Brand</label> <br>
-                <input type="text" id="namabrand" name="namabrand" class="px-3 form-control"> <br>
-                <label for="namaproduk">Nama Produk</label> <br>
-                <input type="text" id="namaproduk" name="namaproduk" class="px-3 form-control"> <br>
-                <label for="namavarian">Varian / Shade</label> <br>
-                <input type="text" id="namavarian" name="namavarian" class="px-3 form-control"> <br>
+            <form class="contentform px-5 py-1" method="POST" action="/rating/product" enctype="multipart/form-data">
+                @csrf
+                <div class="product_name p-0">
+                    <label for="name_product">Nama Produk</label> <br>
+                    <input type="text" id="name_product" name="name_product" class="px-3 form-control @error('name_product') is-invalid @enderror"> <br>
+                    @error('name_product')
+                        <div class="invalid-feedback m-0 p-0">
+                          {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
                 
-                <div class="containers">
+                <label for="type_product">Tipe Produk</label> <br>
+                <input type="text" id="type_product" name="type_product" class="px-3 form-control @error('type_product') is-invalid @enderror"> <br>
+                @error('type_product')
+                    <div class="invalid-feedback m-0 p-0">
+                      {{ $message }}
+                    </div>
+                @enderror
+                {{-- <label for="namavarian">Varian / Shade</label> <br>
+                <input type="text" id="namavarian" name="namavarian" class="px-3 form-control"> <br> --}}
+                
+                <div class="containers @error('form_image') border border-danger @enderror">
                     <div class="wrapper">
                         <div class="image">
                            <img src="" alt="" id="uploadimage">
@@ -46,14 +66,19 @@
                         </div>
                     </div>
                     <button onclick="defaultBtnActive()" id="custom-btn" type="button">+ ADD PHOTO</button>
-                    <input id="default-btn" type="file" hidden name="form-image">
+                    <input id="default-btn" type="file" hidden name="form_image">
                 </div>
                 <div class="sendbutton col-md-12">
-                    <button type="submit" class="btn btn-primary" onclick="sendvalue()">SEND</button>
+                    <button type="submit" class="btn btn-primary">SEND</button>
                     <a href="#">
                     </a>
                 </div>
             </form>
+            @error('form_image')
+                <div class="invalid-feedback">
+                  {{ $message }}
+                </div>
+            @enderror
         </div>
 
         <div class="sectionpic awanpink">

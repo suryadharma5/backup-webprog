@@ -25,10 +25,4 @@ class RatingController extends Controller
         ]);
     }
 
-    public function formRating(){
-        return view('ratingNreview.indexes', [
-            'title' => 'Rating n Review',
-            'active' => 'rating',
-        ]);
-    }
 }

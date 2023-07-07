@@ -8,10 +8,10 @@ let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
 function defaultBtnActive(){
   defaultBtn.click();
 }
-function sendvalue(){
-  alert("Terima Kasih Sudah Membantu HAMILY Melengkapi List Produk :))");
-  location.reload();
-}
+// function sendvalue(){
+//   alert("Terima Kasih Sudah Membantu HAMILY Melengkapi List Produk :))");
+//   location.reload();
+// }
 defaultBtn.addEventListener("change", function(){
   const file = this.files[0];
   if(file){

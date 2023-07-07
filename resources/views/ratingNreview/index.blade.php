@@ -33,7 +33,7 @@
             </div>
             <div class="col-lg-1"></div>
             <div class="col-lg-5 py-2 px-2" style="margin-left: 15px">
-                <a href="/rating/form" class="text-decoration-none text-white">
+                <a href="/rating/product" class="text-decoration-none text-white">
                     <div class="d-flex justify-content-center py-2" style="background-color: #FFB8C7; border-radius: 10px">
                         <h5 class="fw-bold">Add Product</h5>
                     </div>
@@ -48,10 +48,13 @@
                 <a href="/rating/detail/{{ $prod->id }}" class="text-decoration-none text-black">
                   <div class="scroll-area-rating d-flex">
                     <div class="foto-produk">
-                      <img src="/img/section4_photo-product.png" alt="">
+                      @if ($prod->form_image)
+                        <img src="{{ asset('storage/'. $prod->form_image) }}" alt="" class="img-fluid img-thumbnail" style="max-width: 148px;min-height: 282px ;overflow: hidden;">
+                      @endif
+                      <img src="{{ $prod->form_image }}" alt="">
                     </div>
-                    <div class="isi">
-                      <div class="nama-produk">
+                    <div class="isi ms-4">
+                      <div class="nama-produk my-0">
                         {{ $prod->name_product }}
                       </div>
                       <div class="jenis-produk">

@@ -347,7 +347,7 @@ body{
 .nama-produk{
     font-size: 1.646vw;
     font-weight: 600;
-    margin-bottom: 0.500vw;
+    /* margin-bottom: 0.500vw; */
 }
 
 .rating-and-review .scroll-area{

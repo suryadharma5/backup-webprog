@@ -118,7 +118,7 @@
 
                     @if ($men->menfessReply[0]->reply_image)
                         <div class="row mx-1">
-                            <img src="{{$men->menfessReply[0]->reply_image}}" class="card-img-top" alt="..." style="height: 380px; object-fit:cover;">
+                            <img src="{{asset('storage/'.$men->menfessReply[0]->reply_image)}}" class="card-img-top" alt="..." style="height: 380px; object-fit:cover;">
                         </div>
                     @endif
                     <div class="row m-1">

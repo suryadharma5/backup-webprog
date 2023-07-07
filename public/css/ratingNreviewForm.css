@@ -63,7 +63,7 @@
 
 .contentform label{
     padding-top: 1.979vw;
-    padding-bottom: 0.396vw;
+    /* padding-bottom: 0.396vw; */
 }
 
 .contentform input{
