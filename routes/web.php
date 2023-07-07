@@ -48,6 +48,8 @@ Route::get('/book/{doctor:doctor_name}', [BookingController::class, 'bookDoctor'
 Route::get('/coba', [BookingController::class, 'formBooking']);
 
 Route::get('/rating', [RatingController::class, 'index']);
+Route::get('/rating/productSearch', [RatingController::class, 'prodSearch']);
+Route::get('/rating/sucessProd/{data}', [RatingController::class, 'prodSuccess']);
 Route::get('/rating/detail/{prod}', [RatingController::class, 'detailRating'])->middleware('auth');
 Route::resource('/rating/detail/review', ReviewController::class);
 Route::resource('/rating/product', ProductController::class)->middleware('auth');

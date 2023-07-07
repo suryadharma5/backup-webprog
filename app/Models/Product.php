@@ -11,6 +11,13 @@ class Product extends Model
 
     protected $guarded = ['id'];
 
+    public function scopeFilter($query, array $filters){
+
+        $query->when($filters['search'] ?? false, function($query, $search){
+            return $query->where('name_product', 'like', '%'. $search. '%');
+        });
+    }
+
     public function reviews(){
         return $this->hasMany(Review::class);
     }

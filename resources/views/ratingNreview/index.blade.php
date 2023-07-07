@@ -6,6 +6,7 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/home1.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 @endsection
 
 @section('contents')
@@ -23,13 +24,13 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
-
+            
         <div class="search-bar d-flex flex-row mt-4">
             <div class="col-lg-5 d-flex flex-row py-2">
-                <div class="input-group col-lg" style="border-color:#FFB8C7; border-style: solid; text-align: right ; border-radius: 7px">
-                    <input type="text" class="form-control" placeholder="Search Product" name="search" >
+                <form class="input-group col-lg" style="border-color:#FFB8C7; border-style: solid; text-align: right ; border-radius: 7px" action="/rating">
+                    <input type="text" class="form-control" placeholder="Search Product" name="search" id="search" value="{{ request('search') }}">
                     <button class="btn border-0 bg-transparent" type="submit" id="button-addon2"><i class="bi bi-search fa-1x col-lg-4" style="color: #78A2CC; -webkit-text-stroke: 1px;"></i></button>
-                </div>
+                </form>
             </div>
             <div class="col-lg-1"></div>
             <div class="col-lg-5 py-2 px-2" style="margin-left: 15px">
@@ -41,7 +42,7 @@
             </div>
         </div>
         <h3 class="mt-4 fw-bold"> Popular Products</h3>
-        <div class="mt-4 row">
+        <div class="mt-4 row" id="productGila">
             @foreach ($products as $prod)
               {{-- @dd( $prod->reviews[0]->user->username) --}}
               <div class="col-lg-5 mb-4" style="margin-right: 100px">
@@ -113,4 +114,6 @@
             @endforeach
           </div>
     </div>
+
+    <script src="/js/rating.js"></script>
 @endsection
