@@ -6,54 +6,55 @@
 
 @section('contents')
     <div class="full-width-content">
-        <div class="content-atas row">
+        <div class="content-atas row align-items-center mt-4">
             <div class="back-button col-md-2">
                 <i class="fa-solid fa-circle-arrow-left" style="color: #9FCAE6;"></i>
             </div>
             <div class="text-desc col-md-7">
                 Yuk bantu Hamily dengan melengkapi list product yang kamu gunakan!
             </div>
-            <div class="decoration col-md-3">
+            <div class="col-md-2 align-self-center text-center text-white fw-bold py-2" style="background-color: #FFB8C7;border-radius: 7.918vw;">
                 ADD PRODUCTS
             </div>
-
         </div>
 
         {{-- Form add product --}}
-        <form class="contentform" enctype="multipart/form-data" method="">
-            <label for="namabrand">Nama Brand</label> <br>
-            <input type="text" id="namabrand" name="namabrand" class="px-3 form-control"> <br>
-            <label for="namaproduk">Nama Produk</label> <br>
-            <input type="text" id="namaproduk" name="namaproduk" class="px-3 form-control"> <br>
-            <label for="namavarian">Varian / Shade</label> <br>
-            <input type="text" id="namavarian" name="namavarian" class="px-3 form-control"> <br>
-            
-            <div class="containers">
-                <div class="wrapper">
-                    <div class="image">
-                       <img src="" alt="" id="uploadimage">
-                    </div>
-                    <div class="content">
-                        <div class="icon">
-                            <i class="fa-solid fa-image"></i>
+        <div class="container">
+            <form class="contentform px-5 py-1" enctype="multipart/form-data" method="">
+                <label for="namabrand">Nama Brand</label> <br>
+                <input type="text" id="namabrand" name="namabrand" class="px-3 form-control"> <br>
+                <label for="namaproduk">Nama Produk</label> <br>
+                <input type="text" id="namaproduk" name="namaproduk" class="px-3 form-control"> <br>
+                <label for="namavarian">Varian / Shade</label> <br>
+                <input type="text" id="namavarian" name="namavarian" class="px-3 form-control"> <br>
+                
+                <div class="containers">
+                    <div class="wrapper">
+                        <div class="image">
+                           <img src="" alt="" id="uploadimage">
+                        </div>
+                        <div class="content">
+                            <div class="icon">
+                                <i class="fa-solid fa-image"></i>
+                            </div>
+                        </div>
+                        <div id="cancel-btn">
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <div class="file-name">
+                            File name here
                         </div>
                     </div>
-                    <div id="cancel-btn">
-                        <i class="fas fa-times"></i>
-                    </div>
-                    <div class="file-name">
-                        File name here
-                    </div>
+                    <button onclick="defaultBtnActive()" id="custom-btn" type="button">+ ADD PHOTO</button>
+                    <input id="default-btn" type="file" hidden name="form-image">
                 </div>
-                <button onclick="defaultBtnActive()" id="custom-btn" type="button">+ ADD PHOTO</button>
-                <input id="default-btn" type="file" hidden name="form-image">
-            </div>
-            <div class="sendbutton col-md-12">
-                <button type="submit" class="btn btn-primary" onclick="sendvalue()">SEND</button>
-                <a href="#">
-                </a>
-            </div>
-        </form>
+                <div class="sendbutton col-md-12">
+                    <button type="submit" class="btn btn-primary" onclick="sendvalue()">SEND</button>
+                    <a href="#">
+                    </a>
+                </div>
+            </form>
+        </div>
 
         <div class="sectionpic awanpink">
             <img src="/img/awanpink.png" alt="">

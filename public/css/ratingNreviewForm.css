@@ -25,7 +25,7 @@
 
 .back-button{
     /* width: 3.959vw; */
-    font-size: 3.167vw;
+    font-size: 2.167vw;
     text-align: center;
     /* background-color: aqua; */
 }
@@ -45,15 +45,15 @@
     font-size: 1.584vw;
     border-radius: 7.918vw;
     text-align: center;
-    height: fit-content;
+    /* height: fit-content; */
     width: fit-content;
     padding: 0.396vw 3.959vw;
     transform: translate(0, 50%);
 }
 
-.contentform{
+/* .contentform{
     padding: 3.959vw 17.419vw;
-}
+} */
 
 .contentform form{
     color: var(--PINK1);

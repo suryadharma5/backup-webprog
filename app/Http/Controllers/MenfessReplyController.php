@@ -6,6 +6,7 @@ use App\Models\Menfess;
 use App\Models\MenfessReply;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Storage;
 
 class MenfessReplyController extends Controller
 {
@@ -37,11 +38,17 @@ class MenfessReplyController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        // dd($request);
+        // dd($request->file('reply_image')->store('reply-images'));
+        // return $request->file('reply_image')->store('reply-images');
         $validatedData = $request->validate([
             'reply_text' => 'required|max:700',
-            'menfess_id' => 'required'
+            'menfess_id' => 'required',
+            'reply_image' => 'image|file|max:1024'
         ]);
+
+        if ($request->file('reply_image')) {
+            $validatedData['reply_image'] = $request->file('reply_image')->store('reply-images');
+        }
 
         $validatedData['user_id'] = auth()->user()->id;
 
@@ -90,9 +97,15 @@ class MenfessReplyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MenfessReply $menfessReply)
+    public function destroy($id)
     {
-        MenfessReply::destroy($menfessReply->id);
+        $menfessReply = MenfessReply::find($id);
+        // dd($menfessReply);
+
+        if($menfessReply->reply_image){
+            Storage::delete($menfessReply->reply_image);
+        }
+        $menfessReply->delete(  );
         return redirect('/menfess')-> with('success', 'Jawaban berhasil dihapus');
     }
 }

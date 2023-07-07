@@ -1,11 +1,11 @@
-const fileInput = document.getElementById('reply-photo')
+const fileInput = document.getElementById('reply_image')
 const changeFileName = document.querySelector('.filename')
 const xbutton = document.getElementById('x-button')
 var selectedFile = '';
 
 
 function buttonClick(){
-    const photoButton = document.querySelector('#reply-photo')
+    const photoButton = document.querySelector('#reply_image')
     photoButton.click()
 }
 

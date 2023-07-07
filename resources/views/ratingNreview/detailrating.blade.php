@@ -331,7 +331,7 @@
                                           @if ($rev->user_id == auth()->user()->id)
                                           <li><hr class="dropdown-divider"></li>
                                             <form action="/rating/detail/review/{{ $rev->id}}" method="POST">
-                                                <li onclick="return confirm('Apaka anda yakin ?')">
+                                                <li onclick="return confirm('Apakah anda yakin ?')">
                                                     @method('delete')
                                                     @csrf
                                                     <button type="submit" class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i>Hapus</button> 

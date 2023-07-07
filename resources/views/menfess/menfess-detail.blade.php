@@ -69,23 +69,10 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="col my-1 bg-r">
-                            <div class="row d-flex">
-                                <div class="col-1">
-                                    <i class="fa-solid fa-heart fa-lg" style="color: #78a2cc;"></i>
-                                </div>
-                                <div class="col">
-                                    <p style="color: #78A2CC">{{ $menfess->total_likes }} likes</p>
-                                </div>
-                                <div class="col bg-warning">
-                                    a
-                                </div>
-                            </div>
-                        </div> --}}
                     </div>
                     @if ($men->reply_image)
                         <div class="row mx-1">
-                            <img src="{{ $men->reply_image }}" class="card-img-top" alt="..." style="height: 380px; object-fit:cover;">
+                            <img src="{{ asset('storage/'.$men->reply_image) }}" class="img-fluid" alt="..." style="height: 380px; object-fit:cover;">
                         </div>
                     @endif
                     <div class="row m-1 mt-3">
@@ -131,7 +118,7 @@
                                     <button type="button" id="photoButton" onclick="buttonClick()" class="border-0 bg-transparent" style="text-align: left; width:7%">
                                         <i class="bi bi-image-fill fa-2x" style="color: #FFA5B8"></i>
                                     </button>
-                                    <input type="file" name="reply_image" id="reply-photo" hidden>
+                                    <input type="file" name="reply_image" id="reply_image" hidden>
                                     <p class="text-center ms-4 mt-2 filename">No file chosen</p>
                                     <i class="bi bi-x-lg" id="x-button" style="display: none;" onclick="removeFile()"></i>
                                 </div>
