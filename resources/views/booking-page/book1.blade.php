@@ -75,45 +75,49 @@
                                 Status Book
                             </div>
                             @foreach ($bookings as $book)
+                                @if (auth()->user())
                                 @if (auth()->user()->id == $book->user_id)
-                                    <div class="row box text-center">
-                                        <div class="box-atas">
-                                            <div class="date">
-                                               Hari {{$book->hari_praktek}}
-                                            </div>
-                                            <div class="time">
-                                                Pukul {{ $book->jam_praktek }}.00 WIB
-                                            </div>
+                                <div class="row box text-center">
+                                    <div class="box-atas">
+                                        <div class="date">
+                                           Hari {{$book->hari_praktek}}
                                         </div>
-                                        <div class="box-bawah">
-                                            <div class="datadokter">
-                                                <div class="nama-dokter">
-                                                    <div class="icon">
-                                                        <i class="fa-solid fa-user-doctor" style="color: #FFA5B8;" ></i>
-                                                    </div>
-                                                    {{ $book->doctor->doctor_name }}
-                                                </div>
-                                                <div class="nama-rs">
-                                                    <div class="icon">
-                                                        <i class="fa-solid fa-hospital" style="color: #FFA5B8;"></i>
-                                                    </div>
-                                                   {{ $book->doctor->rumahSakit->hospital_name }}
-                                                </div>
-                                            </div>
-                                            <div class="cancelbutton">
-                                                <!-- <button>Cancel</button> -->
-                                                <a href="#popup1">
-                                                    <button type="button" class="btn btn-primary">Cancel</button>
-                                                </a>
-                                            </div>
+                                        <div class="time">
+                                            Pukul {{ $book->jam_praktek }}.00 WIB
                                         </div>
                                     </div>
+                                    <div class="box-bawah">
+                                        <div class="datadokter">
+                                            <div class="nama-dokter">
+                                                <div class="icon">
+                                                    <i class="fa-solid fa-user-doctor" style="color: #FFA5B8;" ></i>
+                                                </div>
+                                                {{ $book->doctor->doctor_name }}
+                                            </div>
+                                            <div class="nama-rs">
+                                                <div class="icon">
+                                                    <i class="fa-solid fa-hospital" style="color: #FFA5B8;"></i>
+                                                </div>
+                                               {{ $book->doctor->rumahSakit->hospital_name }}
+                                            </div>
+                                        </div>
+                                        <form class="cancelbutton" action="/book/delete/{{ $book->id }}" method="POST">
+                                            @method('delete')
+                                            @csrf
+                                            <!-- <button>Cancel</button> -->
+                                            {{-- <a href="#popup1">
+                                            </a> --}}
+                                            <button type="submit" class="btn btn-primary" onclick="return confirm('Apaka anda yakin ?')">Cancel</button>
+                                        </fo>
+                                    </div>
+                                </div>
+                            @endif
                                 @endif
                             @endforeach
             
                         </div>
                         <!-- ----------------------------POP UP KONFIRMASI----------------------------------- -->
-                        <div id="popup1" class="overlay">
+                        {{-- <div id="popup1" class="overlay">
                             <div class="popup">
                                 <div class="warning-icon">
                                     <i class="fa-solid fa-triangle-exclamation" style="color: #FFA5B8;"></i>
@@ -150,7 +154,7 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- ----------------------------END POP UP BERHASIL----------------------------------- -->
                         <div class="col-md-8 pilih-dokter">
                             <div class="title">
