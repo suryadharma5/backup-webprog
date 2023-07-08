@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <div class="praktek-dokter col-lg mt-4">
-                        <h2 class="judul fw-bold">Lokasi & Jadwal Praktik</h2>
+                        <h2 class="judul fw-bold">Lokasi Praktik</h2>
                         <div class="box border py-2 px-3 border-3" style="border-radius: 10px">
                             <div class="rumah-sakit d-flex align-items-center">
                                 <img src="/img/foto-rs.png" alt="">
@@ -42,79 +42,6 @@
                                         Badung, Bali                                
                                     </p>
                                 </div>
-                            </div>
-                            <div class="list-jadwal mt-3 col-lg-12 mb-3">
-                                <h3 class="fw-bold">Pilih Jadwal</h3>
-                                {{-- <h5>Hari</h5> --}}
-                                <div class="col-md-6 d-flex flex-row" action="/">
-                                    <div class="col-md-6">
-                                        <select class="form-select" id="validationCustom04" name="hari_praktek" required>
-                                            <option selected disabled>Hari</option>
-                                            @if ($doctor->hari_praktek)
-                                                @foreach ($doctor->hari_praktek as $hari)
-                                                    <option value="{{ $hari }}">{{ $hari }}</option>
-                                                {{-- <option value="0">No</option> --}}
-                                                @endforeach
-                                            @endif
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            Please select a valid state.
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 ms-5">
-                                        <select class="form-select" id="validationCustom04" name="jam_praktek" required>
-                                            <option selected disabled>Jam</option>
-                                            @for ($i = $doctor->jam_awal; $i <= $doctor->jam_akhir; $i++)
-                                                @if ($i < 10)
-                                                    <option value="{{ $i }}">0{{ $i }}.00</option> 
-                                                @else
-                                                    <option value="{{ $i }}">{{ $i }}.00</option> 
-                                                @endif
-                                            @endfor
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            Please select a valid state.
-                                        </div>
-                                    </div>
-                                </div>
-                                {{-- <div class="item">
-                                    <h4 class="tanggal">
-                                        Kamis , 6 April 2023
-                                    </h4>
-                                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                    <label class="btn btn-outline-primary" for="btncheck1">09.00 - 12.00</label>
-                                    <hr>
-                                </div>
-                                <div class="item">
-                                    <h4 class="tanggal">
-                                        Kamis , 6 April 2023
-                                    </h4>
-                                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                                    <label class="btn btn-outline-primary" for="btncheck2">09.00 - 12.00</label>
-                                    <hr>
-                                </div>
-                                <div class="item">
-                                    <h4 class="tanggal">
-                                        Kamis , 6 April 2023
-                                    </h4>
-                                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-                                    <label class="btn btn-outline-primary" for="btncheck3">09.00 - 12.00</label>
-                                    <hr>
-                                </div>
-                                <div class="item">
-                                    <h4 class="tanggal">
-                                        Kamis , 6 April 2023
-                                    </h4>
-                                    <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
-                                    <label class="btn btn-outline-primary" for="btncheck4">09.00 - 12.00</label>
-                                    <hr>
-                                </div> --}}
-                                {{-- <div class="all-list-button px-2 py-2 d-flex flex-row align-items-center rounded-2 fw-bold justify-content-center" style="width: 38%; background-color: #78A2CC; color:white;">
-                                    <img src="/img/logo-kalender.png" alt="">
-                                    <a class="text-decoration-none text-white mx-2" href="#">
-                                        Tampilkan Jadwal Lainnya
-                                    </a>
-                                </div> --}}
                             </div>
                         </div>
                     </div>

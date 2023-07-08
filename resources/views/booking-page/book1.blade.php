@@ -10,7 +10,13 @@
 <title>Hamily | {{ $title }}</title>
 @endsection
         
-    @section('contents')
+@section('contents')
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show col-lg-12 mt-3" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     <div class="container-fluid g-0 container-gb-book-dokter overflow-hidden" style="position: relative">
             <img src="/img/bg-book-dokter.png" alt="" style="z-index:1" class="bg-book-dokter img-fluid" width="100%">
             <div class="container-fluid g-0 container-text-info-bg" style="position: absolute; z-index: 2">
@@ -68,104 +74,42 @@
                             <div class="title">
                                 Status Book
                             </div>
-                            <div class="row box text-center">
-                                <div class="box-atas">
-                                    <div class="date">
-                                        6 april 2023
-                                    </div>
-                                    <div class="time">
-                                        20.00 - 21.00 WIB
-                                    </div>
-                                </div>
-                                <div class="box-bawah">
-                                    <div class="datadokter">
-                                        <div class="nama-dokter">
-                                            <div class="icon">
-                                                <i class="fa-solid fa-user-doctor" style="color: #FFA5B8;" ></i>
+                            @foreach ($bookings as $book)
+                                @if (auth()->user()->id == $book->user_id)
+                                    <div class="row box text-center">
+                                        <div class="box-atas">
+                                            <div class="date">
+                                               Hari {{$book->hari_praktek}}
                                             </div>
-                                            Dr. Surya Setiakawan
+                                            <div class="time">
+                                                Pukul {{ $book->jam_praktek }}.00 WIB
+                                            </div>
                                         </div>
-                                        <div class="nama-rs">
-                                            <div class="icon">
-                                                <i class="fa-solid fa-hospital" style="color: #FFA5B8;"></i>
+                                        <div class="box-bawah">
+                                            <div class="datadokter">
+                                                <div class="nama-dokter">
+                                                    <div class="icon">
+                                                        <i class="fa-solid fa-user-doctor" style="color: #FFA5B8;" ></i>
+                                                    </div>
+                                                    {{ $book->doctor->doctor_name }}
+                                                </div>
+                                                <div class="nama-rs">
+                                                    <div class="icon">
+                                                        <i class="fa-solid fa-hospital" style="color: #FFA5B8;"></i>
+                                                    </div>
+                                                   {{ $book->doctor->rumahSakit->hospital_name }}
+                                                </div>
                                             </div>
-                                            RSUD Mangusada
-                                        </div>
-                                    </div>
-                                    <div class="cancelbutton">
-                                        <!-- <button>Cancel</button> -->
-                                        <a href="#popup1">
-                                            <button type="button" class="btn btn-primary">Cancel</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <div class="row box text-center">
-                                <div class="box-atas">
-                                    <div class="date">
-                                        6 april 2023
-                                    </div>
-                                    <div class="time">
-                                        20.00 - 21.00 WIB
-                                    </div>
-                                </div>
-                                <div class="box-bawah">
-                                    <div class="datadokter">
-                                        <div class="nama-dokter">
-                                            <div class="icon">
-                                                <i class="fa-solid fa-user-doctor" style="color: #FFA5B8;" ></i>
+                                            <div class="cancelbutton">
+                                                <!-- <button>Cancel</button> -->
+                                                <a href="#popup1">
+                                                    <button type="button" class="btn btn-primary">Cancel</button>
+                                                </a>
                                             </div>
-                                            Dr. Surya Setiakawan
-                                        </div>
-                                        <div class="nama-rs">
-                                            <div class="icon">
-                                                <i class="fa-solid fa-hospital" style="color: #FFA5B8;"></i>
-                                            </div>
-                                            RSUD Mangusada
                                         </div>
                                     </div>
-                                    <div class="cancelbutton">
-                                        <!-- <button>Cancel</button> -->
-                                        <a href="#popup1">
-                                            <button type="button" class="btn btn-primary">Cancel</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <div class="row box text-center">
-                                <div class="box-atas">
-                                    <div class="date">
-                                        6 april 2023
-                                    </div>
-                                    <div class="time">
-                                        20.00 - 21.00 WIB
-                                    </div>
-                                </div>
-                                <div class="box-bawah">
-                                    <div class="datadokter">
-                                        <div class="nama-dokter">
-                                            <div class="icon">
-                                                <i class="fa-solid fa-user-doctor" style="color: #FFA5B8;" ></i>
-                                            </div>
-                                            Dr. Surya Setiakawan
-                                        </div>
-                                        <div class="nama-rs">
-                                            <div class="icon">
-                                                <i class="fa-solid fa-hospital" style="color: #FFA5B8;"></i>
-                                            </div>
-                                            RSUD Mangusada
-                                        </div>
-                                    </div>
-                                    <div class="cancelbutton">
-                                        <!-- <button>Cancel</button> -->
-                                        <a href="#popup1">
-                                            <button type="button" class="btn btn-primary">Cancel</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                                @endif
+                            @endforeach
             
                         </div>
                         <!-- ----------------------------POP UP KONFIRMASI----------------------------------- -->
@@ -271,6 +215,4 @@
             </div>
     </div>
         
-    @endsection
-
-</html>
+@endsection

@@ -33,4 +33,8 @@ class Doctor extends Model
     public function rumahSakit(){
         return $this->belongsTo(RumahSakit::class, 'hospital_id');
     }
+
+    public function booking(){
+        return $this->hasOne(Booking::class);
+    }
 }

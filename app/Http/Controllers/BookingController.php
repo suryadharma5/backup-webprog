@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use App\Models\Doctor;
 use App\Models\Province;
 use App\Models\Regency;
@@ -16,6 +17,7 @@ class BookingController extends Controller
             'doctors' => Doctor::latest()->simplepaginate(5),
             'title' => 'Booking Doctor',
             'active' => 'book',
+            'bookings' => Booking::latest()->get()
             // 'regencies' => Regency::all(),
         ]);
     }
@@ -89,13 +91,15 @@ class BookingController extends Controller
 
     public function bookDoctor(Doctor $doctor){
         return view('booking-page.detail-dokter', [
+            'title' => 'Booking Doctor',
             'active' => 'book',
             'doctor' => $doctor,
         ]);
     }
 
     public function formBooking(Doctor $doctor){
-        return view('booking-page.form-doctor', [
+        return view('booking-page.formbook', [
+            'title' => 'Booking Doctor',
             'active' => 'book',
             'doctor' => $doctor,
             // 'doctor' => $doctor,
@@ -104,21 +108,21 @@ class BookingController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->file('form_image'));
+        // dd($request);
         $validateddata = $request->validate([
-            'name_product' => 'required|max:50',
-            'type_product' => 'required|max:50',
-            'form_image' => 'required|image|file|max:1024'
+            'nama' => 'required|max:255',
+            'doctor_id' => 'required',
+            'user_id' => 'required',
+            'email' => 'required|email:dns',
+            'telephone'=> 'required|min:10|max:12',
+            'hari_praktek' => 'required',
+            'jam_praktek' => 'required'
         ]);
-
-        if ($request->file('form_image')) {
-            $validateddata['form_image'] = $request->file('form_image')->store('product-images');
-        }
 
         // dd($validateddata);
 
-        // Product::create($validateddata);
+        Booking::create($validateddata);
 
-        return redirect('/rating')->with('success', 'Product berhasil diunggah');
+        return redirect('/book')->with('success', 'Product berhasil diunggah');
     }
 }

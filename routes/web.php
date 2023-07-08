@@ -44,8 +44,9 @@ Route::get('/book', [BookingController::class, 'index']);
 Route::post('/getKabupaten', [BookingController::class, 'getKabupaten']);
 Route::post('/getHospital', [BookingController::class, 'getHospital']);
 Route::post('/getDoctor', [BookingController::class, 'getDoctor']);
-Route::get('/book/{doctor}', [BookingController::class, 'bookDoctor']);
-Route::get('/book/{doctor}/coba', [BookingController::class, 'formBooking']);
+Route::get('/book/{doctor}', [BookingController::class, 'bookDoctor'])->middleware('auth');
+Route::get('/book/{doctor}/coba', [BookingController::class, 'formBooking'])->middleware('auth');
+Route::post('/book/{doctor}/coba/add', [BookingController::class, 'store'])->middleware('auth');
 
 Route::get('/rating', [RatingController::class, 'index']);
 Route::get('/rating/productSearch', [RatingController::class, 'prodSearch']);
