@@ -128,92 +128,102 @@
 
 
         <div class="tab-content" id="myTabContent">
+            {{-- Mom's corner --}}
             <div class="tab-pane fade show active" id="content1" role="tabpanel" aria-labelledby="tab1">
                 <!-- Content for Tab 1 -->
-                <a href="/article/detail" class="row mt-3 box-article-tab">
-                    <div class="lg-5 d-flex flex-row">
-                        <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
-                        <div class="col-lg mt-5 mx-3 ">
-                            <h1 class="col-lg-8 fw-bold">Ibu, Jaga Buah Hati Dengan Makanan Ini</h1>
-                            <div class="date-posted">Posted on Wed, April 4th 2023</div>
-                        </div>
-                    </div>
-                </a>
-                <a href="/article/detail" class="row mt-3 box-article-tab">
-                    <div class="lg-5 d-flex flex-row">
-                        <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
-                        <div class="col-lg mt-5 mx-3 ">
-                            <h1 class="col-lg-8 fw-bold">Ibu, Jaga Buah Hati Dengan Makanan Ini</h1>
-                            <div class="date-posted">Posted on Wed, April 4th 2023</div>
-                        </div>
-                    </div>
-                </a>
-                <a href="/article/detail" class="row mt-3 box-article-tab">
-                    <div class="lg-5 d-flex flex-row">
-                        <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
-                        <div class="col-lg mt-5 mx-3 ">
-                            <h1 class="col-lg-8 fw-bold">Ibu, Jaga Buah Hati Dengan Makanan Ini</h1>
-                            <div class="date-posted">Posted on Wed, April 4th 2023</div>
-                        </div>
-                    </div>
-                </a>
+                @foreach ($articles as $a)
+                    @if ($a->category->id == 1)
+                        <a href="/article/detail" class="row mt-3 box-article-tab">
+                            <div class="lg-5 d-flex flex-row">
+                                <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
+                                <div class="col-lg mt-5 mx-3 ">
+                                    <h1 class="col-lg-8 fw-bold">{{ $a->title }}</h1>
+                                    <div class="date-posted">Posted on {{ $a->day }}, 3 {{ $a->month }} {{ $a->year }}</div>
+                                </div>
+                            </div>
+                        </a>
+                    @endif
+                @endforeach
             </div>
+            {{-- Mom's corner end --}}
+
+            {{-- Dad's corner --}}
             <div class="tab-pane fade" id="content2" role="tabpanel" aria-labelledby="tab2">
                 <!-- Content for Tab 2 -->
-                @for ($i = 0; $i < 3; $i++)
-                <a href="/article/detail" class="row mt-3 box-article-tab">
-                    <div class="lg-5 d-flex flex-row">
-                        <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
-                        <div class="col-lg mt-5 mx-3 ">
-                            <h1 class="col-lg-8 fw-bold">Ibu, Jaga Buah Hati Dengan Makanan Ini</h1>
-                            <div class="date-posted">Posted on Wed, April 4th 2023</div>
-                        </div>
-                    </div>
-                </a>
-                @endfor
+                @foreach ($articles as $a)
+                    @if ($a->category->id == 2)
+                        <a href="/article/detail" class="row mt-3 box-article-tab">
+                            <div class="lg-5 d-flex flex-row">
+                                <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
+                                <div class="col-lg mt-5 mx-3 ">
+                                    <h1 class="col-lg-8 fw-bold">{{ $a->title }}</h1>
+                                    <div class="date-posted">Posted on {{ $a->day }}, 3 {{ $a->month }} {{ $a->year }}</div>
+                                </div>
+                            </div>
+                        </a>
+                    @endif
+                @endforeach
             </div>
+            {{-- Dad's corner end --}}
+
+            {{-- Mom & Dad's corner --}}
             <div class="tab-pane fade" id="content3" role="tabpanel" aria-labelledby="tab3">
                 <!-- Content for Tab 3 -->
-                @for ($i = 0; $i < 3; $i++)
-                <a href="/article/detail" class="row mt-3 box-article-tab">
-                    <div class="lg-5 d-flex flex-row">
-                        <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
-                        <div class="col-lg mt-5 mx-3 ">
-                            <h1 class="col-lg-8 fw-bold">Ibu, Jaga Buah Hati Dengan Makanan Ini</h1>
-                            <div class="date-posted">Posted on Wed, April 4th 2023</div>
-                        </div>
-                    </div>
-                </a>
-                @endfor
+                @foreach ($articles as $a)
+                    @if ($a->category->id == 3)
+                        <a href="/article/detail" class="row mt-3 box-article-tab">
+                            <div class="lg-5 d-flex flex-row">
+                                <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
+                                <div class="col-lg mt-5 mx-3 ">
+                                    <h1 class="col-lg-8 fw-bold">{{ $a->title }}</h1>
+                                    <div class="date-posted">Posted on {{ $a->day }}, 3 {{ $a->month }} {{ $a->year }}</div>
+                                </div>
+                            </div>
+                        </a>
+                    @endif
+                @endforeach
             </div>
+            {{-- Mom & Dad's corner end --}}
+
+
+            {{-- Family's corner --}}
             <div class="tab-pane fade" id="content4" role="tabpanel" aria-labelledby="tab4">
                 <!-- Content for Tab 3 -->
-                @for ($i = 0; $i < 3; $i++)
-                <a href="/article/detail" class="row mt-3 box-article-tab">
-                    <div class="lg-5 d-flex flex-row">
-                        <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
-                        <div class="col-lg mt-5 mx-3 ">
-                            <h1 class="col-lg-8 fw-bold">Ibu, Jaga Buah Hati Dengan Makanan Ini</h1>
-                            <div class="date-posted">Posted on Wed, April 4th 2023</div>
-                        </div>
-                    </div>
-                </a>
-                @endfor
+                @foreach ($articles as $a)
+                    @if ($a->category->id == 4)
+                        <a href="/article/detail" class="row mt-3 box-article-tab">
+                            <div class="lg-5 d-flex flex-row">
+                                <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
+                                <div class="col-lg mt-5 mx-3 ">
+                                    <h1 class="col-lg-8 fw-bold">{{ $a->title }}</h1>
+                                    <div class="date-posted">Posted on {{ $a->day }}, 3 {{ $a->month }} {{ $a->year }}</div>
+                                </div>
+                            </div>
+                        </a>
+                    @endif
+                @endforeach
             </div>
+            {{-- Family's corner end --}}
+
+            {{-- Everyone's corner --}}
             <div class="tab-pane fade" id="content5" role="tabpanel" aria-labelledby="tab5">
                 <!-- Content for Tab 3 -->
-                @for ($i = 0; $i < 3; $i++)
-                <a href="/article/detail" class="row mt-3 box-article-tab">
-                    <div class="lg-5 d-flex flex-row">
-                        <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
-                        <div class="col-lg mt-5 mx-3 ">
-                            <h1 class="col-lg-8 fw-bold">Ibu, Jaga Buah Hati Dengan Makanan Ini</h1>
-                            <div class="date-posted">Posted on Wed, April 4th 2023</div>
-                        </div>
-                    </div>
-                </a>
-                @endfor
+                @foreach ($articles as $a)
+                    @if ($a->category->id == 5)
+                        <a href="/article/detail" class="row mt-3 box-article-tab">
+                            <div class="lg-5 d-flex flex-row">
+                                <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
+                                <div class="col-lg mt-5 mx-3 ">
+                                    <h1 class="col-lg-8 fw-bold">{{ $a->title }}</h1>
+                                    <div class="date-posted">Posted on {{ $a->day }}, 3 {{ $a->month }} {{ $a->year }}</div>
+                                </div>
+                            </div>
+                        </a>
+                    @endif
+                @endforeach
             </div>
+            {{-- Everyone's corner end --}}
+
         </div>
 
 

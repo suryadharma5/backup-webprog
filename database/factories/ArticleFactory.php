@@ -18,9 +18,11 @@ class ArticleFactory extends Factory
     {
         return [
             'title' => $this->faker->unique()->sentence(mt_rand(2,5)),
-            'published_at' => $this->faker->date(),
+            'day' => $this->faker->dayOfWeek(),
+            'month' => $this->faker->monthName(),
+            'year' => $this->faker->year(),
             'body' =>  collect($this->faker->paragraphs(mt_rand(2,5)))->map(fn($p)=> "<p>$p</p>")->implode(''),
-            'category_id' => mt_rand(1,2),
+            'category_id' => mt_rand(1,5),
         ];
     }
 }

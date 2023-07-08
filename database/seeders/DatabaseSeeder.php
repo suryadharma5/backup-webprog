@@ -28,15 +28,16 @@ class DatabaseSeeder extends Seeder
 
         User::factory(3)->create();
 
-        Article::factory(20)->create();
-
+        
         $this->call([
             IndoRegionProvinceSeeder::class,
             IndoRegionRegencySeeder::class,
             RumahSakitSeeder::class,
             DoctorSeeder::class,
             MenfessSeeder::class,
+            CategorySeeder::class
             // ProductSeeder::class,
         ]);
+        Article::factory(20)->create();
     }
 }
