@@ -16,7 +16,6 @@ class BookingController extends Controller
             'doctors' => Doctor::latest()->simplepaginate(5),
             'title' => 'Booking Doctor',
             'active' => 'book',
-            'day' => ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu']
             // 'regencies' => Regency::all(),
         ]);
     }
@@ -95,10 +94,31 @@ class BookingController extends Controller
         ]);
     }
 
-    public function formBooking(){
+    public function formBooking(Doctor $doctor){
         return view('booking-page.form-doctor', [
             'active' => 'book',
+            'doctor' => $doctor,
             // 'doctor' => $doctor,
         ]);
+    }
+
+    public function store(Request $request)
+    {
+        // dd($request->file('form_image'));
+        $validateddata = $request->validate([
+            'name_product' => 'required|max:50',
+            'type_product' => 'required|max:50',
+            'form_image' => 'required|image|file|max:1024'
+        ]);
+
+        if ($request->file('form_image')) {
+            $validateddata['form_image'] = $request->file('form_image')->store('product-images');
+        }
+
+        // dd($validateddata);
+
+        // Product::create($validateddata);
+
+        return redirect('/rating')->with('success', 'Product berhasil diunggah');
     }
 }

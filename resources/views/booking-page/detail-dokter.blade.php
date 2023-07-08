@@ -43,8 +43,41 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="list-jadwal mt-3">
-                                <div class="item">
+                            <div class="list-jadwal mt-3 col-lg-12 mb-3">
+                                <h3 class="fw-bold">Pilih Jadwal</h3>
+                                {{-- <h5>Hari</h5> --}}
+                                <div class="col-md-6 d-flex flex-row" action="/">
+                                    <div class="col-md-6">
+                                        <select class="form-select" id="validationCustom04" name="hari_praktek" required>
+                                            <option selected disabled>Hari</option>
+                                            @if ($doctor->hari_praktek)
+                                                @foreach ($doctor->hari_praktek as $hari)
+                                                    <option value="{{ $hari }}">{{ $hari }}</option>
+                                                {{-- <option value="0">No</option> --}}
+                                                @endforeach
+                                            @endif
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Please select a valid state.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 ms-5">
+                                        <select class="form-select" id="validationCustom04" name="jam_praktek" required>
+                                            <option selected disabled>Jam</option>
+                                            @for ($i = $doctor->jam_awal; $i <= $doctor->jam_akhir; $i++)
+                                                @if ($i < 10)
+                                                    <option value="{{ $i }}">0{{ $i }}.00</option> 
+                                                @else
+                                                    <option value="{{ $i }}">{{ $i }}.00</option> 
+                                                @endif
+                                            @endfor
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Please select a valid state.
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- <div class="item">
                                     <h4 class="tanggal">
                                         Kamis , 6 April 2023
                                     </h4>
@@ -75,7 +108,7 @@
                                     <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
                                     <label class="btn btn-outline-primary" for="btncheck4">09.00 - 12.00</label>
                                     <hr>
-                                </div>
+                                </div> --}}
                                 {{-- <div class="all-list-button px-2 py-2 d-flex flex-row align-items-center rounded-2 fw-bold justify-content-center" style="width: 38%; background-color: #78A2CC; color:white;">
                                     <img src="/img/logo-kalender.png" alt="">
                                     <a class="text-decoration-none text-white mx-2" href="#">
@@ -141,8 +174,8 @@
                     <p class="jenis-dokter" style="color: #78A2CC">
                         Dokter Spesialis Kandungan
                     </p>
-                    <button type="button" class="btn fw-bold" style="background-color: #78A2CC; color: white; width:30%">
-                        <a href="#" class="text-decoration-none text-white">Book</a>
+                    <button type="submit" class="btn fw-bold" style="background-color: #78A2CC; color: white; width:30%">
+                        <a href="{{ $doctor->id }}/coba" class="text-decoration-none text-white">Book</a>
                     </button>
                 </div>
             </div>

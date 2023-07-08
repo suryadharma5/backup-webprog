@@ -60,9 +60,6 @@
                     </div>
                 </div>
                 <div class="row mt-4">
-                    {{-- <div class="col-lg-4">
-                        ini untuk status book
-                    </div> --}}
                 </div>
         
                 <div class="contentbookingdokter" id="result">
@@ -215,9 +212,6 @@
                             <div class="title">
                                 Pilih Dokter
                             </div>
-                            <div class="col-lg-7 pilih-hari bg-primary">
-                                
-                            </div>
                             {{-- <div class="row">
                                 <div class="dropdown-hari mt-2 col-lg-8">
                                     <select class="form-select hari" aria-label="Default select example" id="hari">
@@ -235,7 +229,7 @@
 
                             <div class="row" id="listDoctor">
                                 @foreach ($doctors as $doctor)
-                                <div class='spesialisdoc'><div class = 'foto'> <img src='/img/dokter.png'></div>
+                                <div class='spesialisdoc mb-4'><div class = 'foto'> <img src='/img/dokter.png'></div>
                                 <div class='keterangan'>
                                     <div class='title-dokter'>
                                         {{ $doctor->doctor_name }}
@@ -258,7 +252,7 @@
                                     </div>
                                 </div>
                                 <div class = 'bookbutton'>
-                                    <a href='/book/{{ $doctor->doctor_name }}'>
+                                    <a href='/book/{{ $doctor->id }}'>
                                         <button type = 'submit' class = 'btn btn-primary'>Book</button>
                                     </a>
                                 </div>

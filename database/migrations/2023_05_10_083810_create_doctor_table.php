@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('doctors', function (Blueprint $table) {
             $table->id('id');
             $table->unsignedBigInteger('hospital_id');
+            $table->json('hari_praktek')->nullable();
+            $table->integer('jam_awal')->nullable();
+            $table->integer('jam_akhir')->nullable();
             $table->integer('title_id');
             $table->string('doctor_name');
             $table->text('doctor_profile');
