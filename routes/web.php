@@ -38,7 +38,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/article', [ArticleController::class, 'index']);
-Route::get('/article/detail', [ArticleController::class, 'detail']);
+Route::get('/article/detail/{article}', [ArticleController::class, 'detail']);
 
 Route::get('/book', [BookingController::class, 'index']);
 Route::post('/getKabupaten', [BookingController::class, 'getKabupaten']);

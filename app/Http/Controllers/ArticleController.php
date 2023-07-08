@@ -16,9 +16,11 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function detail(){
+    public function detail(article $article){
         return view('article.article-detail', [
+            'title' => 'Article',
             'active' => 'article',
+            'article' => $article
         ]);
     }
 }

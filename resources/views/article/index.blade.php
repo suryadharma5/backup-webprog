@@ -46,50 +46,65 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-9 mx-0 px-0">
-                                        <img src="/img/carousel-slide1.png" class="d-block" alt="..." style="width: 100%; height: 450px;">
+                                        {{-- <img src="/img/carousel-slide1.png" class="d-block" alt="..." style="width: 100%; height: 450px;"> --}}
+                                        <a href="/article/detail/{{ $articles[0]->id }}">
+                                            <img src="https://source.unsplash.com/1200x450/?{{ $articles[0]->category->name }}" alt="" class="img-fluid">
+                                        </a>
                                     </div>
                                     <div class="col-lg-3 d-flex flex-column justify-content-center" style="background-color: #BBA1A0">
-                                        <h5 class="text-white fw-bold" style="font-size: 2.5vw;">
-                                            101 Tips Untuk Kamu yang Baru Menikah ke
-                                        </h5>
+                                        <a href="/article/detail/{{ $articles[0]->id }}" class="text-decoration-none">
+                                            <h5 class="text-white fw-bold" style="font-size: 2.5vw;">
+                                                {{ $articles[0]->title }}
+                                            </h5>
+                                        </a>
                                         <a href="#" class="text-white">
-                                            Mom's Corner.
+                                            {{ $articles[0]->category->name }}
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
         
-                        <div class="carousel-item active">
+                        <div class="carousel-item">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-9 mx-0 px-0">
-                                        <img src="/img/carousel-slide1.png" class="d-block" alt="..." style="width: 100%; height: 450px;">
+                                        {{-- <img src="/img/carousel-slide1.png" class="d-block" alt="..." style="width: 100%; height: 450px;"> --}}
+                                        <a href="/article/detail/{{ $articles[1]->id }}">
+                                            <img src="https://source.unsplash.com/1200x450/?{{ $articles[1]->category->name }}" alt="" class="img-fluid">
+                                        </a>
                                     </div>
                                     <div class="col-lg-3 d-flex flex-column justify-content-center" style="background-color: #BBA1A0">
-                                        <h5 class="text-white fw-bold" style="font-size: 2.5vw;">
-                                            101 Tips Untuk Kamu yang Baru Menikah ke
-                                        </h5>
+                                        <a href="/article/detail/{{ $articles[1]->id }}" class="text-decoration-none">
+                                            <h5 class="text-white fw-bold" style="font-size: 2.5vw;">
+                                                {{ $articles[1]->title }}
+                                            </h5>
+                                        </a>
                                         <a href="#" class="text-white">
-                                            Mom's Corner.
+                                            {{ $articles[1]->category->name }}
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
         
-                        <div class="carousel-item active">
+                        <div class="carousel-item">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-9 mx-0 px-0">
-                                        <img src="/img/carousel-slide1.png" class="d-block" alt="..." style="width: 100%; height: 450px;">
+                                        {{-- <img src="/img/carousel-slide1.png" class="d-block" alt="..." style="width: 100%; height: 450px;"> --}}
+                                        <a href="/article/detail/{{ $articles[2]->id }}">
+                                            <img src="https://source.unsplash.com/1200x450/?{{ $articles[2]->category->name }}" alt="" class="img-fluid">
+                                        </a>
                                     </div>
                                     <div class="col-lg-3 d-flex flex-column justify-content-center" style="background-color: #BBA1A0">
-                                        <h5 class="text-white fw-bold" style="font-size: 2.5vw;">
-                                            101 Tips Untuk Kamu yang Baru Menikah ke
-                                        </h5>
+                                        <a href="/article/detail/{{ $articles[2]->id }}" class="text-decoration-none">
+                                            <h5 class="text-white fw-bold" style="font-size: 2.5vw;">
+                                                {{ $articles[2  ]->title }}
+                                            </h5>
+                                        </a>
                                         <a href="#" class="text-white">
-                                            Mom's Corner.
+                                            {{ $articles[2]->category->name }}
                                         </a>
                                     </div>
                                 </div>
@@ -133,9 +148,10 @@
                 <!-- Content for Tab 1 -->
                 @foreach ($articles as $a)
                     @if ($a->category->id == 1)
-                        <a href="/article/detail" class="row mt-3 box-article-tab">
+                        <a href="/article/detail/{{ $a->id }}" class="row mt-3 box-article-tab">
                             <div class="lg-5 d-flex flex-row">
-                                <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
+                                <img src="https://source.unsplash.com/450x250/?{{ $a->category->name }}" alt="" class="img-thumbnail">  
+                                {{-- <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#"> --}}
                                 <div class="col-lg mt-5 mx-3 ">
                                     <h1 class="col-lg-8 fw-bold">{{ $a->title }}</h1>
                                     <div class="date-posted">Posted on {{ $a->day }}, 3 {{ $a->month }} {{ $a->year }}</div>
@@ -152,9 +168,9 @@
                 <!-- Content for Tab 2 -->
                 @foreach ($articles as $a)
                     @if ($a->category->id == 2)
-                        <a href="/article/detail" class="row mt-3 box-article-tab">
+                        <a href="/article/detail/{{ $a->id }}" class="row mt-3 box-article-tab">
                             <div class="lg-5 d-flex flex-row">
-                                <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
+                                <img src="https://source.unsplash.com/450x250/?{{ $a->category->name }}" alt="" class="img-thumbnail">
                                 <div class="col-lg mt-5 mx-3 ">
                                     <h1 class="col-lg-8 fw-bold">{{ $a->title }}</h1>
                                     <div class="date-posted">Posted on {{ $a->day }}, 3 {{ $a->month }} {{ $a->year }}</div>
@@ -171,9 +187,9 @@
                 <!-- Content for Tab 3 -->
                 @foreach ($articles as $a)
                     @if ($a->category->id == 3)
-                        <a href="/article/detail" class="row mt-3 box-article-tab">
+                        <a href="/article/detail/{{ $a->id }}" class="row mt-3 box-article-tab">
                             <div class="lg-5 d-flex flex-row">
-                                <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
+                                <img src="https://source.unsplash.com/450x250/?{{ $a->category->name }}" alt="" class="img-thumbnail">
                                 <div class="col-lg mt-5 mx-3 ">
                                     <h1 class="col-lg-8 fw-bold">{{ $a->title }}</h1>
                                     <div class="date-posted">Posted on {{ $a->day }}, 3 {{ $a->month }} {{ $a->year }}</div>
@@ -191,9 +207,9 @@
                 <!-- Content for Tab 3 -->
                 @foreach ($articles as $a)
                     @if ($a->category->id == 4)
-                        <a href="/article/detail" class="row mt-3 box-article-tab">
+                        <a href="/article/detail/{{ $a->id }}" class="row mt-3 box-article-tab">
                             <div class="lg-5 d-flex flex-row">
-                                <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
+                                <img src="https://source.unsplash.com/450x250/?{{ $a->category->name }}" alt="" class="img-thumbnail">
                                 <div class="col-lg mt-5 mx-3 ">
                                     <h1 class="col-lg-8 fw-bold">{{ $a->title }}</h1>
                                     <div class="date-posted">Posted on {{ $a->day }}, 3 {{ $a->month }} {{ $a->year }}</div>
@@ -210,9 +226,9 @@
                 <!-- Content for Tab 3 -->
                 @foreach ($articles as $a)
                     @if ($a->category->id == 5)
-                        <a href="/article/detail" class="row mt-3 box-article-tab">
+                        <a href="/article/detail/{{ $a->id }}" class="row mt-3 box-article-tab">
                             <div class="lg-5 d-flex flex-row">
-                                <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#">
+                                <img src="https://source.unsplash.com/450x250/?{{ $a->category->name }}" alt="" class="img-thumbnail">
                                 <div class="col-lg mt-5 mx-3 ">
                                     <h1 class="col-lg-8 fw-bold">{{ $a->title }}</h1>
                                     <div class="date-posted">Posted on {{ $a->day }}, 3 {{ $a->month }} {{ $a->year }}</div>

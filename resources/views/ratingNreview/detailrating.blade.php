@@ -30,7 +30,7 @@
                 </a>
             </div>
             <div class="col-4">
-                <img src="{{ asset('storage/'. $product->form_image) }}" alt="">
+                <img src="{{ asset('storage/'. $product->form_image) }}" alt="" style="min-width: 148px;max-width: 348px;min-height: 482px ;max-height: 582px ;overflow: hidden;" class="mb-3">
                 <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"> <span class="fw-bold"><i class="bi bi-plus-lg"></i> Add Review</span></button>
             </div>
             <div class="col pt-5">

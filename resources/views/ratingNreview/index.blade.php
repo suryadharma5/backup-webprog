@@ -50,7 +50,7 @@
                   <div class="scroll-area-rating d-flex">
                     <div class="foto-produk">
                       @if ($prod->form_image)
-                        <img src="{{ asset('storage/'. $prod->form_image) }}" alt="" class="img-fluid img-thumbnail" style="max-width: 148px;min-height: 282px ;overflow: hidden;">
+                        <img src="{{ asset('storage/'. $prod->form_image) }}" alt="" class="img-fluid img-thumbnail" style="min-width: 148px;max-width: 149px;min-height: 282px ;max-height: 283px ;overflow: hidden;">
                       @endif
                       <img src="{{ $prod->form_image }}" alt="">
                     </div>
@@ -115,5 +115,6 @@
           </div>
     </div>
 
+    {{-- <script src="/js/rating"></script> --}}
     <script src="/js/rating.js"></script>
 @endsection
