@@ -59,7 +59,7 @@ Route::get('/menfess/post', [MenfessController::class, 'postMenfess'])->name('po
 Route::post('/menfess/post/form', [MenfessController::class, 'addMenfess'])->name('addMenfess')->middleware('auth');
 Route::get('/menfess/myMenfess/{user:username}', [MenfessController::class, 'myMenfess'])->middleware('auth');
 Route::put('/menfess/myMenfess/update', [MenfessController::class, 'updateMenfess'])->middleware('auth');
-Route::delete('/menfess/myMenfess/delete/{id}', [MenfessController::class, 'deleteMenfess'])->middleware('auth');
+Route::delete('/menfess/myMenfess/delete', [MenfessController::class, 'deleteMenfess'])->middleware('auth');
 
 Route::get('/track', function(){
     return view('track.index', [

@@ -193,7 +193,7 @@
                         <div class="scroll-area">
                             <div class="question">
                                 <p>
-                                    Bagaimana Cara Mengubah Hari Senin Menjadi Hari Minggu ?
+                                    {{ $m->title }}
                                 </p>
                             </div>
                             <hr>

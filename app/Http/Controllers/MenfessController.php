@@ -87,12 +87,10 @@ class MenfessController extends Controller
         return redirect('/menfess/myMenfess/'. $user->username)->with('success', "Menfess anda berhasil diperbaharui");
     }
 
-    public function deleteMenfess($id): RedirectResponse{
-        $menfess = Menfess::find($id);
+    public function deleteMenfess(Request $request): RedirectResponse{
+        $menfess = Menfess::findOrFail($request->menfess_id);
         $menfess->delete();
 
-        return redirect('menfess')
-            ->with("updated",1)
-            ->with('message', "Your menfess has been deleted.");
+        return redirect('/menfess')->with('success', "Menfess anda berhasil dihapus");
     }
 }

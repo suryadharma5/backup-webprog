@@ -68,10 +68,11 @@
                                                 <button type="button" data-id="{{ $men->id }}" data-question="{{ $men->title }}" data-bs-toggle="modal" data-bs-target="#exampleModal" class="dropdown-item" href="#" id="updateButton"><i class="bi bi-pencil-square me-2" style="color: #78A2CC"></i><span style="color: #78A2CC">Update</span></button>
                                             </li>
                                             <li><hr class="dropdown-divider"></li>
-                                              <form action="/menfess/myMenfess/delete/{{ $men->id}}" method="POST">
+                                              <form action="/menfess/myMenfess/delete" method="POST">
                                                   <li onclick="return confirm('Apakah anda yakin ?')">
                                                       @method('delete')
                                                       @csrf
+                                                      <input type="hidden" value="{{ $men->id }}" name="menfess_id">
                                                       <button type="submit" class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i>Hapus</button> 
                                                   </li>
                                               </form>
