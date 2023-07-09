@@ -52,7 +52,7 @@
                       @if ($prod->form_image)
                         <img src="{{ asset('storage/'. $prod->form_image) }}" alt="" class="img-fluid img-thumbnail" style="min-width: 148px;max-width: 149px;min-height: 282px ;max-height: 283px ;overflow: hidden;">
                       @endif
-                      <img src="{{ $prod->form_image }}" alt="">
+                      {{-- <img src="{{ $prod->form_image }}" alt=""> --}}
                     </div>
                     <div class="isi ms-4">
                       <div class="nama-produk my-0">

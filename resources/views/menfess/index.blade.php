@@ -101,15 +101,17 @@
                             <i class="bi bi-three-dots-vertical titik-tiga" data-bs-toggle="dropdown" style=""></i>
                             <ul class="dropdown-menu">
                               <li><a class="dropdown-item" href="#"><i class="bi bi-exclamation-circle me-2"></i>Laporkan</a></li>
-                              @if ($men->menfessReply[0]->users->id == auth()->user()->id)
-                              <li><hr class="dropdown-divider"></li>
-                                <form action="/menfess/detail/reply/{{ $men->menfessReply[0]->id}}" method="POST">
-                                    <li onclick="return confirm('Apaka anda yakin ?')">
-                                        @method('delete')
-                                        @csrf
-                                        <button type="submit" class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i>Hapus</button> 
-                                    </li>
-                                </form>
+                              @if (auth()->user())
+                                @if ($men->menfessReply[0]->users->id == auth()->user()->id)
+                                <li><hr class="dropdown-divider"></li>
+                                  <form action="/menfess/detail/reply/{{ $men->menfessReply[0]->id}}" method="POST">
+                                      <li onclick="return confirm('Apaka anda yakin ?')">
+                                          @method('delete')
+                                          @csrf
+                                          <button type="submit" class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i>Hapus</button> 
+                                      </li>
+                                  </form>
+                                @endif
                               @endif
                             </ul>
                         </div>

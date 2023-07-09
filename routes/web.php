@@ -10,6 +10,7 @@ use App\Http\Controllers\RatingController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\MenfessController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
@@ -26,12 +27,7 @@ use App\Http\Controllers\MenfessReplyController;
 |
 */
 
-Route::get('/', function () {
-    return view('index', [
-        'title' => 'Home',
-        'active' => 'home'
-    ]);
-});
+Route::get('/', [LandingPageController::class, 'index']);
 
 Auth::routes();
 
