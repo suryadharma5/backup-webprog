@@ -53,12 +53,14 @@ Route::resource('/rating/detail/review', ReviewController::class);
 Route::resource('/rating/product', ProductController::class)->middleware('auth');
 
 Route::get('/menfess', [MenfessController::class, 'index']);
+Route::get('/menfess/search', [MenfessController::class, 'searchMenfess']);
 Route::get('/menfess/detail/{menfess}', [MenfessController::class, 'detail'])->middleware('auth');
 Route::resource('/menfess/detail/reply', MenfessReplyController::class);
 Route::get('/menfess/post', [MenfessController::class, 'postMenfess'])->name('postMenfess');
 Route::post('/menfess/post/form', [MenfessController::class, 'addMenfess'])->name('addMenfess')->middleware('auth');
 Route::get('/menfess/myMenfess/{user:username}', [MenfessController::class, 'myMenfess'])->middleware('auth');
 Route::put('/menfess/myMenfess/update', [MenfessController::class, 'updateMenfess'])->middleware('auth');
+Route::delete('/menfess/myMenfess/delete', [MenfessController::class, 'deleteMenfess'])->middleware('auth');
 Route::delete('/menfess/myMenfess/delete', [MenfessController::class, 'deleteMenfess'])->middleware('auth');
 
 Route::get('/track', function(){

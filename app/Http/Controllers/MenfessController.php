@@ -16,7 +16,7 @@ class MenfessController extends Controller
         return view('menfess.index', [
             'title' => 'Menfess',
             'active' => 'menfess',
-            'menfess' => Menfess::all(),
+            'menfess' => Menfess::latest()->filter(request(['search']))->get(),
         ]);
     }
 
@@ -92,5 +92,117 @@ class MenfessController extends Controller
         $menfess->delete();
 
         return redirect('/menfess')->with('success', "Menfess anda berhasil dihapus");
+    }
+
+    public function searchMenfess(Request $request){
+        if($request->ajax()){
+            $menfess = Menfess::latest()->where('title', 'like', '%' . $request->search . '%')->get();
+
+            foreach ($menfess as $men){
+                echo '
+                    <div class="card my-3">
+                        <div class="card-body">
+                            <div class="row d-flex mx-1">
+                                <div class="col-10 my-1">
+                                    <a href="/menfess/detail/'.$men->id.'" class="text-decoration-none text-black">
+                                        <h3 class="card-title fw-bold">'.$men->title.'</h3>
+                                    </a>
+                                </div>
+                                <div class="col my-1">
+                                    <div class="row d-flex">
+                                        <div class="col-1">
+                                            <i class="fa-solid fa-heart fa-lg" style="color: #78a2cc;"></i>
+                                        </div>
+                                        <div class="col">
+                                            <p style="color: #78A2CC">'.$men->total_likes.' likes</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col my-1" style="margin-left: -25px;">
+                                    <div class="row d-flex">
+                                        <div class="col-1">
+                                            <i class="fa-solid fa-message" style="color: #78a2cc;"></i>
+                                        </div>
+                                        <div class="col">
+                                            <p style="color: #78A2CC">'.$men->total_replies.' replies</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row d-flex mx-1 my-0">
+                                <div class="col-1">
+                                    <p class="card-text" style="color: gray">asked by</p>
+                                </div>
+                                <div class="col" style="margin-left: -38px">
+                                    <p class="card-text" style="font-weight: bold;">'.$men->user->username.'</p>
+                                </div>
+                            </div>
+                            <hr>
+                            ';
+
+                            if ($men->menfessReply->count()) {
+                                echo '
+                                <div class="row d-flex m-1">
+                                    <div class="col-1">
+                                        <img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Profile" style="border-radius: 50%; width: 50px; height:50px; object-fit: cover;">
+                                    </div>
+                                    <div class="col" style="margin-left: -30px">
+                                        <p style="font-weight: bold;">'.$men->menfessReply[0]->users->username.'</p>
+                                        <p style="margin-top: -20px; color: gray;">Worker Dad</p>
+                                    </div>
+                                    <div class="col text-end">
+                                        <div class="dropdown-center">
+                                            <i class="bi bi-three-dots-vertical titik-tiga" data-bs-toggle="dropdown" style=""></i>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#"><i class="bi bi-exclamation-circle me-2"></i>Laporkan</a></li>';
+                            
+                                                if (auth()->user()) {
+                                                    if ($men->menfessReply[0]->users->id == auth()->user()->id) {
+                                                        echo '
+                                                        <li><hr class="dropdown-divider"></li>
+                                                        <form action="/menfess/detail/reply/'.$men->menfessReply[0]->id.'" method="POST">
+                                                            <li onclick="return confirm(\'Apakah anda yakin?\')">
+                                                                '.method_field('delete').'
+                                                                '.csrf_field().'
+                                                                <button type="submit" class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i>Hapus</button> 
+                                                            </li>
+                                                        </form>
+                                                        ';
+                                                    }
+                                                }
+                                            
+                                                echo '
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                ';
+                                            
+                                if ($men->menfessReply[0]->reply_image) {
+                                    echo '
+                                    <div class="row mx-1">
+                                        <img src="'.asset('storage/'.$men->menfessReply[0]->reply_image).'" class="card-img-top" alt="..." style="height: 380px; object-fit:cover;">
+                                    </div>
+                                    ';
+                                }
+                            
+                                echo '
+                                <div class="row m-1">
+                                    <p>'.$men->menfessReply[0]->reply_text.'</p>
+                                </div>
+                                <div class="row text-center" style="margin-left: 30%; margin-right:30%;">
+                                    <div class="tombol">
+                                        <a href="/menfess/detail/'.$men->id.'" class="btn" style="background-color: #78A2CC; color:#FFF7F6;">See all replies  <i class="fa-solid fa-arrow-right fa-lg mx-2" style="color: #ffffff;"></i></a>
+                                    </div>
+                                </div>
+                                ';
+                            }
+                        
+                            echo '
+                        </div>
+                    </div>
+                ';
+            }
+        }
     }
 }
