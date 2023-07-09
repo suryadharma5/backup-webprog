@@ -24,7 +24,7 @@ class ProductSeeder extends Seeder
         $categories = ['Body Care', 'Pakaian', 'Makanan', 'Peralatan'];
         $nama = ['Bedak Super', 'Sabun Unyu', 'Minyak Kelon'];
 
-        for ($i = 0; $i <= 7; $i++) {
+        for ($i = 0; $i <= 10; $i++) {
             DB::table('products')->insert([
                 'name_product' => $nama[mt_rand(0,2)],
                 'type_product' => $faker->randomElement($categories),

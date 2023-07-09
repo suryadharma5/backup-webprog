@@ -49,10 +49,11 @@
                 <a href="/rating/detail/{{ $prod->id }}" class="text-decoration-none text-black">
                   <div class="scroll-area-rating d-flex">
                     <div class="foto-produk">
-                      @if ($prod->form_image)
+                      @if ($prod->form_image != '/img/section4_photo-product.png')
                         <img src="{{ asset('storage/'. $prod->form_image) }}" alt="" class="img-fluid img-thumbnail" style="min-width: 148px;max-width: 149px;min-height: 282px ;max-height: 283px ;overflow: hidden;">
+                      @else
+                        <img src="{{ $prod->form_image }}" alt="">
                       @endif
-                      {{-- <img src="{{ $prod->form_image }}" alt=""> --}}
                     </div>
                     <div class="isi ms-4">
                       <div class="nama-produk my-0">

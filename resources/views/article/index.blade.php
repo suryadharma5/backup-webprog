@@ -11,29 +11,8 @@
 
 @section('contents')
     <div class="container mt-4 bg">
-        <div class="row justify-content-center mb-3">
-            <div class="col-md-6">
-            <form action="/blog" method="GET"> 
-                @if (request('category'))
-                <input type="hidden" name="category" value="{{ request('category') }}">
-                @endif
-    
-                @if (request('author'))
-                <input type="hidden" name="author" value="{{ request('author') }}">
-                @endif
-    
-                <div class="row">
-                    <input type="text" class="form-control searchBar col shadow" placeholder="Search Article" name="search">
-                    <button class="searchButton col-md-1 border-0 rounded-end-5 rounded-start-5" type="submit" id="button-addon2" style="background-color: #FFB8C7; margin-left: -50px">
-                        <i class="bi bi-search searchIcon text-white" style="-webkit-text-stroke: 1px;"></i>
-                    </button>
-                </div>
-            </form>
-            </div>
-        </div>
-    
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 mt-2">
                 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
