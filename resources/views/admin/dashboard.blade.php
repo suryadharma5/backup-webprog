@@ -19,25 +19,25 @@
     </div>
     {{-- card --}}
     <div class="row d-flex mt-2 mx-1 justify-content-between">
-        <div class="card mb-3 text-bg-dark" style="max-width: 21rem;">
+        <div class="card mb-3 text-bg-dark" style="max-width: 18rem;">
             <div class="card-header">Users</div>
             <div class="card-body">
-                <h1>900 users</h1>
+                <h1>{{ count($users) }}</h1>
                 <p class="card-text">Have signed up to be our member, that's cool!</p>
             </div>
         </div>
-        <div class="card mb-3" style="max-width: 21rem; background-color: #FFB8C7; color:white;">
+        <div class="card mb-3" style="max-width: 18rem; background-color: #FFB8C7; color:white;">
             <div class="card-header">Booking doctor</div>
             <div class="card-body">
                    <h1>90 users</h1>
                 <p class="card-text">Have booked our doctors, let's recruite more doctors.</p>
             </div>
         </div>
-        <div class="card mb-3" style="max-width: 21rem; background-color: #78A2CC; color:white;">
+        <div class="card mb-3" style="max-width: 18rem; background-color: #78A2CC; color:white;">
             <div class="card-header">Article</div>
             <div class="card-body">
-                <h1>90 users</h1>
-                <p class="card-text">Have seen our article, keep up the good work.</p>
+                <h1>{{ count($articles) }}</h1>
+                <p class="card-text">Have been added to our application</p>
             </div>
         </div>
     </div>
@@ -55,7 +55,6 @@
             <th scope="col">No</th>
             <th scope="col">Username</th>
             <th scope="col">Email</th>
-            <th scope="col">Name</th>
             <th scope="col">Date of Birth</th>
             <th scope="col">Phone Number</th>
             {{-- <th scope="col">Action</th> --}}
@@ -67,7 +66,6 @@
                 <th scope="row">{{ $user->id }}</th>
                 <td>{{ $user->username }}</td>
                 <td>{{ $user->email }}</td>
-                <td>Belum ada di database</td>
                 <td>{{ $user->dob }}</td>
                 <td>{{ $user->phone_number }}</td>
                 {{-- <td> --}}
@@ -109,24 +107,7 @@
         </tbody>
     </table>
 
-    {{-- paginator --}}
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        </ul>
-    </nav>
+    <div class="row d-flex justify-content-end">{{ $users->links() }}</div>
 
 </div>
 

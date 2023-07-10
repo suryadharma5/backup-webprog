@@ -16,7 +16,7 @@ class ProfileController extends Controller
             'nik' => 'required|digits:16',
             'email' => 'required|email:rfc,dns',
             'phonenumber' => 'required|digits_between:10,13',
-            'biodata' => 'required|max:100',
+            'biodata' => 'required',
             
         ];
 
@@ -30,18 +30,16 @@ class ProfileController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withInput()->withErrors($validator);
         }else{
-            // dd($request);
-            // $fileimage = $request->file('gambar');
-            // $imagename = $request->nim.".".$fileimage->getClientOriginalExtension(); //sebelum mengakhiri dengan extension kita bisa nambah dengan nama image dengan nim
-            // $pathimage = Storage::disk('public')->putFileAs('upload/mahasiswa', $fileimage, $imagename); //menyimpan di dalam storage di dalame folder public
-            // // dd($pathimage);
-            // // Storage::disk('public')->putFileAs();
-
-            // $mhs = CrudMahasiswaModel::create([
-            //     'nim' => $request->nim,
-            //     'nama' => $request->nama,
-            //     'gambar' => $imagename,
-            // ]);
+            auth()->user()->update([
+                'username' => $request->username,
+                'firstname' => $request->firstname,
+                'lastname' => $request->lastname,
+                'dob' => $request->dob,
+                'nik' => $request->nik,
+                'email' => $request->email,
+                'phone_number' => $request->phonenumber,
+                'biodata' => $request->biodata
+            ]);
 
             return redirect()->back()->with('message', 'Your profile has been updated');
         }

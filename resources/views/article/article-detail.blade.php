@@ -23,7 +23,7 @@
     <div class="container col">
         {{-- <img src="/img/bayi-article.png" alt="" class="img-fluid mx-auto d-block gambar mb-4" width="1180px"> --}}
         <img src="https://source.unsplash.com/1200x550/?{{ $article->category->name }}" alt="" class="img-fluid mx-auto d-block gambar mb-4">
-        <p class="mt-3">{{ $article->body }}</p>
+        <p class="mt-3">{!! $article->body !!}</p>
 
     </div>
     <div class="container">

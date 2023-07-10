@@ -55,11 +55,11 @@
             <img class="mb-4" src="/img/logo.png" alt="" width="300" height="100">
           </div>
 
-          <div class="container loginCont col-lg-12">
+          <div class="container loginCont row">
             <form method="POST" action="{{ route('register') }}" class="py-5 px-3">
                 @csrf
 
-                <div class="form-floating">
+                <div class="form-floating col-12">
                     <input type="text" name="username" class="form-control @error('username') is-invalid @enderror forms" id="username" placeholder="Your Username" autofocus required value="{{ old('username') }}">
                     <label for="username" style="color: #7F7476">Username</label>
 
@@ -68,8 +68,36 @@
                         {{ $message }}
                       </div>                      
                     @enderror
+                </div>
+
+                {{-- <div class="row">
+                  <div class="col-6">
+                    <div class="form-floating mt-3">
+                      <input type="text" name="firstname" class="form-control forms mt-3" id="" placeholder="Your Firstname" autofocus required value="{{ old('firstname') }}">
+                      <label for="firstname" style="color: #7F7476">Firstname</label>
+                    </div>
                   </div>
-    
+                  
+                  <div class="col-6">
+                    <div class="form-floating mt-3">
+                      <input type="text" name="lastname" class="form-control forms mt-3" id="" placeholder="Your Lastname" autofocus required value="{{ old('lastname') }}">
+                      <label for="lastname" style="color: #7F7476">Lastname</label>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                <div class="form-floating">
+                  <input type="text" name="nik" class="form-control forms mt-3" id="" placeholder="Your Lastname" autofocus required value="{{ old('nik') }}">
+                  <label for="nik" style="color: #7F7476">NIK</label>
+                </div>
+                
+
+                <div class="form-floating">
+                  <input type="text" class="form-control forms mt-3" id="datepicker" name="dob">
+                  <label for="datepicker" style="color: #7F7476">DOB</label>
+                </div> --}}
+
                 <div class="form-floating">
                   <input type="email" name="email" class="form-control @error('email') is-invalid @enderror forms mt-3" id="email" placeholder="name@example.com" required value="{{ old('email') }}">
                   <label for="email" style="color: #7F7476">Email</label>

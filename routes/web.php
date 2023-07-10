@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use App\Models\Review;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
@@ -97,9 +98,11 @@ Route::get('/track/hpht', function(){
 Route::get('/track/trackRes', [TrackingController::class, 'track']);
 // Route::match(['get', 'post'], '/track/trackRes', [TrackingController::class, 'track']);
 
+
 Route::get('/profile', function(){
-    return view('profile.profile', [
-        'active' => 'profile'
+    return view('profile.index', [
+        'active' => 'profile',
+        'title' => 'Profile'
     ]);
 });
 
@@ -111,7 +114,20 @@ Route::get('/adminDashboard', [AdminController::class, 'dashboard']);
 Route::get('/adminDoctor', [AdminController::class, 'doctor']);
 Route::get('/adminHospital', [AdminController::class, 'hospital']);
 
+Route::put('/adminHospital/{id}', [AdminController::class, 'updateHospital'])->name('adminHospital');
+Route::post('adminHospital', [AdminController::class, 'addHospital'])->name('addHospital');
+Route::delete('/adminHospital/del/{id}',  [AdminController::class, 'destroyHospital'])->name('delete-hospital');
 
+Route::post('adminDoctor', [AdminController::class, 'addDoctor'])->name('addDoctor');
+Route::put('/adminDoctor/{id}', [AdminController::class, 'updateDoctor'])->name('updateDoctor');
+Route::delete('/adminDoctor/del/{id}',  [AdminController::class, 'destroyDoctor'])->name('delete-doctor');
+
+Route::post('/adminArticle', [AdminController::class, 'addArticle'])->name('addArticle');
+Route::put('/adminArticle/{id}', [AdminController::class, 'updateArticle'])->name('updateArticle');
+Route::delete('/adminArticle/del/{id}',  [AdminController::class, 'destroyArticle'])->name('delete-article');
+
+
+Route::put('/updateProfile', [ProfileController::class, 'updateprofile'])->name('updateProfile');
 //404 handler
 Route::fallback(function () {
     return view('404', [

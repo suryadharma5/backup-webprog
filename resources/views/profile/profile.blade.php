@@ -32,17 +32,6 @@
 
 </head>
 <body>
-    {{-- <nav class="navbar navbar-expand-lg navbar-dark navigasi">
-        <div class="container">
-          <a class="navbar-brand" href="/">PPTI Blog</a>
-          <a href="#">
-            <img src="/img/logo.png" alt="" width="200" class="navbar-brand mr-2">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-    </nav> --}}
 
     <nav class="navbar navbar-expand-lg navbar-dark navigasi">
         <div class="container">
@@ -56,43 +45,42 @@
           <div class="collapse navbar-collapse" id="navbarNav">      
       
             <ul class="navbar-nav ms-auto">
-              {{-- jika sudah login --}}
-              @auth
-              {{-- @dd(Auth::user()->username) --}}
-                <li class="nav-item dropdown d-flex flex-row align-items-center">
-                  <img src="/img/profile.png" width="20" alt="" class="d-block" height="20">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     {{ Auth::user()->username }}
-                    </a> 
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-sidebar-reverse"></i>My Dashboard</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <form action="/logout" method="POST">
-                      @csrf
-                      <button type="submit" class="dropdown-item">
-                        <i class="bi bi-box-arrow-right"></i>Logout
-                      </button>
-                    </form>
-                  </ul>
-                </li>
-      
-              {{-- jika belum login --}}
-              @else
-                
-                  <li class="nav-item" style="display: flex; align-content : center;">
-                    <a href="/login" class="nav-link ">
-                        {{-- {{ $active == 'login' ? 'active' : '' }} --}}
-                      <i class="bi bi-box-arrow-in-right" style="margin-right: 5px"></i>
-                    Login</a>
+                {{-- jika sudah login --}}
+                @auth
+                {{-- @dd(Auth::user()->username) --}}
+                  <li class="nav-item dropdown d-flex flex-row align-items-center">
+                    <img src="/img/profile.png" width="20" alt="" class="d-block" height="20">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       {{ Auth::user()->username }}
+                      </a> 
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="/profile"><i class="bi bi-person-fill"></i><span class="mx-2">profile</span></a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <form action="/logout" method="POST">
+                        @csrf
+                        <button type="submit" class="dropdown-item">
+                          <i class="bi bi-box-arrow-right"></i><span class="mx-2">Logout</span>
+                        </button>
+                      </form>
+                    </ul>
                   </li>
-                
-              @endauth
-      
-            </ul>
+        
+                {{-- jika belum login --}}
+                @else
+                  
+                    <li class="nav-item" style="display: flex; align-content : center;">
+                      <a href="/login" class="nav-link {{ $active == 'login' ? 'active' : '' }}">
+                        <i class="bi bi-box-arrow-in-right" style="margin-right: 5px"></i>
+                      Login</a>
+                    </li>
+                  
+                @endauth
+        
+              </ul>
           </div>
         </div>
       </nav>
-      
+
 
     @if (session('message'))
         <!-- Modal -->
@@ -127,7 +115,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-3 bungkus-nav-profile py-3">
-                <a href=""class="row mt-3 mb-3 bungkus-profile-kiri" style="text-decoration: none">
+                <a href="/"class="row mt-3 mb-3 bungkus-profile-kiri" style="text-decoration: none">
                     <div class="col-4">
                         <img src="/img/home-navbar-profile.png" class="pict-nav-profile">
                     </div>
@@ -135,7 +123,7 @@
                         Home
                     </div>
                 </a>
-                <a href=""class="row mt-3 mb-3 bungkus-profile-kiri" style="text-decoration: none">
+                <a href="/track"class="row mt-3 mb-3 bungkus-profile-kiri" style="text-decoration: none">
                     <div class="col-4">
                         <img src="/img/LoadingSign-profile.png" class="pict-nav-profile">
                     </div>
@@ -143,7 +131,7 @@
                         Track
                     </div>
                 </a>
-                <a href=""class="row mt-3 mb-3 bungkus-profile-kiri" style="text-decoration: none">
+                <a href="/book"class="row mt-3 mb-3 bungkus-profile-kiri" style="text-decoration: none">
                     <div class="col-4">
                         <img src="/img/book-profile-navbar.png" class="pict-nav-profile">
                     </div>
@@ -151,7 +139,7 @@
                         Book
                     </div>
                 </a>
-                <a href=""class="row mt-3 mb-3 bungkus-profile-kiri" style="text-decoration: none">
+                <a href="/article"class="row mt-3 mb-3 bungkus-profile-kiri" style="text-decoration: none">
                     <div class="col-4">
                         <img src="/img/article-navbar-profile.png" class="pict-nav-profile">
                     </div>
@@ -159,7 +147,7 @@
                         Article
                     </div>
                 </a>
-                <a href=""class="row mt-3 mb-3 bungkus-profile-kiri" style="text-decoration: none">
+                <a href="/menfess"class="row mt-3 mb-3 bungkus-profile-kiri" style="text-decoration: none">
                     <div class="col-4">
                         <img src="/img/Menfess-profile-navbar.png" class="pict-nav-profile">
                     </div>
@@ -167,7 +155,7 @@
                         Menfess
                     </div>
                 </a>
-                <a href=""class="row mt-3 mb-3 bungkus-profile-kiri" style="text-decoration: none">
+                <a href="/rating"class="row mt-3 mb-3 bungkus-profile-kiri" style="text-decoration: none">
                     <div class="col-4">
                         <img src="/img/Rating-profile-navbar.png" class="pict-nav-profile">
                     </div>
@@ -188,7 +176,7 @@
                     <img src="/img/ProfilePic-profile.png " alt="" class="profile-pict">
                 </div>
                 
-                <form class="row g-3" method="POST">
+                <form action="{{ route('updateProfile') }}" class="row g-3" method="POST">
                     @method("put")
                     @csrf
                     <div class="col-12">
@@ -201,7 +189,7 @@
 
                     <div class="col-md-5">
                         <label class="form-label">First Name</label>
-                        <input type="text" class="form-control @error('firstname') is-invalid @enderror"  name="firstname">
+                        <input type="text" class="form-control @error('firstname') is-invalid @enderror"  name="firstname" value="{{ Auth::user()->firstname }}">
                         @error('firstname')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -211,7 +199,7 @@
                     </div>
                     <div class="col-md-6">
                         <label class="form-label">Last Name</label>
-                        <input type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname">
+                        <input type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ Auth::user()->lastname }}">
                         @error('lastname')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -220,7 +208,7 @@
                     <div class="col-md-5">
                         <label class="form-label">Date of Birth</label>
                         <div class="row g-0 form-control input-group date @error('dob') is-invalid @enderror" id="datepicker">
-                            <input type="text" class="col-10 " style="border: none" name="dob">
+                            <input type="text" class="col-10 " style="border: none" name="dob" value="{{ Auth::user()->dob }}">
                             <span class="input-group-append col-2  d-flex justify-content-center align-items-center">
                                 <span class="button-calendar bg-white d-block col-12 d-flex justify-content-center align-items-center "> 
                                     <i class="fa fa-calendar"></i>
@@ -237,7 +225,7 @@
                     </div>
                     <div class="col-md-6">
                         <label class="form-label ">NIK</label>
-                        <input type="text" class="form-control @error('nik') is-invalid @enderror" name="nik" >
+                        <input type="text" class="form-control @error('nik') is-invalid @enderror" name="nik" value="{{ Auth::user()->nik }}">
                         @error('nik')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -245,14 +233,14 @@
 
                     <div class="col-12">
                         <label class="form-label">Email</label>
-                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email">
+                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ Auth::user()->email }}">
                         @error('email')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="col-12">
                       <label  class="form-label">Phone Number</label>
-                      <input type="text" class="form-control @error('phonenumber') is-invalid @enderror" name="phonenumber">
+                      <input type="text" class="form-control @error('phonenumber') is-invalid @enderror" name="phonenumber" value="{{ Auth::user()->phone_number }}">
                         @error('phonenumber')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -260,10 +248,9 @@
                     <div class="col-12">
                         <div class="row">
                             <label class="form-label col-6">Biodata</label>
-                            <label class="form-label col-6 d-flex justify-content-end ">/100</label>
                         </div>
                       
-                        <textarea class="form-control @error('biodata') is-invalid @enderror" rows="3" name="biodata"></textarea>
+                        <textarea class="form-control @error('biodata') is-invalid @enderror" rows="3" name="biodata">{{ Auth::user()->biodata }}</textarea>
                         @error('biodata')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -316,8 +303,7 @@
         
     </div>
 
-    <label for=""></label>
-    <input type="text" class="form-control">
+    @include('partials.footer')
 
     <script type="text/javascript">
         $(function() {
