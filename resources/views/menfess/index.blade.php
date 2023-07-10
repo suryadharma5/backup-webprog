@@ -20,22 +20,24 @@
     @endif
     {{-- button bagian atas --}}
     <div class="row pt-5 d-flex">
-        <div class="col-2">
+        <div class="col-lg-2">
             <div class="tombol">
                 <button type="button" class="btn" style="background-color: #FFB8C7; font-weight: bold; margin-right: 25px; color:#FFF7F6"data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <i class="fa-solid fa-cloud-arrow-up fa-xl"></i>post menfess
                 </button>
             </div>
         </div>
-        <div class="col-2">
-            <a href="/menfess/myMenfess/{{ auth()->user()->username }}">
-                <div class="tombol">
-                    <button type="button" class="btn" style="background-color: #78A2CC; font-weight: bold; color:#FFF7F6"><i class="fa-solid fa-clock-rotate-left fa-xl"></i>my menfess</button>
-                </div>
-            </a>
-        </div>
+        @if (auth()->user())
+            <div class="col-lg-2">
+                <a href="/menfess/myMenfess/{{ auth()->user()->username }}">
+                    <div class="tombol">
+                        <button type="button" class="btn" style="background-color: #78A2CC; font-weight: bold; color:#FFF7F6"><i class="fa-solid fa-clock-rotate-left fa-xl"></i>my menfess</button>
+                    </div>
+                </a>
+            </div>
+        @endif
         {{-- Search input --}}
-        <div class="col-8">
+        <div class="col-lg">
             <form class="input-group mb-3" action="/menfess">
                 <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2" name="search" id="search">
                 <div class="input-group-append">

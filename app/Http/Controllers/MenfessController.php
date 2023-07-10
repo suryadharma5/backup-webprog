@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Like;
 use App\Models\Menfess;
 use App\Models\MenfessReply;
 use App\Models\User;
@@ -203,6 +204,58 @@ class MenfessController extends Controller
                     </div>
                 ';
             }
+        }
+    }
+
+    public function like(Request $request){
+        if($request->ajax()){
+            $reply = MenfessReply::findOrFail($request->reply_id);
+            $reply->like += 1;
+            $reply->save();
+
+            $user = auth()->user()->id;
+
+            $like = new Like();
+            $like->user_id = $user;
+            $like->menfess_reply_id = $request->reply_id;
+            $like->save();
+
+            $reply_like = $reply->like;
+
+            return response()->json([
+                'like' => $reply_like,
+            ]);
+
+            // Like::create($likeData);
+
+            // $response = $request->all();
+
+            // return response()->json($response);
+        }
+    }
+
+    public function unlike(Request $request){
+        if($request->ajax()){
+            $reply = MenfessReply::findOrFail($request->reply_id);
+            $reply->like -= 1;
+            $reply->save();
+
+            $user = auth()->user()->id;
+
+            $like = Like::where('user_id', $user)->where('menfess_reply_id', $reply->id)->delete();
+
+            $reply_like = $reply->like;
+            
+
+            return response()->json([
+                'like' => $reply_like,
+            ]);
+
+            // Like::create($likeData);
+
+            // $response = $request->all();
+
+            // return response()->json($response);
         }
     }
 }

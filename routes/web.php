@@ -55,6 +55,8 @@ Route::resource('/rating/product', ProductController::class)->middleware('auth')
 Route::get('/menfess', [MenfessController::class, 'index']);
 Route::get('/menfess/search', [MenfessController::class, 'searchMenfess']);
 Route::get('/menfess/detail/{menfess}', [MenfessController::class, 'detail'])->middleware('auth');
+Route::post('/menfess/detail/{menfess}/like', [MenfessController::class, 'like'])->middleware('auth');
+Route::post('/menfess/detail/{menfess}/unlike', [MenfessController::class, 'unlike'])->middleware('auth');
 Route::resource('/menfess/detail/reply', MenfessReplyController::class);
 Route::get('/menfess/post', [MenfessController::class, 'postMenfess'])->name('postMenfess');
 Route::post('/menfess/post/form', [MenfessController::class, 'addMenfess'])->name('addMenfess')->middleware('auth');
