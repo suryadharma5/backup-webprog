@@ -19,6 +19,7 @@ class UserFactory extends Factory
     {
         return [
             'username' => $this->faker->name(),
+            'is_admin' => 0,
             'firstname' => $this->faker->name(),
             'lastname' => $this->faker->name(),
             'dob' => $this->faker->date($format = 'Y-m-d'),
@@ -27,7 +28,7 @@ class UserFactory extends Factory
             'email' => $this->faker->unique()->safeEmail(),
             'phone_number' => $this->faker->phoneNumber(),
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => bcrypt(12345), // password
             'remember_token' => Str::random(10),
         ];
     }

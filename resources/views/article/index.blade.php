@@ -27,7 +27,11 @@
                                     <div class="col-lg-9 mx-0 px-0">
                                         {{-- <img src="/img/carousel-slide1.png" class="d-block" alt="..." style="width: 100%; height: 450px;"> --}}
                                         <a href="/article/detail/{{ $articles[0]->id }}">
-                                            <img src="https://source.unsplash.com/1200x450/?{{ $articles[0]->category->name }}" alt="" class="img-fluid">
+                                            @if ($articles[0]->imageUrl)
+                                                <img src="{{asset('storage/'.$articles[0]->imageUrl)}}" class="img-fluid" alt="..." style="min-width: 1200px; max-width: 1200px; min-height: 450px; max-height: 450px">
+                                            @else
+                                                <img src="https://source.unsplash.com/1200x450/?{{ $articles[0]->category->name }}" alt="" class="img-fluid">
+                                            @endif
                                         </a>
                                     </div>
                                     <div class="col-lg-3 d-flex flex-column justify-content-center" style="background-color: #BBA1A0">
@@ -129,11 +133,15 @@
                     @if ($a->category->id == 1)
                         <a href="/article/detail/{{ $a->id }}" class="row mt-3 box-article-tab">
                             <div class="lg-5 d-flex flex-row">
-                                <img src="https://source.unsplash.com/450x250/?{{ $a->category->name }}" alt="" class="img-thumbnail">  
+                                @if ($a->imageUrl)
+                                    <img src="{{asset('storage/'.$a->imageUrl)}}" class="img-thumbnail" alt="..." style="min-width: 450px; max-width: 450px; min-height: 250px; max-height: 250px">
+                                @else
+                                    <img src="https://source.unsplash.com/450x250/?{{ $a->category->name }}" alt="" class="img-thumbnail">  
+                                @endif
                                 {{-- <img src="/img/gb-artikel-tab.png" class="img-thumbnail" alt="" href="#"> --}}
                                 <div class="col-lg mt-5 mx-3 ">
                                     <h1 class="col-lg-8 fw-bold">{{ $a->title }}</h1>
-                                    <div class="date-posted">Posted on {{ $a->day }}, 3 {{ $a->month }} {{ $a->year }}</div>
+                                    <div class="date-posted">Posted on {{ $a->day }}, {{ $a->date }} {{ $a->month }} {{ $a->year }}</div>
                                 </div>
                             </div>
                         </a>
@@ -149,10 +157,14 @@
                     @if ($a->category->id == 2)
                         <a href="/article/detail/{{ $a->id }}" class="row mt-3 box-article-tab">
                             <div class="lg-5 d-flex flex-row">
-                                <img src="https://source.unsplash.com/450x250/?{{ $a->category->name }}" alt="" class="img-thumbnail">
+                                @if ($a->imageUrl)
+                                    <img src="{{asset('storage/'.$a->imageUrl)}}" class="img-thumbnail" alt="..." style="min-width: 450px; max-width: 450px; min-height: 250px; max-height: 250px">
+                                @else
+                                    <img src="https://source.unsplash.com/450x250/?{{ $a->category->name }}" alt="" class="img-thumbnail">  
+                                @endif
                                 <div class="col-lg mt-5 mx-3 ">
                                     <h1 class="col-lg-8 fw-bold">{{ $a->title }}</h1>
-                                    <div class="date-posted">Posted on {{ $a->day }}, 3 {{ $a->month }} {{ $a->year }}</div>
+                                    <div class="date-posted">Posted on {{ $a->day }}, {{ $a->date }} {{ $a->month }} {{ $a->year }}</div>
                                 </div>
                             </div>
                         </a>
@@ -168,10 +180,14 @@
                     @if ($a->category->id == 3)
                         <a href="/article/detail/{{ $a->id }}" class="row mt-3 box-article-tab">
                             <div class="lg-5 d-flex flex-row">
-                                <img src="https://source.unsplash.com/450x250/?{{ $a->category->name }}" alt="" class="img-thumbnail">
+                                @if ($a->imageUrl)
+                                    <img src="{{asset('storage/'.$a->imageUrl)}}" class="img-thumbnail" alt="..." style="min-width: 450px; max-width: 450px; min-height: 250px; max-height: 250px">
+                                @else
+                                    <img src="https://source.unsplash.com/450x250/?{{ $a->category->name }}" alt="" class="img-thumbnail">  
+                                @endif
                                 <div class="col-lg mt-5 mx-3 ">
                                     <h1 class="col-lg-8 fw-bold">{{ $a->title }}</h1>
-                                    <div class="date-posted">Posted on {{ $a->day }}, 3 {{ $a->month }} {{ $a->year }}</div>
+                                    <div class="date-posted">Posted on {{ $a->day }}, {{ $a->date }} {{ $a->month }} {{ $a->year }}</div>
                                 </div>
                             </div>
                         </a>
@@ -188,10 +204,14 @@
                     @if ($a->category->id == 4)
                         <a href="/article/detail/{{ $a->id }}" class="row mt-3 box-article-tab">
                             <div class="lg-5 d-flex flex-row">
-                                <img src="https://source.unsplash.com/450x250/?{{ $a->category->name }}" alt="" class="img-thumbnail">
+                                @if ($a->imageUrl)
+                                    <img src="{{asset('storage/'.$a->imageUrl)}}" class="img-thumbnail" alt="..." style="min-width: 450px; max-width: 450px; min-height: 250px; max-height: 250px">
+                                @else
+                                    <img src="https://source.unsplash.com/450x250/?{{ $a->category->name }}" alt="" class="img-thumbnail">  
+                                @endif
                                 <div class="col-lg mt-5 mx-3 ">
                                     <h1 class="col-lg-8 fw-bold">{{ $a->title }}</h1>
-                                    <div class="date-posted">Posted on {{ $a->day }}, 3 {{ $a->month }} {{ $a->year }}</div>
+                                    <div class="date-posted">Posted on {{ $a->day }}, {{ $a->date }} {{ $a->month }} {{ $a->year }}</div>
                                 </div>
                             </div>
                         </a>
@@ -207,10 +227,14 @@
                     @if ($a->category->id == 5)
                         <a href="/article/detail/{{ $a->id }}" class="row mt-3 box-article-tab">
                             <div class="lg-5 d-flex flex-row">
-                                <img src="https://source.unsplash.com/450x250/?{{ $a->category->name }}" alt="" class="img-thumbnail">
+                                @if ($a->imageUrl)
+                                    <img src="{{asset('storage/'.$a->imageUrl)}}" class="img-thumbnail" alt="..." style="min-width: 450px; max-width: 450px; min-height: 250px; max-height: 250px">
+                                @else
+                                    <img src="https://source.unsplash.com/450x250/?{{ $a->category->name }}" alt="" class="img-thumbnail">  
+                                @endif
                                 <div class="col-lg mt-5 mx-3 ">
                                     <h1 class="col-lg-8 fw-bold">{{ $a->title }}</h1>
-                                    <div class="date-posted">Posted on {{ $a->day }}, 3 {{ $a->month }} {{ $a->year }}</div>
+                                    <div class="date-posted">Posted on {{ $a->day }}, {{ $a->date }} {{ $a->month }} {{ $a->year }}</div>
                                 </div>
                             </div>
                         </a>

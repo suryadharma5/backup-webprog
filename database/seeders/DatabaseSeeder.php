@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $faker = Faker::create('id_ID');
         User::create([
             'username' => 'suryadharmas',
+            'is_admin' => 1,
             'firstname' => 'surya',
             'lastname' => 'dharmas',
             'dob' => '1979-06-09',
@@ -41,7 +42,8 @@ class DatabaseSeeder extends Seeder
             RumahSakitSeeder::class,
             DoctorSeeder::class,
             MenfessSeeder::class,
-            CategorySeeder::class
+            CategorySeeder::class,
+            JaninSeeder::class,
             // ProductSeeder::class,
         ]);
         Article::factory(20)->create();

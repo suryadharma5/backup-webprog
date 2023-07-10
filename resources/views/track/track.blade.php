@@ -4,6 +4,10 @@
     <link rel="stylesheet" href="/css/track.css">
 @endsection
 
+@section('title')
+    <title>Hamily | {{ $title }}</title>
+@endsection
+
 @section('contents')
 
     <div class="containe">

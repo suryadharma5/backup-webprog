@@ -17,10 +17,11 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('category_id');
             $table->string('title')->unique();
-            // $table->string('image')->nullable();
+            $table->string('imageUrl')->nullable();
             // $table->text('excerp');
             $table->text('body');
             $table->string('day');
+            $table->string('date');
             $table->string('month');
             $table->string('year');
             $table->timestamps();

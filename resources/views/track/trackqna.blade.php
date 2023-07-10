@@ -28,18 +28,18 @@
                             <div class="col-10">
                                 <div class="row g-0 input-group">
                                     <div class="text-center fw-bold">
-                                    Have you consult your pregnancy to doctor?
+                                    Sudah pernah konsultasi kehamilan di dokter?
                                     </div>
                                 </div>
                                 <div class="answer mb-5">
                                     <a href="/track/hpl">
                                         <button type="button" class="yes">
-                                            Yes
+                                            Sudah
                                         </button>
                                     </a>
                                     <a href="/track/hpht">
                                         <button type="button" class="no">
-                                            No
+                                            Belum
                                         </button>
                                     </a>
                                 </div>

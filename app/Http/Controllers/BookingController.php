@@ -123,7 +123,7 @@ class BookingController extends Controller
 
         Booking::create($validateddata);
 
-        return redirect('/book')->with('success', 'Product berhasil diunggah');
+        return redirect('/book')->with('success', 'Booking berhasil dibuat');
     }
 
     public function destroy($id)
@@ -131,6 +131,6 @@ class BookingController extends Controller
         $booking = Booking::find($id);
         // dd($menfessReply);
         $booking->delete();
-        return redirect('/book')-> with('success', 'Jawaban berhasil dihapus');
+        return redirect('/book')-> with('success', 'Booking berhasil dibatalkan');
     }
 }

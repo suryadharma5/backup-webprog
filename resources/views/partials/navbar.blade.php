@@ -41,7 +41,10 @@
                {{ Auth::user()->username }}
               </a> 
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/profile"><i class="bi bi-person-fill"></i><span class="mx-2">profile</span></a></li>
+              <li><a class="dropdown-item" href="/profile"><i class="bi bi-person-fill"></i><span class="mx-2">Profile</span></a></li>
+              @if (Auth::user()->is_admin == 1)
+                <li><a class="dropdown-item" href="/adminDashboard"><i class="bi bi-grid-fill"></i><span class="mx-2">Dashboard</span></a></li>
+              @endif
               <li><hr class="dropdown-divider"></li>
               <form action="/logout" method="POST">
                 @csrf

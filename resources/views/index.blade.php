@@ -12,6 +12,12 @@
 @endsection 
 @section('contents')
 <div class="full-width-content">
+    @if (session()->has('failed'))
+        <div class="alert alert-danger alert-dismissible fade show col-lg-12 mt-3" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     <div class="row">
         <div class="sectionpic awanatas">
             <img src="/img/awanputih.png" alt="">

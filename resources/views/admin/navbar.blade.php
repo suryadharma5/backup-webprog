@@ -37,13 +37,21 @@
                 <span class="fs-5 ms-3 d-none d-sm-inline">Article</span>
             </a>
         </li>
+        <li class="nav-item py-2 py-sm-0">
+            <a href="/" class="nav-link {{ ($on == 'sign-out') ? 'on' : ''}} text-white d-flex flex-row">
+                <div style="width: 35px;">
+                    <i class="fa-sharp fa-solid fa-door-open fa-xl"></i>
+                </div>
+                <span class="fs-5 ms-3 d-none d-sm-inline">Back to Home</span>
+            </a>
+        </li>
         {{-- <li class="nav-item py-2 py-sm-0">
             <a href="" class="nav-link {{ ($on == 'profile') ? 'on' : ''}} text-white">
                 <i class="fa-solid fa-user fa-xl"></i>
                 <span class="fs-5 ms-3 d-none d-sm-inline">Profile</span>
             </a>
         </li> --}}
-        <li class="nav-item py-2 py-sm-0">
+        {{-- <li class="nav-item py-2 py-sm-0">
             <a href="" class="nav-link {{ ($on == 'sign-out') ? 'on' : ''}} text-white d-flex flex-row">
                 <div style="width: 35px;">
                     <i class="fa-solid fa-right-from-bracket fa-xl"></i>
@@ -55,6 +63,6 @@
                     </button>
                 </form>
             </a>
-        </li>
+        </li> --}}
     </ul>
 </div>

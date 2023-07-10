@@ -95,7 +95,7 @@ Route::get('/track/hpht', function(){
     ]);
 });
 
-Route::get('/track/trackRes', [TrackingController::class, 'track']);
+Route::get('/track/trackRes', [TrackingController::class, 'track'])->middleware('auth');
 // Route::match(['get', 'post'], '/track/trackRes', [TrackingController::class, 'track']);
 
 
@@ -109,22 +109,26 @@ Route::get('/profile', function(){
 
 
 
-Route::get('/adminArticle', [AdminController::class, 'article']);
-Route::get('/adminDashboard', [AdminController::class, 'dashboard']);
-Route::get('/adminDoctor', [AdminController::class, 'doctor']);
-Route::get('/adminHospital', [AdminController::class, 'hospital']);
 
-Route::put('/adminHospital/{id}', [AdminController::class, 'updateHospital'])->name('adminHospital');
-Route::post('adminHospital', [AdminController::class, 'addHospital'])->name('addHospital');
-Route::delete('/adminHospital/del/{id}',  [AdminController::class, 'destroyHospital'])->name('delete-hospital');
 
-Route::post('adminDoctor', [AdminController::class, 'addDoctor'])->name('addDoctor');
-Route::put('/adminDoctor/{id}', [AdminController::class, 'updateDoctor'])->name('updateDoctor');
-Route::delete('/adminDoctor/del/{id}',  [AdminController::class, 'destroyDoctor'])->name('delete-doctor');
-
-Route::post('/adminArticle', [AdminController::class, 'addArticle'])->name('addArticle');
-Route::put('/adminArticle/{id}', [AdminController::class, 'updateArticle'])->name('updateArticle');
-Route::delete('/adminArticle/del/{id}',  [AdminController::class, 'destroyArticle'])->name('delete-article');
+Route::middleware(['isAdmin'])->group(function () {
+    Route::get('/adminArticle', [AdminController::class, 'article']);
+    Route::get('/adminDashboard', [AdminController::class, 'dashboard']);
+    Route::get('/adminDoctor', [AdminController::class, 'doctor']);
+    Route::get('/adminHospital', [AdminController::class, 'hospital']);
+    
+    Route::put('/adminHospital/{id}', [AdminController::class, 'updateHospital'])->name('adminHospital');
+    Route::post('adminHospital', [AdminController::class, 'addHospital'])->name('addHospital');
+    Route::delete('/adminHospital/del/{id}',  [AdminController::class, 'destroyHospital'])->name('delete-hospital');
+    
+    Route::post('adminDoctor', [AdminController::class, 'addDoctor'])->name('addDoctor');
+    Route::put('/adminDoctor/{id}', [AdminController::class, 'updateDoctor'])->name('updateDoctor');
+    Route::delete('/adminDoctor/del/{id}',  [AdminController::class, 'destroyDoctor'])->name('delete-doctor');
+    
+    Route::post('/adminArticle', [AdminController::class, 'addArticle'])->name('addArticle');
+    Route::put('/adminArticle/{id}', [AdminController::class, 'updateArticle'])->name('updateArticle');
+    Route::delete('/adminArticle/del/{id}',  [AdminController::class, 'destroyArticle'])->name('delete-article');
+});
 
 
 Route::put('/updateProfile', [ProfileController::class, 'updateprofile'])->name('updateProfile');

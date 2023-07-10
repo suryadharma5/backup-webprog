@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\article;
+use App\Models\Booking;
 use App\Models\Category;
 use App\Models\Doctor;
 use App\Models\User;
@@ -17,11 +18,13 @@ use Carbon\Carbon;
 class AdminController extends Controller
 {
     public function dashboard(){
+        $booking = Booking::all();
         return view('admin.dashboard', [
             'on' => 'dashboard',
             'usersCount' => User::all(),
             'users' => User::latest()->paginate(10),
-            'articles' => Article::all()
+            'articles' => Article::all(),
+            'bookings' => $booking->count()
         ]);
     }
 
@@ -141,13 +144,13 @@ class AdminController extends Controller
     public function addArticle(Request $request){
         $createdAt = Carbon::parse($request->created_at);
         $dayName = $createdAt->format('l'); // Mengambil nama hari dalam bahasa Inggris, misalnya "Monday"
+        $date = $createdAt->format('d'); // Mengambil nama hari dalam bahasa Inggris, misalnya "Monday"
         $monthName = $createdAt->format('F'); // Mengambil nama bulan dalam bahasa Inggris, misalnya "January"
         $year = $createdAt->format('Y'); 
 
-        if($request->hasFile('gambar')){
-            $fileimage = $request->file('gambar');
-            $imagename = $request->title.".".$fileimage->getClientOriginalExtension(); //sebelum mengakhiri dengan extension kita bisa nambah dengan nama image dengan nim
-            Storage::disk('public')->putFileAs('img', $fileimage, $imagename);
+        if($request->file('gambar')){
+            // $imagename = $request->title.".".$fileimage->getClientOriginalExtension(); //sebelum mengakhiri dengan extension kita bisa nambah dengan nama image dengan nim
+            $file = $request->file('gambar')->store('article-images');
 
             $body = nl2br($request->input('body'));
             $body = '<p>' . preg_replace('/\r\n|\r|\n/', '</p><p>', $body) . '</p>';
@@ -156,8 +159,9 @@ class AdminController extends Controller
                 'category_id' => $request->idCat, 
                 'title' => $request->title,
                 'body' => $body,
-                'imageUrl' => Storage::url('img/'.$imagename),
+                'imageUrl' => $file,
                 'day' => $dayName,
+                'date' => $date,
                 'month' => $monthName,
                 'year' => $year
             ]);
@@ -173,6 +177,7 @@ class AdminController extends Controller
             'title' => $request->title,
             'body' => $body,
             'day' => $dayName,
+            'date' => $date,
             'month' => $monthName,
             'year' => $year
         ]);
@@ -184,12 +189,14 @@ class AdminController extends Controller
         $article = article::findOrFail($id);
         $createdAt = Carbon::parse($article->created_at);
         $dayName = $createdAt->format('l'); // Mengambil nama hari dalam bahasa Inggris, misalnya "Monday"
+        $date = $createdAt->format('d'); // Mengambil nama hari dalam bahasa Inggris, misalnya "Monday"
         $monthName = $createdAt->format('F'); // Mengambil nama bulan dalam bahasa Inggris, misalnya "January"
         $year = $createdAt->format('Y'); 
 
         $article->category_id = $request->idCat;
         $article->title = $request->title;
         $article->day = $dayName;
+        $article->date = $date;
         $article->month = $monthName;
         $article->year = $year;
 
@@ -199,11 +206,13 @@ class AdminController extends Controller
 
         $article->body = $body;
 
-        if($request->hasFile('gambar')){
-            $fileimage = $request->file('gambar');
-            $imagename = $request->title.".".$fileimage->getClientOriginalExtension(); //sebelum mengakhiri dengan extension kita bisa nambah dengan nama image dengan nim
-            Storage::disk('public')->putFileAs('img', $fileimage, $imagename);
-            $article->imageUrl = Storage::url('img/'.$imagename);
+        if($request->file('gambar')){
+            // $fileimage = $request->file('gambar');
+            // $imagename = $request->title.".".$fileimage->getClientOriginalExtension(); //sebelum mengakhiri dengan extension kita bisa nambah dengan nama image dengan nim
+            // Storage::disk('public')->putFileAs('img', $fileimage, $imagename);
+            // $article->imageUrl = Storage::url('img/'.$imagename);
+            $file = $request->file('gambar')->store('article-images');
+            $article->imageUrl = $file;
         }
 
         $article->save();
@@ -214,6 +223,10 @@ class AdminController extends Controller
     public function destroyArticle(Request $request, $id){
         $ar = article::findOrFail($id);
         $ar->delete();
+
+        if($ar->imageUrl){
+            Storage::delete($ar->imageUrl);
+        }
 
         return redirect()->back()->with('message', 'Delete article successful');
 
