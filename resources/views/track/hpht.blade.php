@@ -26,27 +26,21 @@
             <div class="col-4 g-0 ">
                 <div class="row g-0 formulir-kalender">
                     <form class="pt-5">
-                        <div class="col-12 form-group d-flex justify-content-center">
+                        <div class="col-12 mb-5 form-group d-flex justify-content-center">
                             <div class="col-10">
                                 <div class="row g-0 input-group date" id="datepicker">
-                                    <input class="form-control col-10" placeholder="Masukkan hari perkiraan lahir (HPL)" min="return datecheck();">
+                                    <input type="text" class="form-control col-10" placeholder="Masukkan hari haid terakhir (HPHT)" >
                                     <span class="input-group-append col-2">
-                                        <span class="button-calendar bg-white d-block col-12 d-flex justify-content-center align-items-center" style="hover: pointer"> 
+                                        <span class="button-calendar bg-white d-block col-12 d-flex justify-content-center align-items-center "> 
                                             {{-- input-group-text  --}}
-                                            <i class="fa fa-calendar" style="cursor: pointer"></i>
+                                            <i class="fa fa-calendar"></i>
                                         </span>
                                     </span>
                                 </div>
                             </div>
                         </div>
                     </form>
-
-                    <a href="/track/hpht" class="hpl-text text-center mt-3 mb-5" style="width: 100%">
-                        Belum mengetahui HPL anda?
-                    </a>
-
                 </div>
-
             </div>
             <div class="col-1">
                 
@@ -73,25 +67,26 @@
                 'format': 'dd-mm-yyyy',
                 'autoclose': true,
                 'todayHighlight': true,
-                startDate: new Date()
+                endDate: new Date()
             });
-            
         });
         function dateDiff() {
             var a = $( "#datepicker" ).datepicker("getDate");
-            // console.log(a);
             // alert(a);
-            // window.location.reload();
             if (a === null) {
                 window.location.href = '/track/form';
                 alert('Sorry, we think you entered the wrong date');
             }
             var date = new Date();
-            var sisahari = Math.ceil((a - date)/ 86400000);
+            // 20 Mei 2020 + 9 bulan + (33-21) = 8 Februari 2021.
+            var temp = new Date(a);
+            temp.setDate(temp.getDate()+289);
+
+            var sisahari = Math.ceil((temp - date)/ 86400000);
             var diff = Math.ceil(sisahari/7);
-            var week = 43 - diff;
+            var week = 42 - diff;
             localStorage.setItem('passingval', week);
-            localStorage.setItem('passingdate', a);
+            localStorage.setItem('passingdate', temp);
             localStorage.setItem('passingsisahari', sisahari);
             window.location.href = 'track.blade.php';
         }

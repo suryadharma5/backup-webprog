@@ -4,8 +4,8 @@
 }
 
 nav {
-    height: 105px;
-    width: 1260px;
+    /* height: 105px; */
+    /* width: 1260px; */
     background-color: white;
 }
 
@@ -38,9 +38,9 @@ header {
 }
 
 .answer button {
-    margin-top: 30px;
-    width: 140px;
-    height: 40px;
+    margin-top: 2.375vw;
+    width: 11.085vw;
+    height: 3.167vw;
     background: #F9D7D6;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
     border-radius: 10px;

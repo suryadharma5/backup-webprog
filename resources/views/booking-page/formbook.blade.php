@@ -40,10 +40,6 @@
                 09.00 - 12.00
             </div>
         </div>
-
-        <div class="col-2 d-flex justify-content-center pt-5">
-            <img src="/img/edit-square.svg" class="edit-square-icon" onmouseenter="hoverinPrev(this)" onmouseleave="hoveroutPrev(this)">
-        </div>
     </div>
 
     <form class="row mt-3" action="/book/{{ $doctor->id }}/coba/add" method="POST">

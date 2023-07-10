@@ -106,8 +106,8 @@
                             </p>
                             <h5 class="fw-bold">{{ Str::limit($menfess->title, $limit=150, '...') }}</h5>
                             <div class="mb-3">
-                                <textarea class="form-control @error('user_reply') is-invalid @enderror" id="exampleFormControlTextarea1" rows="9" placeholder="Type reply..." style="background-color: #C3E4F1" name="reply_text"></textarea>
-                                @error('user_reply')
+                                <textarea class="form-control @error('reply_text') is-invalid @enderror" id="exampleFormControlTextarea1" rows="9" placeholder="Type reply..." style="background-color: #C3E4F1" name="reply_text"></textarea>
+                                @error('reply_text')
                                 <div class="invalid-feedback">
                                   {{ $message }}
                                 </div>

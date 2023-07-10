@@ -15,6 +15,7 @@ use App\Http\Controllers\MenfessController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\MenfessReplyController;
+use App\Http\Controllers\TrackingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,12 +74,28 @@ Route::get('/track', function(){
 });
 
 Route::get('/track/form', function(){
+    return view('track.trackqna', [
+        'active' => 'track',
+        'title' => 'Tracking'
+    ]);
+});
+
+Route::get('/track/hpl', function(){
     return view('track.hpl', [
         'active' => 'track',
         'title' => 'Tracking'
     ]);
 });
 
+Route::get('/track/hpht', function(){
+    return view('track.hpht', [
+        'active' => 'track',
+        'title' => 'Tracking'
+    ]);
+});
+
+Route::get('/track/trackRes', [TrackingController::class, 'track']);
+// Route::match(['get', 'post'], '/track/trackRes', [TrackingController::class, 'track']);
 
 Route::get('/profile', function(){
     return view('profile.profile', [

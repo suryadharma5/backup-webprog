@@ -35,6 +35,10 @@ class DoctorSeeder extends Seeder
             ]);
         }
 
+        for ($i = 0 ; $i <=9; $i++){
+            $doctor = Doctor::find($i+1);
+        }
+
         $doctor = Doctor::find(1);    
         $hari = ['senin', 'selasa', 'rabu'];
         foreach($hari as $h){
