@@ -1,5 +1,5 @@
 <div class="p-2" style="background-color: #78A2CC">
-    <a class="d-flex align-items-center mt-1 text-decoration-none text-white" href="#">
+    <a class="d-flex align-items-center mt-1 text-decoration-none text-white" href="/">
         <img src="/img/logo.png" alt="" width="200" class="navbar-brand mr-2">
     </a>
     <ul class="nav nav-pills flex-column mt-2">
@@ -48,7 +48,12 @@
                 <div style="width: 35px;">
                     <i class="fa-solid fa-right-from-bracket fa-xl"></i>
                 </div>
-                <span class="fs-5 ms-3 d-none d-sm-inline">Sign out</span>
+                <form action="/logout" method="POST">
+                    @csrf
+                    <button type="submit" class="" style="background: none; border: none;color: inherit;padding: 0;font: inherit;cursor: pointer;outline: inherit;">
+                      <span class="fs-5 ms-3 d-none d-sm-inline">Logout</span>
+                    </button>
+                </form>
             </a>
         </li>
     </ul>

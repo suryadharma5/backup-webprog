@@ -37,7 +37,6 @@
   <body>
     @stack('backgorund-color')
     {{-- ini berarti ngambil dari folder partials dengan nama file Navbar --}}
-    @include('partials.navbar')
     
     {{-- <div class="containers">
     </div> --}}

@@ -19,14 +19,14 @@ return new class extends Migration
             $table->json('hari_praktek')->nullable();
             $table->integer('jam_awal')->nullable();
             $table->integer('jam_akhir')->nullable();
-            $table->integer('title_id');
+            $table->integer('title_id')->nullable();
             $table->string('doctor_name');
             $table->text('doctor_profile');
             $table->integer('year_experience');
             $table->timestamps();
 
             // $table->foreign('title_id')->references('id')->on('title');
-            $table->foreign('hospital_id')->references('id')->on('rumah_sakits');
+            $table->foreign('hospital_id')->references('id')->on('rumah_sakits')->onDelete('cascade');
         });
     }
 

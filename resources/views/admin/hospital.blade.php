@@ -11,32 +11,29 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-                <form action="">
+                <form action="{{ route('addHospital') }}" method="POST">
+                    @csrf
                     <div class="modal-body">
-
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="province">Province</label>
-                            <select class="form-select" id="province">
-                              <option selected>Choose...</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
+                            <select class="form-select daerah" aria-label="Default select example" id="provinsi" name="idProvinsi">
+                                <option selected>Pilih Provinsi</option>
+                                @foreach ($provinces as $province)
+                                    <option value="{{ $province->id }}">{{ $province->name }}</option>
+                                @endforeach
                             </select>
                         </div>
 
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="regency">Regency</label>
-                            <select class="form-select" id="regency">
-                              <option selected>Choose...</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
+                            <select class="form-select daerah" aria-label="Default select example" id="kabupaten" name="idKabupaten">
+                                <option selected>Pilih Kabupaten</option>
                             </select>
                         </div>
 
                         <div class="form-group mb-3">
                             <label for="">Hospital Name</label>
-                            <input type="text" name="hospital" required class="form-control">
+                            <input type="text" name="hospitalName" class="form-control" >
                         </div>
 
                         <div class="modal-footer">
@@ -50,7 +47,8 @@
     </div>
 
     {{-- Edit Modal --}}
-    <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+    @foreach ($hospitals as $hospital)
+    <div class="modal fade" id="editModal-{{ $hospital->id }}" tabindex="-1" aria-hidden="true" aria-labelledby="editModalLabel">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -58,32 +56,31 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-                <form action="">
+                
+                <form action="{{ route('adminHospital', $hospital->id) }}" method="POST">
+                    @method("put")
+                    @csrf
                     <div class="modal-body">
-
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="province">Province</label>
-                            <select class="form-select" id="province">
-                              <option selected>Choose...</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
+                            <select class="form-select daerah" aria-label="Default select example" id="provinsi2" name="idProvinsi">
+                                <option selected>Pilih Provinsi</option>
+                                @foreach ($provinces as $province)
+                                    <option value="{{ $province->id }}">{{ $province->name }}</option>
+                                @endforeach
                             </select>
                         </div>
 
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="regency">Regency</label>
-                            <select class="form-select" id="regency">
-                              <option selected>Choose...</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
+                            <select class="form-select daerah" aria-label="Default select example" id="kabupaten2" name="idKabupaten">
+                                <option selected>Pilih Kabupaten</option>
                             </select>
                         </div>
 
                         <div class="form-group mb-3">
                             <label for="">Hospital Name</label>
-                            <input type="text" name="hospital" required class="form-control">
+                            <input type="text" name="hospitalName" class="form-control" value="{{ $hospital->hospital_name }}">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -94,9 +91,12 @@
             </div>
         </div>
     </div>
+    @endforeach
+    
 
     {{-- Delete Modal --}}
-    <div class="modal fade" id="deleteModal" tabindex="-1">
+    @foreach ($hospitals as $hospital)
+    <div class="modal fade" id="deleteModal-{{ $hospital->id }}" tabindex="-1"  aria-hidden="true" aria-labelledby="deleteModalLabel">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -108,11 +108,16 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-              <button type="button" class="btn btn-primary">Yes</button>
+              <form action="{{ route('delete-hospital', $hospital->id) }}" method="POST">
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit" class="btn btn-primary">Yes</button>
+              </form>
             </div>
           </div>
         </div>
     </div>
+    @endforeach
 
     <div class="container my-3">
         {{-- title --}}
@@ -138,6 +143,20 @@
             </div>
         </div>
 
+        @if (session('message'))
+
+          <div class="alert alert-success row mt-2" role="alert">
+            <div class="col-6">
+                {{ session('message') }} 
+            </div>
+            <div class="col-4"></div>
+            <div class="col-2 d-flex justify-content-end">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          </div>
+       
+        @endif
+
         <table class="table table-striped">
             <thead>
             <tr>
@@ -149,51 +168,29 @@
             </tr>
             </thead>
             <tbody>
+            @foreach ($hospitals as $hospital)
             <tr>
-                <th scope="row">1</th>
-                <td>Eka Hospital</td>
-                <td>Banten</td>
-                <td>Serpong</td>
+                <th scope="row">{{ $loop->iteration }}</th>
+                <td>{{ $hospital->hospital_name }}</td>
+                <td>{{ $hospital->province->name }}</td>
+                <td style="text-transform: capitalize">{{ $hospital->regency->name }}</td>
                 <td>
-                    <button type="button" class="btn btn-success editBtn">
-                        <i class="fa-solid fa-pen-to-square fa-sm editBtn"></i>&nbsp;Edit
-                    </button>
-                    <button type="button" class="btn btn-danger deleteBtn">
+                    <a href="#" data-bs-toggle='modal' data-bs-target="#editModal-{{ $hospital->id }}" style="text-decoration: none">
+                        <button type="button" class="btn btn-success editBtn mb-2">
+                            <i class="fa-solid fa-pen-to-square fa-sm editBtn"></i>&nbsp;Edit
+                        </button>
+                    </a>
+                    
+                    <button type="button" class="btn btn-danger deleteBtn" data-bs-toggle='modal' data-bs-target="#deleteModal-{{ $hospital->id }}">
                         <i class="fa-solid fa-trash fa-sm"></i>&nbsp;Delete
                     </button>
                 </td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Eka Hospital</td>
-                <td>Banten</td>
-                <td>Serpong</td>
-                <td>
-                    <button type="button" class="btn btn-success editBtn">
-                        <i class="fa-solid fa-pen-to-square fa-sm editBtn"></i>&nbsp;Edit
-                    </button>
-                    <button type="button" class="btn btn-danger deleteBtn">
-                        <i class="fa-solid fa-trash fa-sm"></i>&nbsp;Delete
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Eka Hospital</td>
-                <td>Banten</td>
-                <td>Serpong</td>
-                <td>
-                    <button type="button" class="btn btn-success editBtn">
-                        <i class="fa-solid fa-pen-to-square fa-sm editBtn"></i>&nbsp;Edit
-                    </button>
-                    <button type="button" class="btn btn-danger deleteBtn">
-                        <i class="fa-solid fa-trash fa-sm"></i>&nbsp;Delete
-                    </button>
-                </td>
-            </tr>
+            @endforeach
             </tbody>
         </table>
-        {{-- paginator --}}
+
+        {{-- paginator
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
             <li class="page-item">
@@ -210,7 +207,9 @@
                 </a>
             </li>
             </ul>
-        </nav>
+        </nav> --}}
+        <div class="row d-flex justify-content-end">{{ $hospitals->links() }}</div>
+        
     </div>
 
 
@@ -219,13 +218,13 @@
 @section('scripts')
 
     <script>
-        $(document).ready(function(){
+        // $(document).ready(function(){
 
-            $(document).on('click', '.editBtn', function(){
-                // var article_id = $(this).val();
-                $('#editModal').modal('show');
-            });
-        })
+        //     $(document).on('click', '.editBtn', function(){
+        //         // var article_id = $(this).val();
+        //         $('#editModal').modal('show');
+        //     });
+        // })
 
         $(document).ready(function(){
 
@@ -235,13 +234,13 @@
             });
         })
 
-        $(document).ready(function(){
+        // $(document).ready(function(){
 
-            $(document).on('click', '.deleteBtn', function(){
-                // var article_id = $(this).val();
-                $('#deleteModal').modal('show');
-            });
-        })
+        //     $(document).on('click', '.deleteBtn', function(){
+        //         // var article_id = $(this).val();
+        //         $('#deleteModal').modal('show');
+        //     });
+        // })
     </script>
 
 @endsection

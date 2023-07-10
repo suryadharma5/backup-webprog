@@ -16,28 +16,40 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        //
-        $faker = Faker::create('id_ID');
-        DB::table('users')->insert([
-            'username' => 'kerasakti',
-            'dob' => $faker->date($format = 'Y-m-d', $max = '2000'),
-            'email' => 'kersakti@gmail.com',
-            'phone_number' => $faker->phoneNumber(),
-            'password' => $faker->password(),
-        ]);
-        DB::table('users')->insert([
-            'username' => 'mahmudcantik',
-            'dob' => $faker->date($format = 'Y-m-d', $max = '2000'),
-            'email' => 'mahmudcantik@gmail.com',
-            'phone_number' => $faker->phoneNumber(),
-            'password' => $faker->password(),
-        ]);
-        DB::table('users')->insert([
-            'username' => 'mamipapi',
-            'dob' => $faker->date($format = 'Y-m-d', $max = '2000'),
-            'email' => 'mamipapi@gmail.com',
-            'phone_number' => $faker->phoneNumber(),
-            'password' => $faker->password(),
-        ]);
+         //
+         $faker = Faker::create('id_ID');
+         DB::table('users')->insert([
+             'username' => 'kerasakti',
+             'firstname' => 'kera',
+             'lastname' => 'sakti',
+             'dob' => $faker->date($format = 'Y-m-d', $max = '2000'),
+             'nik' => $faker->numerify('################'),
+             'email' => 'kersakti@gmail.com',
+             'phone_number' => $faker->phoneNumber(),
+             'biodata' => $faker->text(),
+             'password' => $faker->password(),
+         ]);
+         DB::table('users')->insert([
+             'username' => 'mahmudcantik',
+             'firstname' => 'mahmud',
+             'lastname' => 'cantik',
+             'dob' => $faker->date($format = 'Y-m-d', $max = '2000'),
+             'nik' => $faker->numerify('################'),
+             'biodata' => $faker->text(),
+             'email' => 'mahmudcantik@gmail.com',
+             'phone_number' => $faker->phoneNumber(),
+             'password' => $faker->password(),
+         ]);
+         DB::table('users')->insert([
+             'username' => 'mamipapi',
+             'firstname' => 'mami',
+             'lastname' => 'papi',
+             'dob' => $faker->date($format = 'Y-m-d', $max = '2000'),
+             'nik' => $faker->numerify('################'),
+             'biodata' => $faker->text(),
+             'email' => 'mamipapi@gmail.com',
+             'phone_number' => $faker->phoneNumber(),
+             'password' => $faker->password(),
+         ]);
     }
 }

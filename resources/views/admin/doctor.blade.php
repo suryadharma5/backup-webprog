@@ -11,18 +11,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-                <form action="">
+                <form action="{{ route('addDoctor') }}" method="POST">
+                    @csrf
                     <div class="modal-body">
-
-                        <div class="input-group mb-3">
-                            <label class="input-group-text" for="doctorTitle">Title</label>
-                            <select class="form-select" id="doctorTitle">
-                              <option selected>Choose...</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
-                            </select>
-                        </div>
 
                         <div class="form-group mb-3">
                             <label for="">Name</label>
@@ -30,7 +21,7 @@
                         </div>
                         <div class="form-group mb-3">
                             <label for="">Biodata</label>
-                            <input type="file" name="biodata" accept=".doc, .docx, .pdf" required class="form-control">
+                            <textarea class="form-control" name="biodata" id="" cols="30" rows="10"></textarea>
                         </div>
                         <div class="form-group mb-3">
                             <label for="">Year of experience</label>
@@ -38,31 +29,25 @@
                         </div>
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="province">Province</label>
-                            <select class="form-select" id="province">
-                              <option selected>Choose...</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
+                            <select class="form-select daerah" aria-label="Default select example" id="provinsi" name="idProvinsi">
+                                <option selected>Pilih Provinsi</option>
+                                @foreach ($provinces as $province)
+                                    <option value="{{ $province->id }}">{{ $province->name }}</option>
+                                @endforeach
                             </select>
                         </div>
 
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="regency">Regency</label>
-                            <select class="form-select" id="regency">
-                              <option selected>Choose...</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
+                            <select class="form-select daerah" aria-label="Default select example" id="kabupaten" name="idKabupaten">
+                                <option selected>Pilih Kabupaten</option>
                             </select>
                         </div>
 
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="hospital">Hospital</label>
-                            <select class="form-select" id="hospital">
-                              <option selected>Choose...</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
+                            <select class="form-select daerah" aria-label="Default select example" id="hospital" name="idHospital">
+                                <option selected>Pilih Rumah Sakit</option>
                             </select>
                         </div>
                         <div class="modal-footer">
@@ -76,7 +61,8 @@
     </div>
 
     {{-- Edit Modal --}}
-    <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+    @foreach ($doctors as $doctor)
+    <div class="modal fade" id="editModal-{{ $doctor->id }}" tabindex="-1" aria-hidden="true" aria-labelledby="editModalLabel">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -84,58 +70,44 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-                <form action="">
+                <form action="{{ route('updateDoctor', $doctor->id) }}" method="POST">
+                    @csrf
+                    @method('put')
                     <div class="modal-body">
-
-                        <div class="input-group mb-3">
-                            <label class="input-group-text" for="doctorTitle">Title</label>
-                            <select class="form-select" id="doctorTitle">
-                              <option selected>Choose...</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
-                            </select>
-                        </div>
 
                         <div class="form-group mb-3">
                             <label for="">Name</label>
-                            <input type="text" name="doctorName" required class="form-control">
+                            <input type="text" name="doctorName" required class="form-control" value="{{ $doctor->doctor_name }}">
                         </div>
                         <div class="form-group mb-3">
                             <label for="">Biodata</label>
-                            <input type="file" name="biodata" accept=".doc, .docx, .pdf" required class="form-control">
+                            <textarea class="form-control" name="biodata" id="" cols="30" rows="10">{{ $doctor->doctor_profile }}</textarea>
                         </div>
                         <div class="form-group mb-3">
                             <label for="">Year of experience</label>
-                            <input type="number" name="yearExperience" required class="form-control">
+                            <input type="number" name="yearExperience" required class="form-control" value="{{ $doctor->year_experience }}">
                         </div>
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="province">Province</label>
-                            <select class="form-select" id="province">
-                              <option selected>Choose...</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
+                            <select class="form-select daerah" aria-label="Default select example" id="provinsi2" name="idProvinsi">
+                                <option selected>Pilih Provinsi</option>
+                                @foreach ($provinces as $province)
+                                    <option value="{{ $province->id }}">{{ $province->name }}</option>
+                                @endforeach
                             </select>
                         </div>
 
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="regency">Regency</label>
-                            <select class="form-select" id="regency">
-                              <option selected>Choose...</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
+                            <select class="form-select daerah" aria-label="Default select example" id="kabupaten2" name="idKabupaten">
+                                <option selected>Pilih Kabupaten</option>
                             </select>
                         </div>
 
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="hospital">Hospital</label>
-                            <select class="form-select" id="hospital">
-                              <option selected>Choose...</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
+                            <select class="form-select daerah" aria-label="Default select example" id="hospital2" name="idHospital">
+                                <option selected>Pilih Rumah Sakit</option>
                             </select>
                         </div>
                         <div class="modal-footer">
@@ -147,9 +119,11 @@
             </div>
         </div>
     </div>
+    @endforeach
 
     {{-- Delete Modal --}}
-    <div class="modal fade" id="deleteModal" tabindex="-1">
+    @foreach ($doctors as $doctor)
+    <div class="modal fade" id="deleteModal-{{ $doctor->id }}" tabindex="-1" aria-hidden="true" aria-labelledby="deleteModalLabel">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -161,11 +135,17 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-              <button type="button" class="btn btn-primary">Yes</button>
+              <form action="{{ route('delete-doctor', $doctor->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-primary">Yes</button>
+            </form>
             </div>
           </div>
         </div>
     </div>
+    @endforeach
+
 
     <div class="container my-3">
         {{-- title --}}
@@ -191,95 +171,56 @@
             </div>
         </div>
 
+        
+        @if (session('message'))
+
+          <div class="alert alert-success row mt-2" role="alert">
+            <div class="col-6">
+                {{ session('message') }} 
+            </div>
+            <div class="col-4"></div>
+            <div class="col-2 d-flex justify-content-end">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          </div>
+       
+        @endif
+
         <table class="table table-striped">
             <thead>
             <tr>
                 <th scope="col">No</th>
                 <th scope="col">Name</th>
                 <th scope="col">Hospital</th>
-                <th scope="col">Title</th>
                 <th scope="col">Year of Experience</th>
                 <th scope="col">Action</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mister Jago</td>
-                <td>Eka Hospital</td>
-                <td>Dokter Spesialis Kandungan</td>
-                <td>20 years</td>
-                <td>
-                    {{-- <a href="#" class="text-decoration-none text-white"> --}}
-                        <button type="button" class="btn btn-success editBtn">
-                            <i class="fa-solid fa-pen-to-square fa-sm editBtn"></i>&nbsp;Edit
-                        </button>
-                    {{-- </a> --}}
-                    {{-- <a href="#" class="text-decoration-none text-white"> --}}
-                        <button type="button" class="btn btn-danger deleteBtn">
-                            <i class="fa-solid fa-trash fa-sm"></i>&nbsp;Delete
-                        </button>
-                    {{-- </a> --}}
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Mister Jago</td>
-                <td>Eka Hospital</td>
-                <td>Dokter Spesialis Kandungan</td>
-                <td>20 years</td>
-                <td>
-                    {{-- <a href="#" class="text-decoration-none text-white"> --}}
-                        <button type="button" class="btn btn-success editBtn">
-                            <i class="fa-solid fa-pen-to-square fa-sm"></i>&nbsp;Edit
-                        </button>
-                    {{-- </a> --}}
-                    {{-- <a href="#" class="text-decoration-none text-white"> --}}
-                        <button type="button" class="btn btn-danger deleteBtn">
-                            <i class="fa-solid fa-trash fa-sm"></i>&nbsp;Delete
-                        </button>
-                    {{-- </a> --}}
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Mister Jago</td>
-                <td>Eka Hospital</td>
-                <td>Dokter Spesialis Kandungan</td>
-                <td>20 years</td>
-                <td>
-                    {{-- <a href="#" class="text-decoration-none text-white"> --}}
-                        <button type="button" class="btn btn-success editBtn">
-                            <i class="fa-solid fa-pen-to-square fa-sm"></i>&nbsp;Edit
-                        </button>
-                    {{-- </a> --}}
-                    {{-- <a href="#" class="text-decoration-none text-white"> --}}
-                        <button type="button" class="btn btn-danger deleteBtn">
-                            <i class="fa-solid fa-trash fa-sm"></i>&nbsp;Delete
-                        </button>
-                    {{-- </a> --}}
-                </td>
-            </tr>
+            @foreach ($doctors as $doctor)
+                <tr>
+                    <th scope="row">{{ $loop->iteration }}</th>
+                    <td>{{ $doctor->doctor_name }}</td>
+                    <td class="col-3">{{ $doctor->rumahSakit->hospital_name }}</td>
+                    <td class="text-center">{{ $doctor->year_experience }}</td>
+                    <td>
+                        {{-- <a href="#" class="text-decoration-none text-white"> --}}
+                            <button type="button" class="btn btn-success editBtn" data-bs-toggle='modal' data-bs-target="#editModal-{{ $doctor->id }}">
+                                <i class="fa-solid fa-pen-to-square fa-sm editBtn"></i>&nbsp;Edit
+                            </button>
+                        {{-- </a> --}}
+                        {{-- <a href="#" class="text-decoration-none text-white"> --}}
+                            <button type="button" class="btn btn-danger deleteBtn" data-bs-toggle='modal' data-bs-target="#deleteModal-{{ $doctor->id }}">
+                                <i class="fa-solid fa-trash fa-sm"></i>&nbsp;Delete
+                            </button>
+                        {{-- </a> --}}
+                    </td>
+                </tr>
+            @endforeach
+            
             </tbody>
         </table>
-        {{-- paginator --}}
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-            </ul>
-        </nav>
+        <div class="row d-flex justify-content-end">{{ $doctors->links() }}</div>
     </div>
 
 
