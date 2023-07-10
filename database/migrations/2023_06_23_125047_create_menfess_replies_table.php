@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('menfess_replies', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('menfess_id');
+            $table->foreignId('menfess_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('user_id');
             $table->string('reply_image')->nullable()->default(null);
             $table->longText('reply_text');
-
+            $table->integer('like')->nullable()->default(0);
             $table->timestamps();
         });
     }

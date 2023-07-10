@@ -48,8 +48,15 @@
                         <div class="col">
                             <div class="col-lg py-2">
                                 <div class="d-flex flex-row justify-content-end align-items-center">
-                                    <i class="fa-solid fa-heart fa-lg" style="color: #78a2cc;"></i>
-                                    <div class="align-self-center p-0 ms-1">{{ $men->total_likes }} likes</div>
+                                    <div class="like col-lg-6" style="display: flex; flex-direction: row; justify-content: end">
+                                        {{-- @if ($men->isLikedBy(auth()->user()))
+                                            <i id="like-icon" class="unlike-icon bi bi-heart-fill" style="color: #78a2cc;" data-reply-id="{{ $men->id }}" data-menfess-id="{{ $men->menfess_id }}" data-token-id="{{ csrf_token() }}" data-user-id="{{ auth()->user()->id }}"></i>
+                                        @else
+                                            <i id="unlike-icon" class="like-icon bi bi-heart" style="color: #78a2cc;" data-reply-id="{{ $men->id }}" data-menfess-id="{{ $men->menfess_id }}" data-token-id="{{ csrf_token() }}" data-user-id="{{ auth()->user()->id }}"></i>
+                                        @endif --}}
+                                        <i id="like-icon" class="like-icon bi bi-heart" style="color: #78a2cc;" data-reply-id="{{ $men->id }}" data-menfess-id="{{ $men->menfess_id }}" data-token-id="{{ csrf_token() }}" data-user-id="{{ auth()->user()->id }}"></i>
+                                        <div class="p-0 ms-1" id="total-like">{{ $men->like }} likes</div>
+                                    </div>
                                     <div class="dropdown-center ms-4">
                                         <i class="bi bi-three-dots-vertical titik-tiga" data-bs-toggle="dropdown" style=""></i>
                                         <ul class="dropdown-menu">
@@ -99,8 +106,8 @@
                             </p>
                             <h5 class="fw-bold">{{ Str::limit($menfess->title, $limit=150, '...') }}</h5>
                             <div class="mb-3">
-                                <textarea class="form-control @error('user_reply') is-invalid @enderror" id="exampleFormControlTextarea1" rows="9" placeholder="Type reply..." style="background-color: #C3E4F1" name="reply_text"></textarea>
-                                @error('user_reply')
+                                <textarea class="form-control @error('reply_text') is-invalid @enderror" id="exampleFormControlTextarea1" rows="9" placeholder="Type reply..." style="background-color: #C3E4F1" name="reply_text"></textarea>
+                                @error('reply_text')
                                 <div class="invalid-feedback">
                                   {{ $message }}
                                 </div>

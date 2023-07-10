@@ -1,3 +1,4 @@
+
 button{
     width: 175px;
     height: 50px;
@@ -19,4 +20,62 @@ button i {
 
 .tombol :hover {
     transform: scale(1.1);
+}
+
+.backBtn a i {
+    color: #78A2CC;
+    margin-top:60px;
+}
+.backBtn :hover{
+    color: #9FCAE6;
+}
+
+.backBtnU a i {
+    color:#FFB8C7;
+    margin-top:60px;
+}
+
+.backBtnU :hover{
+    color: #F9D7D6;
+}
+
+.blueBtn button{
+    color: white;
+    font-weight: bold;
+    background-color: #78A2CC;
+    border:none;
+}
+
+.blueBtn a{
+    color: white;
+    background-color: #78A2CC;
+    border:none;
+}
+
+.blueBtn :hover{
+    color: white;
+    font-weight: bold;
+    background-color: #9FCAE6;
+    border: none;
+}
+
+.pinkBtn button {
+    background-color: #FFB8C7;
+    font-weight: bold;
+    color:white;
+}
+
+.pinkBtn :hover {
+    color: white;
+    background-color: #F9C6D1;
+}
+
+.submitBtn{
+    background-color: #FFB8C7;
+    border:none;
+}
+
+.submitBtn :hover{
+    background-color: #9FCAE6;
+    border: none;
 }

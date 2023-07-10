@@ -11,6 +11,9 @@
     --SEMIBOLD: 600;
     --BOLD: 700;
     --EXTRABOLD: 800;
+    --change: 0;
+    --left: 0;
+    --right: 0;
 }
 
 .full-width-content{
@@ -33,19 +36,7 @@
 }
 
 .circular .inner{
-    /* display: none; */
-    position: absolute;
-    z-index: 6;
-    top: 50%;
-    left: 50%;
-    height: 80px;
-    width: 80px;
-    margin: -40px 0 0 -40px;
-    /* background: var(--BLUE2); */
-    border-radius: 100%;
-    background: url(/img/watermelon.jpg);
-    background-size: cover;
-    /* box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2); */
+    /*  */
 }
 
 .circular .numb{
@@ -83,7 +74,7 @@
 }
 @keyframes left{
     100%{
-        transform: rotate(180deg);
+        transform: rotate(var(--left));
     }
 }
 
@@ -98,7 +89,7 @@
 }
 @keyframes right{
     100%{
-        transform: rotate(calc(8.57deg*(30 - 21)));
+        transform: rotate(var(--right));
     }
 }
 
@@ -108,8 +99,8 @@
     /* background: yellow; */
     inset: 5px;
     z-index: 10;
-    transform: rotate(calc(8.57deg*30));
-    animation: animateDot 5s linear both;
+    /* transform: rotate(calc(8.57deg*30)); */
+    animation: animateDot 4s linear both;
 }
 
 @keyframes animateDot{
@@ -117,7 +108,8 @@
         transform: rotate(0deg);
     }
     100%{
-        transform: rotate(calc(8.57deg*30));
+        transform: rotate(var(--change));
+        /* transform: rotate(calc(8.57deg*30)); */
     }
 }
 

@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->string('title');
-            $table->integer('total_likes')->default(0);
-            $table->integer('total_replies')->default(0);
+            $table->integer('total_likes')->nullable()->default(0);
+            $table->integer('total_replies')->nullable()->default(0);
 
             // $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

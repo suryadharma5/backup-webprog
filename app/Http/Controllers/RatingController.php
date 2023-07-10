@@ -26,7 +26,7 @@ class RatingController extends Controller
                   <a href='/rating/detail/" . $prod->id . "' class='text-decoration-none text-black'>
                       <div class='scroll-area-rating d-flex'>
                           <div class='foto-produk'>";
-        if ($prod->form_image) {
+        if (asset('storage/' . $prod->form_image)) {
           echo "<img src='" . asset('storage/' . $prod->form_image) . "' alt='' class='img-fluid img-thumbnail' style='max-width: 148px; min-height: 282px; overflow: hidden;'>";
         }
         echo "<img src='" . $prod->form_image . "' alt=''>

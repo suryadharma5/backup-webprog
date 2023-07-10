@@ -8,7 +8,7 @@
 
 
 @section('title')
- <title>Hamily | {{ $title }}</title>
+ <title>Hamily</title>
 @endsection 
 @section('contents')
 <div class="full-width-content">
@@ -127,7 +127,7 @@
                 </div>
             </div>
             <div class="col-md-12 text-center zoom">
-                <a href="./nextpage.html">
+                <a href="/book">
                     <button type="button" class="btn btn-primary">See More</button>
                 </a>
             </div>
@@ -147,46 +147,33 @@
                 Get easy-to-read information on benefits or risk of medications, drugs, or other exposures during pregnancy and while breastfeeding.
             </div>
             <div class="row">
-              <div class="col-md-4 px-3">
-                <img src="/img/articlepic.jpg" alt="">
-                <div class="articleTitle">
-                    Ep. 54: Participating in a Pregnancy Study Part 2
+                @foreach ($articles as $a)
+                <div class="col-md-4 px-3">
+                    <a href="/article/detail/{{ $a->id }}">
+                        <img src="https://source.unsplash.com/350x350/?{{ $a->category->name }}" alt="" class="img-fluid">  
+                    </a>
+                    <div class="articleTitle fw-bold">
+                        <a href="/article/detail/{{ $a->id }}" class="text-decoration-none text-white">
+                            <h5 class="fw-bold">{{ $a->title }}</h5>
+                        </a>
+                    </div>
+                    <div class="articleDesc">
+                        {{ Str::limit($a->body,150, '...')}}
+                        <a href="/article/detail/{{ $a->id }}">(continue)</a>
+                    </div>                
                 </div>
-                <div class="articleDesc">
-                    Leslie, a mom of two, joins host Chris Stallman to talk about her experience participating in a MotherToBaby pregnancy study. She describes the time commitment, benefits, study results and why..... 
-                    <a href="nextpage.html">(continue)</a>
-                </div>
-                
-              </div>
-              <div class="col-md-4 px-3">
-                <img src="/img/articlepic.jpg" alt="">
-                <div class="articleTitle">
-                    Ep. 54: Participating in a Pregnancy Study Part 2
-                </div>
-                <div class="articleDesc">
-                    Leslie, a mom of two, joins host Chris Stallman to talk about her experience participating in a MotherToBaby pregnancy study. She describes the time commitment, benefits, study results and why..... 
-                    <a href="nextpage.html">(continue)</a>
-                </div>
-              </div>
-              <div class="col-md-4 px-3">
-                <img src="/img/articlepic.jpg" alt="">
-                <div class="articleTitle">
-                    Ep. 54: Participating in a Pregnancy Study Part 2
-                </div>
-                <div class="articleDesc">
-                    Leslie, a mom of two, joins host Chris Stallman to talk about her experience participating in a MotherToBaby pregnancy study. She describes the time commitment, benefits, study results and why..... 
-                    <a href="nextpage.html">(continue)</a>
-                </div>
-              </div>
+                @endforeach
             </div>
             <div class="col-md-12 text-center zoom">
-                <a href="./nextpage.html">
+                <a href="/article">
                     <button type="button" class="btn btn-primary">See More</button>
                 </a>
             </div>
         </div>
     </div>
+    <!-- ----------------------------------ARTICLE SECTION END---------------------------------- -->
 
+    <!-- ----------------------------------MENFESS SECTION---------------------------------- -->
     <section>
         <div class="sectionpic awanbiru">
             <img src="/img/section3_awan.png" alt="">
@@ -201,180 +188,53 @@
         </div>
         <div class="container-via">
             <div class="scroll-container">
-                <div class="scroll-area">
-                    <div class="persona">
-                        <div class="foto-profile">
-                            <img src="/img/section 3_profile-picture.png" alt="">
-                        </div>
-                        <div class="nama-profile">
-                            <div class="nama">
-                                Brian Setiawan 1
+                @foreach ($menfess as $m)
+                    <a href="/menfess/detail/{{ $m->id }}" class="text-decoration-none text-black">
+                        <div class="scroll-area">
+                            <div class="question">
+                                <p>
+                                    {{ $m->title }}
+                                </p>
                             </div>
-                            <div class="nama-desc">
-                                Bapak-Bapak yang sudah bekerja
-                            </div>
+                            <hr>
+                            @if ($m->menfessReply->count())
+                                <div class="persona">
+                                    <div class="foto-profile">
+                                        <img src="/img/section 3_profile-picture.png" alt="">
+                                    </div>
+                                    <div class="nama-profile">
+                                        <div class="nama">
+                                            {{ $m->menfessReply[0]->users->username }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content mt-2">
+                                    @if ($m->menfessReply[0]->reply_image)
+                                        <div class="row mx-1">
+                                            <img src="{{asset('storage/'.$m->menfessReply[0]->reply_image)}}" class="img-thumbnail" alt="..." style="max-width: 550px;max-height: 275px">
+                                        </div>
+                                    @endif
+                                    <p>
+                                        <a href="" class="text-decoration-none text-black">
+                                            <p>{{$m->menfessReply[0]->reply_text}} <span class="text-primary">(lanjut)</span></p>
+                                        </a>
+                                    </p>
+                                </div>
+                            @endif
                         </div>
-                    </div>
-                    <div class="content">
-                        <div class="question">
-                            <p>
-                                Bagaimana Cara Mengubah Hari Senin Menjadi Hari Minggu ?
-                            </p>
-                        </div>
-                        <img src="/img/section3_image-menfess.png" alt="">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele...
-                            <a href="#">(lanjut)</a>
-                        </p>
-                    </div>
-                    <div class="action-bar">
-                        <a href="#"><img src="/img/section3_like.png" alt=""></a>
-                        <a href="#"><img src="/img/section3_comment.png" alt=""></a>
-                        <a href="#"><img src="/img/section3_share.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="scroll-area">
-                    <div class="persona">
-                        <div class="foto-profile">
-                            <img src="/img/section 3_profile-picture.png" alt="">
-                        </div>
-                        <div class="nama-profile">
-                            <div class="nama">
-                                Brian Setiawan 2
-                            </div>
-                            <div class="nama-desc">
-                                Bapak-Bapak yang sudah bekerja
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <div class="question">
-                            <p>
-                                Bagaimana Cara Mengubah Hari Senin Menjadi Hari Minggu ?
-                            </p>
-                        </div>
-                        <img src="/img/section3_image-menfess.png" alt="">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele...
-                            <a href="#">(lanjut)</a>
-                        </p>
-                    </div>
-                    <div class="action-bar">
-                        <a href="#"><img src="/img/section3_like.png" alt=""></a>
-                        <a href="#"><img src="/img/section3_comment.png" alt=""></a>
-                        <a href="#"><img src="/img/section3_share.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="scroll-area">
-                    <div class="persona">
-                        <div class="foto-profile">
-                            <img src="/img/section 3_profile-picture.png" alt="">
-                        </div>
-                        <div class="nama-profile">
-                            <div class="nama">
-                                Brian Setiawan 3
-                            </div>
-                            <div class="nama-desc">
-                                Bapak-Bapak yang sudah bekerja
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <div class="question">
-                            <p>
-                                Bagaimana Cara Mengubah Hari Senin Menjadi Hari Minggu ?
-                            </p>
-                        </div>
-                        <img src="/img/section3_image-menfess.png" alt="">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele...
-                            <a href="#">(lanjut)</a>
-                        </p>
-                        <!-- <a class="lanjut" href="#">
-                            <p>
-                                (lanjut)
-                            </p>
-                        </a> -->
-                    </div>
-                    <div class="action-bar">
-                        <a href="#"><img src="/img/section3_like.png" alt=""></a>
-                        <a href="#"><img src="/img/section3_comment.png" alt=""></a>
-                        <a href="#"><img src="/img/section3_share.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="scroll-area">
-                    <div class="persona">
-                        <div class="foto-profile">
-                            <img src="/img/section 3_profile-picture.png" alt="">
-                        </div>
-                        <div class="nama-profile">
-                            <div class="nama">
-                                Brian Setiawan 4
-                            </div>
-                            <div class="nama-desc">
-                                Bapak-Bapak yang sudah bekerja
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <div class="question">
-                            <p>
-                                Bagaimana Cara Mengubah Hari Senin Menjadi Hari Minggu ?
-                            </p>
-                        </div>
-                        <img src="/img/section3_image-menfess.png" alt="">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele...
-                            <a href="#">(lanjut)</a>
-                        </p>
-                    </div>
-                    <div class="action-bar">
-                        <a href="#"><img src="/img/section3_like.png" alt=""></a>
-                        <a href="#"><img src="/img/section3_comment.png" alt=""></a>
-                        <a href="#"><img src="/img/section3_share.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="scroll-area">
-                    <div class="persona">
-                        <div class="foto-profile">
-                            <img src="/img/section 3_profile-picture.png" alt="">
-                        </div>
-                        <div class="nama-profile">
-                            <div class="nama">
-                                Brian Setiawan 1
-                            </div>
-                            <div class="nama-desc">
-                                Bapak-Bapak yang sudah bekerja
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <div class="question">
-                            <p>
-                                Bagaimana Cara Mengubah Hari Senin Menjadi Hari Minggu ?
-                            </p>
-                        </div>
-                        <img src="/img/section3_image-menfess.png" alt="">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur. Pharetra curabitur dolor lectus faucibus potenti nam commodo nec tincidunt. Gravida turpis morbi netus in. Adipiscing risus nulla vele...
-                            <a href="#">(lanjut)</a>
-                        </p>
-                    </div>
-                    <div class="action-bar">
-                        <a href="#"><img src="/img/section3_like.png" alt=""></a>
-                        <a href="#"><img src="/img/section3_comment.png" alt=""></a>
-                        <a href="#"><img src="/img/section3_share.png" alt=""></a>
-                    </div>
-                </div>
+                    </a>
+                @endforeach
             </div>
         </div>
         <div class="col-md-12 text-center zoom">
-                <a href="./nextpage.html">
+                <a href="/menfess">
                     <button type="button" class="btn btn-primary">See More</button>
                 </a>
         </div>
     </section>
+    <!-- ----------------------------------MENFESS SECTION END---------------------------------- -->
 
+    <!-- ----------------------------------RATING REVIEW SECTION---------------------------------- -->
     <section>
         <div class="bekgron">
             <img src="/img/section4_gunung.png" alt="">
@@ -389,331 +249,81 @@
         </div>
         <div class="container-via">
             <div class="scroll-container">
-                <div class="scroll-area">
-                    <div class="foto-produk">
-                        <img src="/img/section4_photo-product.png" alt="">
-                    </div>
-                    <div class="isi">
-                        <div class="nama-produk">
-                            <!-- <h5> -->
-                                Johnsons Baby
-                            <!-- </h5> -->
-                            <div class="jenis-produk">
-                                Baby Bath Blue 200ml
+                @foreach ($products as $prod)
+                    <a href="/rating/detail/{{ $prod->id }}" class="text-decoration-none text-black">
+                        <div class="scroll-area">
+                            <div class="foto-produk">
+                                @if ($prod->form_image)
+                                    <img src="{{ asset('storage/'. $prod->form_image) }}" alt="" class="img-fluid img-thumbnail" style="min-width: 148px;max-width: 149px;min-height: 282px ;max-height: 283px ;overflow: hidden;">
+                                @endif
                             </div>
-                        </div>
-                        <div class="count">
-                            <div class="rating">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <div class="average-rating">
-                                <!-- <p> -->
-                                    &nbsp; 4.9 &nbsp;
-                                <!-- </p> -->
-                            </div>
-                            <div class="total-rating">
-                                <!-- <p> -->
-                                    (250 people)
-                                <!-- </p> -->
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="person">
-                            <div class="jarakwokwok">
-                                <div class="foto-profile">
-                                    <img src="/img/section4_profile-picture.png" alt="">
+                            <div class="isi ms-2">
+                                <div class="nama-produk">
+                                    <!-- <h5> -->
+                                        {{ $prod->name_product }}
+                                    <!-- </h5> -->
+                                    <div class="jenis-produk">
+                                        {{ $prod->type_product }}
+                                    </div>
                                 </div>
-                                <div class="nama-person">
-                                    &nbsp; NURHAYATI 1
+                                <div class="count">
+                                    <div class="rating">
+                                        <span class="fa fa-star {{ ($prod->rating >= 1) ? 'checked' : ''}}"></span>
+                                        <span class="fa fa-star {{ ($prod->rating >= 2) ? 'checked' : ''}}"></span>
+                                        <span class="fa fa-star {{ ($prod->rating >= 3) ? 'checked' : ''}}"></span>
+                                        <span class="fa fa-star {{ ($prod->rating >= 4) ? 'checked' : ''}}"></span>
+                                        <span class="fa fa-star {{ ($prod->rating >= 5) ? 'checked' : ''}}"></span>
+                                    </div>
+                                    <div class="average-rating">
+                                        <!-- <p> -->
+                                            &nbsp; {{ $prod->rating }}&nbsp;
+                                        <!-- </p> -->
+                                    </div>
+                                    <div class="total-rating">
+                                        <!-- <p> -->
+                                            ({{ $prod->total_review }} {{ ($prod->total_review > 1) ? 'peoples' : 'people'}}) 
+                                        <!-- </p> -->
+                                    </div>
                                 </div>
-                            </div>
-                            <a class="lanjut" href="#">
-                                <!-- <p> -->
-                                (ALL REVIEWS)
-                                <!-- </p> -->
-                            </a>
-                        </div>
-                        <div class="rekomen">
-                            <div class="jempol">
-                                <img src="/img/section4_jempol-rekomen.png" alt="">
-                            </div>
-                            <div class="rekomendesc">
-                                &nbsp;
-                                NURHAYATI 1 recommends this product!
-                            </div>
-                        </div>
-                        <div reviews>
-                            <p>
-                                sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="scroll-area">
-                    <div class="foto-produk">
-                        <img src="/img/section4_photo-product.png" alt="">
-                    </div>
-                    <div class="isi">
-                        <div class="nama-produk">
-                            <!-- <h5> -->
-                                Johnsons Baby
-                            <!-- </h5> -->
-                            <div class="jenis-produk">
-                                Baby Bath Blue 200ml
+                                <hr>
+                                @if ($prod->reviews->count())
+                                    <div class="person">
+                                        <div class="jarakwokwok">
+                                        <div class="foto-profile">
+                                          <img src="/img/section4_profile-picture.png" alt="">
+                                        </div>
+                                        <div class="nama-person ms-2">
+                                          {{ $prod->reviews[0]->user->username }}
+                                        </div>
+                                        </div>
+    
+                                        <a class="lanjut" href="/rating/detail/{{ $prod->id }}">
+                                          (ALL REVIEWS)
+                                        </a>
+                                    </div>
+                                    <div class="rekomen" style="background-color: {{ ($prod->reviews[0]->recommend == 1) ? '#BDFFBC' : '#FFBCBC' }}">
+                                        <div class="jempol">
+                                            <img src="/img/{{ ($prod->reviews[0]->recommend == 1) ? 'section4_jempol-rekomen.png' : 'section4_jempol-nonrekomen.png'}}" alt="">
+                                        </div>
+                                        <div class="rekomendesc" style="color:  {{ ($prod->reviews[0]->recommend == 1) ? '#5EC75C' : '#C75C5C'}}">
+                                            &nbsp; {{ $prod->reviews[0]->user->username }} {{ ($prod->reviews[0]->recommend == 1) ? 'merekomendasikan ini' : 'tidak merekomendasikan ini'}}
+                                        </div>
+                                    </div>
+                                    <div reviews>
+                                        <p>
+                                            {{ $prod->reviews[0]->comment }}
+                                        </p>
+                                    </div>
+                                @endif
                             </div>
                         </div>
-                        <div class="count">
-                            <div class="rating">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <div class="average-rating">
-                                <!-- <p> -->
-                                    &nbsp; 4.9 &nbsp;
-                                <!-- </p> -->
-                            </div>
-                            <div class="total-rating">
-                                <!-- <p> -->
-                                    (250 people)
-                                <!-- </p> -->
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="person">
-                            <div class="jarakwokwok">
-                                <div class="foto-profile">
-                                    <img src="/img/section4_profile-picture.png" alt="">
-                                </div>
-                                <div class="nama-person">
-                                    &nbsp; NURHAYATI 2
-                                </div>
-                            </div>
-                            <a class="lanjut" href="#">
-                                <!-- <p> -->
-                                (ALL REVIEWS)
-                                <!-- </p> -->
-                            </a>
-                        </div>
-                        <div class="rekomen">
-                            <div class="jempol">
-                                <img src="/img/section4_jempol-rekomen.png" alt="">
-                            </div>
-                            <div class="rekomendesc">
-                                &nbsp;
-                                NURHAYATI 2 recommends this product!
-                            </div>
-                        </div>
-                        <div reviews>
-                            <p>
-                                sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="scroll-area">
-                    <div class="foto-produk">
-                        <img src="/img/section4_photo-product.png" alt="">
-                    </div>
-                    <div class="isi">
-                        <div class="nama-produk">
-                            <!-- <h5> -->
-                                Johnsons Baby
-                            <!-- </h5> -->
-                            <div class="jenis-produk">
-                                Baby Bath Blue 200ml
-                            </div>
-                        </div>
-                        <div class="count">
-                            <div class="rating">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <div class="average-rating">
-                                <!-- <p> -->
-                                    &nbsp; 4.9 &nbsp;
-                                <!-- </p> -->
-                            </div>
-                            <div class="total-rating">
-                                <!-- <p> -->
-                                    (250 people)
-                                <!-- </p> -->
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="person">
-                            <div class="jarakwokwok">
-                                <div class="foto-profile">
-                                    <img src="/img/section4_profile-picture.png" alt="">
-                                </div>
-                                <div class="nama-person">
-                                    &nbsp; NURHAYATI 3
-                                </div>
-                            </div>
-                            <a class="lanjut" href="#">
-                                <!-- <p> -->
-                                (ALL REVIEWS)
-                                <!-- </p> -->
-                            </a>
-                        </div>
-                        <div class="rekomen">
-                            <div class="jempol">
-                                <img src="/img/section4_jempol-rekomen.png" alt="">
-                            </div>
-                            <div class="rekomendesc">
-                                &nbsp;
-                                NURHAYATI 3 recommends this product!
-                            </div>
-                        </div>
-                        <div reviews>
-                            <p>
-                                sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="scroll-area">
-                    <div class="foto-produk">
-                        <img src="/img/section4_photo-product.png" alt="">
-                    </div>
-                    <div class="isi">
-                        <div class="nama-produk">
-                            <!-- <h5> -->
-                                Johnsons Baby
-                            <!-- </h5> -->
-                            <div class="jenis-produk">
-                                Baby Bath Blue 200ml
-                            </div>
-                        </div>
-                        <div class="count">
-                            <div class="rating">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <div class="average-rating">
-                                <!-- <p> -->
-                                    &nbsp; 4.9 &nbsp;
-                                <!-- </p> -->
-                            </div>
-                            <div class="total-rating">
-                                <!-- <p> -->
-                                    (250 people)
-                                <!-- </p> -->
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="person">
-                            <div class="jarakwokwok">
-                                <div class="foto-profile">
-                                    <img src="/img/section4_profile-picture.png" alt="">
-                                </div>
-                                <div class="nama-person">
-                                    &nbsp; NURHAYATI 4
-                                </div>
-                            </div>
-                            <a class="lanjut" href="#">
-                                <!-- <p> -->
-                                (ALL REVIEWS)
-                                <!-- </p> -->
-                            </a>
-                        </div>
-                        <div class="rekomen">
-                            <div class="jempol">
-                                <img src="/img/section4_jempol-rekomen.png" alt="">
-                            </div>
-                            <div class="rekomendesc">
-                                &nbsp;
-                                NURHAYATI 4 recommends this product!
-                            </div>
-                        </div>
-                        <div reviews>
-                            <p>
-                                sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="scroll-area">
-                    <div class="foto-produk">
-                        <img src="/img/section4_photo-product.png" alt="">
-                    </div>
-                    <div class="isi">
-                        <div class="nama-produk">
-                            <!-- <h5> -->
-                                Johnsons Baby
-                            <!-- </h5> -->
-                            <div class="jenis-produk">
-                                Baby Bath Blue 200ml
-                            </div>
-                        </div>
-                        <div class="count">
-                            <div class="rating">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <div class="average-rating">
-                                <!-- <p> -->
-                                    &nbsp; 4.9 &nbsp;
-                                <!-- </p> -->
-                            </div>
-                            <div class="total-rating">
-                                <!-- <p> -->
-                                    (250 people)
-                                <!-- </p> -->
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="person">
-                            <div class="jarakwokwok">
-                                <div class="foto-profile">
-                                    <img src="/img/section4_profile-picture.png" alt="">
-                                </div>
-                                <div class="nama-person">
-                                    &nbsp; NURHAYATI 5
-                                </div>
-                            </div>
-                            <a class="lanjut" href="#">
-                                <!-- <p> -->
-                                (ALL REVIEWS)
-                                <!-- </p> -->
-                            </a>
-                        </div>
-                        <div class="rekomen">
-                            <div class="jempol">
-                                <img src="/img/section4_jempol-rekomen.png" alt="">
-                            </div>
-                            <div class="rekomendesc">
-                                &nbsp;
-                                NURHAYATI 5 recommends this product!
-                            </div>
-                        </div>
-                        <div reviews>
-                            <p>
-                                sabun nya wangi banget, anakku jadi seneng kalo mandi xixixi
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                    </a>
+                @endforeach
             </div>
         </div>
         <div class="col-md-12 text-center zoom">
             <div class="col-md-12 text-center zoom">
-                <a href="./nextpage.html" class="text-decoration-none text-white">
+                <a href="/rating" class="text-decoration-none text-white">
                     <button type="button" class="btn btn-primary">See More</button>
                 </a>
             </div>
@@ -737,6 +347,7 @@
             </a>
         </div> -->
     </section>
+    <!-- ----------------------------------RATING REVIEW SECTION END---------------------------------- -->
     
         
 </div>

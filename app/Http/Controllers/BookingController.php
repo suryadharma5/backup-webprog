@@ -125,4 +125,12 @@ class BookingController extends Controller
 
         return redirect('/book')->with('success', 'Product berhasil diunggah');
     }
+
+    public function destroy($id)
+    {
+        $booking = Booking::find($id);
+        // dd($menfessReply);
+        $booking->delete();
+        return redirect('/book')-> with('success', 'Jawaban berhasil dihapus');
+    }
 }

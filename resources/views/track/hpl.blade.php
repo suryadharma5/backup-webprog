@@ -20,7 +20,7 @@
     <div class="col-lg-12 containers">
         <img src="/img/ibu-hamil.png" style="position: absolute;top:0;z-index:-1; width:100%">
         <div class="row g-0 justify-content-center align-items-center box-formulir-keseluruhan">
-            <a href="" class="col-1 g-0 d-flex justify-content-center align-items-center">
+            <a href="/track/form" class="col-1 g-0 d-flex justify-content-center align-items-center">
                 <img src="/img/back-form-kalender-hover.png" class="col-6" id="prev-bottom" onmouseenter="hoverinPrev(this)" onmouseleave="hoveroutPrev(this)">
             </a> 
             <div class="col-4 g-0 ">
@@ -29,11 +29,11 @@
                         <div class="col-12 form-group d-flex justify-content-center">
                             <div class="col-10">
                                 <div class="row g-0 input-group date" id="datepicker">
-                                    <input type="text" class="form-control col-10" placeholder="Masukkan hari perkiraan lahir (HPL)" >
+                                    <input class="form-control col-10" placeholder="Masukkan hari perkiraan lahir (HPL)" min="return datecheck();">
                                     <span class="input-group-append col-2">
-                                        <span class="button-calendar bg-white d-block col-12 d-flex justify-content-center align-items-center "> 
+                                        <span class="button-calendar bg-white d-block col-12 d-flex justify-content-center align-items-center" style="hover: pointer"> 
                                             {{-- input-group-text  --}}
-                                            <i class="fa fa-calendar"></i>
+                                            <i class="fa fa-calendar" style="cursor: pointer"></i>
                                         </span>
                                     </span>
                                 </div>
@@ -41,7 +41,7 @@
                         </div>
                     </form>
 
-                    <a href="/hpht" class="hpl-text text-center mt-3 mb-5" style="width: 100%">
+                    <a href="/track/hpht" class="hpl-text text-center mt-3 mb-5" style="width: 100%">
                         Belum mengetahui HPL anda?
                     </a>
 
@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="bt-bayi" style="width: 100%">
-            <a href="" class="link-button-start-tracking">
+            <a href="/track/trackRes" class="link-button-start-tracking" onclick="return dateDiff()">
                 <img src="/img/button-tracking.png" class="button-kalender" style="position: absolute; z-index:1">
                 <div class="text-start-tracking col-1 text-center" style="position: absolute; z-index: 2">
                     Start
@@ -71,9 +71,36 @@
         $(function() {
             $('#datepicker').datepicker({
                 'format': 'dd-mm-yyyy',
-                'autoclose': true
+                'autoclose': true,
+                'todayHighlight': true,
+                startDate: new Date()
             });
+            
         });
+        function dateDiff() {
+            var a = $( "#datepicker" ).datepicker("getDate");
+            // console.log(a);
+            // alert(a);
+            // window.location.reload();
+            if (a === null) {
+                window.location.href = '/track/form';
+                alert('Sorry, we think you entered the wrong date');
+            }
+            var date = new Date();
+            var sisahari = Math.ceil((a - date)/ 86400000);
+            var diff = Math.ceil(sisahari/7);
+            var week = 43 - diff;
+
+            var curr = week-1;
+            // var encodedValue = encodeURIComponent(curr);
+            var encodedValue = encodeURIComponent(curr);
+            document.cookie = "index=" + encodedValue;
+
+            localStorage.setItem('passingval', week);
+            localStorage.setItem('passingdate', a);
+            localStorage.setItem('passingsisahari', sisahari);
+            window.location.href = 'track.blade.php';
+        }
     </script>
     
       <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
