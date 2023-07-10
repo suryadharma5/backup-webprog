@@ -90,6 +90,12 @@
             var sisahari = Math.ceil((a - date)/ 86400000);
             var diff = Math.ceil(sisahari/7);
             var week = 43 - diff;
+
+            var curr = week-1;
+            // var encodedValue = encodeURIComponent(curr);
+            var encodedValue = encodeURIComponent(curr);
+            document.cookie = "index=" + encodedValue;
+
             localStorage.setItem('passingval', week);
             localStorage.setItem('passingdate', a);
             localStorage.setItem('passingsisahari', sisahari);

@@ -100,10 +100,7 @@
             let output = document.getElementById('demo');
             output.innerText = value;
 
-            var curr = value-1;
-            // var encodedValue = encodeURIComponent(curr);
-            var encodedValue = encodeURIComponent(curr);
-            document.cookie = "index=" + encodedValue;
+            
 
             const numb = document.querySelector(".numb");
             let counter = 0;
