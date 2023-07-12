@@ -80,7 +80,7 @@ class BookingController extends Controller
                 </div>
             </div>
             <div class = 'bookbutton'>
-                <a href='/book/$doctor->doctor_name'>
+                <a href='/book/$doctor->id'>
                     <button type = 'submit' class = 'btn btn-primary'>Book</button>
                 </a>
             </div>

@@ -21,7 +21,7 @@ class AdminMiddleware
             # code...
             return $next($request);
         } else {
-            return redirect('/')->with('failed', 'anda bukan admin');
+            return redirect('/noaccess')->with('failed', 'anda bukan admin');
         }
     }
 }

@@ -138,3 +138,9 @@ Route::fallback(function () {
         'active' => 'none'
     ]);
 });
+
+Route::get('/noaccess', function(){
+    return view('403', [
+        'active' => 'none'
+    ]);
+});

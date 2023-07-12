@@ -39,7 +39,7 @@
                                         {{ $doctor->rumahSakit->hospital_name }}
                                     </h3>
                                     <p class="lokasi">
-                                        Badung, Bali                                
+                                        {{ Str::after($doctor->rumahSakit->regency->name, 'KABUPATEN') }}, {{ $doctor->rumahSakit->province->name }}
                                     </p>
                                 </div>
                             </div>

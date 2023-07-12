@@ -149,7 +149,8 @@
                 Profile
             </div>
             <div class="row baris-profile-pict d-flex justify-content-center">
-                <img src="/img/ProfilePic-profile.png " alt="" class="profile-pict">
+                <img id = 'profile' src="/img/ProfilePic-profile.png " alt="" class="rounded-circle profile-pict">
+                {{-- <img id ='profile' src="/img/aming.jpg " alt="" class="profile-pict rounded-circle"> --}}
             </div>
             
             <form action="{{ route('updateProfile') }}" class="row g-3" method="POST">

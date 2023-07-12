@@ -21,7 +21,7 @@ class DoctorSeeder extends Seeder
         $rs = DB::table('rumah_sakits')->pluck('id');
         
 
-        for ($i = 0 ; $i <=9; $i++){
+        for ($i = 0 ; $i <=1000; $i++){
             $temp = $rs->shuffle();
             Doctor::create([
                 // 'hospital_id' => $temp[0],
@@ -35,7 +35,7 @@ class DoctorSeeder extends Seeder
             ]);
         }
 
-        for ($i = 0 ; $i <=9; $i++){
+        for ($i = 0 ; $i <=1000; $i++){
             $doctor = Doctor::find($i+1);
             $hari = ['senin', 'selasa', 'rabu'];
             foreach($hari as $h){

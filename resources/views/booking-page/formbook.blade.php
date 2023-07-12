@@ -46,19 +46,19 @@
       @csrf
       <div class="mb-3">
         <label for="nama" class="form-label">Nama Lengkap</label>
-        <input type="text" name="nama" class="form-control" id="formGroupExampleInput" placeholder="">
+        <input type="text" name="nama" class="form-control" id="formGroupExampleInput" placeholder="" value="{{ old(auth()->user()->username) }}">
       </div>
       <div class="mb-3">
         <label for="nik" class="form-label">NIK</label>
-        <input type="text" name="nik" class="form-control" id="formGroupExampleInput2" placeholder="">
+        <input type="text" name="nik" class="form-control" id="formGroupExampleInput2" placeholder="" value="{{ old(auth()->user()->nik) }}">
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <input type="email" name="email" class="form-control" id="formGroupExampleInput2" placeholder="">
+        <input type="email" name="email" class="form-control" id="formGroupExampleInput2" placeholder="" value="{{ old(auth()->user()->email) }}">
       </div>
       <div class="mb-3">
         <label for="telephone" class="form-label">Nomor Telepon</label>
-        <input type="tel" class="form-control" name="telephone" maxlength="12"  required/>
+        <input type="tel" class="form-control" name="telephone" maxlength="12"  required value="{{ old('tes') }}">
       </div>
       <div class="list-jadwal mt-3 col-lg-12 mb-3">
         <label for="" class="form-label">Pilih Jadwal</label>
