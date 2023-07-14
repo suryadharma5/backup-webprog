@@ -330,11 +330,11 @@
                                           <li><a class="dropdown-item" href="#"><i class="bi bi-exclamation-circle me-2"></i>Laporkan</a></li>
                                           @if ($rev->user_id == auth()->user()->id)
                                           <li><hr class="dropdown-divider"></li>
-                                            <form action="/rating/detail/review/{{ $rev->id}}" method="POST">
-                                                <li onclick="return confirm('Apakah anda yakin ?')">
+                                            <form action="/rating/detail/review/{{ $rev->id}}" method="POST" class="deleteReview">
+                                                <li onclick= confirmDelete()>
                                                     @method('delete')
                                                     @csrf
-                                                    <button type="submit" class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i>Hapus</button> 
+                                                    <button type="button" class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i>Hapus</button> 
                                                 </li>
                                             </form>
                                           @endif
@@ -360,6 +360,23 @@
         </div>
     </div>
    
+    <script>
+        const confirmDelete = () => {
+            Swal.fire({
+            title: 'Apakah anda yakin',
+            text: "Review anda akan hilang",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Hapus'
+            }).then((result) => {
+            if (result.isConfirmed) {
+              document.querySelector('.deleteReview').submit();
+            }
+            })
+        }
+    </script>
 
 
 @endsection

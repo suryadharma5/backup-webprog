@@ -34,7 +34,7 @@
 
         {{-- main content user reply --}}
         @foreach ($menfess->menfessReply as $men)
-            {{-- @dd($men->users) --}}
+            {{-- @dd($like) --}}
             <div class="card-body border-0 mt-4">
                     <div class="card my-3" style="background-color: #FFF7F6">
                     <div class="row d-flex m-1 mt-3">
@@ -49,12 +49,12 @@
                             <div class="col-lg py-2">
                                 <div class="d-flex flex-row justify-content-end align-items-center">
                                     <div class="like col-lg-6" style="display: flex; flex-direction: row; justify-content: end">
-                                        {{-- @if ($men->isLikedBy(auth()->user()))
+                                        {{-- @if ($like[0]->menfess_reply_id == $men->id)
                                             <i id="like-icon" class="unlike-icon bi bi-heart-fill" style="color: #78a2cc;" data-reply-id="{{ $men->id }}" data-menfess-id="{{ $men->menfess_id }}" data-token-id="{{ csrf_token() }}" data-user-id="{{ auth()->user()->id }}"></i>
                                         @else
-                                            <i id="unlike-icon" class="like-icon bi bi-heart" style="color: #78a2cc;" data-reply-id="{{ $men->id }}" data-menfess-id="{{ $men->menfess_id }}" data-token-id="{{ csrf_token() }}" data-user-id="{{ auth()->user()->id }}"></i>
+                                            <i id="like-icon" class="like-icon bi bi-heart" style="color: #78a2cc;" data-reply-id="{{ $men->id }}" data-menfess-id="{{ $men->menfess_id }}" data-token-id="{{ csrf_token() }}" data-user-id="{{ auth()->user()->id }}"></i>
                                         @endif --}}
-                                        <i id="like-icon" class="like-icon bi bi-heart" style="color: #78a2cc;" data-reply-id="{{ $men->id }}" data-menfess-id="{{ $men->menfess_id }}" data-token-id="{{ csrf_token() }}" data-user-id="{{ auth()->user()->id }}"></i>
+                                        <i id="like-icon" class="unlike-icon bi bi-heart-fill" style="color: #78a2cc;" data-reply-id="{{ $men->id }}" data-menfess-id="{{ $men->menfess_id }}" data-token-id="{{ csrf_token() }}" data-user-id="{{ auth()->user()->id }}" style="display: none;"></i>
                                         <div class="p-0 ms-1" id="total-like">{{ $men->like }} likes</div>
                                     </div>
                                     <div class="dropdown-center ms-4">

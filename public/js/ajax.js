@@ -61,3 +61,19 @@ $(function (){
     })
 
 })
+
+const confirmDelete = () => {
+    Swal.fire({
+        title: 'Apakah anda yakin',
+        text: "Booking anda akan hilang",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Hapus'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          document.querySelector('.cancelbutton').submit();
+        }
+      })
+}

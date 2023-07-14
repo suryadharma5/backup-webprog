@@ -136,7 +136,8 @@ class ReviewController extends Controller
         $product->rating = round($product->rating, 1);
         $product->save();
 
-        Review::destroy($review->id);
+        // Review::destroy($review->id);
+        $review->delete();
         // dd($review);
         return redirect('/rating')-> with('success', 'Review berhasil dihapus');
     }

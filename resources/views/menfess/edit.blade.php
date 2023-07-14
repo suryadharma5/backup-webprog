@@ -14,10 +14,13 @@
 @section('contents')
     <div class="container m-10">
         @if (session()->has('success'))
-        <div class="alert alert-success alert-dismissible fade show col-lg-12 mt-3" role="alert">
-            {{ session('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: '{{ session('success') }}',
+                });  
+            </script>
         @endif
         <div class="backBtnU">
             <a href="/menfess">
@@ -68,12 +71,12 @@
                                                 <button type="button" data-id="{{ $men->id }}" data-question="{{ $men->title }}" data-bs-toggle="modal" data-bs-target="#exampleModal" class="dropdown-item" href="#" id="updateButton"><i class="bi bi-pencil-square me-2" style="color: #78A2CC"></i><span style="color: #78A2CC">Update</span></button>
                                             </li>
                                             <li><hr class="dropdown-divider"></li>
-                                              <form action="/menfess/myMenfess/delete" method="POST">
-                                                  <li onclick="return confirm('Apakah anda yakin ?')">
+                                              <form action="/menfess/myMenfess/delete" method="POST" class="cancelButton">
+                                                  <li onclick=confirmDelete()>
                                                       @method('delete')
                                                       @csrf
                                                       <input type="hidden" value="{{ $men->id }}" name="menfess_id">
-                                                      <button type="submit" class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i>Hapus</button> 
+                                                      <button type="button" class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i>Hapus</button> 
                                                   </li>
                                               </form>
                                         </ul>
@@ -217,6 +220,24 @@
         }
 
     </style>
+
+    <script>
+        const confirmDelete = () => {
+            Swal.fire({
+            title: 'Apakah anda yakin',
+            text: "Menfess anda akan hilang",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Hapus'
+            }).then((result) => {
+            if (result.isConfirmed) {
+              document.querySelector('.cancelButton').submit();
+            }
+            })
+        }
+    </script>
 
 @endsection
 

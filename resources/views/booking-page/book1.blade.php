@@ -12,10 +12,17 @@
         
 @section('contents')
     @if (session()->has('success'))
-        <div class="alert alert-success alert-dismissible fade show col-lg-12 mt-3" role="alert">
+        {{-- <div class="alert alert-success alert-dismissible fade show col-lg-12 mt-3" role="alert">
             {{ session('success') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+        </div> --}}
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: '{{ session('success') }}',
+            });  
+        </script>
     @endif
     <div class="container-fluid g-0 container-gb-book-dokter overflow-hidden" style="position: relative">
             <img src="/img/bg-book-dokter.png" alt="" style="z-index:1" class="bg-book-dokter img-fluid" width="100%">
@@ -107,8 +114,8 @@
                                                     <!-- <button>Cancel</button> -->
                                                     {{-- <a href="#popup1">
                                                     </a> --}}
-                                                    <button type="submit" class="btn btn-primary" onclick="return confirm('Apaka anda yakin ?')">Cancel</button>
-                                                </fo>
+                                                    <button type="button" class="btn btn-primary" onclick=confirmDelete()>Cancel</button>
+                                                </form>
                                             </div>
                                         </div>
                                     @endif

@@ -23,6 +23,7 @@ function removeFile(){
 }
 
 $(document).ready(function() {
+    $('.unlike-icon').hide()
     $('.like-icon').on('click', function() {
         console.log('like')
         var icon = $(this);
@@ -33,7 +34,6 @@ $(document).ready(function() {
 
         // Kirim permintaan AJAX untuk mengubah status like
         $.ajax({
-            
             url: '/menfess/detail/'+ menfess_id + '/like',
             type: 'POST',
             data: {
@@ -46,8 +46,9 @@ $(document).ready(function() {
                 console.log('like')
                 $('#total-like').text(response.like + ' likes');
                 // $('.like-icon').toggleClass('unlike-icon');
-                $('#like-icon').removeClass('like-icon').addClass('unlike-icon')
-                $('#like-icon').removeClass('bi-heart').addClass('bi-heart-fill')
+                // $('#like-icon').removeClass('bi-heart').addClass('bi-heart-fill')
+                $('.like-icon').hide()
+                $('.unlike-icon').show()
                 // $('#like-icon').removeClass('unlike-icon bi bi-heart-fill').addClass('like-icon bi bi-heart')
             },
             error: function(xhr, textStatus, error) {
@@ -80,9 +81,11 @@ $(document).ready(function() {
             success: function(response) {
                 console.log('unlike')
                 $('#total-like').text(response.like + ' likes');
-                $('.unlike-icon').toggleClass('like-icon');
+                // $('.unlike-icon').toggleClass('like-icon');
                 // $('#like-icon').removeClass('like-icon').addClass('unlike-icon')
-                $('#like-icon').removeClass('bi-heart-fille').addClass('bi-heart')
+                // $('#like-icon').removeClass('bi-heart-fille').addClass('bi-heart')
+                $('.like-icon').show()
+                $('.unlike-icon').hide()
                 // $('#like-icon').removeClass('unlike-icon bi bi-heart-fill').addClass('like-icon bi bi-heart')
                 // $('.unlike-icon').removeClass('unlike-icon bi bi-heart-fill').addClass('like-icon bi bi-heart')
             }

@@ -13,10 +13,18 @@
 
 <div class="container">
     @if (session()->has('success'))
-        <div class="alert alert-success alert-dismissible fade show col-lg-12 mt-3" role="alert">
+        {{-- <div class="alert alert-success alert-dismissible fade show col-lg-12 mt-3" role="alert">
             {{ session('success') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+        </div> --}}
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: '{{ session('success') }}',
+            });
+            
+        </script>
     @endif
     {{-- button bagian atas --}}
     <div class="row pt-5 d-flex">
@@ -108,11 +116,11 @@
                                   @if (auth()->user())
                                     @if ($men->menfessReply[0]->users->id == auth()->user()->id)
                                     <li><hr class="dropdown-divider"></li>
-                                      <form action="/menfess/detail/reply/{{ $men->menfessReply[0]->id}}" method="POST">
-                                          <li onclick="return confirm('Apaka anda yakin ?')">
+                                      <form action="/menfess/detail/reply/{{ $men->menfessReply[0]->id}}" method="POST" class="deleteReply">
+                                          <li onclick= replydelete()>
                                               @method('delete')
                                               @csrf
-                                              <button type="submit" class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i>Hapus</button> 
+                                              <button type="button" class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i>Hapus</button> 
                                           </li>
                                       </form>
                                     @endif

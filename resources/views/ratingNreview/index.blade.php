@@ -12,17 +12,32 @@
 @section('contents')
     <div class="container">
         @if (session()->has('success'))
-            <div class="alert alert-success alert-dismissible fade show col-lg-12 mt-3" role="alert">
+            {{-- <div class="alert alert-success alert-dismissible fade show col-lg-12 mt-3" role="alert">
                 {{ session('success') }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
+            </div> --}}
+            <script>
+              Swal.fire({
+                  icon: 'success',
+                  title: 'Success',
+                  text: '{{ session('success') }}',
+              });  
+            </script>
         @endif
 
         @if (session()->has('failed'))
-            <div class="alert alert-danger alert-dismissible fade show col-lg-12 mt-3" role="alert">
+            {{-- <div class="alert alert-danger alert-dismissible fade show col-lg-12 mt-3" role="alert">
                 {{ session('failed') }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
+            </div> --}}
+
+            <script>
+              Swal.fire({
+                  icon: 'error',
+                  title: 'Oops',
+                  text: '{{ session('failed') }}',
+              });  
+            </script>
         @endif
             
         <div class="search-bar d-flex flex-row mt-4">

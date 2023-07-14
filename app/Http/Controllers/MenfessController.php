@@ -22,11 +22,15 @@ class MenfessController extends Controller
     }
 
     public function detail(Menfess $menfess){
+        $user = auth()->user()->id;
+        $like = Like::where('user_id', $user)->get();
+        // dd($like);
         return view('menfess.menfess-detail', [
             'title' => 'Menfess',
             'active' => 'menfess',
             'menfess' => $menfess,
             'reply' => MenfessReply::where('menfess_id', $menfess->id)->get(),
+            'like' => $like
         ]);
     }
 
@@ -92,7 +96,7 @@ class MenfessController extends Controller
         $menfess = Menfess::findOrFail($request->menfess_id);
         $menfess->delete();
 
-        return redirect('/menfess')->with('success', "Menfess anda berhasil dihapus");
+        return redirect()->back()->with('success', "Menfess anda berhasil dihapus");
     }
 
     public function searchMenfess(Request $request){
