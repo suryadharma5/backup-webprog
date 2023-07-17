@@ -23,14 +23,19 @@ class MenfessController extends Controller
 
     public function detail(Menfess $menfess){
         $user = auth()->user()->id;
-        $like = Like::where('user_id', $user)->get();
+
+        $isLike = [];
+        
+        foreach($menfess->menfessReply as $men){
+            array_push($isLike, Like::where('user_id', $user)->where('menfess_reply_id', $men->id)->exists());
+        };
+        // $like = $like->where('menfess_reply_id', $menfess->id)->get();
         // dd($like);
         return view('menfess.menfess-detail', [
             'title' => 'Menfess',
             'active' => 'menfess',
             'menfess' => $menfess,
-            'reply' => MenfessReply::where('menfess_id', $menfess->id)->get(),
-            'like' => $like
+            'like' => $isLike
         ]);
     }
 

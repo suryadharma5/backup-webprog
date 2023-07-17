@@ -3,7 +3,6 @@
 
 @section('css')
         <link rel="stylesheet" href="/css/book1.css">
-        {{-- <link rel="stylesheet" href="/css/navbar.css"> --}}
 @endsection
         
 @section('title')
@@ -12,10 +11,6 @@
         
 @section('contents')
     @if (session()->has('success'))
-        {{-- <div class="alert alert-success alert-dismissible fade show col-lg-12 mt-3" role="alert">
-            {{ session('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div> --}}
         <script>
             Swal.fire({
                 icon: 'success',
@@ -63,15 +58,13 @@
                         </select>
                         <select class="form-select daerah" aria-label="Default select example" id="kabupaten">
                             <option selected disabled>Pilih Kabupaten</option>
-                            {{-- @foreach ($regencies as $regency)
-                                <option value="{{ $regency->id }}">{{ $regency->name }}</option>
-                                @endforeach --}}
                         </select>
                          <select class="form-select daerah" aria-label="Default select example" id="hospital">
                             <option selected disabled>Pilih Rumah Sakit</option>
                         </select>
                     </div>
                 </div>
+
                 <div class="row mt-4">
                 </div>
         
@@ -111,9 +104,6 @@
                                                 <form class="cancelbutton" action="/book/delete/{{ $book->id }}" method="POST">
                                                     @method('delete')
                                                     @csrf
-                                                    <!-- <button>Cancel</button> -->
-                                                    {{-- <a href="#popup1">
-                                                    </a> --}}
                                                     <button type="button" class="btn btn-primary" onclick=confirmDelete()>Cancel</button>
                                                 </form>
                                             </div>

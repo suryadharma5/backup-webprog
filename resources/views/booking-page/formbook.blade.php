@@ -8,6 +8,8 @@
   <title>Hamily | {{ $title }}</title>
 @endsection
 
+{{-- @dd($doctor) --}}
+
 @section('contents')
 <div class="container box-form-luar">
   <section class="back-button">
@@ -46,19 +48,19 @@
       @csrf
       <div class="mb-3">
         <label for="nama" class="form-label">Nama Lengkap</label>
-        <input type="text" name="nama" class="form-control" id="formGroupExampleInput" placeholder="" value="{{ old(auth()->user()->username) }}">
+        <input type="text" name="nama" class="form-control" id="formGroupExampleInput" placeholder="" value="{{ auth()->user()->username }}" required>
       </div>
       <div class="mb-3">
         <label for="nik" class="form-label">NIK</label>
-        <input type="text" name="nik" class="form-control" id="formGroupExampleInput2" placeholder="" value="{{ old(auth()->user()->nik) }}">
+        <input type="text" name="nik" class="form-control" id="formGroupExampleInput2" placeholder="" required>
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <input type="email" name="email" class="form-control" id="formGroupExampleInput2" placeholder="" value="{{ old(auth()->user()->email) }}">
+        <input type="email" name="email" class="form-control" id="formGroupExampleInput2" placeholder="" value="{{ auth()->user()->email }}" required>
       </div>
       <div class="mb-3">
         <label for="telephone" class="form-label">Nomor Telepon</label>
-        <input type="tel" class="form-control" name="telephone" maxlength="12"  required value="{{ old('tes') }}">
+        <input type="tel" class="form-control" name="telephone" maxlength="12"  required value="{{ auth()->user()->phone_number }}" required>
       </div>
       <div class="list-jadwal mt-3 col-lg-12 mb-3">
         <label for="" class="form-label">Pilih Jadwal</label>
@@ -70,7 +72,6 @@
                     @if ($doctor->hari_praktek)
                         @foreach ($doctor->hari_praktek as $hari)
                             <option value="{{ $hari }}">{{ $hari }}</option>
-                        {{-- <option value="0">No</option> --}}
                         @endforeach
                     @endif
                 </select>
@@ -106,21 +107,6 @@
         </button>
       </div>
     </form>
-          {{-- <div class="mb3">
-            <label for="formGroupExampleInput2" class="form-label">Apakah Pasien BPJS ? </label>
-            <div class="row g-0 mb-2">
-                <input class="form-check-input col-3" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label col-9 d-flex align-items-center" for="flexRadioDefault1">
-                  Iya
-                </label>
-            </div>
-            <div class="row g-0">
-                <input class="form-check-input col-3" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                <label class="form-check-label col-9 d-flex align-items-center" for="flexRadioDefault2">
-                  Tidak
-                </label>
-            </div>
-          </div> --}}
     </div>
     
 
@@ -129,10 +115,6 @@
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        {{-- <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div> --}}
         <div class="modal-body">
           <div class="offset-2 col-8" style="text-align: justify">
             <div class="book-sukses pt-3 pb-3 col-12 text-center">

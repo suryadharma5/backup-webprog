@@ -23,7 +23,7 @@
             <img src="/img/awanputih.png" alt="">
         </div>
         <div class="sectionpic trackbutton zoom" style="">
-            <a href="/home1/nextpage.html">
+            <a href="/track">
                 <img src="/img/track button.png" alt="">
             </a>
         </div>

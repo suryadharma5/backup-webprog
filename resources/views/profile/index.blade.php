@@ -58,36 +58,6 @@
   </nav>
 
 
-@if (session('message'))
-    <!-- Modal -->
-    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" style="background-color: #78A2CC;border:none">
-                <div class="row modal-header" style="border: none">
-                    <button type="button" class="btn-close col-12 d-flex justify-content-end" data-bs-dismiss="modal" aria-label="Close" style="border: none; color: #FFB8C7; outline:none">
-                    </button>
-                    <h5 class="modal-title col-12 text-center " id="successModalLabel" style="font-weight: bold; color:white; font-size:25px">Yeay!</h5>
-                    <div class="col-12 text-center">
-                        <img src="/img/check-update-sukses-profile.png" alt="" style="width: 100px; height:100px">
-                    </div>
-                    <h5 class="col-12 modal-title text-center" style="font-weight: bold; color:white; font-size:25px">{{ session('message') }}  </h5>
-                </div>
-                <div class="modal-footer" style="border-top: none;">
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Skrip JavaScript untuk Menampilkan Modal -->
-    <script>
-        $(document).ready(function() {
-            $('#successModal').modal('show');
-        });
-    </script>
-@endif
-
-
 <div class="container mt-5">
     <div class="row">
         <div class="col-3 bungkus-nav-profile py-3">
@@ -153,7 +123,7 @@
                 {{-- <img id ='profile' src="/img/aming.jpg " alt="" class="profile-pict rounded-circle"> --}}
             </div>
             
-            <form action="{{ route('updateProfile') }}" class="row g-3" method="POST">
+            <form action="{{ route('updateProfile') }}" class="updateProfile row g-3" method="POST">
                 @method("put")
                 @csrf
                 <div class="col-12">
@@ -233,43 +203,9 @@
                     @enderror
                 </div>
                 <div class="col-12 d-flex justify-content-center ">
-                  <button type="button" class="col-3 btn btn-update-profile pt-2 pb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">UPDATE</button>
+                  <button type="button" class="col-3 btn btn-update-profile pt-2 pb-2" onclick="confirmDelete()">UPDATE</button>
                 </div>
 
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                    <div class="modal-content">
-                        {{-- <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div> --}}
-                        <div class="modal-body">
-                        <div class="offset-2 col-8" style="text-align: justify">
-                            <div class="book-sukses pt-3 pb-3 col-12 text-center">
-                            Do you want to update your profile?
-                            </div>
-                            {{-- <p class="book-sukses-detail">
-                            Jangan lupa datang ke RSUD Mangusada <span class="book-sukses-detail-span"> Kamis, 6 April 2023, Jam 09.00 - 12.00</span> 
-                            Semoga konsultasinya berjalan lancar & memuaskan
-                            </p> --}}
-                            <div class="row">
-                                <button type="submit" class="col-5 yes-profile mt-3 mb-4 pt-3 pb-3">
-                                    <div style="font-weight: bold">Yes</div>
-                                </button>
-                                <div class="col-2">
-
-                                </div>
-                                <button class="col-5 no-profile mt-3 mb-4" data-bs-dismiss="modal">
-                                    <div class="no-profile" style="font-weight: bold"  >No</div>
-                                </button>
-                            </div>
-                            
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
 
               </form>
             
@@ -279,6 +215,24 @@
     
     
 </div>
+
+<script>
+    const confirmDelete = () => {
+        Swal.fire({
+            title: 'Apakah anda yakin',
+            text: "Profile anda akan diperbaharui",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Update'
+            }).then((result) => {
+            if (result.isConfirmed) {
+              document.querySelector('.updateProfile').submit();
+            }
+        })
+    }
+</script>
 
 @endsection
     

@@ -101,8 +101,8 @@
                     <p class="jenis-dokter" style="color: #78A2CC">
                         Dokter Spesialis Kandungan
                     </p>
-                    <button type="submit" class="btn fw-bold" style="background-color: #78A2CC; color: white; width:30%">
-                        <a href="{{ $doctor->id }}/coba" class="text-decoration-none text-white">Book</a>
+                    <button type="button" class="btn fw-bold" style="background-color: #78A2CC; color: white; width:30%">
+                        <a href="/book/{{ $doctor->id }}/coba" class="text-decoration-none text-white">Book</a>
                     </button>
                 </div>
             </div>
@@ -110,10 +110,5 @@
         </section>
     </div>
     <div class="mb-5"></div>
-    {{-- <footer>
-        <div>
-            <p> INI FOOTER NANTI </p>
-        </div>
-    </footer> --}}
     
 @endsection
