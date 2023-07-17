@@ -92,11 +92,43 @@ class RatingController extends Controller
 
   public function detailRating(Product $prod)
   {
+    $reviews = Review::where('product_id', $prod->id)->get();
+    $rate1 = 0;
+    $rate2 = 0;
+    $rate3 = 0;
+    $rate4 = 0;
+    $rate5 = 0;
+    $recom = 0;
+    foreach($reviews as $p){
+        if($p->rate === 1){
+            $rate1++;
+        }else if ($p->rate === 2){
+            $rate2++;
+        }else if ($p->rate === 3){
+            $rate3++;
+        }else if ($p->rate === 4){
+            $rate4++;
+        }else if ($p->rate === 5){
+            $rate5++;
+        }
+
+        if($p->recommend === 1){
+            $recom++;
+        }
+    }
+
     return view('ratingNreview.detailrating', [
       'title' => 'Rating n Review',
       'active' => 'rating',
       'product' => $prod,
-      'review' => Review::where('product_id', $prod->id)->get()
+      'review' => $reviews,
+      'rate1' => $rate1,
+      'rate2' => $rate2,
+      'rate3' => $rate3,
+      'rate4' => $rate4,
+      'rate5' => $rate5,
+      'total' => count($reviews),
+      'recom' => $recom
     ]);
   }
 }

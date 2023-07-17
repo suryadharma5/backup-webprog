@@ -58,23 +58,43 @@
                             Rating Distribution
                         </div>
                         <div class="row">
-                            <div class="col-9 mt-2">
-                                <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                    <div class="progress-bar" style="width: 25%"></div>
+                            @if ($total)
+                                <div class="col-9 mt-2">
+                                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" style="width: {{ ($rate5/$total)*100 }}%"></div>
+                                    </div>
+                                    <div class="progress mt-2" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" style="width: {{ ($rate4/$total)*100 }}%"></div>
+                                    </div>
+                                    <div class="progress mt-2" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" style="width: {{ ($rate3/$total)*100 }}%"></div>
+                                    </div>
+                                    <div class="progress mt-2" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" style="width: {{ ($rate2/$total)*100 }}%"></div>
+                                    </div>
+                                    <div class="progress mt-2" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" style="width: {{ ($rate1/$total)*100 }}%"></div>
+                                    </div>
                                 </div>
-                                <div class="progress mt-2" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                    <div class="progress-bar" style="width: 100%"></div>
-                                </div>
-                                <div class="progress mt-2" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                    <div class="progress-bar" style="width: 70%"></div>
-                                </div>
-                                <div class="progress mt-2" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                    <div class="progress-bar" style="width: 40%"></div>
-                                </div>
-                                <div class="progress mt-2" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                    <div class="progress-bar" style="width: 25%"></div>
-                                </div>
-                            </div>
+                            @else
+                                <div class="col-9 mt-2">
+                                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" style="width: 0%"></div>
+                                    </div>
+                                    <div class="progress mt-2" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" style="width: 0%"></div>
+                                    </div>
+                                    <div class="progress mt-2" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" style="width: 0%"></div>
+                                    </div>
+                                    <div class="progress mt-2" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" style="width: 0%"></div>
+                                    </div>
+                                    <div class="progress mt-2" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" style="width: 0%"></div>
+                                    </div>
+                                </div>                          
+                            @endif
                             <div class="col">
                                 <div class="rate-dist">
                                     5
@@ -104,7 +124,7 @@
                     </div>
                     <div class="col-3 mt-3">
                         <div class="user-text">
-                            25 <span class="user-text-span"> users </span>
+                            {{ $review->count() }} <span class="user-text-span"> {{ ($review->count() > 1) ? 'users' : 'user' }} </span>
                         </div>
                         <div class="reviewed-this">
                             Reviewed this
@@ -115,7 +135,7 @@
                     </div>
                     <div class="col-4 mt-3">
                         <div class="user-text">
-                            25 <span class="user-text-span"> users </span>
+                            {{ $recom }} <span class="user-text-span"> {{ ($recom > 1) ? 'users' : 'user' }} </span>
                         </div>
                         <div class="reviewed-this">
                             Recommended this

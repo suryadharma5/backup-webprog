@@ -35,7 +35,7 @@
 
         {{-- main content user reply --}}
         @foreach ($menfess->menfessReply as $men)
-            {{-- @dd($loop->index) --}}
+            {{-- @dd($like) --}}
             <div class="card-body border-0 mt-4">
                     <div class="card my-3" style="background-color: #FFF7F6">
                     <div class="row d-flex m-1 mt-3">
